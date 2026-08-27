@@ -1,0 +1,5997 @@
+{
+ "map": "Recreation_dans_les_iles_v1.2",
+ "source_file": "Recreation_dans_les_iles_v1.2.w3x",
+ "archive": {
+  "files": [
+   "scripts\\war3map.j",
+   "war3map.doo",
+   "war3map.mmp",
+   "war3map.shd",
+   "war3map.w3a",
+   "war3map.w3b",
+   "war3map.w3d",
+   "war3map.w3e",
+   "war3map.w3h",
+   "war3map.w3i",
+   "war3map.w3q",
+   "war3map.w3t",
+   "war3map.w3u",
+   "war3map.wpm",
+   "war3map.wts",
+   "war3mapExtra.txt",
+   "war3mapMap.blp",
+   "war3mapMisc.txt",
+   "war3mapSkin.txt"
+  ],
+  "hash_entries": 64,
+  "block_entries": 23
+ },
+ "strings": {
+  "1": {
+   "comment": "",
+   "text": "RECREATION DANS LES ILES V1.2"
+  },
+  "8": {
+   "comment": "",
+   "text": "Player 1"
+  },
+  "9": {
+   "comment": "",
+   "text": "Player 2"
+  },
+  "10": {
+   "comment": "",
+   "text": "Player 3"
+  },
+  "11": {
+   "comment": "",
+   "text": "Player 4"
+  },
+  "12": {
+   "comment": "",
+   "text": "Player 5"
+  },
+  "13": {
+   "comment": "",
+   "text": "Player 6"
+  },
+  "14": {
+   "comment": "",
+   "text": "Player 7"
+  },
+  "15": {
+   "comment": "",
+   "text": "Player 8"
+  },
+  "109": {
+   "comment": "Units: hC32 (Bombe à Eau), Hotkey (Hotkey)",
+   "text": "B"
+  },
+  "115": {
+   "comment": "Units: hC03 (Camp de |cffd45e19Tortues|r), Hotkey (Hotkey)",
+   "text": "M"
+  },
+  "119": {
+   "comment": "Units: oC05 (|cff008000Jarre Oublié|r), Hotkey (Hotkey)",
+   "text": "T"
+  },
+  "151": {
+   "comment": "Units: zC02 (|cff0000ffTortue Terrestre|r), Hotkey (Hotkey)",
+   "text": "A"
+  },
+  "183": {
+   "comment": "Units: hC27 (Camp de |cffffff00Raies Volante|r), Hotkey (Hotkey)",
+   "text": "H"
+  },
+  "273": {
+   "comment": "Upgrades: R00G (Épées en fer,Épées en acier,Épées en mithril), Name (Name)",
+   "text": "Scout Tower"
+  },
+  "486": {
+   "comment": "Units: Edem (Ninja utilisateur du Jyuuken), Hotkey (Hotkey)",
+   "text": "J"
+  },
+  "557": {
+   "comment": "Units: ohwd (Totem), Hotkey (Hotkey)",
+   "text": "P"
+  },
+  "586": {
+   "comment": "Units: oC11 (|cff800080Démolisseur|r), Hotkey (Hotkey)",
+   "text": "C"
+  },
+  "612": {
+   "comment": "Buffs/Effects: B00E (Firerocks), EditorName (Name (Editor Only))",
+   "text": "Firerocks"
+  },
+  "622": {
+   "comment": "Buffs/Effects: B002 (Haste), EditorName (Name (Editor Only))",
+   "text": "Haste"
+  },
+  "675": {
+   "comment": "Units: oC18 (Entrainement d'un |cff808000Garde Royale|r), Hotkey (Hotkey)",
+   "text": "Z"
+  },
+  "706": {
+   "comment": "Buffs/Effects: B00F (Frost Aura), EditorName (Name (Editor Only))",
+   "text": "Frost Aura"
+  },
+  "707": {
+   "comment": "Buffs/Effects: B00F (Frost Aura), Bufftip (Tooltip)",
+   "text": "Frost Aura"
+  },
+  "735": {
+   "comment": "Buffs/Effects: B000 (Schleichendes Gift), EditorSuffix (Editor Suffix)",
+   "text": "_2"
+  },
+  "760": {
+   "comment": "Buffs/Effects: B00K (Might of Oaks), EditorName (Name (Editor Only))",
+   "text": "Might of Oaks"
+  },
+  "765": {
+   "comment": "Buffs/Effects: B00L (Banish), EditorName (Name (Editor Only))",
+   "text": "Banish"
+  },
+  "778": {
+   "comment": "Buffs/Effects: B00E (Firerocks), EditorSuffix (Editor Suffix)",
+   "text": "_2"
+  },
+  "786": {
+   "comment": "Units: uC28 (Lance Surikens mobile), Hotkey (Hotkey)",
+   "text": "O"
+  },
+  "805": {
+   "comment": "Buffs/Effects: B00N (Poison Arrows), EditorName (Name (Editor Only))",
+   "text": "Poison Arrows"
+  },
+  "806": {
+   "comment": "Buffs/Effects: B00N (Poison Arrows), Bufftip (Tooltip)",
+   "text": "Poison Arrows"
+  },
+  "819": {
+   "comment": "Buffs/Effects: B000 (Schleichendes Gift), Bufftip (Tooltip)",
+   "text": "Poison"
+  },
+  "859": {
+   "comment": "Buffs/Effects: B002 (Haste), Bufftip (Tooltip)",
+   "text": "Haste"
+  },
+  "860": {
+   "comment": "Buffs/Effects: B00O (), Bufftip (Tooltip)",
+   "text": "Haste"
+  },
+  "933": {
+   "comment": "Buffs/Effects: B002 (Haste), Buffubertip (Tooltip - Extended)",
+   "text": "This Runner is using haste."
+  },
+  "934": {
+   "comment": "Buffs/Effects: B003 (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "935": {
+   "comment": "Buffs/Effects: B003 (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Atk-Move-Aura)"
+  },
+  "936": {
+   "comment": "Buffs/Effects: B003 (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "937": {
+   "comment": "Buffs/Effects: B003 (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "This Kodo has increased attack- and movementspeed"
+  },
+  "938": {
+   "comment": "Buffs/Effects: B004 (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "939": {
+   "comment": "Buffs/Effects: B004 (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Feuerbrand)"
+  },
+  "940": {
+   "comment": "Buffs/Effects: B004 (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "941": {
+   "comment": "Buffs/Effects: B004 (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "This Kodo is surrounded by runner-killing flames."
+  },
+  "942": {
+   "comment": "Buffs/Effects: B005 (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "943": {
+   "comment": "Buffs/Effects: B005 (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Slow-Aura)"
+  },
+  "944": {
+   "comment": "Buffs/Effects: B005 (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "945": {
+   "comment": "Buffs/Effects: B005 (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "This unit has a slowed movement- and attackspeed."
+  },
+  "946": {
+   "comment": "Buffs/Effects: B006 (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "947": {
+   "comment": "Buffs/Effects: B006 (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Live-Reg)"
+  },
+  "948": {
+   "comment": "Buffs/Effects: B006 (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "949": {
+   "comment": "Buffs/Effects: B006 (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "This Kodo has an increased hitpointregeneration"
+  },
+  "950": {
+   "comment": "Buffs/Effects: B007 (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "951": {
+   "comment": "Buffs/Effects: B007 (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Manaburn-Aura)"
+  },
+  "952": {
+   "comment": "Buffs/Effects: B007 (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "953": {
+   "comment": "Buffs/Effects: B007 (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "This Unit will loose all its Mana under the effect of this aura."
+  },
+  "954": {
+   "comment": "Buffs/Effects: B008 (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "955": {
+   "comment": "Buffs/Effects: B008 (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Thorns-Aura)"
+  },
+  "956": {
+   "comment": "Buffs/Effects: B008 (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "957": {
+   "comment": "Buffs/Effects: B008 (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "Every unit attacking this Kodo will recieve damage."
+  },
+  "958": {
+   "comment": "Buffs/Effects: B009 (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "959": {
+   "comment": "Buffs/Effects: B009 (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Damage-Aura)"
+  },
+  "960": {
+   "comment": "Buffs/Effects: B009 (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "961": {
+   "comment": "Buffs/Effects: B009 (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "This Kodo has an increased attackdamage."
+  },
+  "962": {
+   "comment": "Buffs/Effects: B00A (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "963": {
+   "comment": "Buffs/Effects: B00A (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Inv)"
+  },
+  "964": {
+   "comment": "Buffs/Effects: B00A (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "965": {
+   "comment": "Buffs/Effects: B00A (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "This Unit is invisible."
+  },
+  "966": {
+   "comment": "Buffs/Effects: B00B (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "967": {
+   "comment": "Buffs/Effects: B00B (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "This Kodo is invincible."
+  },
+  "968": {
+   "comment": "Buffs/Effects: B00B (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Invinc)"
+  },
+  "969": {
+   "comment": "Buffs/Effects: B00B (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "970": {
+   "comment": "Buffs/Effects: B00C (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "971": {
+   "comment": "Buffs/Effects: B00C (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Shield)"
+  },
+  "972": {
+   "comment": "Buffs/Effects: B00C (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "973": {
+   "comment": "Buffs/Effects: B00C (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "A shield that protects against spells."
+  },
+  "974": {
+   "comment": "Buffs/Effects: B000 (Schleichendes Gift), EditorName (Name (Editor Only))",
+   "text": "Schleichendes Gift"
+  },
+  "977": {
+   "comment": "Buffs/Effects: B000 (Schleichendes Gift), Buffubertip (Tooltip - Extended)",
+   "text": "This unit is poisoned. It has a slowed attack- and movementspeed."
+  },
+  "978": {
+   "comment": "Buffs/Effects: B00E (Firerocks), Bufftip (Tooltip)",
+   "text": "Firerocks"
+  },
+  "980": {
+   "comment": "Buffs/Effects: B00E (Firerocks), Buffubertip (Tooltip - Extended)",
+   "text": "This unit is burning."
+  },
+  "984": {
+   "comment": "Buffs/Effects: B00F (Frost Aura), Buffubertip (Tooltip - Extended)",
+   "text": "This unit is slowed down."
+  },
+  "985": {
+   "comment": "Buffs/Effects: B00J (Buff), EditorName (Name (Editor Only))",
+   "text": "Buff"
+  },
+  "986": {
+   "comment": "Buffs/Effects: B00J (Buff), Bufftip (Tooltip)",
+   "text": "Buff"
+  },
+  "987": {
+   "comment": "Buffs/Effects: B00J (Buff), Buffubertip (Tooltip - Extended)",
+   "text": "I'm a buff made by ForTheUnion"
+  },
+  "988": {
+   "comment": "Buffs/Effects: B00K (Might of Oaks), Bufftip (Tooltip)",
+   "text": "Might of Oaks"
+  },
+  "990": {
+   "comment": "Buffs/Effects: B00K (Might of Oaks), Buffubertip (Tooltip - Extended)",
+   "text": "This unit is summoned."
+  },
+  "991": {
+   "comment": "Buffs/Effects: B00L (Banish), Bufftip (Tooltip)",
+   "text": "Banish"
+  },
+  "993": {
+   "comment": "Buffs/Effects: B00L (Banish), Buffubertip (Tooltip - Extended)",
+   "text": "This unit is astral"
+  },
+  "994": {
+   "comment": "Buffs/Effects: B00M (Decreased Armor), EditorName (Name (Editor Only))",
+   "text": "Decreased Armor"
+  },
+  "995": {
+   "comment": "Buffs/Effects: B00M (Decreased Armor), Bufftip (Tooltip)",
+   "text": "Decreased Armor"
+  },
+  "996": {
+   "comment": "Buffs/Effects: B00M (Decreased Armor), Buffubertip (Tooltip - Extended)",
+   "text": "This unit was hit by a Shodow Tower. It has reduced armor."
+  },
+  "997": {
+   "comment": "Buffs/Effects: B001 (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "998": {
+   "comment": "Buffs/Effects: B001 (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "This unit is infected."
+  },
+  "999": {
+   "comment": "Buffs/Effects: B001 (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Cloud)"
+  },
+  "1000": {
+   "comment": "Buffs/Effects: B001 (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "1001": {
+   "comment": "Buffs/Effects: B00D (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "1002": {
+   "comment": "Buffs/Effects: B00D (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Armor-Aura)"
+  },
+  "1003": {
+   "comment": "Buffs/Effects: B00D (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "1004": {
+   "comment": "Buffs/Effects: B00D (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "This Kodo has increased armor"
+  },
+  "1005": {
+   "comment": "Buffs/Effects: B00G (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "1006": {
+   "comment": "Buffs/Effects: B00G (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Cripple-Aura)"
+  },
+  "1007": {
+   "comment": "Buffs/Effects: B00G (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "1008": {
+   "comment": "Buffs/Effects: B00G (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "This unit has reduced armor."
+  },
+  "1009": {
+   "comment": "Buffs/Effects: B00H (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Shell)"
+  },
+  "1010": {
+   "comment": "Buffs/Effects: B00H (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "1011": {
+   "comment": "Buffs/Effects: B00H (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "1012": {
+   "comment": "Buffs/Effects: B00H (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "This kodo has shield which absorbs the next 300 magial damage."
+  },
+  "1013": {
+   "comment": "Buffs/Effects: B00I (Kodo), EditorName (Name (Editor Only))",
+   "text": "Kodo"
+  },
+  "1014": {
+   "comment": "Buffs/Effects: B00I (Kodo), Buffubertip (Tooltip - Extended)",
+   "text": "This Kodo shares its damage to other kodos."
+  },
+  "1015": {
+   "comment": "Buffs/Effects: B00I (Kodo), EditorSuffix (Editor Suffix)",
+   "text": "(Link)"
+  },
+  "1016": {
+   "comment": "Buffs/Effects: B00I (Kodo), Bufftip (Tooltip)",
+   "text": "Kodo"
+  },
+  "1019": {
+   "comment": "Buffs/Effects: B00N (Poison Arrows), Buffubertip (Tooltip - Extended)",
+   "text": "This unit is poisoned."
+  },
+  "1021": {
+   "comment": "Buffs/Effects: B00O (), Buffubertip (Tooltip - Extended)",
+   "text": "This unit has Haste; it has increased movement speed."
+  },
+  "1022": {
+   "comment": "Upgrades: R000 (Dressage au combat), Name (Name)",
+   "text": "Gold Mining"
+  },
+  "1023": {
+   "comment": "Upgrades: R000 (Dressage au combat), effect1 (Effect 1)",
+   "text": "rmin"
+  },
+  "1024": {
+   "comment": "Units: oC09 (Ninja marionnettiste), Hotkey (Hotkey)",
+   "text": "G"
+  },
+  "1025": {
+   "comment": "Upgrades: R000 (Dressage au combat), Tip (Tooltip)",
+   "text": "Research Gold Mining"
+  },
+  "1026": {
+   "comment": "Upgrades: R000 (Dressage au combat), Ubertip (Tooltip - Extended)",
+   "text": "Allows you workers to carry +1 Gold."
+  },
+  "1027": {
+   "comment": "Upgrades: R000 (Dressage au combat), Ubertip (Tooltip - Extended)",
+   "text": "Allows you workers to carry +3 Gold."
+  },
+  "1028": {
+   "comment": "Upgrades: R000 (Dressage au combat), Tip (Tooltip)",
+   "text": "Research Advanced Gold Mining"
+  },
+  "1029": {
+   "comment": "Upgrades: R000 (Dressage au combat), Name (Name)",
+   "text": "Advanced Gold Mining"
+  },
+  "1030": {
+   "comment": "Upgrades: R000 (Dressage au combat), Name (Name)",
+   "text": "Expert Gold Mining"
+  },
+  "1031": {
+   "comment": "Upgrades: R000 (Dressage au combat), Hotkey (Hotkey)",
+   "text": "G"
+  },
+  "1032": {
+   "comment": "Upgrades: R000 (Dressage au combat), Hotkey (Hotkey)",
+   "text": "G"
+  },
+  "1033": {
+   "comment": "Upgrades: R000 (Dressage au combat), Ubertip (Tooltip - Extended)",
+   "text": "Allows you workers to carry +5 Gold."
+  },
+  "1034": {
+   "comment": "Upgrades: R000 (Dressage au combat), Tip (Tooltip)",
+   "text": "Research Expert Gold Mining"
+  },
+  "1035": {
+   "comment": "Upgrades: R001 (Dressage au combat), Name (Name)",
+   "text": "Level 3 Ability Research"
+  },
+  "1036": {
+   "comment": "Upgrades: R001 (Dressage au combat), Tip (Tooltip)",
+   "text": "Research Level 3 Ability"
+  },
+  "1037": {
+   "comment": "Upgrades: R001 (Dressage au combat), Ubertip (Tooltip - Extended)",
+   "text": "Allows your runner to use his Level 3 Ability.|nMountainking: Avatar|nChaos Blademaster: Immolation|nNaga Siren: Frost Nova|nVampire Lord: Carrion Swarm|nSylvanas Windrunner: Might of Oaks"
+  },
+  "1038": {
+   "comment": "Upgrades: R001 (Dressage au combat), Ubertip (Tooltip - Extended)",
+   "text": "Furthermore increases the movement speed of your units by a speed factor of 50."
+  },
+  "1039": {
+   "comment": "Upgrades: R001 (Dressage au combat), Tip (Tooltip)",
+   "text": "Research Extreme |cffffcc00H|raste"
+  },
+  "1040": {
+   "comment": "Upgrades: R003 (Maçonnerie consolidée,Maçonnerie optimisée,Maçonnerie fortifiée), Ubertip (Tooltip - Extended)",
+   "text": "Increases the armor and hit points of buildings. Also grants them a slight hitpointregenration."
+  },
+  "1041": {
+   "comment": "Upgrades: R003 (Maçonnerie consolidée,Maçonnerie optimisée,Maçonnerie fortifiée), Ubertip (Tooltip - Extended)",
+   "text": "Further increases the armor, regeneration and hit points of buildings."
+  },
+  "1042": {
+   "comment": "Upgrades: R003 (Maçonnerie consolidée,Maçonnerie optimisée,Maçonnerie fortifiée), Ubertip (Tooltip - Extended)",
+   "text": "Further increases the armor, regeneration and hit points of buildings."
+  },
+  "1043": {
+   "comment": "Upgrades: R003 (Maçonnerie consolidée,Maçonnerie optimisée,Maçonnerie fortifiée), Tip (Tooltip)",
+   "text": "Research Improved Walls"
+  },
+  "1044": {
+   "comment": "Upgrades: R003 (Maçonnerie consolidée,Maçonnerie optimisée,Maçonnerie fortifiée), Tip (Tooltip)",
+   "text": "Research Advanced Walls"
+  },
+  "1045": {
+   "comment": "Upgrades: R003 (Maçonnerie consolidée,Maçonnerie optimisée,Maçonnerie fortifiée), Tip (Tooltip)",
+   "text": "Research Magic Walls"
+  },
+  "1046": {
+   "comment": "Upgrades: R003 (Maçonnerie consolidée,Maçonnerie optimisée,Maçonnerie fortifiée), Name (Name)",
+   "text": "Improved Walls"
+  },
+  "1047": {
+   "comment": "Upgrades: R003 (Maçonnerie consolidée,Maçonnerie optimisée,Maçonnerie fortifiée), Name (Name)",
+   "text": "Advanced Walls"
+  },
+  "1048": {
+   "comment": "Upgrades: R003 (Maçonnerie consolidée,Maçonnerie optimisée,Maçonnerie fortifiée), Name (Name)",
+   "text": "Magic Walls"
+  },
+  "1049": {
+   "comment": "Upgrades: R003 (Maçonnerie consolidée,Maçonnerie optimisée,Maçonnerie fortifiée), effect2 (Effect 2)",
+   "text": "rhpx"
+  },
+  "1050": {
+   "comment": "Upgrades: R003 (Maçonnerie consolidée,Maçonnerie optimisée,Maçonnerie fortifiée), effect3 (Effect 3)",
+   "text": "rhpr"
+  },
+  "1051": {
+   "comment": "Upgrades: R004 (Dressage au combat), Name (Name)",
+   "text": "Detonator Research"
+  },
+  "1052": {
+   "comment": "Upgrades: R004 (Dressage au combat), Hotkey (Hotkey)",
+   "text": "D"
+  },
+  "1053": {
+   "comment": "Upgrades: R004 (Dressage au combat), Tip (Tooltip)",
+   "text": "Research Detonators"
+  },
+  "1054": {
+   "comment": "Upgrades: R004 (Dressage au combat), Ubertip (Tooltip - Extended)",
+   "text": "Allows you to detonate some of your buildings"
+  },
+  "1055": {
+   "comment": "Upgrades: R004 (Dressage au combat), Ubertip (Tooltip - Extended)",
+   "text": "Futhermore increases your mana reserve and mana regeneration rate."
+  },
+  "1056": {
+   "comment": "Upgrades: R004 (Dressage au combat), Tip (Tooltip)",
+   "text": "Research Advanced Invigoration"
+  },
+  "1057": {
+   "comment": "Units: oC23 (|cffc0c0c0Ingénieur|r), Hotkey (Hotkey)",
+   "text": "I"
+  },
+  "1058": {
+   "comment": "Upgrades: R004 (Dressage au combat), Hotkey (Hotkey)",
+   "text": "I"
+  },
+  "1059": {
+   "comment": "Upgrades: R004 (Dressage au combat), Name (Name)",
+   "text": "Advanced Invigoration"
+  },
+  "1060": {
+   "comment": "Upgrades: R004 (Dressage au combat), Name (Name)",
+   "text": "Ultimate Invigoration"
+  },
+  "1061": {
+   "comment": "Upgrades: R004 (Dressage au combat), Tip (Tooltip)",
+   "text": "Research Ultimate Invigoration"
+  },
+  "1062": {
+   "comment": "Upgrades: R004 (Dressage au combat), Ubertip (Tooltip - Extended)",
+   "text": "Futhermore increases your mana reserve and mana regeneration rate."
+  },
+  "1063": {
+   "comment": "Upgrades: R008 (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), Name (Name)",
+   "text": "Selected Difficulty"
+  },
+  "1064": {
+   "comment": "Upgrades: R008 (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), effect1 (Effect 1)",
+   "text": "rhpx"
+  },
+  "1065": {
+   "comment": "Upgrades: R008 (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), effect2 (Effect 2)",
+   "text": "rarm"
+  },
+  "1066": {
+   "comment": "Upgrades: R008 (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), effect4 (Effect 4)",
+   "text": "rhpr"
+  },
+  "1067": {
+   "comment": "Upgrades: R006 (Épées en fer,Épées en acier,Épées en mithril), Name (Name)",
+   "text": "Lightning Tower Research"
+  },
+  "1068": {
+   "comment": "Upgrades: R006 (Épées en fer,Épées en acier,Épées en mithril), Tip (Tooltip)",
+   "text": "Research Lightning Tower"
+  },
+  "1069": {
+   "comment": "Upgrades: R006 (Épées en fer,Épées en acier,Épées en mithril), Ubertip (Tooltip - Extended)",
+   "text": "Allows you to build Lightning Towers."
+  },
+  "1070": {
+   "comment": "Upgrades: R006 (Épées en fer,Épées en acier,Épées en mithril), Name (Name)",
+   "text": "Thunder Tower Research"
+  },
+  "1071": {
+   "comment": "Upgrades: R006 (Épées en fer,Épées en acier,Épées en mithril), Tip (Tooltip)",
+   "text": "Research Thunder Tower"
+  },
+  "1072": {
+   "comment": "Upgrades: R006 (Épées en fer,Épées en acier,Épées en mithril), Ubertip (Tooltip - Extended)",
+   "text": "Allows you to build Thunder Towers."
+  },
+  "1073": {
+   "comment": "Upgrades: R007 (Épées en fer,Épées en acier,Épées en mithril), Name (Name)",
+   "text": "Flame Tower Research"
+  },
+  "1074": {
+   "comment": "Upgrades: R007 (Épées en fer,Épées en acier,Épées en mithril), Tip (Tooltip)",
+   "text": "Research Flame Tower"
+  },
+  "1075": {
+   "comment": "Upgrades: R007 (Épées en fer,Épées en acier,Épées en mithril), Ubertip (Tooltip - Extended)",
+   "text": "Allows you to build Flame Towers"
+  },
+  "1076": {
+   "comment": "Upgrades: R007 (Épées en fer,Épées en acier,Épées en mithril), Name (Name)",
+   "text": "Inferno Tower Research"
+  },
+  "1077": {
+   "comment": "Upgrades: R007 (Épées en fer,Épées en acier,Épées en mithril), Tip (Tooltip)",
+   "text": "Research Inferno Tower"
+  },
+  "1078": {
+   "comment": "Upgrades: R007 (Épées en fer,Épées en acier,Épées en mithril), Ubertip (Tooltip - Extended)",
+   "text": "Allows you to build Inferno Towers"
+  },
+  "1079": {
+   "comment": "Upgrades: R009 (Épées en fer,Épées en acier,Épées en mithril), Name (Name)",
+   "text": "Poison Tower Research"
+  },
+  "1080": {
+   "comment": "Upgrades: R009 (Épées en fer,Épées en acier,Épées en mithril), Tip (Tooltip)",
+   "text": "Research Poison Tower"
+  },
+  "1081": {
+   "comment": "Upgrades: R009 (Épées en fer,Épées en acier,Épées en mithril), Ubertip (Tooltip - Extended)",
+   "text": "Allows you to build Poison Towers."
+  },
+  "1082": {
+   "comment": "Upgrades: R009 (Épées en fer,Épées en acier,Épées en mithril), Name (Name)",
+   "text": "Toxic Tower Research"
+  },
+  "1083": {
+   "comment": "Upgrades: R009 (Épées en fer,Épées en acier,Épées en mithril), Tip (Tooltip)",
+   "text": "Research Toxic Tower"
+  },
+  "1084": {
+   "comment": "Upgrades: R009 (Épées en fer,Épées en acier,Épées en mithril), Ubertip (Tooltip - Extended)",
+   "text": "Allows you to build Toxic Towers."
+  },
+  "1085": {
+   "comment": "Upgrades: R00E (Armure en fer,Armure en acier,Armure en mithril), Name (Name)",
+   "text": "Reinforced Armor Research"
+  },
+  "1086": {
+   "comment": "Upgrades: R00E (Armure en fer,Armure en acier,Armure en mithril), Name (Name)",
+   "text": "Reinforced Armor Research"
+  },
+  "1087": {
+   "comment": "Upgrades: R00E (Armure en fer,Armure en acier,Armure en mithril), Tip (Tooltip)",
+   "text": "Reinforced Armor Level 1"
+  },
+  "1088": {
+   "comment": "Upgrades: R00E (Armure en fer,Armure en acier,Armure en mithril), Tip (Tooltip)",
+   "text": "Reinforced Armor Level 2"
+  },
+  "1089": {
+   "comment": "Upgrades: R00E (Armure en fer,Armure en acier,Armure en mithril), Ubertip (Tooltip - Extended)",
+   "text": "Increases the Armor and Hitpoints of your Footmen"
+  },
+  "1090": {
+   "comment": "Upgrades: R00E (Armure en fer,Armure en acier,Armure en mithril), Ubertip (Tooltip - Extended)",
+   "text": "Increases the Armor and Hitpoints of your Footmen"
+  },
+  "1091": {
+   "comment": "Upgrades: R00E (Armure en fer,Armure en acier,Armure en mithril), effect2 (Effect 2)",
+   "text": "rhpx"
+  },
+  "1092": {
+   "comment": "Upgrades: R002 (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), Name (Name)",
+   "text": "Level 2 Ability Research"
+  },
+  "1093": {
+   "comment": "Upgrades: R002 (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), Tip (Tooltip)",
+   "text": "Research Level 2 Ability"
+  },
+  "1094": {
+   "comment": "Upgrades: R002 (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), Ubertip (Tooltip - Extended)",
+   "text": "Allows your runner to use his Level 2 Ability.|nMountainking: Haste|nChaos Blademaster: Critical Strike|nNaga Siren: Banish|nVampire Lord: Dark Vision|nSylvanas Windrunner: Poison Arrows"
+  },
+  "1095": {
+   "comment": "Upgrades: R005 (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), Name (Name)",
+   "text": "Increased Manapool"
+  },
+  "1096": {
+   "comment": "Upgrades: R005 (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), Tip (Tooltip)",
+   "text": "Increased Manapool"
+  },
+  "1097": {
+   "comment": "Upgrades: R005 (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), Ubertip (Tooltip - Extended)",
+   "text": "Provides your runner with 50 additional Manapoints"
+  },
+  "1098": {
+   "comment": "Upgrades: R005 (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), Name (Name)",
+   "text": "Extended Manapool"
+  },
+  "1099": {
+   "comment": "Upgrades: R005 (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), Tip (Tooltip)",
+   "text": "Extended Manapool"
+  },
+  "1100": {
+   "comment": "Upgrades: R005 (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), Ubertip (Tooltip - Extended)",
+   "text": "Provides your runner with 100 additional Manapoints"
+  },
+  "1101": {
+   "comment": "Upgrades: R00C (Épées en fer,Épées en acier,Épées en mithril), Name (Name)",
+   "text": "Advanced Warfare Research"
+  },
+  "1102": {
+   "comment": "Upgrades: R00C (Épées en fer,Épées en acier,Épées en mithril), Tip (Tooltip)",
+   "text": "Research Advanced Warfare"
+  },
+  "1103": {
+   "comment": "Upgrades: R00C (Épées en fer,Épées en acier,Épées en mithril), Ubertip (Tooltip - Extended)",
+   "text": "Provides you with better units and buildings"
+  },
+  "1104": {
+   "comment": "Upgrades: R00C (Épées en fer,Épées en acier,Épées en mithril), Ubertip (Tooltip - Extended)",
+   "text": "Gives you access to the most powerful units and buildings in the game."
+  },
+  "1105": {
+   "comment": "Upgrades: R00C (Épées en fer,Épées en acier,Épées en mithril), Name (Name)",
+   "text": "Modern Warfare Research"
+  },
+  "1106": {
+   "comment": "Upgrades: R00C (Épées en fer,Épées en acier,Épées en mithril), Tip (Tooltip)",
+   "text": "Research Modern Warfare"
+  },
+  "1107": {
+   "comment": "Upgrades: R00D (Épées en fer,Épées en acier,Épées en mithril), Name (Name)",
+   "text": "Special Tower Research"
+  },
+  "1108": {
+   "comment": "Upgrades: R00D (Épées en fer,Épées en acier,Épées en mithril), Tip (Tooltip)",
+   "text": "Research Special Tower"
+  },
+  "1109": {
+   "comment": "Upgrades: R00D (Épées en fer,Épées en acier,Épées en mithril), Ubertip (Tooltip - Extended)",
+   "text": "Allows your Runner to build his Special Tower.|nMountainking: Rocket Tower|nChaos Blademaster: Chaos Tower|nNaga Siren: Frost Tower|nVampire Lord: Shadow Tower|nSylvanas Windrunner: Moon Tower"
+  },
+  "1110": {
+   "comment": "Upgrades: R00J (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), Name (Name)",
+   "text": "Timed Difficulty"
+  },
+  "1111": {
+   "comment": "Upgrades: R00J (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), effect1 (Effect 1)",
+   "text": "rhpx"
+  },
+  "1112": {
+   "comment": "Upgrades: R00J (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), effect2 (Effect 2)",
+   "text": "rats"
+  },
+  "1113": {
+   "comment": "Upgrades: R00J (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), effect3 (Effect 3)",
+   "text": "rmov"
+  },
+  "1114": {
+   "comment": "Upgrades: R00J (Améliorer en Prêtre adepte,Améliorer en Prêtre maître), effect4 (Effect 4)",
+   "text": "rhpr"
+  },
+  "1116": {
+   "comment": "Upgrades: R00G (Épées en fer,Épées en acier,Épées en mithril), Tip (Tooltip)",
+   "text": "Research Scout Tower"
+  },
+  "1117": {
+   "comment": "Upgrades: R00G (Épées en fer,Épées en acier,Épées en mithril), Ubertip (Tooltip - Extended)",
+   "text": "Allows you to build Scout Towers."
+  },
+  "1118": {
+   "comment": "Upgrades: R00H (Canons longs), Name (Name)",
+   "text": "Dwarven Rifleman Training"
+  },
+  "1119": {
+   "comment": "Upgrades: R00H (Canons longs), Name (Name)",
+   "text": "Dwarven Rifleman Training"
+  },
+  "1120": {
+   "comment": "Upgrades: R00H (Canons longs), Tip (Tooltip)",
+   "text": "Dwarven Rifleman Training - Level 1"
+  },
+  "1121": {
+   "comment": "Upgrades: R00H (Canons longs), Tip (Tooltip)",
+   "text": "Dwarven Rifleman Training - Level 2"
+  },
+  "1122": {
+   "comment": "Upgrades: R00H (Canons longs), Ubertip (Tooltip - Extended)",
+   "text": "Gives the Rifleman Steel Bullets"
+  },
+  "1123": {
+   "comment": "Units: hC16 (|cffffff00Murloc|r), Hotkey (Hotkey)",
+   "text": "L"
+  },
+  "1124": {
+   "comment": "Upgrades: R00I (Défense), Name (Name)",
+   "text": "Dwarven Soldier Training"
+  },
+  "1125": {
+   "comment": "Upgrades: R00I (Défense), Tip (Tooltip)",
+   "text": "Dwarven Soldier Training - Level 1"
+  },
+  "1126": {
+   "comment": "Upgrades: R00I (Défense), Hotkey (Hotkey)",
+   "text": "D"
+  },
+  "1127": {
+   "comment": "Upgrades: R00I (Défense), Name (Name)",
+   "text": "Dwarven Soldier Training"
+  },
+  "1128": {
+   "comment": "Upgrades: R00I (Défense), Tip (Tooltip)",
+   "text": "Dwarven Soldier Training - Level 2"
+  },
+  "1129": {
+   "comment": "Upgrades: R00I (Défense), Ubertip (Tooltip - Extended)",
+   "text": "Allows Dwarven Soldier to use the Defend ability, which increases their defensive capabilities against Piercing attacks."
+  },
+  "1130": {
+   "comment": "Upgrades: R00I (Défense), Ubertip (Tooltip - Extended)",
+   "text": "Equipes the Dwarven Soldier with Broad Armor, giving him chance to reduce damage"
+  },
+  "1131": {
+   "comment": "Upgrades: R00K (Défense), Name (Name)",
+   "text": "Fell Grunt Training"
+  },
+  "1132": {
+   "comment": "Upgrades: R00K (Défense), Tip (Tooltip)",
+   "text": "Fell Grunt Training - Level 1"
+  },
+  "1133": {
+   "comment": "Upgrades: R00K (Défense), Ubertip (Tooltip - Extended)",
+   "text": "Allows Fell Grunt to use Battle Reflexes, which gives him a chance to evade an attack."
+  },
+  "1134": {
+   "comment": "Upgrades: R00K (Défense), Name (Name)",
+   "text": "Fell Grunt Training"
+  },
+  "1135": {
+   "comment": "Upgrades: R00K (Défense), Tip (Tooltip)",
+   "text": "Fell Grunt Training - Level 2"
+  },
+  "1136": {
+   "comment": "Upgrades: R00K (Défense), Ubertip (Tooltip - Extended)",
+   "text": "Allows the Fell Grunt to use Berserk in battle, giving him faster attack speed but takes more damage."
+  },
+  "1137": {
+   "comment": "Upgrades: R00K (Défense), Hotkey (Hotkey)",
+   "text": "D"
+  },
+  "1138": {
+   "comment": "Upgrades: R00L (Défense), Name (Name)",
+   "text": "Fell Raider Training"
+  },
+  "1139": {
+   "comment": "Upgrades: R00L (Défense), Tip (Tooltip)",
+   "text": "Fell Raider Training - Level 1"
+  },
+  "1140": {
+   "comment": "Upgrades: R00L (Défense), Ubertip (Tooltip - Extended)",
+   "text": "Allows the Fell Raider to use the ability Haste, making him move faster for a short period of time."
+  },
+  "1141": {
+   "comment": "Upgrades: R00M (Canons longs), Name (Name)",
+   "text": "Elven Archer Training"
+  },
+  "1142": {
+   "comment": "Upgrades: R00M (Canons longs), Tip (Tooltip)",
+   "text": "Elven Archer Training - Level 1"
+  },
+  "1143": {
+   "comment": "Upgrades: R00M (Canons longs), Name (Name)",
+   "text": "Elven Archer Training"
+  },
+  "1144": {
+   "comment": "Upgrades: R00M (Canons longs), Tip (Tooltip)",
+   "text": "Elven Archer Training - Level 2"
+  },
+  "1145": {
+   "comment": "Upgrades: R00M (Canons longs), Ubertip (Tooltip - Extended)",
+   "text": "Increases the range of the Elven Archer's attacks."
+  },
+  "1146": {
+   "comment": "Upgrades: R00M (Canons longs), Ubertip (Tooltip - Extended)",
+   "text": "Gives the Elven Archer Critical Strike."
+  },
+  "1147": {
+   "comment": "Units: oC31 (|cff800080Démolisseur Amélioré|r), Hotkey (Hotkey)",
+   "text": "L"
+  },
+  "1148": {
+   "comment": "Upgrades: R00N (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Name (Name)",
+   "text": "Elven Priest Training"
+  },
+  "1149": {
+   "comment": "Upgrades: R00N (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Tip (Tooltip)",
+   "text": "Elven Priest Training - Level 1"
+  },
+  "1150": {
+   "comment": "Upgrades: R00N (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Ubertip (Tooltip - Extended)",
+   "text": "Increases Elven Priests' mana capacity and mana regeneration rate."
+  },
+  "1151": {
+   "comment": "Upgrades: R00N (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Name (Name)",
+   "text": "Elven Priest Training"
+  },
+  "1152": {
+   "comment": "Upgrades: R00N (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Tip (Tooltip)",
+   "text": "Elven Priest Training - Level 2"
+  },
+  "1153": {
+   "comment": "Upgrades: R00N (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Ubertip (Tooltip - Extended)",
+   "text": "Grants the Elven Priest the ability to cast Heal."
+  },
+  "1154": {
+   "comment": "Upgrades: R00O (Défense), Name (Name)",
+   "text": "Murloc Training"
+  },
+  "1155": {
+   "comment": "Upgrades: R00O (Défense), Tip (Tooltip)",
+   "text": "Murloc Training - Level 1"
+  },
+  "1156": {
+   "comment": "Upgrades: R00O (Défense), Ubertip (Tooltip - Extended)",
+   "text": "Instead of training 1 murloc you will train 2 murlocs."
+  },
+  "1157": {
+   "comment": "Upgrades: R00O (Défense), Name (Name)",
+   "text": "Murloc Training"
+  },
+  "1158": {
+   "comment": "Upgrades: R00O (Défense), Tip (Tooltip)",
+   "text": "Murloc Training - Level 2"
+  },
+  "1159": {
+   "comment": "Upgrades: R00O (Défense), Ubertip (Tooltip - Extended)",
+   "text": "Gives the Murloc the ability to constantly regenerate hitpoints."
+  },
+  "1160": {
+   "comment": "Upgrades: R00O (Défense), Hotkey (Hotkey)",
+   "text": "D"
+  },
+  "1161": {
+   "comment": "Upgrades: R00P (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Name (Name)",
+   "text": "Naga Siren Training"
+  },
+  "1162": {
+   "comment": "Upgrades: R00P (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Tip (Tooltip)",
+   "text": "Naga Siren Training - Level 1"
+  },
+  "1163": {
+   "comment": "Upgrades: R00P (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Ubertip (Tooltip - Extended)",
+   "text": "Gives the Naga Siren the ability to Infest the kodos, which creates a parasite inside the kodo which will unleash on its death."
+  },
+  "1164": {
+   "comment": "Upgrades: R00P (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Name (Name)",
+   "text": "Naga Siren Training"
+  },
+  "1165": {
+   "comment": "Upgrades: R00P (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Tip (Tooltip)",
+   "text": "Naga Siren Training - Level 2"
+  },
+  "1166": {
+   "comment": "Upgrades: R00P (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Ubertip (Tooltip - Extended)",
+   "text": "Gives the Naga Siren the ability to cast slow on the kodos, slowing their attack speed and movement speed."
+  },
+  "1167": {
+   "comment": "Upgrades: R00Q (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Name (Name)",
+   "text": "Necromancer Training"
+  },
+  "1168": {
+   "comment": "Upgrades: R00Q (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Name (Name)",
+   "text": "Necromancer Training"
+  },
+  "1169": {
+   "comment": "Upgrades: R00Q (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Tip (Tooltip)",
+   "text": "Necromancer Training - Level 1"
+  },
+  "1170": {
+   "comment": "Upgrades: R00Q (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Tip (Tooltip)",
+   "text": "Necromancer Training - Level 2"
+  },
+  "1171": {
+   "comment": "Upgrades: R00Q (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Ubertip (Tooltip - Extended)",
+   "text": "Gives the Necromancer the ability to cast Unholy Frenzy, makes the targeted friendly unit attack faster but take damage over time."
+  },
+  "1172": {
+   "comment": "Upgrades: R00Q (Améliorer en Ensorceleuse adepte,Améliorer en Ensorceleuse maître), Ubertip (Tooltip - Extended)",
+   "text": "Gives the necromancer the ability to cast Cripple, slows the targeted enemy units attack and movement speed greatly."
+  },
+  "1173": {
+   "comment": "Upgrades: R00R (Défense), Name (Name)",
+   "text": "Skeleton Training"
+  },
+  "1174": {
+   "comment": "Upgrades: R00R (Défense), Tip (Tooltip)",
+   "text": "Skeleton Training - Level 1"
+  },
+  "1175": {
+   "comment": "Upgrades: R00R (Défense), Ubertip (Tooltip - Extended)",
+   "text": "This gives the Skeleton Warrior the ability to reanimate after he has died."
+  },
+  "1216": {
+   "comment": "Units: oC04 (|cff800080Démolisseur Mobile|r), Hotkey (Hotkey)",
+   "text": "C"
+  },
+  "1557": {
+   "comment": "Units: hC14 (Camp de |cffffff00Murloc|r), Hotkey (Hotkey)",
+   "text": "M"
+  },
+  "1626": {
+   "comment": "Units: oC07 (Sas d'entrainement de Ninja), Hotkey (Hotkey)",
+   "text": "A"
+  },
+  "1631": {
+   "comment": "Units: hC15 (Camp de |cffffff00Makrura|r), Hotkey (Hotkey)",
+   "text": "A"
+  },
+  "1635": {
+   "comment": "Units: nC29 (Bombe Aérosol), Hotkey (Hotkey)",
+   "text": "A"
+  },
+  "1640": {
+   "comment": "Units: oC25 (|cffffff00Obélisque amélioré|r), Hotkey (Hotkey)",
+   "text": "A"
+  },
+  "1663": {
+   "comment": "Units: oC33 (Bombe à Eau), Hotkey (Hotkey)",
+   "text": "B"
+  },
+  "1936": {
+   "comment": "",
+   "text": "RECREATION DANS LES ILES V1.2"
+  },
+  "2010": {
+   "comment": "",
+   "text": "The red player must choose:\n|cffffff00Right|r arrow to change the map.\n|cffffff00Left|r arrow to go back.\n|cffffff00Up|r arrow to select the map.\n|cffffff00Down arrow to choose randomly.\n\nWithout choice, another player is selected after 40 seconds.\n"
+  },
+  "2011": {
+   "comment": "",
+   "text": "Chimako"
+  },
+  "2017": {
+   "comment": "",
+   "text": "RECREATION returns, in the Islands this time.\n\nThe red player must choose:\n|cffffff00Right|r arrow to change the map.\n|cffffff00Left|r arrow to go back.\n|cffffff00Up|r arrow to select the map.\n|cffffff00Down arrow to choose randomly.\n\nCreated by Chimako"
+  },
+  "2021": {
+   "comment": "",
+   "text": "Force 1"
+  },
+  "2055": {
+   "comment": "",
+   "text": "Force 2"
+  },
+  "2073": {
+   "comment": "",
+   "text": "Tu as été assomé !\n1 Minute de repos!"
+  },
+  "2074": {
+   "comment": "",
+   "text": "Tu as été assomé !\n1 Minute de repos!"
+  },
+  "2075": {
+   "comment": "Units: ohwd (Totem), Tip (Tooltip - Basic)",
+   "text": "Placer un Totem de santé"
+  },
+  "2076": {
+   "comment": "Units: ohwd (Totem), Ubertip (Tooltip - Extended)",
+   "text": "Un totem indien magique au pouvoir mystique surprennant.|n|n|cffffcc00Régénération.|r"
+  },
+  "2077": {
+   "comment": "Units: ohwd (Totem), Name (Name)",
+   "text": "Totem"
+  },
+  "2078": {
+   "comment": "Units: hmpr (|cffff0000Geyser des Pronfondeurs|r), Name (Name)",
+   "text": "|cffff0000Geyser des Pronfondeurs|r"
+  },
+  "2079": {
+   "comment": "Units: hmpr (|cffff0000Geyser des Pronfondeurs|r), Tip (Tooltip - Basic)",
+   "text": "Libérer l'energie du |cffff0000Geyser des pronfondeurs|r"
+  },
+  "2080": {
+   "comment": "Units: hmpr (|cffff0000Geyser des Pronfondeurs|r), Ubertip (Tooltip - Extended)",
+   "text": "L'energie du |cffff0000Geyser des pronfondeurs|r, lorsqu'elle est relaché peut faire de grands ravages. Toutes les constructions seront détruites et les unités crées seront tuées."
+  },
+  "2081": {
+   "comment": "Units: hmpr (|cffff0000Geyser des Pronfondeurs|r), Hotkey (Hotkey)",
+   "text": "K"
+  },
+  "2082": {
+   "comment": "Units: hgyr (|cffffff00Raies Volante|r), Name (Name)",
+   "text": "|cffffff00Raies Volante|r"
+  },
+  "2083": {
+   "comment": "Units: hgyr (|cffffff00Raies Volante|r), Tip (Tooltip - Basic)",
+   "text": "Le vol de Raies permet d'attaquer par la voie aérienne"
+  },
+  "2084": {
+   "comment": "Units: hgyr (|cffffff00Raies Volante|r), Ubertip (Tooltip - Extended)",
+   "text": "Les |cffffff00Raies Volantes|r peuvent traverser la carte sans ce soucier des obstacles terrestres"
+  },
+  "2085": {
+   "comment": "Units: H000 (|cff808000Garde Royale|r), Name (Name)",
+   "text": "|cff808000Garde Royale|r"
+  },
+  "2086": {
+   "comment": "Units: Edem (Ninja utilisateur du Jyuuken), Name (Name)",
+   "text": "Ninja utilisateur du Jyuuken"
+  },
+  "2087": {
+   "comment": "Units: hctw (|cff008000Jarre refuge|r), Name (Name)",
+   "text": "|cff008000Jarre refuge|r"
+  },
+  "2088": {
+   "comment": "Units: hctw (|cff008000Jarre refuge|r), Ubertip (Tooltip - Extended)",
+   "text": "Augmente la capacité de refuge d'une |cff008000Jarre |r"
+  },
+  "2089": {
+   "comment": "Units: hctw (|cff008000Jarre refuge|r), Tip (Tooltip - Basic)",
+   "text": "Ajouter une |cff008000Jarre|r supplémentaire pour le refuge de serpents"
+  },
+  "2090": {
+   "comment": "Units: hctw (|cff008000Jarre refuge|r), Hotkey (Hotkey)",
+   "text": "K"
+  },
+  "2091": {
+   "comment": "Units: Hmkg (|cff0000ffSeigneur des flots Makrura|r), Name (Name)",
+   "text": "|cff0000ffSeigneur des flots Makrura|r"
+  },
+  "2092": {
+   "comment": "Units: Hmkg (|cff0000ffSeigneur des flots Makrura|r), Tip (Tooltip - Basic)",
+   "text": "Appeler |cff0000ffSeigneur des flots Makrura|r"
+  },
+  "2093": {
+   "comment": "Units: Hmkg (|cff0000ffSeigneur des flots Makrura|r), Revivetip (Tooltip - Revive)",
+   "text": "Ressusciter |cff0000ffSeigneur des flots Makrura|r"
+  },
+  "2094": {
+   "comment": "Units: Hmkg (|cff0000ffSeigneur des flots Makrura|r), Propernames (Proper Names)",
+   "text": "|cff0000ffSeigneur des flots"
+  },
+  "2095": {
+   "comment": "Units: Hmkg (|cff0000ffSeigneur des flots Makrura|r), Awakentip (Tooltip - Awaken)",
+   "text": "Ressusciter le |cff0000ffSeigneur des flots Makrura|r"
+  },
+  "2096": {
+   "comment": "Units: Otch (|cff0000ffInvocatrice Naga|r), Name (Name)",
+   "text": "|cff0000ffInvocatrice Naga|r"
+  },
+  "2097": {
+   "comment": "Units: Otch (|cff0000ffInvocatrice Naga|r), Tip (Tooltip - Basic)",
+   "text": "Appeler |cff0000ffInvocatrice Naga|r"
+  },
+  "2098": {
+   "comment": "Units: Otch (|cff0000ffInvocatrice Naga|r), Ubertip (Tooltip - Extended)",
+   "text": "|cff0000ffInvocatrice Naga|r est dotée d'une force considérable."
+  },
+  "2099": {
+   "comment": "Units: Otch (|cff0000ffInvocatrice Naga|r), Revivetip (Tooltip - Revive)",
+   "text": "Ressusciter |cff0000ffInvocatrice Naga|r"
+  },
+  "2100": {
+   "comment": "Units: Otch (|cff0000ffInvocatrice Naga|r), Propernames (Proper Names)",
+   "text": "|cff0000ffInvocatrice Naga|r"
+  },
+  "2101": {
+   "comment": "Units: Ekee (|cff0000ffSeigneur Mymidon|r), Name (Name)",
+   "text": "|cff0000ffSeigneur Mymidon|r"
+  },
+  "2102": {
+   "comment": "Units: Ekee (|cff0000ffSeigneur Mymidon|r), Propernames (Proper Names)",
+   "text": "|cff0000ffSeigneur Mymidon|r"
+  },
+  "2103": {
+   "comment": "Units: Ekee (|cff0000ffSeigneur Mymidon|r), Tip (Tooltip - Basic)",
+   "text": "Appeler |cff0000ffSeigneur Mymidon|r"
+  },
+  "2104": {
+   "comment": "Units: Ekee (|cff0000ffSeigneur Mymidon|r), Ubertip (Tooltip - Extended)",
+   "text": "|cff0000ffSeigneur Mymidon|r vous montrera comment l'expérience du combat et la pratique de la perversité vous permettent de gagner la partie."
+  },
+  "2105": {
+   "comment": "Units: Ekee (|cff0000ffSeigneur Mymidon|r), Revivetip (Tooltip - Revive)",
+   "text": "Ressusciter |cff0000ffSeigneur Mymidon|r"
+  },
+  "2106": {
+   "comment": "Units: Ulic (|cff0000ffSeigneur Tsukar|r), Name (Name)",
+   "text": "|cff0000ffSeigneur Tsukar|r"
+  },
+  "2107": {
+   "comment": "Units: Ulic (|cff0000ffSeigneur Tsukar|r), Ubertip (Tooltip - Extended)",
+   "text": "|cff0000ffSeigneur Tsukar|r est un Héro capable de faire bien des miracles à l'aide de ses attaques à distance."
+  },
+  "2108": {
+   "comment": "Units: Ulic (|cff0000ffSeigneur Tsukar|r), Tip (Tooltip - Basic)",
+   "text": "Appeler |cff0000ffSeigneur Tsukar|r"
+  },
+  "2109": {
+   "comment": "Units: Ulic (|cff0000ffSeigneur Tsukar|r), Revivetip (Tooltip - Revive)",
+   "text": "Ressusciter |cff0000ffSeigneur Tsukar|r"
+  },
+  "2110": {
+   "comment": "Units: Ulic (|cff0000ffSeigneur Tsukar|r), Propernames (Proper Names)",
+   "text": "|cff0000ffSeigneur Tsukar|r"
+  },
+  "2111": {
+   "comment": "Units: oC00 (|cff0000ffRequin planctonphile|r), Name (Name)",
+   "text": "|cff0000ffRequin planctonphile|r"
+  },
+  "2113": {
+   "comment": "Units: z001 (|cffff0000Tortue Dragon|r|r), Tip (Tooltip - Basic)",
+   "text": "Entrainer une |cff0000ffTortue enragée|r"
+  },
+  "2114": {
+   "comment": "Units: zC02 (|cff0000ffTortue Terrestre|r), Ubertip (Tooltip - Extended)",
+   "text": "Une Tortue attaquant à distance."
+  },
+  "2115": {
+   "comment": "Units: hC03 (Camp de |cffd45e19Tortues|r), Name (Name)",
+   "text": "Camp de |cffd45e19Tortues|r"
+  },
+  "2116": {
+   "comment": "Units: hC03 (Camp de |cffd45e19Tortues|r), Ubertip (Tooltip - Extended)",
+   "text": "Les |cffd45e19Tortues|r sont capables d'attaquer à distance des ennemis ou des bâtiments."
+  },
+  "2118": {
+   "comment": "Units: oC05 (|cff008000Jarre Oublié|r), Name (Name)",
+   "text": "|cff008000Jarre Oublié|r"
+  },
+  "2120": {
+   "comment": "Units: oC05 (|cff008000Jarre Oublié|r), Tip (Tooltip - Basic)",
+   "text": "Déposer une |cff008000Jarre|r pour qu'un serpent y trouve refuge"
+  },
+  "2121": {
+   "comment": "Units: oC06 (|cff0000ffNaga d'eau douce|r), Name (Name)",
+   "text": "|cff0000ffNaga d'eau douce|r"
+  },
+  "2122": {
+   "comment": "Units: oC07 (Sas d'entrainement de Ninja), Name (Name)",
+   "text": "Sas d'entrainement de Ninja"
+  },
+  "2123": {
+   "comment": "Units: oC07 (Sas d'entrainement de Ninja), Tip (Tooltip - Basic)",
+   "text": "Entrainer un Ninja utilisateur du Jyuuken."
+  },
+  "2124": {
+   "comment": "Units: oC07 (Sas d'entrainement de Ninja), Ubertip (Tooltip - Extended)",
+   "text": "Le Jyuuken est un art de combat au corps à corps. Particulièrement dévastateur, ce taijutsu est le plus puissant au niveau des effets à Long terme."
+  },
+  "2125": {
+   "comment": "Units: oC09 (Ninja marionnettiste), Name (Name)",
+   "text": "Ninja marionnettiste"
+  },
+  "2126": {
+   "comment": "Units: oC09 (Ninja marionnettiste), Tip (Tooltip - Basic)",
+   "text": "Former un ninja marionnettiste."
+  },
+  "2127": {
+   "comment": "Units: oC09 (Ninja marionnettiste), Ubertip (Tooltip - Extended)",
+   "text": "Une marionnette est capable de faire des dégats , toutefoi sa capacité n'est pas treès puissante."
+  },
+  "2128": {
+   "comment": "Units: oC10 (Ninja marionettiste), Name (Name)",
+   "text": "Ninja marionettiste"
+  },
+  "2129": {
+   "comment": "Units: oC11 (|cff800080Démolisseur|r), Name (Name)",
+   "text": "|cff800080Démolisseur|r"
+  },
+  "2132": {
+   "comment": "Units: nC12 (Maîtresse), Name (Name)",
+   "text": "Maîtresse"
+  },
+  "2133": {
+   "comment": "Units: oC13 (|cffffff00Obélisque|r), Name (Name)",
+   "text": "|cffffff00Obélisque|r"
+  },
+  "2134": {
+   "comment": "Units: oC13 (|cffffff00Obélisque|r), Tip (Tooltip - Basic)",
+   "text": "Construire un |cffffff00Obélisque|r"
+  },
+  "2135": {
+   "comment": "Units: oC13 (|cffffff00Obélisque|r), Hotkey (Hotkey)",
+   "text": "P"
+  },
+  "2137": {
+   "comment": "Units: hC14 (Camp de |cffffff00Murloc|r), Name (Name)",
+   "text": "Camp de |cffffff00Murloc|r"
+  },
+  "2138": {
+   "comment": "Units: hC14 (Camp de |cffffff00Murloc|r), Tip (Tooltip - Basic)",
+   "text": "Construire une camp de |cffffff00Murloc|r"
+  },
+  "2139": {
+   "comment": "Units: hC14 (Camp de |cffffff00Murloc|r), Ubertip (Tooltip - Extended)",
+   "text": "Ce camp spécialisé dans la formation de |cffffff00Murloc|r."
+  },
+  "2140": {
+   "comment": "Units: hC15 (Camp de |cffffff00Makrura|r), Name (Name)",
+   "text": "Camp de |cffffff00Makrura|r"
+  },
+  "2141": {
+   "comment": "Units: hC15 (Camp de |cffffff00Makrura|r), Tip (Tooltip - Basic)",
+   "text": "Construire un Camp de |cffffff00Makrura|r"
+  },
+  "2142": {
+   "comment": "Units: hC15 (Camp de |cffffff00Makrura|r), Ubertip (Tooltip - Extended)",
+   "text": "Améliorer pour evoluer les |cffffff00Murloc|r en |cffffff00Makrura|r"
+  },
+  "2143": {
+   "comment": "Units: hC16 (|cffffff00Murloc|r), Name (Name)",
+   "text": "|cffffff00Murloc|r"
+  },
+  "2144": {
+   "comment": "Units: hC16 (|cffffff00Murloc|r), Tip (Tooltip - Basic)",
+   "text": "Entrainer un |cffffff00Murloc|r"
+  },
+  "2145": {
+   "comment": "Units: hC16 (|cffffff00Murloc|r), Ubertip (Tooltip - Extended)",
+   "text": "|cffffff00Murloc|r prêt à se battre."
+  },
+  "2146": {
+   "comment": "Units: hC17 (|cffffff00Makrura|r), Name (Name)",
+   "text": "|cffffff00Makrura|r"
+  },
+  "2147": {
+   "comment": "Units: hC17 (|cffffff00Makrura|r), Tip (Tooltip - Basic)",
+   "text": "Entrainer un |cffffff00Makrura|r"
+  },
+  "2148": {
+   "comment": "Units: hC17 (|cffffff00Makrura|r), Ubertip (Tooltip - Extended)",
+   "text": "Le |cffffff00Makrura|r se déplace plus rapidement et supporte mieux les attaques ennemies."
+  },
+  "2149": {
+   "comment": "Units: oC18 (Entrainement d'un |cff808000Garde Royale|r), Name (Name)",
+   "text": "Entrainement d'un |cff808000Garde Royale|r"
+  },
+  "2150": {
+   "comment": "Units: oC18 (Entrainement d'un |cff808000Garde Royale|r), Tip (Tooltip - Basic)",
+   "text": "Entrainer un |cff808000Garde Royale|r"
+  },
+  "2151": {
+   "comment": "Units: oC18 (Entrainement d'un |cff808000Garde Royale|r), Ubertip (Tooltip - Extended)",
+   "text": "Tel un pouvoir surnaturel, le chidori est dévastateur et ses dégats sont condérables."
+  },
+  "2152": {
+   "comment": "Units: oC21 (Tank Miniature Matchbox en kit), Name (Name)",
+   "text": "Tank Miniature Matchbox en kit"
+  },
+  "2153": {
+   "comment": "Units: oC21 (Tank Miniature Matchbox en kit), Tip (Tooltip - Basic)",
+   "text": "Assembler une Maquette Tan|cffffcc00k|r"
+  },
+  "2154": {
+   "comment": "Units: oC21 (Tank Miniature Matchbox en kit), Hotkey (Hotkey)",
+   "text": "K"
+  },
+  "2155": {
+   "comment": "Units: oC21 (Tank Miniature Matchbox en kit), Ubertip (Tooltip - Extended)",
+   "text": "Une char d'assaut en maquette pour les adeptes du Blietzkrigg.|n|n|cffffcc00Attaque les unités terrestres et aériennes, dégats supplémentaires sur les batiments.|r"
+  },
+  "2156": {
+   "comment": "Units: hC22 (Tank Miniature Matchbox), Name (Name)",
+   "text": "Tank Miniature Matchbox"
+  },
+  "2157": {
+   "comment": "Units: oC23 (|cffc0c0c0Ingénieur|r), Name (Name)",
+   "text": "|cffc0c0c0Ingénieur|r"
+  },
+  "2158": {
+   "comment": "Units: oC23 (|cffc0c0c0Ingénieur|r), Ubertip (Tooltip - Extended)",
+   "text": "Appel de la mer ! Un ingénieur vient vous aider.|n|n|cffffcc00Unité de construction avancée.|r"
+  },
+  "2159": {
+   "comment": "Units: oC23 (|cffc0c0c0Ingénieur|r), Tip (Tooltip - Basic)",
+   "text": "|cffc0c0c0Ingénieur|r"
+  },
+  "2160": {
+   "comment": "Units: uC28 (Lance Surikens mobile), Name (Name)",
+   "text": "Lance Surikens mobile"
+  },
+  "2161": {
+   "comment": "Units: nC29 (Bombe Aérosol), Name (Name)",
+   "text": "Bombe Aérosol"
+  },
+  "2162": {
+   "comment": "Units: nC29 (Bombe Aérosol), Ubertip (Tooltip - Extended)",
+   "text": "Une bombe aérosol nocive pour la santé.|n|n|cffffcc00Attaque les unités terrestres et aériennes.|r"
+  },
+  "2163": {
+   "comment": "Units: nC29 (Bombe Aérosol), Tip (Tooltip - Basic)",
+   "text": "Déposer une Bombe |cffffcc00A|rerosol"
+  },
+  "2164": {
+   "comment": "Units: oC25 (|cffffff00Obélisque amélioré|r), Name (Name)",
+   "text": "|cffffff00Obélisque amélioré|r"
+  },
+  "2165": {
+   "comment": "Units: oC25 (|cffffff00Obélisque amélioré|r), Tip (Tooltip - Basic)",
+   "text": "Améliorer |cffffff00l'Obélisque|r"
+  },
+  "2167": {
+   "comment": "Units: oC04 (|cff800080Démolisseur Mobile|r), Name (Name)",
+   "text": "|cff800080Démolisseur Mobile|r"
+  },
+  "2168": {
+   "comment": "Units: oC04 (|cff800080Démolisseur Mobile|r), Tip (Tooltip - Basic)",
+   "text": "Construire un |cff800080Démolisseur|r mobile"
+  },
+  "2170": {
+   "comment": "Units: oC31 (|cff800080Démolisseur Amélioré|r), Name (Name)",
+   "text": "|cff800080Démolisseur Amélioré|r"
+  },
+  "2171": {
+   "comment": "Units: oC31 (|cff800080Démolisseur Amélioré|r), Tip (Tooltip - Basic)",
+   "text": "Améliorer le |cff800080Démolisseur|r"
+  },
+  "2172": {
+   "comment": "Units: oC31 (|cff800080Démolisseur Amélioré|r), Ubertip (Tooltip - Extended)",
+   "text": "Améliorer le |cff800080Démolisseur|r : cela permet une plus grande portée et une meilleure attaque."
+  },
+  "2173": {
+   "comment": "Units: hC32 (Bombe à Eau), Name (Name)",
+   "text": "Bombe à Eau"
+  },
+  "2174": {
+   "comment": "Units: hC32 (Bombe à Eau), Tip (Tooltip - Basic)",
+   "text": "Gonfler une |cffffcc00B|rombe à Eau"
+  },
+  "2175": {
+   "comment": "Units: hC32 (Bombe à Eau), Ubertip (Tooltip - Extended)",
+   "text": "La bombe à eau peut détruire le château ennemi d'un seul coup !|n|n|cffffcc00Très fragile !|r"
+  },
+  "2176": {
+   "comment": "Units: hC32 (Bombe à Eau), EditorSuffix (Name - Editor Suffix)",
+   "text": "unit"
+  },
+  "2177": {
+   "comment": "Units: oC33 (Bombe à Eau), Name (Name)",
+   "text": "Bombe à Eau"
+  },
+  "2178": {
+   "comment": "Units: oC33 (Bombe à Eau), Tip (Tooltip - Basic)",
+   "text": "Gonfler une |cffffcc00B|rombe à Eau"
+  },
+  "2179": {
+   "comment": "Units: oC33 (Bombe à Eau), Ubertip (Tooltip - Extended)",
+   "text": "La bombe à eau peut détruire le château ennemi d'un seul coup !|n|n|cffffcc00Très fragile !|r"
+  },
+  "2180": {
+   "comment": "Units: hC26 (|cffff0000Geyser des pronfondeurs|r), Name (Name)",
+   "text": "|cffff0000Geyser des pronfondeurs|r"
+  },
+  "2181": {
+   "comment": "Units: hC26 (|cffff0000Geyser des pronfondeurs|r), Tip (Tooltip - Basic)",
+   "text": "|cffff0000Geyser des pronfondeurs|r"
+  },
+  "2182": {
+   "comment": "Units: hC26 (|cffff0000Geyser des pronfondeurs|r), Ubertip (Tooltip - Extended)",
+   "text": "Le|cffff0000 Geyser des profondeurs|r relache une telle quantitée d'eau que cela détruit tout les batiments ainsi que les étres vivants"
+  },
+  "2183": {
+   "comment": "Units: hC26 (|cffff0000Geyser des pronfondeurs|r), Hotkey (Hotkey)",
+   "text": "P"
+  },
+  "2184": {
+   "comment": "Units: hC27 (Camp de |cffffff00Raies Volante|r), Name (Name)",
+   "text": "Camp de |cffffff00Raies Volante|r"
+  },
+  "2185": {
+   "comment": "Units: hC27 (Camp de |cffffff00Raies Volante|r), Tip (Tooltip - Basic)",
+   "text": "Construire un camp de |cffffff00Raies Volante|r"
+  },
+  "2186": {
+   "comment": "Units: hC27 (Camp de |cffffff00Raies Volante|r), Ubertip (Tooltip - Extended)",
+   "text": "Les |cffffff00Raies Volante|r peuvent détruire des batiments ennemis. Ils peuvent aussi survoler toute la carte."
+  },
+  "2190": {
+   "comment": "Units: oC19 (|cffc0c0c0Ingénieur|r), Name (Name)",
+   "text": "|cffc0c0c0Ingénieur|r"
+  },
+  "2191": {
+   "comment": "Units: hC34 (Volcan de Purée), Name (Name)",
+   "text": "Volcan de Purée"
+  },
+  "2192": {
+   "comment": "Units: oC24 (|cff008000Esprit de l'Hydre|r), Name (Name)",
+   "text": "|cff008000Esprit de l'Hydre|r"
+  },
+  "2193": {
+   "comment": "Units: oC24 (|cff008000Esprit de l'Hydre|r), EditorSuffix (Name - Editor Suffix)",
+   "text": "|cff008000Esprit de l'Hydre|r"
+  },
+  "2194": {
+   "comment": "Units: oC35 (|cff008000Esprit de l'Hydre|r), Name (Name)",
+   "text": "|cff008000Esprit de l'Hydre|r"
+  },
+  "2195": {
+   "comment": "Units: oC35 (|cff008000Esprit de l'Hydre|r), Tip (Tooltip - Basic)",
+   "text": "Invoquer |cff008000l'Esprit de l'Hydre|r"
+  },
+  "2196": {
+   "comment": "Units: oC35 (|cff008000Esprit de l'Hydre|r), Hotkey (Hotkey)",
+   "text": "N"
+  },
+  "2197": {
+   "comment": "Units: oC35 (|cff008000Esprit de l'Hydre|r), Ubertip (Tooltip - Extended)",
+   "text": "|cff008000Esprit de l'Hydre|r ravage tout sur son passage. Il est l'un des derniers Monstres encore vivant."
+  },
+  "2200": {
+   "comment": "Units: oC08 (Le|cffff8080 Corail|r produit de la nourriture - 4 Food), Ubertip (Tooltip - Extended)",
+   "text": "Le|cffff8080 Corail|r produit un peu de nourriture. Envoie des coquillages  si un ennemi s'approche."
+  },
+  "2201": {
+   "comment": "Units: oC36 (|cff808080Antre des Profondeurs|r), Name (Name)",
+   "text": "|cff808080Antre des Profondeurs|r"
+  },
+  "2202": {
+   "comment": "Units: oC36 (|cff808080Antre des Profondeurs|r), EditorSuffix (Name - Editor Suffix)",
+   "text": "final"
+  },
+  "2203": {
+   "comment": "Units: nC01 (Bombe Aérosol Incendiaire), Name (Name)",
+   "text": "Bombe Aérosol Incendiaire"
+  },
+  "2204": {
+   "comment": "Units: nC01 (Bombe Aérosol Incendiaire), Tip (Tooltip - Basic)",
+   "text": "Allumer une allumette devant la Bombe |cffffcc00A|rerosol"
+  },
+  "2205": {
+   "comment": "Units: nC01 (Bombe Aérosol Incendiaire), Hotkey (Hotkey)",
+   "text": "A"
+  },
+  "2206": {
+   "comment": "Units: nC01 (Bombe Aérosol Incendiaire), Ubertip (Tooltip - Extended)",
+   "text": "Une bombe aérosol avec une allumette devant le spray (ne faite en aucun cas ce genre de manipulation chez vous !).|n|n|cffffcc00Attaque les unités terrestres et aériennes.|r"
+  },
+  "2207": {
+   "comment": "Units: oC20 (|cff0000ffJet d'eau), Name (Name)",
+   "text": "|cff0000ffJet d'eau"
+  },
+  "2209": {
+   "comment": "Units: oC20 (|cff0000ffJet d'eau), Tip (Tooltip - Basic)",
+   "text": "Construire un|cff0000ff Jet d'eau|r !"
+  },
+  "2210": {
+   "comment": "Units: uC37 (Sarutobi), Name (Name)",
+   "text": "Sarutobi"
+  },
+  "2211": {
+   "comment": "Units: uC37 (Sarutobi), Ubertip (Tooltip - Extended)",
+   "text": "Sarutobi est le très célèbre Sandaime, le Troisième Hokage de Konoha. Sa force est considérable, mais son prix l'est autant."
+  },
+  "2212": {
+   "comment": "Units: uC37 (Sarutobi), Tip (Tooltip - Basic)",
+   "text": "Appeler Sarutobi"
+  },
+  "2213": {
+   "comment": "Units: oC39 (|cff008080Soigneur Iktan|r), Name (Name)",
+   "text": "|cff008080Soigneur Iktan|r"
+  },
+  "2214": {
+   "comment": "Units: oC39 (|cff008080Soigneur Iktan|r), Tip (Tooltip - Basic)",
+   "text": "Entrainer un |cff008080Soigneur Iktan|r"
+  },
+  "2215": {
+   "comment": "Units: halt (|cff00ff00Autel des profondeurs|r), Name (Name)",
+   "text": "|cff00ff00Autel des profondeurs|r"
+  },
+  "2216": {
+   "comment": "Units: hC38 (|cff00ff00Autel des profondeurs|r), Tip (Tooltip - Basic)",
+   "text": "|cff00ff00Construire un autel des profondeurs|r"
+  },
+  "2217": {
+   "comment": "Units: oC40 (|cff008000Dragon Carnassier|r), Name (Name)",
+   "text": "|cff008000Dragon Carnassier|r"
+  },
+  "2218": {
+   "comment": "Units: oC40 (|cff008000Dragon Carnassier|r), Tip (Tooltip - Basic)",
+   "text": "Invoquer |cff008000Dragon Carnassier|r"
+  },
+  "2220": {
+   "comment": "Units: nC49 (Magasin de jouets), Name (Name)",
+   "text": "Magasin de jouets"
+  },
+  "2223": {
+   "comment": "Items: IC43 (Couronne des rois), Name (Name)",
+   "text": "Couronne des rois"
+  },
+  "2224": {
+   "comment": "Items: IC44 (Mine gobelines), Name (Name)",
+   "text": "Mine gobelines"
+  },
+  "2225": {
+   "comment": "Items: I000 (Tome d’expérience), Ubertip (Tooltip - Extended)",
+   "text": "Augmente le Niveau du héro proche de 1."
+  },
+  "2226": {
+   "comment": "Abilities: AOmi (Image miroir), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Crée <AOmi,DataA1> double pour troubler l’ennemi. Dissipe les sorts qui affectent le Hero.|nDure <AOmi,Dur1> s."
+  },
+  "2227": {
+   "comment": "Abilities: AOmi (Image miroir), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Crée <AOmi,DataA2> doubles pour troubler l’ennemi. Dissipe les sorts qui affectent l'Hero.|nDure <AOmi,Dur1> s."
+  },
+  "2228": {
+   "comment": "Abilities: AOmi (Image miroir), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Crée <AOmi,DataA3> doubles pour troubler l’ennemi. Dissipe les sorts qui affectent l'Hero.|nDure <AOmi,Dur1> s."
+  },
+  "2229": {
+   "comment": "Abilities: AOmi (Image miroir), Researchubertip (Tooltip - Learn - Extended)",
+   "text": "Crée des doubles pour troubler l’ennemi et dissipe les sorts qui affectent l'Hero.|n|n|cffffcc00Niveau 1 :|r crée <AOmi,DataA1> double.|n|cffffcc00Niveau 2 :|r crée <AOmi,DataA2> doubles.|n|cffffcc00Niveau 3 :|r crée <AOmi,DataA3> doubles."
+  },
+  "2230": {
+   "comment": "Abilities: AOwk (Marche-vent), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement de <AOwk,DataB1,%> % pendant <AOwk,Dur1> s. S’il attaque une unité, il réapparaît et inflige <AOwk,DataC1> points de dégâts supplémentaires."
+  },
+  "2231": {
+   "comment": "Abilities: AOwk (Marche-vent), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement de <AOwk,DataB2,%> % pendant <AOwk,Dur2> s. S’il attaque une unité, il réapparaît et inflige <AOwk,DataC2> points de dégâts supplémentaires."
+  },
+  "2232": {
+   "comment": "Abilities: AOwk (Marche-vent), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement de <AOwk,DataB3,%> % pendant <AOwk,Dur3> s. S’il attaque une unité, il réapparaît et inflige <AOwk,DataC3> points de dégâts supplémentaires."
+  },
+  "2233": {
+   "comment": "Abilities: AOwk (Marche-vent), Researchubertip (Tooltip - Learn - Extended)",
+   "text": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement. S’il attaque une unité, il réapparaît et inflige des dégâts supplémentaires.|n|n|cffffcc00Niveau 1 :|r augmente la vitesse de déplacement de <AOwk,DataB1,%> %, augmente les dégâts de <AOwk,DataC1>, dure <AOwk,Dur1> s. |n|cffffcc00Niveau 2 :|r augmente la vitesse de déplacement de <AOwk,DataB2,%> %, augmente les dégâts de <AOwk,DataC2>, dure <AOwk,Dur2> s. |n|cffffcc00Niveau 3 :|r augmente la vitesse de déplacement de <AOwk,DataB3,%>, augmente les dégâts de <AOwk,DataC3> %, dure <AOwk,Dur3> s."
+  },
+  "2234": {
+   "comment": "Abilities: AOww (Tempête de lames), Researchtip (Tooltip - Learn)",
+   "text": "Apprendre Aura de Feu"
+  },
+  "2235": {
+   "comment": "Abilities: AOww (Tempête de lames), Researchubertip (Tooltip - Learn - Extended)",
+   "text": "L'Hero devient insensible à la magie et fait bruler les unités terrestres ennemies proches, ce qui leur inflige <AOww,DataA1> points de dégâts par seconde."
+  },
+  "2236": {
+   "comment": "Abilities: AOww (Tempête de lames), Tip (Tooltip - Normal)",
+   "text": "Aura de feu"
+  },
+  "2237": {
+   "comment": "Abilities: AOww (Tempête de lames), Ubertip (Tooltip - Normal - Extended)",
+   "text": "L'Hero devient insensible à la magie et fait bruler les unités terrestres ennemies proches, ce qui leur inflige <AOww,DataA1> points de dégâts par seconde.|nDure <AOww,Dur1> s."
+  },
+  "2238": {
+   "comment": "Upgrades: R000 (Dressage au combat), Hotkey (Hotkey)",
+   "text": "G"
+  },
+  "2239": {
+   "comment": "Upgrades: R004 (Dressage au combat), Hotkey (Hotkey)",
+   "text": "I"
+  },
+  "2240": {
+   "comment": "Upgrades: R00H (Canons longs), Hotkey (Hotkey)",
+   "text": "L"
+  },
+  "2241": {
+   "comment": "Upgrades: R00M (Canons longs), Hotkey (Hotkey)",
+   "text": "L"
+  },
+  "2242": {
+   "comment": "",
+   "text": "|cffff0000Attack the tower|r corresponding to the card you wish to play!\n|cffff0000Attaque la tour|r correspondante a la carte que tu souhaite jouer!\n\n"
+  },
+  "2243": {
+   "comment": "",
+   "text": "THE FORTRESS\nSIZE: MEDIUM\n|cffd45e194 Playeurs|r"
+  },
+  "2244": {
+   "comment": "",
+   "text": "|cff008000SHIPWRECK ISLAND\nSIZE: VERY SMALL|r\n|cffd45e192 Playeurs|r"
+  },
+  "2245": {
+   "comment": "",
+   "text": "|cff800080THE ISLAND WILD\nSIZE: MEDIUM|r\n|cffd45e194 Playeurs|r"
+  },
+  "2246": {
+   "comment": "",
+   "text": "|cff008000THE TURTLE\nSIZE: BIG|r\n|cffd45e198 Playeurs|r"
+  },
+  "2247": {
+   "comment": "",
+   "text": "|cff8080ffNATURAL DISASTER\nSIZE: VERY BIG|r\n|cffd45e198 Playeurs|r"
+  },
+  "2248": {
+   "comment": "",
+   "text": "|cff800000THE VOLCANO\nSIZE: MEDIUM|r\n|cffd45e196 Playeurs|r"
+  },
+  "2249": {
+   "comment": "",
+   "text": "|cffff0000THE ORIGINAL\nSIZE: MEDIUM|r\n|cffd45e196 Playeurs|r"
+  },
+  "2250": {
+   "comment": "",
+   "text": "|cff800000THE FOUR FOUNTAINS\nSIZE: BIG|r\n|cffd45e196 Playeurs|r"
+  },
+  "2251": {
+   "comment": "",
+   "text": "Player 9"
+  },
+  "2252": {
+   "comment": "",
+   "text": "Player 10"
+  },
+  "2253": {
+   "comment": "",
+   "text": "Player 11"
+  },
+  "2254": {
+   "comment": "",
+   "text": "Player 12"
+  },
+  "2256": {
+   "comment": "",
+   "text": "Equipe 2 Remporte la partie"
+  },
+  "2258": {
+   "comment": "",
+   "text": "Equipe 1 Remporte la partie"
+  },
+  "2260": {
+   "comment": "",
+   "text": "END |c00ff000fGAME!"
+  },
+  "2261": {
+   "comment": "Destructibles: B000 (Petit pont MAP7), Name (Name)",
+   "text": "Petit pont MAP7"
+  },
+  "2262": {
+   "comment": "",
+   "text": "Prédicateur"
+  },
+  "2263": {
+   "comment": "",
+   "text": "Le Volcan entre en eruption!!"
+  },
+  "2266": {
+   "comment": "",
+   "text": "Prédicateur"
+  },
+  "2267": {
+   "comment": "Units\\Orc\\KotoBeast\\KodoDrum1.wav",
+   "text": "La Terre tremble, soyez prets!"
+  },
+  "2287": {
+   "comment": "",
+   "text": "Prédicateur"
+  },
+  "2288": {
+   "comment": "Units\\Orc\\KotoBeast\\KodoDrum1.wav",
+   "text": "The |cffff0000Red|r player chooses the map.\n|cffffff00Right |ror |cffffff00left|r arrow to change the map.\n|cffffff00Up|r arrow to confirm.\n|cffffff00Down|r arrow for random.\n|cffd45e19Without choice|r, another player is selected after 30 sec!\n"
+  },
+  "2296": {
+   "comment": "",
+   "text": "Prédicateur"
+  },
+  "2297": {
+   "comment": "",
+   "text": "The |cffff0000Red|r player chooses the map.\n|cffffff00Right |ror |cffffff00left|r arrow to change the map.\n|cffffff00Up|r arrow to confirm.\n|cffffff00Down|r arrow for random.\n|cffd45e19Without choice|r, another player is selected!\n"
+  },
+  "2298": {
+   "comment": "",
+   "text": "Boost Camp de Murloc"
+  },
+  "2300": {
+   "comment": "",
+   "text": "Boost Camp de Makrura"
+  },
+  "2301": {
+   "comment": "",
+   "text": "Le Camp de Tortue à été combiné."
+  },
+  "2302": {
+   "comment": "",
+   "text": "Les Corraux ont été combinés."
+  },
+  "2303": {
+   "comment": "Units: oC08 (Le|cffff8080 Corail|r produit de la nourriture - 4 Food), Name (Name)",
+   "text": "Le|cffff8080 Corail|r produit de la nourriture - 4 Food"
+  },
+  "2304": {
+   "comment": "Units: o001 (Le|cffff8080 Corail amélioré|r produit de la nourriture - 8 Food), Name (Name)",
+   "text": "Le|cffff8080 Corail amélioré|r produit de la nourriture - 8 Food"
+  },
+  "2306": {
+   "comment": "Units: o001 (Le|cffff8080 Corail amélioré|r produit de la nourriture - 8 Food), Ubertip (Tooltip - Extended)",
+   "text": "Le|cffff8080 Corail|r produit un peu de nourriture. Envoie des coquillages  si un ennemi s'approche."
+  },
+  "2307": {
+   "comment": "Units: h001 (Camp de |cffd45e19Sirénes Naga |r), Name (Name)",
+   "text": "Camp de |cffd45e19Sirénes Naga |r"
+  },
+  "2308": {
+   "comment": "Units: h001 (Camp de |cffd45e19Sirénes Naga |r), Ubertip (Tooltip - Extended)",
+   "text": "Les |cffd45e19Sirénes Naga|r sont capables de nager dans les eaux profondes."
+  },
+  "2309": {
+   "comment": "Units: h001 (Camp de |cffd45e19Sirénes Naga |r), Tip (Tooltip - Basic)",
+   "text": "Construire un camp de |cffd45e19Siréne Naga |r"
+  },
+  "2310": {
+   "comment": "Units: h001 (Camp de |cffd45e19Sirénes Naga |r), Hotkey (Hotkey)",
+   "text": "M"
+  },
+  "2311": {
+   "comment": "Units: z000 (|cffff8080Sirénes Naga|r), Name (Name)",
+   "text": "|cffff8080Sirénes Naga|r"
+  },
+  "2312": {
+   "comment": "Units: z000 (|cffff8080Sirénes Naga|r), Tip (Tooltip - Basic)",
+   "text": "Entrainer une |cffff8080Siréne Naga|r"
+  },
+  "2313": {
+   "comment": "Units: z000 (|cffff8080Sirénes Naga|r), Hotkey (Hotkey)",
+   "text": "A"
+  },
+  "2314": {
+   "comment": "Units: z000 (|cffff8080Sirénes Naga|r), Ubertip (Tooltip - Extended)",
+   "text": "Une Naga capable de nager dans les eaux pronfondes."
+  },
+  "2315": {
+   "comment": "Units: z001 (|cffff0000Tortue Dragon|r|r), Name (Name)",
+   "text": "|cffff0000Tortue Dragon|r|r"
+  },
+  "2317": {
+   "comment": "Units: z001 (|cffff0000Tortue Dragon|r|r), Hotkey (Hotkey)",
+   "text": "A"
+  },
+  "2318": {
+   "comment": "Units: z001 (|cffff0000Tortue Dragon|r|r), Ubertip (Tooltip - Extended)",
+   "text": "Une Tortue attaquant à distance."
+  },
+  "2319": {
+   "comment": "Units: h002 (Camp de |cffff0000Tortues Dragon|r|r), Name (Name)",
+   "text": "Camp de |cffff0000Tortues Dragon|r|r"
+  },
+  "2320": {
+   "comment": "Units: h002 (Camp de |cffff0000Tortues Dragon|r|r), Ubertip (Tooltip - Extended)",
+   "text": "Les|cffff0000Tortues Dragon |rsont capables d'attaquer à distance des ennemis ou des bâtiments."
+  },
+  "2321": {
+   "comment": "Units: h002 (Camp de |cffff0000Tortues Dragon|r|r), Tip (Tooltip - Basic)",
+   "text": "Construire un camp de |cffff0000Tortues Dragon|r"
+  },
+  "2322": {
+   "comment": "Units: h002 (Camp de |cffff0000Tortues Dragon|r|r), Hotkey (Hotkey)",
+   "text": "M"
+  },
+  "2323": {
+   "comment": "Units: oC08 (Le|cffff8080 Corail|r produit de la nourriture - 4 Food), Tip (Tooltip - Basic)",
+   "text": "Préparer le repas des unités - 4 foods"
+  },
+  "2324": {
+   "comment": "Units: o001 (Le|cffff8080 Corail amélioré|r produit de la nourriture - 8 Food), Tip (Tooltip - Basic)",
+   "text": "Préparer le repas des unités 8 foods"
+  },
+  "2325": {
+   "comment": "Abilities: A000 (Aura de dégats tornade), Name (Name)",
+   "text": "Aura de dégats tornade"
+  },
+  "2326": {
+   "comment": "Abilities: A001 (Aura de dégât sur les bâtiments et abres), Name (Name)",
+   "text": "Aura de dégât sur les bâtiments et abres"
+  },
+  "2327": {
+   "comment": "",
+   "text": "Prédicateur"
+  },
+  "2328": {
+   "comment": "Units\\Orc\\KotoBeast\\KodoDrum1.wav",
+   "text": "Des |cff8080ffmétéorites|r se rapprochent! "
+  },
+  "2329": {
+   "comment": "",
+   "text": "Prédicateur"
+  },
+  "2330": {
+   "comment": "",
+   "text": "Des |cff8080ffmétéorites|r touchent le sol!"
+  },
+  "2331": {
+   "comment": "Units: oC40 (|cff008000Dragon Carnassier|r), Ubertip (Tooltip - Extended)",
+   "text": "Le |cff008000Dragon Carnassier|r adore la viande fraiche! N'attaque pas les |cffff0000Structures|r!!"
+  },
+  "2332": {
+   "comment": "Units: H003 (|cff0000ffSeigneur des flots Makrura|r), Name (Name)",
+   "text": "|cff0000ffSeigneur des flots Makrura|r"
+  },
+  "2333": {
+   "comment": "Units: H003 (|cff0000ffSeigneur des flots Makrura|r), Tip (Tooltip - Basic)",
+   "text": "Appeler |cff0000ffSeigneur des flots Makrura|r"
+  },
+  "2334": {
+   "comment": "Units: H003 (|cff0000ffSeigneur des flots Makrura|r), Revivetip (Tooltip - Revive)",
+   "text": "Ressusciter |cff0000ffSeigneur des flots Makrura|r"
+  },
+  "2335": {
+   "comment": "Units: H003 (|cff0000ffSeigneur des flots Makrura|r), Propernames (Proper Names)",
+   "text": "|cff0000ffSeigneur des flots"
+  },
+  "2336": {
+   "comment": "Units: H003 (|cff0000ffSeigneur des flots Makrura|r), Awakentip (Tooltip - Awaken)",
+   "text": "Ressusciter le |cff0000ffSeigneur des flots Makrura|r"
+  },
+  "2347": {
+   "comment": "Units: Hamg (|cff0000ffSeigneur Mymidon|r), Name (Name)",
+   "text": "|cff0000ffSeigneur Mymidon|r"
+  },
+  "2348": {
+   "comment": "Units: Hamg (|cff0000ffSeigneur Mymidon|r), Propernames (Proper Names)",
+   "text": "|cff0000ffSeigneur Mymidon|r"
+  },
+  "2349": {
+   "comment": "Units: E000 (|cff0000ffSeigneur Mymidon|r), Tip (Tooltip - Basic)",
+   "text": "Appeler |cff0000ffSeigneur Mymidon|r"
+  },
+  "2350": {
+   "comment": "Units: E000 (|cff0000ffSeigneur Mymidon|r), Ubertip (Tooltip - Extended)",
+   "text": "|cff0000ffSeigneur Mymidon|r vous montrera comment l'expérience du combat et la pratique de la perversité vous permettent de gagner la partie."
+  },
+  "2351": {
+   "comment": "Units: Hamg (|cff0000ffSeigneur Mymidon|r), Awakentip (Tooltip - Awaken)",
+   "text": "Ressusciter |cff0000ffSeigneur Mymidon|r"
+  },
+  "2352": {
+   "comment": "Units: Hpal (|cff0000ffReine mer|r), Name (Name)",
+   "text": "|cff0000ffReine mer|r"
+  },
+  "2353": {
+   "comment": "Units: O002 (|cff0000ffReine mer|r), Tip (Tooltip - Basic)",
+   "text": "Appeler |cff0000ffReine mer|r"
+  },
+  "2354": {
+   "comment": "Units: O002 (|cff0000ffReine mer|r), Ubertip (Tooltip - Extended)",
+   "text": "|cff0000ffReine mer|r est dotée d'une force considérable."
+  },
+  "2355": {
+   "comment": "Units: O002 (|cff0000ffReine mer|r), Revivetip (Tooltip - Revive)",
+   "text": "Ressusciter |cff0000ffReine mer|r"
+  },
+  "2356": {
+   "comment": "Units: Hpal (|cff0000ffReine mer|r), Propernames (Proper Names)",
+   "text": "|cff0000ffReine mer|r"
+  },
+  "2357": {
+   "comment": "Units: Hblm (|cff0000ffSeigneur Tamatoa|r), Name (Name)",
+   "text": "|cff0000ffSeigneur Tamatoa|r"
+  },
+  "2358": {
+   "comment": "Units: U000 (|cff0000ffSeigneur Tamatoa|r), Ubertip (Tooltip - Extended)",
+   "text": "|cff0000ffSeigneur Tamatoa|r est un Héro capable de faire bien des miracles à l'aide de ses attaques à distance."
+  },
+  "2359": {
+   "comment": "Units: U000 (|cff0000ffSeigneur Tamatoa|r), Tip (Tooltip - Basic)",
+   "text": "Appeler |cff0000ffSeigneur Tamatoa|r"
+  },
+  "2360": {
+   "comment": "Units: U000 (|cff0000ffSeigneur Tamatoa|r), Revivetip (Tooltip - Revive)",
+   "text": "Ressusciter |cff0000ffSeigneur Tamatoa|r"
+  },
+  "2361": {
+   "comment": "Units: Hblm (|cff0000ffSeigneur Tamatoa|r), Propernames (Proper Names)",
+   "text": "|cff0000ffSeigneur Tamatoa|r"
+  },
+  "2362": {
+   "comment": "Abilities: A002 (Vague écrasante R), Name (Name)",
+   "text": "Vague écrasante R"
+  },
+  "2363": {
+   "comment": "Abilities: A006 (Onde de choc R), Name (Name)",
+   "text": "Onde de choc R"
+  },
+  "2364": {
+   "comment": "Abilities: A007 (Séisme R), Name (Name)",
+   "text": "Séisme R"
+  },
+  "2365": {
+   "comment": "Abilities: A008 (Marche-vent), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement de <AOwk,DataB1,%> % pendant <AOwk,Dur1> s. S’il attaque une unité, il réapparaît et inflige <AOwk,DataC1> points de dégâts supplémentaires."
+  },
+  "2366": {
+   "comment": "Abilities: A008 (Marche-vent), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement de <AOwk,DataB2,%> % pendant <AOwk,Dur2> s. S’il attaque une unité, il réapparaît et inflige <AOwk,DataC2> points de dégâts supplémentaires."
+  },
+  "2367": {
+   "comment": "Abilities: A008 (Marche-vent), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement de <AOwk,DataB3,%> % pendant <AOwk,Dur3> s. S’il attaque une unité, il réapparaît et inflige <AOwk,DataC3> points de dégâts supplémentaires."
+  },
+  "2368": {
+   "comment": "Abilities: A008 (Marche-vent), Researchubertip (Tooltip - Learn - Extended)",
+   "text": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement. S’il attaque une unité, il réapparaît et inflige des dégâts supplémentaires.|n|n|cffffcc00Niveau 1 :|r augmente la vitesse de déplacement de <AOwk,DataB1,%> %, augmente les dégâts de <AOwk,DataC1>, dure <AOwk,Dur1> s. |n|cffffcc00Niveau 2 :|r augmente la vitesse de déplacement de <AOwk,DataB2,%> %, augmente les dégâts de <AOwk,DataC2>, dure <AOwk,Dur2> s. |n|cffffcc00Niveau 3 :|r augmente la vitesse de déplacement de <AOwk,DataB3,%>, augmente les dégâts de <AOwk,DataC3> %, dure <AOwk,Dur3> s."
+  },
+  "2370": {
+   "comment": "Abilities: A009 (Blizzard R), Name (Name)",
+   "text": "Blizzard R"
+  },
+  "2371": {
+   "comment": "Abilities: A00F (Éclair de tempête T), Name (Name)",
+   "text": "Éclair de tempête T"
+  },
+  "2372": {
+   "comment": "Abilities: A00B (Nova de givre T), Name (Name)",
+   "text": "Nova de givre T"
+  },
+  "2373": {
+   "comment": "Abilities: A00D (Sarments T), Name (Name)",
+   "text": "Sarments T"
+  },
+  "2374": {
+   "comment": "Abilities: A00E (Poison lent T), Name (Name)",
+   "text": "Poison lent T"
+  },
+  "2375": {
+   "comment": "Units: nC30 (|cff00ff00Barriére de Corail|r), Name (Name)",
+   "text": "|cff00ff00Barriére de Corail|r"
+  },
+  "2376": {
+   "comment": "Units: nC30 (|cff00ff00Barriére de Corail|r), Tip (Tooltip - Basic)",
+   "text": "La |cff00ff00Barriére de Corail|r permet d'augmenter la vitesse de recupération des unitées proches ainsi que leurs vitesses."
+  },
+  "2377": {
+   "comment": "Units: nC30 (|cff00ff00Barriére de Corail|r), Ubertip (Tooltip - Extended)",
+   "text": "|cff00ff00Barriére de Corail|r"
+  },
+  "2378": {
+   "comment": "Abilities: A00E (Poison lent T), Researchubertip (Tooltip - Learn - Extended)",
+   "text": "Puissant poison, immobilisant, désarmant et infligeant des dégâts à une cible ennemie de façon temporaire.|n|n|cffffcc00Niveau 1 :|r <AEer,DataA1> points de dégâts par seconde pendant <AEer,Dur1> s.|n|cffffcc00Niveau 2 :|r <AEer,DataA2> points de dégâts par seconde pendant <AEer,Dur2> s.|n|cffffcc00Niveau 3 :|r <AEer,DataA3> points de dégâts par seconde pendant <AEer,Dur3> s."
+  },
+  "2379": {
+   "comment": "Abilities: A00E (Poison lent T), Researchtip (Tooltip - Learn)",
+   "text": "Apprendre Fléche empoissoné de |cffffcc00niveau %d|r"
+  },
+  "2380": {
+   "comment": "Abilities: A00E (Poison lent T), Tip (Tooltip - Normal)",
+   "text": "Empoisonnement de |cffffcc00niveau 1|r"
+  },
+  "2381": {
+   "comment": "Abilities: A00E (Poison lent T), Tip (Tooltip - Normal)",
+   "text": "Empoisonnement de |cffffcc00niveau 2|r"
+  },
+  "2382": {
+   "comment": "Abilities: A00E (Poison lent T), Tip (Tooltip - Normal)",
+   "text": "Empoisonnement de |cffffcc00niveau 3|r"
+  },
+  "2383": {
+   "comment": "Abilities: A00E (Poison lent T), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Puissant narcotique, immobilisant et désarmant la cible ennemie pendant <AEer,Dur1> s, et lui infligent <AEer,DataA1> points de dégâts par seconde."
+  },
+  "2384": {
+   "comment": "Abilities: A00E (Poison lent T), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Puissant narcotique, immobilisant et désarmant la cible ennemie pendant <AEer,Dur2> s, et lui infligent <AEer,DataA2> points de dégâts par seconde."
+  },
+  "2385": {
+   "comment": "Abilities: A00E (Poison lent T), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Puissant narcotique, immobilisant et désarmant la cible ennemie pendant <AEer,Dur3> s, et lui infligent <AEer,DataA3> points de dégâts par seconde."
+  },
+  "2386": {
+   "comment": "Abilities: A002 (Vague écrasante R), Hotkey (Hotkey - Normal)",
+   "text": "R"
+  },
+  "2387": {
+   "comment": "Abilities: A002 (Vague écrasante R), Researchhotkey (Hotkey - Learn)",
+   "text": "R"
+  },
+  "2388": {
+   "comment": "Abilities: A006 (Onde de choc R), Researchhotkey (Hotkey - Learn)",
+   "text": "R"
+  },
+  "2389": {
+   "comment": "Abilities: A006 (Onde de choc R), Hotkey (Hotkey - Normal)",
+   "text": "R"
+  },
+  "2390": {
+   "comment": "Abilities: A007 (Séisme R), Hotkey (Hotkey - Normal)",
+   "text": "R"
+  },
+  "2391": {
+   "comment": "Abilities: A007 (Séisme R), Researchhotkey (Hotkey - Learn)",
+   "text": "R"
+  },
+  "2392": {
+   "comment": "Abilities: A009 (Blizzard R), Researchhotkey (Hotkey - Learn)",
+   "text": "R"
+  },
+  "2393": {
+   "comment": "Abilities: A009 (Blizzard R), Hotkey (Hotkey - Normal)",
+   "text": "R"
+  },
+  "2394": {
+   "comment": "Abilities: A00B (Nova de givre T), Hotkey (Hotkey - Normal)",
+   "text": "T"
+  },
+  "2395": {
+   "comment": "Abilities: A00B (Nova de givre T), Researchhotkey (Hotkey - Learn)",
+   "text": "T"
+  },
+  "2396": {
+   "comment": "Abilities: A00D (Sarments T), Researchhotkey (Hotkey - Learn)",
+   "text": "T"
+  },
+  "2397": {
+   "comment": "Abilities: A00D (Sarments T), Hotkey (Hotkey - Normal)",
+   "text": "T"
+  },
+  "2398": {
+   "comment": "Abilities: A00E (Poison lent T), Hotkey (Hotkey - Normal)",
+   "text": "T"
+  },
+  "2399": {
+   "comment": "Abilities: A00E (Poison lent T), Researchhotkey (Hotkey - Learn)",
+   "text": "T"
+  },
+  "2400": {
+   "comment": "Abilities: A00F (Éclair de tempête T), Hotkey (Hotkey - Normal)",
+   "text": "T"
+  },
+  "2401": {
+   "comment": "Abilities: A00F (Éclair de tempête T), Researchhotkey (Hotkey - Learn)",
+   "text": "T"
+  },
+  "2402": {
+   "comment": "Abilities: A00F (Éclair de tempête T), Researchtip (Tooltip - Learn)",
+   "text": "Apprendre Éclair de tempête de |cffffcc00niveau %d|r"
+  },
+  "2403": {
+   "comment": "Abilities: A00F (Éclair de tempête T), Researchubertip (Tooltip - Learn - Extended)",
+   "text": "Lance un marteau magique qui inflige des dégâts à l’ennemi ciblé et l’étourdit.|n|n|cffffcc00Niveau 1 :|r inflige <ANsb,DataA1> points de dégâts, étourdit pendant <ANsb,Dur1> s.|n|cffffcc00Niveau 2 :|r inflige <ANsb,DataA2> points de dégâts, étourdit pendant <ANsb,Dur2> s.|n|cffffcc00Niveau 3 :|r inflige <ANsb,DataA3> points de dégâts, étourdit pendant <ANsb,Dur3> s.|n|cffffcc00Niveau 4 :|r inflige <ANsb,DataA4> points de dégâts, étourdit pendant <ANsb,Dur4> s."
+  },
+  "2404": {
+   "comment": "Abilities: A00F (Éclair de tempête T), Tip (Tooltip - Normal)",
+   "text": "Éclair de tempête de |cffffcc00niveau 1|r"
+  },
+  "2405": {
+   "comment": "Abilities: A00F (Éclair de tempête T), Tip (Tooltip - Normal)",
+   "text": "Éclair de tempête de |cffffcc00niveau 2|r"
+  },
+  "2406": {
+   "comment": "Abilities: A00F (Éclair de tempête T), Tip (Tooltip - Normal)",
+   "text": "Éclair de tempête de |cffffcc00niveau 3|r"
+  },
+  "2407": {
+   "comment": "Abilities: A00F (Éclair de tempête T), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Lance un marteau magique qui inflige <ANsb,DataA1> points de dégâts à une unité ennemie et l’étourdit pendant <ANsb,Dur1> s."
+  },
+  "2408": {
+   "comment": "Abilities: A00F (Éclair de tempête T), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Lance un marteau magique qui inflige <ANsb,DataA2> points de dégâts à une unité ennemie et l’étourdit pendant <ANsb,Dur2> s."
+  },
+  "2409": {
+   "comment": "Abilities: A00F (Éclair de tempête T), Ubertip (Tooltip - Normal - Extended)",
+   "text": "Lance un marteau magique qui inflige <ANsb,DataA3> points de dégâts à une unité ennemie et l’étourdit pendant <ANsb,Dur3> s."
+  },
+  "2410": {
+   "comment": "",
+   "text": "Commandes"
+  },
+  "2411": {
+   "comment": "",
+   "text": "Pour selectionner la carte:\n\nTouche Droite ou Gauche pour Changer de carte.\nTouche du Haut pour Valider la carte.\nTouche du Bas pour Changer de carte aléatoirement.\n\nPour changer de Camera:\n-cam\n-cam2"
+  },
+  "2412": {
+   "comment": "",
+   "text": "Created By Chimako"
+  },
+  "2413": {
+   "comment": "",
+   "text": ""
+  },
+  "2414": {
+   "comment": "",
+   "text": "Quittez le centre, les ponts vont ce redresser!\nLeave the center, the bridges will straighten up!\n\n"
+  },
+  "2415": {
+   "comment": "",
+   "text": "Attention, les ponts vont descendre!\nBe careful, the bridges will go down!"
+  },
+  "2416": {
+   "comment": "Units: hC03 (Camp de |cffd45e19Tortues|r), Tip (Tooltip - Basic)",
+   "text": "Construire un camp de |cffd45e19Tortues|r, |cffffff00Necessite de l'eau.|r"
+  },
+  "2417": {
+   "comment": "Units: H004 (Archimage nage), Name (Name)",
+   "text": "Archimage nage"
+  },
+  "2418": {
+   "comment": "Units: Hpal (|cff0000ffReine mer|r), Tip (Tooltip - Basic)",
+   "text": "Invoquer la |cff0000ffReine mer|r"
+  },
+  "2419": {
+   "comment": "Units: Hpal (|cff0000ffReine mer|r), Revivetip (Tooltip - Revive)",
+   "text": "Ressusciter la |cff0000ffReine mer|r"
+  },
+  "2420": {
+   "comment": "Units: Hpal (|cff0000ffReine mer|r), Awakentip (Tooltip - Awaken)",
+   "text": "Ressusciter la |cff0000ffReine mer|r"
+  },
+  "2421": {
+   "comment": "Units: Hamg (|cff0000ffSeigneur Mymidon|r), Tip (Tooltip - Basic)",
+   "text": "Invoquer un |cff0000ffSeigneur Mymidon|r"
+  },
+  "2422": {
+   "comment": "Units: Hamg (|cff0000ffSeigneur Mymidon|r), Revivetip (Tooltip - Revive)",
+   "text": "Ressusciter |cff0000ffSeigneur Mymidon|r"
+  },
+  "2423": {
+   "comment": "Units: O002 (|cff0000ffReine mer|r), Name (Name)",
+   "text": "|cff0000ffReine mer|r"
+  },
+  "2424": {
+   "comment": "Units: O002 (|cff0000ffReine mer|r), Propernames (Proper Names)",
+   "text": "|cff0000ffReine mer|r"
+  },
+  "2425": {
+   "comment": "Units: E000 (|cff0000ffSeigneur Mymidon|r), Name (Name)",
+   "text": "|cff0000ffSeigneur Mymidon|r"
+  },
+  "2426": {
+   "comment": "Units: E000 (|cff0000ffSeigneur Mymidon|r), Propernames (Proper Names)",
+   "text": "|cff0000ffSeigneur Mymidon|r"
+  },
+  "2427": {
+   "comment": "Units: E000 (|cff0000ffSeigneur Mymidon|r), Revivetip (Tooltip - Revive)",
+   "text": "Ressusciter |cff0000ffSeigneur Mymidon|r"
+  },
+  "2428": {
+   "comment": "Units: Hblm (|cff0000ffSeigneur Tamatoa|r), Awakentip (Tooltip - Awaken)",
+   "text": "Ressusciter le |cff0000ffSeigneur Tamatoa|r"
+  },
+  "2429": {
+   "comment": "Units: Hblm (|cff0000ffSeigneur Tamatoa|r), Tip (Tooltip - Basic)",
+   "text": "Invoquer le |cff0000ffSeigneur Tamatoa|r"
+  },
+  "2430": {
+   "comment": "Units: Hblm (|cff0000ffSeigneur Tamatoa|r), Revivetip (Tooltip - Revive)",
+   "text": "Ressusciter le |cff0000ffSeigneur Tamatoa|r"
+  },
+  "2431": {
+   "comment": "Units: U000 (|cff0000ffSeigneur Tamatoa|r), Name (Name)",
+   "text": "|cff0000ffSeigneur Tamatoa|r"
+  },
+  "2432": {
+   "comment": "Units: U000 (|cff0000ffSeigneur Tamatoa|r), Propernames (Proper Names)",
+   "text": "|cff0000ffSeigneur Tamatoa|r"
+  },
+  "2433": {
+   "comment": "Units: halt (|cff00ff00Autel des profondeurs|r), Tip (Tooltip - Basic)",
+   "text": "Construire un |cff00ff00Autel des profondeurs|r"
+  },
+  "2434": {
+   "comment": "Units: hC38 (|cff00ff00Autel des profondeurs|r), Name (Name)",
+   "text": "|cff00ff00Autel des profondeurs|r"
+  },
+  "2436": {
+   "comment": "Units: zC02 (|cff0000ffTortue Terrestre|r), Name (Name)",
+   "text": "|cff0000ffTortue Terrestre|r"
+  },
+  "2437": {
+   "comment": "Units: zC02 (|cff0000ffTortue Terrestre|r), Tip (Tooltip - Basic)",
+   "text": "Entrainer une |cff0000ffTortue Terrestre|r"
+  },
+  "2438": {
+   "comment": "",
+   "text": "|cffff0000Attaque|r la tour correspondante a la carte que tu souhaite jouer."
+  },
+  "2440": {
+   "comment": "",
+   "text": "|cffff0000T|r|cffff1200o|r|cffff2600w|r|cffff3900e|r|cffff4d00r|r|cffff6100 |r|cffff7400a|r|cffff8800t|r|cffff9b00a|r|cffffaf00t|r|cffffc300c|r|cffffd600k|r|cffffea00e|r|cfffffe00r|r"
+  },
+  "2441": {
+   "comment": "",
+   "text": "|cff008000THE TURTLE\nSIZE: BIG|r"
+  },
+  "2442": {
+   "comment": "",
+   "text": "|cff800000THE VOLCANO\nSIZE: MEDIUM|r"
+  },
+  "2443": {
+   "comment": "",
+   "text": "Map Pont"
+  },
+  "2445": {
+   "comment": "",
+   "text": "|cff008000SHIPWRECK ISLAND\nSIZE: VERY SMALL|r"
+  },
+  "2446": {
+   "comment": "",
+   "text": "|cff800080THE ISLAND WILD\nSIZE: MEDIUM|r"
+  },
+  "2447": {
+   "comment": "",
+   "text": "|cff8080ffNATURAL DISASTER\nSIZE: VERY BIG|r"
+  },
+  "2448": {
+   "comment": "",
+   "text": "|cffff0000THE ORIGINAL\nSIZE: MEDIUM|r"
+  },
+  "2449": {
+   "comment": "",
+   "text": "|cff800000THE FOUR FOUNTAINS\nSIZE: BIG|r"
+  },
+  "2450": {
+   "comment": "Units: h005 (Select the map), Name (Name)",
+   "text": "Select the map"
+  },
+  "2451": {
+   "comment": "",
+   "text": "Spécial Event"
+  },
+  "2452": {
+   "comment": "",
+   "text": "|cffff0000Spécial Event on:|r\n\nMap Fortress |cffffff00(at he middle left)|r\nMap Turtle |cffffff00(at the bottom left)|r\nMap Volcano |cffffff00(at the top right)|r\nMap Natural Disaster|cffffff00 (at the bottom right)|r"
+  },
+  "2453": {
+   "comment": "",
+   "text": "Prédicateur"
+  },
+  "2454": {
+   "comment": "Units\\Orc\\KotoBeast\\KodoDrum1.wav",
+   "text": "Le|cffff0000 Joueur Rouge|r choisit la carte.\n|cffffff00Touche de Droite|r ou|cffffff00 Gauche|r pour changer de carte.\n|cffffff00Touche du Haut|r pour sélectionner.\n|cffffff00Touche du Bas|r pour changer de carte aléatoirement.\n|cffd45e19Sans choix|r, un autre joueur est choisi après |cffd45e1930 secondes|r.\n"
+  },
+  "2455": {
+   "comment": "",
+   "text": "|cffd45e19Created By Chimako|r"
+  },
+  "2456": {
+   "comment": "Units: oC05 (|cff008000Jarre Oublié|r), Ubertip (Tooltip - Extended)",
+   "text": "La|cff008000 jarre oublié|r est devenu le nid d'un serpent de mer. Construction rapide, courte portée."
+  },
+  "2457": {
+   "comment": "Units: oC11 (|cff800080Démolisseur|r), Tip (Tooltip - Basic)",
+   "text": "Construire un |cff800080Démolisseur|r fixe."
+  },
+  "2458": {
+   "comment": "Units: oC11 (|cff800080Démolisseur|r), Ubertip (Tooltip - Extended)",
+   "text": "Le |cff800080démolisseur|r Construction lente, moyenne portée."
+  },
+  "2459": {
+   "comment": "Units: oC13 (|cffffff00Obélisque|r), Ubertip (Tooltip - Extended)",
+   "text": "|cffffff00L'Obélisque|r est capable de décerner les Heros invisible"
+  },
+  "2460": {
+   "comment": "Units: oC25 (|cffffff00Obélisque amélioré|r), Ubertip (Tooltip - Extended)",
+   "text": "L'amélioration de |cffffff00l'obélisque|r permet de decerner les Heros invisible, et augmente les degats."
+  },
+  "2461": {
+   "comment": "Units: oC04 (|cff800080Démolisseur Mobile|r), Ubertip (Tooltip - Extended)",
+   "text": "Version améliorée du |cff800080Démolisseur|r fixe, plus lent mais plus puissant, trés grande portée."
+  },
+  "2462": {
+   "comment": "Units: oC20 (|cff0000ffJet d'eau), Ubertip (Tooltip - Extended)",
+   "text": "Le |cff0000ffJet d'eau|r, Conctruction lente, dégats important et moyenne portée."
+  }
+ },
+ "info": {
+  "format": 31,
+  "saves": 5901,
+  "editor_version": 6106,
+  "game_version": [
+   1,
+   32,
+   2,
+   14722
+  ],
+  "name": "RECREATION DANS LES ILES V1.2",
+  "author": "Chimako",
+  "description": "The red player must choose:\n|cffffff00Right|r arrow to change the map.\n|cffffff00Left|r arrow to go back.\n|cffffff00Up|r arrow to select the map.\n|cffffff00Down arrow to choose randomly.\n\nWithout choice, another player is selected after 40 seconds.\n",
+  "recommended_players": "",
+  "camera_bounds": [
+   -2816.0,
+   -3328.0,
+   28032.0,
+   28032.0,
+   -2816.0,
+   28032.0,
+   28032.0,
+   -3328.0
+  ],
+  "camera_complements": [
+   6,
+   1,
+   4,
+   3
+  ],
+  "playable_w": 249,
+  "playable_h": 249,
+  "flags": 56440,
+  "tileset": "Z",
+  "loading_screen_index": -1,
+  "loading_screen_custom": "",
+  "loading_text": "TRIGSTR_2017",
+  "loading_title": "TRIGSTR_1936",
+  "loading_subtitle": "",
+  "game_data_set": 0,
+  "prologue_path": "",
+  "prologue_text": "",
+  "prologue_title": "",
+  "prologue_subtitle": "",
+  "fog_style": 0,
+  "fog_z_start": 3000.0,
+  "fog_z_end": 5000.0,
+  "fog_density": 0.5,
+  "fog_color": [
+   0,
+   0,
+   0,
+   255
+  ],
+  "weather_global": 0,
+  "sound_env": "",
+  "light_env": "Z",
+  "water_color": [
+   128,
+   128,
+   128,
+   255
+  ],
+  "players": [],
+  "forces": [
+   {
+    "flags": 1,
+    "player_mask": 12,
+    "name": ""
+   },
+   {
+    "flags": 16777216,
+    "player_mask": 16777216,
+    "name": ""
+   },
+   {
+    "flags": 0,
+    "player_mask": 1381236736,
+    "name": "IGSTR_008"
+   }
+  ],
+  "upgrades": [
+   {
+    "player_mask": 1181483008,
+    "id": "\u0000\u0000\u0000\u0000",
+    "level": 1022,
+    "availability": 0
+   },
+   {
+    "player_mask": 0,
+    "id": "\u0001\u0000\u0000\u0000",
+    "level": 1,
+    "availability": 1
+   },
+   {
+    "player_mask": 0,
+    "id": "TRIG",
+    "level": 1599231059,
+    "availability": 3747888
+   },
+   {
+    "player_mask": 1172832256,
+    "id": "\u0000\u0000lF",
+    "level": 0,
+    "availability": 1021
+   },
+   {
+    "player_mask": 0,
+    "id": "\u0000\u0000\u0000\u0000",
+    "level": 2,
+    "availability": 1
+   },
+   {
+    "player_mask": 1,
+    "id": "\u0000\u0000\u0000\u0000",
+    "level": 1195987540,
+    "availability": 1599231059
+   },
+   {
+    "player_mask": 3158320,
+    "id": "\u0000\u0000èE",
+    "level": 1181483008,
+    "availability": 0
+   },
+   {
+    "player_mask": 1019,
+    "id": "\u0000\u0000\u0000\u0000",
+    "level": 0,
+    "availability": 3
+   },
+   {
+    "player_mask": 1,
+    "id": "\u0001\u0000\u0000\u0000",
+    "level": 0,
+    "availability": 1195987540
+   },
+   {
+    "player_mask": 1599231059,
+    "id": "011\u0000",
+    "level": 1172832256,
+    "availability": 1181483008
+   },
+   {
+    "player_mask": 0,
+    "id": "÷\u0003\u0000\u0000",
+    "level": 0,
+    "availability": 0
+   },
+   {
+    "player_mask": 4,
+    "id": "\u0001\u0000\u0000\u0000",
+    "level": 1,
+    "availability": 0
+   },
+   {
+    "player_mask": 1195987540,
+    "id": "STR_",
+    "level": 3289392,
+    "availability": 1172832256
+   },
+   {
+    "player_mask": 1181483008,
+    "id": "\u0000\u0000\u0000\u0000",
+    "level": 1007,
+    "availability": 0
+   },
+   {
+    "player_mask": 0,
+    "id": "\u0005\u0000\u0000\u0000",
+    "level": 1,
+    "availability": 1
+   },
+   {
+    "player_mask": 0,
+    "id": "TRIG",
+    "level": 1599231059,
+    "availability": 3354928
+   },
+   {
+    "player_mask": 1172832256,
+    "id": "\u0000\u0000lF",
+    "level": 0,
+    "availability": 991
+   },
+   {
+    "player_mask": 0,
+    "id": "\u0000\u0000\u0000\u0000",
+    "level": 6,
+    "availability": 1
+   },
+   {
+    "player_mask": 1,
+    "id": "\u0000\u0000\u0000\u0000",
+    "level": 1195987540,
+    "availability": 1599231059
+   },
+   {
+    "player_mask": 3420464,
+    "id": "\u0000\u0000èE",
+    "level": 1181483008,
+    "availability": 0
+   },
+   {
+    "player_mask": 959,
+    "id": "\u0000\u0000\u0000\u0000",
+    "level": 0,
+    "availability": 7
+   },
+   {
+    "player_mask": 1,
+    "id": "\u0001\u0000\u0000\u0000",
+    "level": 0,
+    "availability": 1195987540
+   },
+   {
+    "player_mask": 1599231059,
+    "id": "015\u0000",
+    "level": 1172832256,
+    "availability": 1181483008
+   },
+   {
+    "player_mask": 0,
+    "id": "\u0003\u0000\u0000",
+    "level": 0,
+    "availability": 0
+   },
+   {
+    "player_mask": 8,
+    "id": "\u0001\u0000\u0000\u0000",
+    "level": 1,
+    "availability": 0
+   },
+   {
+    "player_mask": 1195987540,
+    "id": "STR_",
+    "level": 825569842,
+    "availability": -402653184
+   },
+   {
+    "player_mask": 1811939397,
+    "id": "F\u0000\u0000\u0000",
+    "level": 196352,
+    "availability": 0
+   },
+   {
+    "player_mask": 0,
+    "id": "\u0000\t\u0000\u0000",
+    "level": 256,
+    "availability": 256
+   },
+   {
+    "player_mask": 0,
+    "id": "\u0000TRI",
+    "level": 1381258055,
+    "availability": 892482143
+   },
+   {
+    "player_mask": 50,
+    "id": "èE\u0000\u0000",
+    "level": 18028,
+    "availability": 33488896
+   },
+   {
+    "player_mask": 0,
+    "id": "\u0000\u0000\u0000\u0000",
+    "level": 655360,
+    "availability": 131072
+   },
+   {
+    "player_mask": 65536,
+    "id": "\u0000\u0000\u0000\u0000",
+    "level": 1381236736,
+    "availability": 1414743881
+   },
+   {
+    "player_mask": 842162002,
+    "id": "53\u0000\u0000",
+    "level": 4581376,
+    "availability": 172387328
+   },
+   {
+    "player_mask": 172008407,
+    "id": "×£@\n",
+    "level": 172008407,
+    "availability": 188785623
+   },
+   {
+    "player_mask": 33554432,
+    "id": "\u0000\u0000\u0000\u0001",
+    "level": 0,
+    "availability": 1409286144
+   },
+   {
+    "player_mask": 1397180754,
+    "id": "TR_2",
+    "level": 3421490,
+    "availability": 1172832256
+   },
+   {
+    "player_mask": 1181483008,
+    "id": "XÀA",
+    "level": 1,
+    "availability": 2
+   },
+   {
+    "player_mask": 0,
+    "id": "\u0002\u0000\u0000\u0000",
+    "level": 9,
+    "availability": -3041
+   },
+   {
+    "player_mask": 1195987540,
+    "id": "STR_",
+    "level": 825372722,
+    "availability": 2304
+   },
+   {
+    "player_mask": 778240,
+    "id": "\u0000TRI",
+    "level": 1381258055,
+    "availability": 892351071
+   },
+   {
+    "player_mask": 53,
+    "id": "\u0000\u0000\u0000\u0000",
+    "level": 0,
+    "availability": 0
+   }
+  ],
+  "_partial": "unpack_from requires a buffer of at least 906 bytes for unpacking 4 bytes at offset 902 (actual buffer size is 904)"
+ },
+ "units": {
+  "modified_standard": [
+   {
+    "id": "ohwd",
+    "base": "ohwd",
+    "cost_gold": 10,
+    "build_time": 5,
+    "unit_type": "mechanical",
+    "hp_max": 20,
+    "tip": "Placer un Totem de santé",
+    "uhot": "P",
+    "utub": "Un totem indien magique au pouvoir mystique surprennant.|n|n|cffffcc00Régénération.|r",
+    "name": "Totem"
+   },
+   {
+    "id": "hmpr",
+    "base": "hmpr",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNEarthquake.blp",
+    "name": "|cffff0000Geyser des Pronfondeurs|r",
+    "tip": "Libérer l'energie du |cffff0000Geyser des pronfondeurs|r",
+    "utub": "L'energie du |cffff0000Geyser des pronfondeurs|r, lorsqu'elle est relaché peut faire de grands ravages. Toutes les constructions seront détruites et les unités crées seront tuées.",
+    "build_time": 30,
+    "cost_gold": 0,
+    "cost_lumber": 0,
+    "food_used": 0,
+    "model": "units\\creeps\\GoblinSapper\\GoblinSapper",
+    "uhot": "K",
+    "usma": 0
+   },
+   {
+    "id": "hgyr",
+    "base": "hgyr",
+    "name": "|cffffff00Raies Volante|r",
+    "upgrades_used": "",
+    "cost_lumber": 0,
+    "cost_gold": 0,
+    "tint_b": 150,
+    "tint_r": 150,
+    "uclg": 150,
+    "ucol": 16.0,
+    "hp_max": 250,
+    "atk1_dmg_base": 5,
+    "armor": 4,
+    "abilities_normal": "",
+    "attacks_enabled": 3,
+    "food_used": 0,
+    "tip": "Le vol de Raies permet d'attaquer par la voie aérienne",
+    "utub": "Les |cffffff00Raies Volantes|r peuvent traverser la carte sans ce soucier des obstacles terrestres",
+    "build_time": 45,
+    "ua2g": "ward,structure,debris,item",
+    "atk2_sides": 10,
+    "atk2_dice": 2,
+    "atk2_dmg_base": 20,
+    "atk1_sides": 10,
+    "model": "units\\naga\\WindSerpent\\WindSerpent.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNWindSerpent.blp"
+   },
+   {
+    "id": "Hpal",
+    "base": "Hpal",
+    "name": "|cff0000ffReine mer|r",
+    "model": "Units\\Naga\\NagaSummoner\\NagaSummoner.mdl",
+    "usca": 1.0,
+    "selection_scale": 2.0,
+    "cost_lumber": 0,
+    "cost_gold": 80,
+    "food_used": 10,
+    "hero_str_per_lvl": 19,
+    "ustp": 3.0,
+    "hero_int_per_lvl": 20,
+    "uinp": 3.0,
+    "hero_agi_per_lvl": 21,
+    "hp_max": 200,
+    "hp_regen": 0.5,
+    "atk1_range_motion_buffer": 500,
+    "atk1_dmg_point": "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
+    "atk1_area_full": "air,ward,structure,debris,item,ground",
+    "atk1_sides": 4,
+    "atk1_range": 2.0,
+    "abilities_hero": "AOae,AOwk,A00B,A009",
+    "umvr": 0.5,
+    "tip": "Invoquer la |cff0000ffReine mer|r",
+    "hotkey": "Ressusciter la |cff0000ffReine mer|r",
+    "utub": "",
+    "armor": 1,
+    "proper_names": "|cff0000ffReine mer|r",
+    "usnd": "NagaSiren",
+    "ucar": 0,
+    "uhas": "",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNNagaSummoner.blp",
+    "icon_score_screen": "UI\\Glues\\ScoreScreen\\scorescreen-hero-taurenchieftain.blp",
+    "uaap": "large",
+    "uarm": "Flesh",
+    "ubs1": 0.957,
+    "udp1": 0.36,
+    "move_type": "amph",
+    "mana_regen": 0.1,
+    "point_value": 150,
+    "primary_attribute": "AGI",
+    "attack_walk": "Ressusciter la |cff0000ffReine mer|r",
+    "atk1_targets": 900,
+    "ubs2": 0.8,
+    "udp2": 0.4,
+    "mana_initial": 50,
+    "urq1": "hpxe",
+    "urq2": ""
+   },
+   {
+    "id": "Edem",
+    "base": "Edem",
+    "proper_names": "",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNChaosWarlockGreen.blp",
+    "usca": 0.7,
+    "uclg": 200,
+    "tint_r": 0,
+    "tint_b": 0,
+    "name": "Ninja utilisateur du Jyuuken",
+    "cost_gold": 0,
+    "cost_lumber": 0,
+    "hp_max": 250,
+    "uagp": 5.0,
+    "hero_agi_per_lvl": 10,
+    "hero_int_per_lvl": 2,
+    "hero_str_per_lvl": 2,
+    "ustp": 2.0,
+    "uinp": 1.0,
+    "hp_regen_type": "always",
+    "hp_regen": 0.75,
+    "build_time": 1,
+    "atk1_dmg_point": "",
+    "atk1_dice": 5,
+    "atk1_sides": 4,
+    "atk1_range": 0.9,
+    "abilities_hero": "",
+    "abilities_normal": "ACct,ACev",
+    "sight_day": 800,
+    "tip": "",
+    "hotkey": "",
+    "utub": "",
+    "uhot": "J",
+    "model": "units\\creeps\\assassin\\assassin.mdl"
+   },
+   {
+    "id": "hctw",
+    "base": "hctw",
+    "name": "|cff008000Jarre refuge|r",
+    "utub": "Augmente la capacité de refuge d'une |cff008000Jarre |r",
+    "tip": "Ajouter une |cff008000Jarre|r supplémentaire pour le refuge de serpents",
+    "uhot": "K",
+    "abilities_normal": "",
+    "atk1_range_motion_buffer": 650,
+    "atk1_weapon_type": "missile",
+    "atk1_dmg_point": "Abilities\\Weapons\\PoisonArrow\\PoisonArrowMissile.mdl",
+    "atk1_area_full": "air,ward,structure,debris,wall,item,ground",
+    "attacks_enabled": 1,
+    "atk1_dmg_base": 13,
+    "atk1_dice": 2,
+    "atk1_sides": 5,
+    "atk1_range": 0.9,
+    "upgrades_used": "",
+    "atk1_cooldown": 0,
+    "atk1_area_medium": 0,
+    "atk1_area_small": 0,
+    "atk1_projectile": "",
+    "atk1_targets": 1500,
+    "requirements": "",
+    "hp_max": 200,
+    "build_time": 20,
+    "usca": 0.8,
+    "tint_b": 0,
+    "cost_gold": 10,
+    "cost_lumber": 0,
+    "atk1_type": "pierce",
+    "model": "buildings\\naga\\TidalGuardian\\TidalGuardian.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNTidalGuardian.blp"
+   },
+   {
+    "id": "Hmkg",
+    "base": "Hmkg",
+    "point_value": 150,
+    "food_used": 10,
+    "cost_lumber": 0,
+    "cost_gold": 80,
+    "atk1_area_full": "air,debris,ground,item,structure,tree,wall,ward",
+    "abilities_hero": "AOwk,AEah,A00D,A007",
+    "model": "Units\\Creeps\\Lobstrokkblue\\Lobstrokkblue.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNLobstrokkBlue.blp",
+    "name": "|cff0000ffSeigneur des flots Makrura|r",
+    "tip": "Appeler |cff0000ffSeigneur des flots Makrura|r",
+    "utub": "",
+    "hotkey": "Ressusciter |cff0000ffSeigneur des flots Makrura|r",
+    "proper_names": "|cff0000ffSeigneur des flots",
+    "usnd": "Lobstrokk",
+    "attack_walk": "Ressusciter le |cff0000ffSeigneur des flots Makrura|r",
+    "uhas": "",
+    "usca": 1.4,
+    "selection_scale": 2.0,
+    "uarm": "Stone",
+    "atk1_range": 2.0,
+    "atk1_sides": 4,
+    "ubs2": 0.8,
+    "udp2": 0.4,
+    "move_type": "amph",
+    "hp_max": 200,
+    "hp_regen": 0.5,
+    "uinp": 3.0,
+    "hero_agi_per_lvl": 21,
+    "hero_int_per_lvl": 19,
+    "hero_str_per_lvl": 20,
+    "atk1_range_motion_buffer": 500,
+    "mana_regen": 0.1,
+    "atk1_targets": 900,
+    "mana_initial": 50,
+    "urq1": "hpxe",
+    "urq2": ""
+   },
+   {
+    "id": "Otch",
+    "base": "Otch",
+    "point_value": 150,
+    "food_used": 10,
+    "cost_lumber": 0,
+    "cost_gold": 80,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "abilities_hero": "AOsh,AHab,AOwk,AEtq",
+    "model": "Units\\Naga\\NagaSummoner\\NagaSummoner.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNNagaSummoner.blp",
+    "name": "|cff0000ffInvocatrice Naga|r",
+    "tip": "Appeler |cff0000ffInvocatrice Naga|r",
+    "utub": "|cff0000ffInvocatrice Naga|r est dotée d'une force considérable.",
+    "hotkey": "Ressusciter |cff0000ffInvocatrice Naga|r",
+    "proper_names": "|cff0000ffInvocatrice Naga|r",
+    "usnd": "NagaSiren",
+    "attack_walk": ""
+   },
+   {
+    "id": "Ekee",
+    "base": "Ekee",
+    "point_value": 150,
+    "food_used": 10,
+    "cost_lumber": 0,
+    "cost_gold": 80,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground",
+    "name": "|cff0000ffSeigneur Mymidon|r",
+    "proper_names": "|cff0000ffSeigneur Mymidon|r",
+    "abilities_hero": "AHfa,AEah,AOwk,ANr2",
+    "tip": "Appeler |cff0000ffSeigneur Mymidon|r",
+    "utub": "|cff0000ffSeigneur Mymidon|r vous montrera comment l'expérience du combat et la pratique de la perversité vous permettent de gagner la partie.",
+    "hotkey": "Ressusciter |cff0000ffSeigneur Mymidon|r",
+    "model": "units\\naga\\NagaMyrmidon\\NagaMyrmidon.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNNagaMyrmidon.blp",
+    "usnd": "NagaMyrmidon",
+    "atk1_dmg_point": "Abilities\\Weapons\\FireBallMissile\\FireBallMissile.mdl",
+    "attack_walk": ""
+   },
+   {
+    "id": "Edmm",
+    "base": "Edmm",
+    "point_value": 150
+   },
+   {
+    "id": "Uwar",
+    "base": "Uwar",
+    "abilities_hero": "AOcl,AUfn,AHmt,AHhb",
+    "abilities_normal": "",
+    "hp_max": 100,
+    "defense_type": "hero",
+    "atk1_targets": 1200,
+    "point_value": 150,
+    "food_used": 10,
+    "cost_lumber": 0,
+    "cost_gold": 80
+   },
+   {
+    "id": "Ulic",
+    "base": "Ulic",
+    "cost_gold": 80,
+    "cost_lumber": 0,
+    "food_used": 10,
+    "point_value": 150,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground",
+    "name": "|cff0000ffSeigneur Tsukar|r",
+    "utub": "|cff0000ffSeigneur Tsukar|r est un Héro capable de faire bien des miracles à l'aide de ses attaques à distance.",
+    "tip": "Appeler |cff0000ffSeigneur Tsukar|r",
+    "hotkey": "Ressusciter |cff0000ffSeigneur Tsukar|r",
+    "abilities_hero": "AEer,AEim,AOwk,AOeq",
+    "proper_names": "|cff0000ffSeigneur Tsukar|r",
+    "atk1_dmg_point": "abilities\\weapons\\catapult\\catapultmissile.mdl",
+    "model": "Units\\Creeps\\tuskar\\tuskar.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNTuskaarBrown.blp",
+    "attack_walk": "",
+    "usnd": "Knight"
+   },
+   {
+    "id": "ntor",
+    "base": "ntor",
+    "hp_max": 400,
+    "abilities_normal": "A000,Atdg,Atsp,Atwa,Aasl"
+   },
+   {
+    "id": "halt",
+    "base": "halt",
+    "trains": "Hpal,Hamg,Hmkg,Hblm",
+    "name": "|cff00ff00Autel des profondeurs|r",
+    "tip": "Construire un |cff00ff00Autel des profondeurs|r",
+    "cost_lumber": 0,
+    "cost_gold": 60,
+    "hp_max": 600,
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNAltarOfDepths.blp",
+    "model": "buildings\\naga\\AltarOfDepths\\AltarOfDepths.mdl",
+    "special_ability": "buildings\\naga\\AltarOfDepths\\AltarOfDepths.mdl"
+   },
+   {
+    "id": "Hamg",
+    "base": "Hamg",
+    "abilities_hero": "AEar,AOwk,A006,A00E",
+    "uhas": "",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNNagaMyrmidon.blp",
+    "icon_score_screen": "UI\\Glues\\ScoreScreen\\scorescreen-hero-keeperofthegrove.blp",
+    "model": "units\\naga\\NagaMyrmidon\\NagaMyrmidon.mdl",
+    "ulpx": 0.0,
+    "ulpz": 60.0,
+    "selection_scale": 2.0,
+    "ushh": 200.0,
+    "ushw": 200.0,
+    "special_ability": "Units\\NightElf\\Illidan\\Illidan.mdl",
+    "uacq": 500.0,
+    "ubs1": 0.77,
+    "udp1": 0.4,
+    "atk1_range": 2.0,
+    "uma1": 0.1,
+    "atk1_area_full": "debris,ground,item,structure,ward",
+    "ubs2": 0.8,
+    "udp2": 0.4,
+    "armor": 1,
+    "move_speed": 270,
+    "umvr": 0.4,
+    "move_type": "amph",
+    "umsl": "",
+    "usnd": "NagaMyrmidon",
+    "uagp": 1.5,
+    "food_used": 10,
+    "ufor": 0,
+    "cost_gold": 80,
+    "hp_max": 200,
+    "hp_regen": 0.5,
+    "uinp": 3.0,
+    "cost_lumber": 0,
+    "mana_regen": 0.1,
+    "point_value": 150,
+    "primary_attribute": "STR",
+    "hero_agi_per_lvl": 19,
+    "hero_int_per_lvl": 20,
+    "hero_str_per_lvl": 21,
+    "ustp": 3.0,
+    "name": "|cff0000ffSeigneur Mymidon|r",
+    "proper_names": "|cff0000ffSeigneur Mymidon|r",
+    "attack_walk": "Ressusciter |cff0000ffSeigneur Mymidon|r",
+    "tip": "Invoquer un |cff0000ffSeigneur Mymidon|r",
+    "utub": "",
+    "hotkey": "Ressusciter |cff0000ffSeigneur Mymidon|r",
+    "atk1_range_motion_buffer": 500,
+    "mana_initial": 50,
+    "urq1": "hpxe",
+    "urq2": ""
+   },
+   {
+    "id": "Hblm",
+    "base": "Hblm",
+    "abilities_hero": "A002,A00F,AUau,AOwk",
+    "uhas": "",
+    "abilities_normal": "AInv",
+    "uabs": "AInv",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNSpiderCrabBehemoth.blp",
+    "model": "Units\\Creeps\\SpiderCrabBehemoth\\SpiderCrabBehemoth.mdl",
+    "usca": 1.0,
+    "selection_scale": 2.0,
+    "uacq": 500.0,
+    "uarm": "Stone",
+    "atk1_range": 2.0,
+    "atk1_dmg_point": "Abilities\\Weapons\\SludgeMissile\\SludgeMissile.mdl",
+    "atk1_range_motion_buffer": 500,
+    "atk1_area_full": "air,debris,ground,item,structure,tree,wall,ward",
+    "ubs2": 0.8,
+    "udp2": 0.4,
+    "armor": 1,
+    "move_speed": 270,
+    "move_type": "amph",
+    "usnd": "SpiderCrab",
+    "food_used": 10,
+    "ufor": 0,
+    "cost_gold": 80,
+    "hp_max": 200,
+    "hp_regen": 0.5,
+    "mana_regen": 0.1,
+    "mana_initial": 50,
+    "cost_lumber": 0,
+    "hero_agi_per_lvl": 20,
+    "hero_int_per_lvl": 21,
+    "hero_str_per_lvl": 19,
+    "ustp": 3.0,
+    "urq1": "hpxe",
+    "urq2": "",
+    "name": "|cff0000ffSeigneur Tamatoa|r",
+    "proper_names": "|cff0000ffSeigneur Tamatoa|r",
+    "attack_walk": "Ressusciter le |cff0000ffSeigneur Tamatoa|r",
+    "tip": "Invoquer le |cff0000ffSeigneur Tamatoa|r",
+    "utub": "",
+    "hotkey": "Ressusciter le |cff0000ffSeigneur Tamatoa|r",
+    "button_x": 3,
+    "button_y": 2
+   },
+   {
+    "id": "hgtw",
+    "base": "hgtw",
+    "uabs": "Ahar,Amil,Ahrp",
+    "abilities_normal": "Ahar,Amil,Ahrp",
+    "atk1_dmg_base": 1,
+    "unit_type": "peon",
+    "atk1_sides": 1,
+    "sight_day": 1000,
+    "usin": 1000
+   }
+  ],
+  "custom": [
+   {
+    "id": "oC00",
+    "base": "opeo",
+    "name": "|cff0000ffRequin planctonphile|r",
+    "model": "Units\\Creeps\\FacelessOne\\FacelessOne.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNFacelessOne.blp",
+    "usca": 1.0,
+    "cost_gold": 500,
+    "food_used": 0,
+    "hp_max": 1000,
+    "abilities_normal": "ACdm,ACbl,ACfa,ACtb",
+    "mana_max": 150,
+    "mana_regen": 10.0,
+    "ubsi": 0,
+    "button_x": 0,
+    "ubdi": 0,
+    "upgrades_used": "",
+    "builds": "hC14,hC15,hC03,hC27,oC05,oC11,oC13,oC20,oC23,halt,oC08",
+    "move_speed": 300,
+    "defense_type": "hero",
+    "usnd": "GiantSeaTurtle",
+    "attacks_enabled": 0
+   },
+   {
+    "id": "zC02",
+    "base": "zmar",
+    "name": "|cff0000ffTortue Terrestre|r",
+    "usca": 0.5,
+    "tint_r": 0,
+    "tint_b": 0,
+    "ucol": 16.0,
+    "cost_gold": 0,
+    "food_used": 0,
+    "build_time": 15,
+    "upgrades_used": "",
+    "atk1_dmg_base": 5,
+    "atk1_sides": 3,
+    "tip": "Entrainer une |cff0000ffTortue Terrestre|r",
+    "uhot": "A",
+    "utub": "Une Tortue attaquant à distance.",
+    "button_x": 0,
+    "ubdi": 0,
+    "ubsi": 0,
+    "hp_max": 225,
+    "sight_day": 500,
+    "armor": 3,
+    "point_value": 7,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground",
+    "model": "Units\\Creeps\\DragonSeaTurtleRange\\DragonSeaTurtleRange.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNSeaTurtleRed.blp",
+    "atk1_dmg_point": "Abilities\\Weapons\\SludgeMissile\\SludgeMissile.mdl",
+    "atk1_weapon_type": "mline",
+    "race": "human",
+    "cargo_size": 0,
+    "armor_upgrade_bonus": 5,
+    "uarm": "Ethereal"
+   },
+   {
+    "id": "hC03",
+    "base": "hbar",
+    "name": "Camp de |cffd45e19Tortues|r",
+    "upat": "PathTextures\\4x4SimpleSolid.blp",
+    "selection_scale": 0.8,
+    "cost_gold": 50,
+    "cost_lumber": 0,
+    "build_time": 20,
+    "trains": "zC02",
+    "upgrades_used": "",
+    "researches": "",
+    "utub": "Les |cffd45e19Tortues|r sont capables d'attaquer à distance des ennemis ou des bâtiments.",
+    "tip": "Construire un camp de |cffd45e19Tortues|r, |cffffff00Necessite de l'eau.|r",
+    "hp_max": 500,
+    "model": "Doodads\\Ruins\\Water\\CoralArch\\CoralArch0.mdl",
+    "food_used": 4,
+    "uhot": "M",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNSeaTurtleRed.blp",
+    "special_ability": "buildings\\naga\\TempleofTides\\TempleofTides.mdl",
+    "ushb": "",
+    "ubertip": "",
+    "usca": 0.5,
+    "usew": 1,
+    "team_color": 1,
+    "build_sound": "",
+    "upap": "unfloat",
+    "usit": 3,
+    "usnd": "AncientOfWar",
+    "button_x": 2,
+    "button_y": 2
+   },
+   {
+    "id": "oC05",
+    "base": "owtw",
+    "name": "|cff008000Jarre Oublié|r",
+    "model": "buildings\\naga\\TidalGuardian\\TidalGuardian.mdl",
+    "usca": 0.6,
+    "tint_b": 0,
+    "utub": "La|cff008000 jarre oublié|r est devenu le nid d'un serpent de mer. Construction rapide, courte portée.",
+    "uhot": "T",
+    "tip": "Déposer une |cff008000Jarre|r pour qu'un serpent y trouve refuge",
+    "atk1_dmg_base": 9,
+    "atk1_dmg_point": "Abilities\\Weapons\\ChimaeraAcidMissile\\ChimaeraAcidMissile.mdl",
+    "requirements": "",
+    "upgrades_used": "",
+    "hp_max": 100,
+    "build_time": 7,
+    "cost_gold": 5,
+    "cost_lumber": 0,
+    "sight_day": 800,
+    "atk1_range_motion_buffer": 600,
+    "upgrades_to": "hctw",
+    "atk1_range": 0.7,
+    "atk1_targets": 1500,
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNTidalGuardian.blp",
+    "point_value": 10,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground",
+    "ushb": "",
+    "button_y": 1,
+    "button_x": 0
+   },
+   {
+    "id": "oC06",
+    "base": "opeo",
+    "name": "|cff0000ffNaga d'eau douce|r",
+    "model": "Units\\Creeps\\FacelessOne\\FacelessOne.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNFacelessOne.blp",
+    "builds": "hC14,hC15,hC03,hC27,oC05,oC11,oC13,oC20,hC38,oC23,oC08",
+    "usca": 1.0,
+    "cost_gold": 500,
+    "food_used": 0,
+    "hp_max": 1000,
+    "mana_max": 150,
+    "mana_regen": 10.0,
+    "upgrades_used": "",
+    "abilities_normal": "ACbl,ACdm,ACfa,ACtb",
+    "move_speed": 300,
+    "button_x": 0,
+    "ubdi": 0,
+    "ubsi": 0,
+    "defense_type": "hero",
+    "usnd": "GiantSeaTurtle",
+    "attacks_enabled": 0
+   },
+   {
+    "id": "oC07",
+    "base": "owtw",
+    "name": "Sas d'entrainement de Ninja",
+    "model": "Doodads\\Ruins\\Structures\\RuinsBuilding\\RuinsBuilding1.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNChaosWarlockGreen.blp",
+    "usca": 0.8,
+    "cost_lumber": 0,
+    "cost_gold": 30,
+    "build_time": 35,
+    "requirements": "",
+    "upgrades_used": "",
+    "abilities_normal": "Abds",
+    "tip": "Entrainer un Ninja utilisateur du Jyuuken.",
+    "uhot": "A",
+    "utub": "Le Jyuuken est un art de combat au corps à corps. Particulièrement dévastateur, ce taijutsu est le plus puissant au niveau des effets à Long terme.",
+    "sight_day": 800,
+    "ucol": 75.0,
+    "atk1_range_motion_buffer": 100,
+    "food_used": 5,
+    "point_value": 75
+   },
+   {
+    "id": "oC09",
+    "base": "owtw",
+    "name": "Ninja marionnettiste",
+    "cost_gold": 40,
+    "cost_lumber": 0,
+    "build_time": 30,
+    "hp_max": 800,
+    "requirements": "",
+    "model": "units\\creeps\\IronGolem\\IronGolem",
+    "usca": 0.8,
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNArmorGolem.blp",
+    "upgrades_used": "",
+    "sight_day": 800,
+    "tip": "Former un ninja marionnettiste.",
+    "uhot": "G",
+    "utub": "Une marionnette est capable de faire des dégats , toutefoi sa capacité n'est pas treès puissante.",
+    "usnd": "IronGolem",
+    "food_used": 5,
+    "attacks_enabled": 0,
+    "ua2r": 600,
+    "atk2_type": "pierce",
+    "ua2w": "mbounce",
+    "ua2m": "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl",
+    "atk1_targets": 1500,
+    "atk2_targets": 1000,
+    "ua2g": "ward,structure,debris,item,ground",
+    "atk1_dmg_point": "Abilities\\Weapons\\Mortar\\MortarMissile.mdl",
+    "atk1_dmg_base": 10,
+    "atk2_dmg_base": 5,
+    "atk2_sides": 5,
+    "atk2_dice": 1,
+    "atk2_range": 0.75,
+    "abilities_normal": "",
+    "point_value": 125
+   },
+   {
+    "id": "oC10",
+    "base": "ohun",
+    "name": "Ninja marionettiste",
+    "model": "units\\creeps\\IronGolem\\IronGolem",
+    "usca": 0.8,
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNArmorGolem.blp",
+    "cost_gold": 0,
+    "cost_lumber": 0,
+    "food_used": 5,
+    "defense_type": "large",
+    "hp_max": 600,
+    "requirements": "",
+    "upgrades_used": "Remg",
+    "atk1_dmg_point": "Abilities\\Weapons\\Mortar\\MortarMissile.mdl",
+    "atk1_range": 2.0,
+    "atk1_dmg_base": 25,
+    "atk1_dice": 10,
+    "atk1_cooldown": 100,
+    "atk1_area_medium": 150,
+    "atk1_area_small": 250,
+    "atk1_sides": 10,
+    "sight_day": 800,
+    "button_x": 0,
+    "ubdi": 0,
+    "ubsi": 0,
+    "armor": 8,
+    "usnd": "SteamTank",
+    "atk1_projectile": "enemies,ground",
+    "atk1_weapon_type": "msplash",
+    "atk1_targets": 800,
+    "tip": "",
+    "utub": "",
+    "attacks_enabled": 3,
+    "ua2r": 550,
+    "atk2_type": "pierce",
+    "ua2w": "mbounce",
+    "ua2m": "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl",
+    "atk2_targets": 800,
+    "ua2g": "ward,debris,item,ground",
+    "atk2_dmg_base": 5,
+    "atk2_sides": 10,
+    "atk2_dice": 10,
+    "atk2_range": 1.0,
+    "atk1_range_motion_buffer": 650,
+    "atk2_cooldown": 400,
+    "move_height": 50.0,
+    "atk1_type": "siege",
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item",
+    "uacq": 650.0,
+    "ua2p": "ward,debris,item,ground",
+    "point_value": 125
+   },
+   {
+    "id": "oC11",
+    "base": "owtw",
+    "name": "|cff800080Démolisseur|r",
+    "model": "units\\orc\\catapult\\catapult_V1.mdl",
+    "usca": 0.8,
+    "uclg": 200,
+    "build_time": 15,
+    "hp_max": 150,
+    "requirements": "",
+    "cost_gold": 5,
+    "cost_lumber": 0,
+    "upgrades_used": "",
+    "atk1_dmg_point": "Abilities\\Weapons\\SteamTank\\SteamTankImpact.mdl",
+    "atk1_range": 1.2,
+    "abilities_normal": "Abds",
+    "sight_day": 80,
+    "atk1_range_motion_buffer": 700,
+    "tip": "Construire un |cff800080Démolisseur|r fixe.",
+    "utub": "Le |cff800080démolisseur|r Construction lente, moyenne portée.",
+    "uhot": "C",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNDemolisher.blp",
+    "atk1_dice": 3,
+    "usnd": "Ballista",
+    "upgrades_to": "oC31",
+    "atk1_type": "siege",
+    "point_value": 15,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground",
+    "button_y": 1,
+    "button_x": 1
+   },
+   {
+    "id": "nC12",
+    "base": "nvlw",
+    "name": "Maîtresse",
+    "usca": 5.0,
+    "hp_max": 5000,
+    "targeted_as": "air",
+    "defense_type": "normal",
+    "tip": "",
+    "utub": "",
+    "move_speed": 150,
+    "hp_regen_type": "none",
+    "hp_regen": 0.0
+   },
+   {
+    "id": "oC13",
+    "base": "owtw",
+    "model": "Doodads\\Ruins\\Props\\RuinsObelisk\\RuinsObelisk0.mdl",
+    "name": "|cffffff00Obélisque|r",
+    "icon": "ReplaceableTextures\\PassiveButtons\\PASBTNMagicalSentry.blp",
+    "hp_max": 250,
+    "cost_gold": 60,
+    "cost_lumber": 0,
+    "build_time": 25,
+    "upgrades_used": "",
+    "requirements": "",
+    "atk1_range_motion_buffer": 550,
+    "atk1_dmg_point": "Abilities\\Weapons\\BansheeMissile\\BansheeMissile.mdl",
+    "atk1_dmg_base": 30,
+    "abilities_normal": "Adt1,Aeth",
+    "sight_day": 800,
+    "tip": "Construire un |cffffff00Obélisque|r",
+    "uhot": "P",
+    "utub": "|cffffff00L'Obélisque|r est capable de décerner les Heros invisible",
+    "atk1_dice": 4,
+    "usnd": "AltarOfKings",
+    "usca": 1.1,
+    "defense_type": "normal",
+    "atk1_targets": 1000,
+    "upgrades_to": "oC25",
+    "atk1_range": 0.8,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "atk1_type": "normal",
+    "point_value": 20,
+    "turn_rate": 1.1,
+    "button_x": 2,
+    "button_y": 1,
+    "uabs": "Adt1,Aeth"
+   },
+   {
+    "id": "hC14",
+    "base": "htow",
+    "name": "Camp de |cffffff00Murloc|r",
+    "upat": "PathTextures\\4x4SimpleSolid.blp",
+    "ucol": 144.0,
+    "selection_scale": 1.0,
+    "cost_gold": 20,
+    "cost_lumber": 0,
+    "food_made": 0,
+    "build_time": 35,
+    "hp_max": 650,
+    "upgrades_used": "",
+    "atk1_dmg_point": "",
+    "atk1_targets": 0,
+    "abilities_normal": "",
+    "tip": "Construire une camp de |cffffff00Murloc|r",
+    "uhot": "M",
+    "utub": "Ce camp spécialisé dans la formation de |cffffff00Murloc|r.",
+    "upgrades_to": "hC15",
+    "trains": "hC16",
+    "food_used": 2,
+    "unit_type": "mechanical",
+    "special_ability": "buildings\\other\\MurlocHut0\\MurlocHut0.mdl",
+    "ubertip": "",
+    "ushb": "",
+    "model": "buildings\\other\\MurlocHut0\\MurlocHut0.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNMurloc.blp",
+    "researches": "",
+    "priority": 20,
+    "usit": 8,
+    "usnd": "Murloc",
+    "button_y": 2
+   },
+   {
+    "id": "hC15",
+    "base": "hkee",
+    "name": "Camp de |cffffff00Makrura|r",
+    "ucol": 144.0,
+    "upat": "PathTextures\\6x6SimpleSolid.blp",
+    "selection_scale": 1.0,
+    "cost_gold": 30,
+    "cost_lumber": 0,
+    "food_made": 0,
+    "build_time": 40,
+    "hp_max": 750,
+    "upgrades_used": "",
+    "atk1_dmg_point": "",
+    "atk1_targets": 0,
+    "abilities_normal": "",
+    "tip": "Construire un Camp de |cffffff00Makrura|r",
+    "utub": "Améliorer pour evoluer les |cffffff00Murloc|r en |cffffff00Makrura|r",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNLobstrokkRed.blp",
+    "trains": "hC17",
+    "uhot": "A",
+    "food_used": 3,
+    "unit_type": "mechanical",
+    "model": "buildings\\other\\MurlocHut1\\MurlocHut1.mdl",
+    "ushb": "",
+    "ubertip": "",
+    "researches": "",
+    "upgrades_to": "",
+    "priority": 1,
+    "usit": 2,
+    "point_value": 0,
+    "usnd": "Murloc",
+    "button_x": 1
+   },
+   {
+    "id": "hC16",
+    "base": "hfoo",
+    "name": "|cffffff00Murloc|r",
+    "usca": 0.5,
+    "ucol": 16.0,
+    "cost_gold": 0,
+    "food_used": 0,
+    "build_time": 16,
+    "hp_max": 125,
+    "upgrades_used": "",
+    "atk1_range_motion_buffer": 50,
+    "atk1_range": 1.0,
+    "abilities_normal": "",
+    "sight_day": 500,
+    "button_x": 0,
+    "ubdi": 0,
+    "ubsi": 0,
+    "tip": "Entrainer un |cffffff00Murloc|r",
+    "uhot": "L",
+    "utub": "|cffffff00Murloc|r prêt à se battre.",
+    "atk1_dmg_base": 5,
+    "atk1_sides": 5,
+    "atk1_dice": 2,
+    "armor": 1,
+    "point_value": 10,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "model": "units\\creeps\\MurlocWarrior\\MurlocWarrior_V1.mdl",
+    "special_ability": "units\\creeps\\MurlocWarrior\\MurlocWarrior_V1.mdl",
+    "usnd": "Murloc",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNMurloc.blp",
+    "priority": 0
+   },
+   {
+    "id": "hC17",
+    "base": "hkni",
+    "name": "|cffffff00Makrura|r",
+    "requirements": "hC15",
+    "upgrades_used": "",
+    "usca": 0.5,
+    "ucol": 17.0,
+    "selection_scale": 1.2,
+    "cost_gold": 0,
+    "cost_lumber": 0,
+    "food_used": 0,
+    "build_time": 20,
+    "hp_max": 200,
+    "atk1_range_motion_buffer": 50,
+    "atk1_dmg_base": 10,
+    "atk1_range": 1.1,
+    "sight_day": 500,
+    "button_x": 0,
+    "ubdi": 0,
+    "ubsi": 0,
+    "tip": "Entrainer un |cffffff00Makrura|r",
+    "utub": "Le |cffffff00Makrura|r se déplace plus rapidement et supporte mieux les attaques ennemies.",
+    "point_value": 20,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "special_ability": "Units\\Creeps\\Lobstrokkred\\Lobstrokkred.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNLobstrokkRed.blp",
+    "model": "Units\\Creeps\\Lobstrokkred\\Lobstrokkred.mdl",
+    "armor": 3,
+    "priority": 1
+   },
+   {
+    "id": "oC18",
+    "base": "owtw",
+    "name": "Entrainement d'un |cff808000Garde Royale|r",
+    "model": "Doodads\\Ruins\\Structures\\RuinsBuilding\\RuinsBuilding1.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNNagaMyrmidonRoyalGuard.blp",
+    "usca": 0.8,
+    "cost_gold": 60,
+    "cost_lumber": 0,
+    "requirements": "",
+    "upgrades_used": "",
+    "abilities_normal": "Abds",
+    "sight_day": 800,
+    "tip": "Entrainer un |cff808000Garde Royale|r",
+    "uhot": "Z",
+    "utub": "Tel un pouvoir surnaturel, le chidori est dévastateur et ses dégats sont condérables.",
+    "build_time": 60,
+    "food_used": 10
+   },
+   {
+    "id": "oC21",
+    "base": "otrb",
+    "name": "Tank Miniature Matchbox en kit",
+    "model": "units\\human\\WarWagon\\WarWagon",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNSteamTank.blp",
+    "usca": 0.5,
+    "ucol": 36.0,
+    "upat": "PathTextures\\4x4SimpleSolid.blp",
+    "selection_scale": 0.5,
+    "cost_gold": 50,
+    "cost_lumber": 0,
+    "food_made": 0,
+    "build_time": 30,
+    "upgrades_used": "",
+    "atk1_range_motion_buffer": 0,
+    "atk1_type": "unknown",
+    "atk1_weapon_type": "normal",
+    "abilities_normal": "",
+    "tip": "Assembler une Maquette Tan|cffffcc00k|r",
+    "uhot": "K",
+    "utub": "Une char d'assaut en maquette pour les adeptes du Blietzkrigg.|n|n|cffffcc00Attaque les unités terrestres et aériennes, dégats supplémentaires sur les batiments.|r",
+    "food_used": 2,
+    "point_value": 50
+   },
+   {
+    "id": "hC22",
+    "base": "hmtt",
+    "name": "Tank Miniature Matchbox",
+    "usca": 0.5,
+    "ucol": 24.0,
+    "selection_scale": 1.4,
+    "cost_gold": 0,
+    "cost_lumber": 0,
+    "food_used": 2,
+    "build_time": 1,
+    "hp_max": 500,
+    "upgrades_used": "",
+    "atk1_range_motion_buffer": 200,
+    "atk1_area_full": "tree,ward,debris,wall,item,ground",
+    "atk1_dmg_base": 5,
+    "atk1_sides": 5,
+    "atk1_range": 2.0,
+    "sight_day": 800,
+    "requirements": "",
+    "atk1_projectile": "ground,structure",
+    "atk1_dice": 5,
+    "atk1_cooldown": 200,
+    "tip": "",
+    "utub": "",
+    "attacks_enabled": 3,
+    "ua2r": 200,
+    "atk2_type": "siege",
+    "ua2w": "instant",
+    "ua2m": "Abilities\\Weapons\\SteamTank\\SteamTankImpact.mdl",
+    "atk2_targets": 2500,
+    "ua2g": "structure",
+    "atk2_dmg_base": 5,
+    "atk2_sides": 10,
+    "atk2_dice": 10,
+    "atk1_type": "pierce",
+    "point_value": 50
+   },
+   {
+    "id": "oC23",
+    "base": "obar",
+    "name": "|cffc0c0c0Ingénieur|r",
+    "trains": "nC24",
+    "researches": "",
+    "hp_max": 700,
+    "hp_regen": 2.0,
+    "cost_lumber": 0,
+    "cost_gold": 30,
+    "upat": "PathTextures\\8x8SimpleSolid.blp",
+    "ucol": 90.0,
+    "upgrades_used": "",
+    "abilities_normal": "",
+    "utub": "Appel de la mer ! Un ingénieur vient vous aider.|n|n|cffffcc00Unité de construction avancée.|r",
+    "tip": "|cffc0c0c0Ingénieur|r",
+    "hp_regen_type": "always",
+    "uhot": "I",
+    "model": "Units\\Creeps\\HeroGoblinAlchemist\\HeroGoblinAlchemist.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNHeroAlchemist.blp",
+    "usnd": "GoblinSapper",
+    "usca": 1.5,
+    "button_x": 2
+   },
+   {
+    "id": "uC28",
+    "base": "umtw",
+    "name": "Lance Surikens mobile",
+    "upgrades_used": "",
+    "cost_lumber": 0,
+    "hp_max": 500,
+    "hp_regen": 3.5,
+    "attacks_enabled": 1,
+    "atk1_targets": 500,
+    "atk1_area_full": "ward,structure,debris,item,ground",
+    "atk1_range": 5.0,
+    "atk1_cooldown": 200,
+    "move_type": "",
+    "move_speed": 25,
+    "umvr": 0.1,
+    "abilities_normal": "",
+    "utub": "",
+    "tip": "",
+    "food_used": 10,
+    "build_time": 1,
+    "cost_gold": 100,
+    "atk1_range_motion_buffer": 1700,
+    "uhot": "O",
+    "atk1_dice": 4,
+    "model": "units\\nightelf\\Ballista\\Ballista.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNBallista.blp",
+    "atk1_area_medium": 250,
+    "atk1_projectile": "allies,ward,structure,debris,enemies,item,ground",
+    "atk1_area_small": 300,
+    "atk1_sides": 20,
+    "atk1_dmg_point": "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl"
+   },
+   {
+    "id": "nC29",
+    "base": "ndgt",
+    "name": "Bombe Aérosol",
+    "cost_lumber": 0,
+    "cost_gold": 100,
+    "hp_max": 600,
+    "atk1_range_motion_buffer": 1100,
+    "atk1_type": "spells",
+    "atk1_dmg_base": 30,
+    "atk1_range": 0.6,
+    "utub": "Une bombe aérosol nocive pour la santé.|n|n|cffffcc00Attaque les unités terrestres et aériennes.|r",
+    "tip": "Déposer une Bombe |cffffcc00A|rerosol",
+    "uhot": "A",
+    "usca": 0.8,
+    "atk1_dmg_point": "Abilities\\Weapons\\ZigguratMissile\\ZigguratMissile.mdl",
+    "atk1_targets": 900,
+    "upgrades_to": "nC01",
+    "cargo_size": 0
+   },
+   {
+    "id": "oC25",
+    "base": "owtw",
+    "name": "|cffffff00Obélisque amélioré|r",
+    "model": "Doodads\\Ruins\\Props\\RuinsObelisk\\RuinsObelisk0.mdl",
+    "icon": "ReplaceableTextures\\PassiveButtons\\PASBTNMagicalSentry.blp",
+    "usnd": "SpiritWolf",
+    "cost_lumber": 0,
+    "cost_gold": 60,
+    "build_time": 30,
+    "hp_max": 400,
+    "requirements": "",
+    "defense_type": "normal",
+    "armor": 6,
+    "atk1_dmg_base": 50,
+    "atk1_targets": 1050,
+    "atk1_range_motion_buffer": 600,
+    "atk1_dmg_point": "Abilities\\Weapons\\BansheeMissile\\BansheeMissile.mdl",
+    "atk1_dice": 6,
+    "atk1_sides": 5,
+    "sight_day": 800,
+    "tip": "Améliorer |cffffff00l'Obélisque|r",
+    "uhot": "A",
+    "utub": "L'amélioration de |cffffff00l'obélisque|r permet de decerner les Heros invisible, et augmente les degats.",
+    "atk1_range": 0.7,
+    "usca": 1.4,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "atk1_type": "chaos",
+    "point_value": 25,
+    "tint_b": 0,
+    "uclg": 0,
+    "abilities_normal": "Adt1",
+    "turn_rate": 1.1,
+    "uabs": ""
+   },
+   {
+    "id": "oC04",
+    "base": "owtw",
+    "name": "|cff800080Démolisseur Mobile|r",
+    "requirements": "",
+    "tip": "Construire un |cff800080Démolisseur|r mobile",
+    "uhot": "C",
+    "utub": "Version améliorée du |cff800080Démolisseur|r fixe, plus lent mais plus puissant, trés grande portée.",
+    "model": "units\\orc\\catapult\\catapult_V1.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNDemolisher.blp",
+    "cost_gold": 100,
+    "cost_lumber": 0,
+    "build_time": 60,
+    "hp_max": 250,
+    "food_used": 10,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "atk1_dmg_point": "Abilities\\Weapons\\SteamTank\\SteamTankImpact.mdl"
+   },
+   {
+    "id": "oC31",
+    "base": "owtw",
+    "name": "|cff800080Démolisseur Amélioré|r",
+    "model": "units\\orc\\catapult\\catapult_V1.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNDemolisher.blp",
+    "usnd": "Ballista",
+    "atk1_dmg_point": "Abilities\\Weapons\\SteamTank\\SteamTankImpact.mdl",
+    "atk1_dice": 5,
+    "atk1_dmg_base": 25,
+    "atk1_range": 1.2,
+    "atk1_sides": 5,
+    "requirements": "",
+    "upgrades_used": "",
+    "cost_lumber": 0,
+    "hp_max": 250,
+    "build_time": 30,
+    "armor": 4,
+    "cost_gold": 10,
+    "tip": "Améliorer le |cff800080Démolisseur|r",
+    "uhot": "L",
+    "utub": "Améliorer le |cff800080Démolisseur|r : cela permet une plus grande portée et une meilleure attaque.",
+    "atk1_range_motion_buffer": 850,
+    "atk1_type": "siege",
+    "point_value": 20,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground"
+   },
+   {
+    "id": "hC32",
+    "base": "hgry",
+    "name": "Bombe à Eau",
+    "model": "units\\nightelf\\Wisp\\Wisp",
+    "usca": 1.5,
+    "tint_r": 0,
+    "uclg": 0,
+    "food_used": 0,
+    "build_time": 30,
+    "cost_lumber": 0,
+    "cost_gold": 20,
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNWisp.blp",
+    "upgrades_used": "",
+    "atk1_range_motion_buffer": 90,
+    "atk1_dmg_base": 1000,
+    "atk1_dice": 100,
+    "atk1_sides": 100,
+    "atk1_weapon_type": "instant",
+    "atk1_dmg_point": "Abilities\\Weapons\\FrostWyrmMissile\\FrostWyrmMissile.mdx",
+    "atk1_targets": 1900,
+    "attacks_enabled": 0,
+    "atk1_range": 100.0,
+    "atk1_type": "siege",
+    "hp_max": 5,
+    "hp_regen": 0.0,
+    "abilities_normal": "Acrs",
+    "move_speed": 350,
+    "tip": "Gonfler une |cffffcc00B|rombe à Eau",
+    "uhot": "B",
+    "utub": "La bombe à eau peut détruire le château ennemi d'un seul coup !|n|n|cffffcc00Très fragile !|r",
+    "name_suffix": "unit",
+    "unit_type": "sapper",
+    "point_value": 30
+   },
+   {
+    "id": "oC33",
+    "base": "owtw",
+    "name": "Bombe à Eau",
+    "model": "units\\nightelf\\Wisp\\Wisp",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNWisp.blp",
+    "tint_r": 0,
+    "uclg": 0,
+    "requirements": "",
+    "armor": 0,
+    "build_time": 20,
+    "cost_lumber": 0,
+    "cost_gold": 13,
+    "tip": "Gonfler une |cffffcc00B|rombe à Eau",
+    "utub": "La bombe à eau peut détruire le château ennemi d'un seul coup !|n|n|cffffcc00Très fragile !|r",
+    "uhot": "B",
+    "usca": 1.5,
+    "hp_max": 50,
+    "point_value": 30
+   },
+   {
+    "id": "hC26",
+    "base": "hhou",
+    "name": "|cffff0000Geyser des pronfondeurs|r",
+    "food_made": 0,
+    "cost_lumber": 0,
+    "cost_gold": 400,
+    "build_time": 180,
+    "model": "Doodads\\Barrens\\Rocks\\Geyser\\Geyser2.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNOrbOfLightning.blp",
+    "hp_max": 50,
+    "armor": 15,
+    "upgrades_used": "",
+    "usca": 1.2,
+    "tip": "|cffff0000Geyser des pronfondeurs|r",
+    "utub": "Le|cffff0000 Geyser des profondeurs|r relache une telle quantitée d'eau que cela détruit tout les batiments ainsi que les étres vivants",
+    "uhot": "P",
+    "ubertip": "",
+    "special_ability": "Doodads\\Barrens\\Rocks\\Geyser\\Geyser2.mdl",
+    "trains": "hmpr"
+   },
+   {
+    "id": "hC27",
+    "base": "hbar",
+    "name": "Camp de |cffffff00Raies Volante|r",
+    "model": "buildings\\other\\HarpyNest\\HarpyNest.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNRavenForm.blp",
+    "usnd": "NagaMyrmidon",
+    "cost_lumber": 0,
+    "cost_gold": 60,
+    "build_time": 40,
+    "trains": "hgyr",
+    "upgrades_used": "",
+    "researches": "",
+    "hp_max": 500,
+    "tip": "Construire un camp de |cffffff00Raies Volante|r",
+    "uhot": "H",
+    "utub": "Les |cffffff00Raies Volante|r peuvent détruire des batiments ennemis. Ils peuvent aussi survoler toute la carte.",
+    "food_used": 4,
+    "ucol": 0.0,
+    "point_value": 35,
+    "ubertip": "",
+    "special_ability": "buildings\\other\\HarpyNest\\HarpyNest.mdl",
+    "ushb": "ShadowCannonTower",
+    "priority": 10,
+    "button_x": 3,
+    "button_y": 2
+   },
+   {
+    "id": "nC30",
+    "base": "ncnt",
+    "name": "|cff00ff00Barriére de Corail|r",
+    "cost_gold": 100,
+    "mana_max": 99999,
+    "mana_regen": 5.5,
+    "mana_initial": 500,
+    "build_time": 40,
+    "hp_max": 700,
+    "hp_regen": 5.0,
+    "hp_regen_type": "always",
+    "abilities_normal": "ACvp,Aoar",
+    "food_made": 20,
+    "tip": "La |cff00ff00Barriére de Corail|r permet d'augmenter la vitesse de recupération des unitées proches ainsi que leurs vitesses.",
+    "description": "",
+    "utub": "|cff00ff00Barriére de Corail|r",
+    "model": "Doodads\\Ruins\\Water\\Coral\\Coral9.mdl",
+    "usca": 1.05,
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNHeal.blp",
+    "race": "orc",
+    "uspe": 0
+   },
+   {
+    "id": "oC19",
+    "base": "opeo",
+    "name": "|cffc0c0c0Ingénieur|r",
+    "model": "Units\\Creeps\\HeroGoblinAlchemist\\HeroGoblinAlchemist.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNHeroAlchemist.blp",
+    "usca": 1.2,
+    "tint_r": 0,
+    "ucol": 0.0,
+    "usnd": "GoblinSapper",
+    "cost_gold": 0,
+    "build_time": 5,
+    "builds": "nC30,oC40,oC35,uC28,hC26,oC18",
+    "upgrades_used": "",
+    "attacks_enabled": 1,
+    "abilities_normal": "",
+    "tip": "",
+    "utub": "",
+    "food_used": 0,
+    "move_speed": 200,
+    "atk1_area_full": "tree",
+    "atk1_dmg_base": 100,
+    "atk1_range_motion_buffer": 50
+   },
+   {
+    "id": "hC34",
+    "base": "hgtw",
+    "name": "Volcan de Purée",
+    "model": "buildings\\other\\FountainOfMana\\FountainOfMana",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNFountainOfLife.blp",
+    "usnd": "FountainOfLifeBlood",
+    "abilities_normal": "Avul",
+    "uacq": 500.0,
+    "atk1_type": "chaos",
+    "atk1_dmg_point": "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMissile.mdl",
+    "atk1_area_full": "ward,structure,debris,item,ground",
+    "ucol": 130.0,
+    "uclg": 100,
+    "tint_b": 50,
+    "atk1_targets": 1000,
+    "atk1_range_motion_buffer": 1750
+   },
+   {
+    "id": "oC24",
+    "base": "otau",
+    "name": "|cff008000Esprit de l'Hydre|r",
+    "model": "Units\\Creeps\\Hydra\\Hydra.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNGreenHydra.blp",
+    "tint_b": 100,
+    "uclg": 150,
+    "ucol": 60.0,
+    "usnd": "Hydralisk",
+    "cost_gold": 0,
+    "cost_lumber": 0,
+    "food_used": 15,
+    "build_time": 1,
+    "hp_max": 1000,
+    "hp_regen": 0.0,
+    "requirements": "",
+    "upgrades_used": "",
+    "armor": 0,
+    "armor_upgrade_bonus": 0,
+    "defense_type": "hero",
+    "atk1_dmg_base": 50,
+    "atk1_sides": 25,
+    "abilities_normal": "",
+    "umvr": 0.25,
+    "tip": "",
+    "utub": "",
+    "atk1_cooldown": 100,
+    "atk1_area_medium": 200,
+    "atk1_area_small": 300,
+    "atk1_projectile": "allies,ward,structure,debris,enemies,item,ground",
+    "atk1_weapon_type": "msplash",
+    "atk1_targets": 1000,
+    "atk1_dice": 25,
+    "unit_type": "giant",
+    "point_value": 250,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "name_suffix": "|cff008000Esprit de l'Hydre|r",
+    "usca": 1.5,
+    "move_speed": 240,
+    "move_type": "amph"
+   },
+   {
+    "id": "oC35",
+    "base": "ofor",
+    "name": "|cff008000Esprit de l'Hydre|r",
+    "researches": "",
+    "upgrades_used": "",
+    "model": "Units\\Creeps\\Hydra\\Hydra.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNGreenHydra.blp",
+    "usca": 1.5,
+    "uclg": 150,
+    "tint_b": 100,
+    "usnd": "Hydralisk",
+    "food_used": 15,
+    "cost_gold": 100,
+    "unit_type": "",
+    "abilities_normal": "",
+    "tip": "Invoquer |cff008000l'Esprit de l'Hydre|r",
+    "uhot": "N",
+    "utub": "|cff008000Esprit de l'Hydre|r ravage tout sur son passage. Il est l'un des derniers Monstres encore vivant.",
+    "uacq": 500.0,
+    "point_value": 250
+   },
+   {
+    "id": "oC08",
+    "base": "owtw",
+    "name": "Le|cffff8080 Corail|r produit de la nourriture - 4 Food",
+    "model": "buildings\\naga\\CoralBed\\CoralBed.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNCoralBed.blp",
+    "usca": 0.5,
+    "cost_gold": 15,
+    "cost_lumber": 0,
+    "food_made": 4,
+    "build_time": 15,
+    "hp_max": 300,
+    "requirements": "",
+    "atk1_range_motion_buffer": 500,
+    "atk1_dmg_point": "Doodads\\Ruins\\Props\\Ruins_Shells\\Ruins_Shells1.mdl",
+    "atk1_type": "normal",
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "atk1_targets": 500,
+    "atk1_range": 1.5,
+    "abilities_normal": "ACav",
+    "tip": "Préparer le repas des unités - 4 foods",
+    "utub": "Le|cffff8080 Corail|r produit un peu de nourriture. Envoie des coquillages  si un ennemi s'approche.",
+    "point_value": 35,
+    "button_x": 0
+   },
+   {
+    "id": "oC36",
+    "base": "owtw",
+    "name": "|cff808080Antre des Profondeurs|r",
+    "model": "buildings\\naga\\SpawningGrounds\\SpawningGrounds.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNCastle.blp",
+    "usnd": "ElvenGuardTower",
+    "requirements": "",
+    "upgrades_used": "",
+    "hp_max": 3000,
+    "atk1_range_motion_buffer": 600,
+    "atk1_dmg_point": "Abilities\\Weapons\\DragonHawkMissile\\DragonHawkMissile.mdl",
+    "atk1_targets": 1500,
+    "atk1_range": 0.8,
+    "ua2r": 1000,
+    "atk2_type": "siege",
+    "ua2w": "msplash",
+    "ua2m": "Abilities\\Weapons\\DragonHawkMissile\\DragonHawkMissile.mdl",
+    "atk2_targets": 1000,
+    "ua2g": "ward,structure,debris,item,ground",
+    "atk2_range": 2.0,
+    "atk1_sides": 8,
+    "atk2_dmg_base": 20,
+    "atk2_dice": 2,
+    "atk2_sides": 8,
+    "atk2_cooldown": 100,
+    "ua2h": 150,
+    "ua2q": 200,
+    "ua2p": "ward,structure,debris,item,ground",
+    "abilities_normal": "",
+    "uacq": 1000.0,
+    "tint_b": 0,
+    "ucol": 180.0,
+    "name_suffix": "final",
+    "selection_scale": 5.0,
+    "usca": 1.25
+   },
+   {
+    "id": "nC01",
+    "base": "negf",
+    "name": "Bombe Aérosol Incendiaire",
+    "build_time": 30,
+    "cost_gold": 75,
+    "cost_lumber": 0,
+    "atk1_type": "spells",
+    "atk1_area_full": "air,ward,structure,debris,item,ground",
+    "atk1_dmg_base": 40,
+    "atk1_sides": 15,
+    "tip": "Allumer une allumette devant la Bombe |cffffcc00A|rerosol",
+    "uhot": "A",
+    "utub": "Une bombe aérosol avec une allumette devant le spray (ne faite en aucun cas ce genre de manipulation chez vous !).|n|n|cffffcc00Attaque les unités terrestres et aériennes.|r",
+    "usca": 0.8,
+    "atk1_weapon_type": "msplash",
+    "atk1_cooldown": 50,
+    "atk1_area_medium": 100,
+    "atk1_area_small": 200
+   },
+   {
+    "id": "oC20",
+    "base": "owtw",
+    "name": "|cff0000ffJet d'eau",
+    "cost_gold": 150,
+    "cost_lumber": 0,
+    "upgrades_used": "",
+    "armor": 0,
+    "armor_upgrade_bonus": 0,
+    "atk1_range_motion_buffer": 1000,
+    "atk1_dmg_base": 100,
+    "atk1_cooldown": 3,
+    "atk1_area_medium": 5,
+    "atk1_area_small": 10,
+    "abilities_normal": "",
+    "sight_day": 1000,
+    "usin": 500,
+    "point_value": 150,
+    "build_time": 40,
+    "requirements": "",
+    "utub": "Le |cff0000ffJet d'eau|r, Conctruction lente, dégats important et moyenne portée.",
+    "atk1_area_full": "tree,air,ward,structure,debris,enemies,wall,item,ground",
+    "atk1_targets": 2500,
+    "tip": "Construire un|cff0000ff Jet d'eau|r !",
+    "model": "Units\\Creeps\\SeaElemental\\SeaElemental.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNSeaElemental.blp",
+    "atk1_dmg_point": "Abilities\\Weapons\\SeaElementalMissile\\SeaElementalMissile.mdl",
+    "button_y": 1
+   },
+   {
+    "id": "uC37",
+    "base": "uabo",
+    "name": "Sarutobi",
+    "cost_gold": 500,
+    "cost_lumber": 0,
+    "build_time": 180,
+    "hp_max": 4000,
+    "hp_regen": 0.0,
+    "hp_regen_type": "none",
+    "requirements": "",
+    "upgrades_used": "",
+    "armor": 3,
+    "atk1_dmg_base": 1000,
+    "abilities_normal": "",
+    "sleeps": 1,
+    "point_value": 1000,
+    "utub": "Sarutobi est le très célèbre Sandaime, le Troisième Hokage de Konoha. Sa force est considérable, mais son prix l'est autant.",
+    "food_used": 15,
+    "atk1_cooldown": 1,
+    "atk1_area_medium": 2,
+    "atk1_area_small": 3,
+    "atk1_range": 1.67,
+    "tip": "Appeler Sarutobi",
+    "model": "units\\human\\HeroPaladinBoss2\\HeroPaladinBoss2.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNArthas.blp",
+    "usnd": "HeroPaladin"
+   },
+   {
+    "id": "oC39",
+    "base": "oshm",
+    "name": "|cff008080Soigneur Iktan|r",
+    "cost_gold": 60,
+    "cost_lumber": 0,
+    "food_used": 5,
+    "unit_type": "peon",
+    "build_time": 40,
+    "hp_max": 500,
+    "mana_max": 20000,
+    "mana_regen": 1000.0,
+    "mana_initial": 1000,
+    "upgrades_used": "",
+    "armor_upgrade_bonus": 0,
+    "atk1_dmg_base": 35,
+    "abilities_normal": "AChw,ACcl,ACba,Anh1,ACsw",
+    "classification": "",
+    "ucut": "",
+    "point_value": 200,
+    "atk1_range_motion_buffer": 700,
+    "tip": "Entrainer un |cff008080Soigneur Iktan|r",
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground",
+    "model": "units\\creeps\\OrcWarlock\\OrcWarlock.mdl",
+    "utub": "",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNOrcWarlock.blp"
+   },
+   {
+    "id": "hC38",
+    "base": "halt",
+    "name": "|cff00ff00Autel des profondeurs|r",
+    "cost_gold": 60,
+    "cost_lumber": 0,
+    "hp_max": 600,
+    "upgrades_used": "",
+    "trains": "Hpal,Hamg,Hmkg,Hblm",
+    "tip": "|cff00ff00Construire un autel des profondeurs|r",
+    "model": "buildings\\naga\\AltarOfDepths\\AltarOfDepths.mdl",
+    "special_ability": "buildings\\naga\\AltarOfDepths\\AltarOfDepths.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNAltarOfDepths.blp",
+    "button_y": 0
+   },
+   {
+    "id": "oC40",
+    "base": "osw1",
+    "name": "|cff008000Dragon Carnassier|r",
+    "model": "units\\naga\\SnapDragon\\SnapDragon.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNSnapDragon.blp",
+    "usca": 2.0,
+    "food_used": 10,
+    "name_suffix": "",
+    "unit_type": "giant,summoned",
+    "build_time": 60,
+    "hp_max": 1000,
+    "armor": 5,
+    "atk1_dmg_base": 400,
+    "atk1_dice": 2,
+    "atk1_range": 1.9,
+    "atk1_cooldown": 100,
+    "atk1_area_medium": 200,
+    "atk1_area_small": 300,
+    "atk1_projectile": "ward,debris,item,ground",
+    "ua2m": "Abilities\\Weapons\\BansheeMissile\\BansheeMissile.mdl",
+    "atk1_area_full": "debris,ground,item,tree,wall,ward",
+    "ua2r": 500,
+    "atk2_type": "siege",
+    "ua2w": "missile",
+    "atk2_targets": 1000,
+    "ua2g": "structure",
+    "atk2_dmg_base": 1000,
+    "cost_gold": 200,
+    "atk2_range": 1.0,
+    "tip": "Invoquer |cff008000Dragon Carnassier|r",
+    "utub": "Le |cff008000Dragon Carnassier|r adore la viande fraiche! N'attaque pas les |cffff0000Structures|r!!",
+    "move_type": "amph"
+   },
+   {
+    "id": "nC49",
+    "base": "ngme",
+    "name": "Magasin de jouets",
+    "sells_items": "IC42,IC48,IC41,IC43,IC47,IC46,IC45,IC44,I000,I001"
+   },
+   {
+    "id": "H000",
+    "base": "Hpal",
+    "name": "|cff808000Garde Royale|r",
+    "model": "units\\naga\\NagaRoyalGuard\\NagaRoyalGuard.mdl",
+    "usca": 0.7,
+    "tint_b": 0,
+    "selection_scale": 0.1,
+    "cost_lumber": 0,
+    "cost_gold": 0,
+    "food_used": 9,
+    "hero_str_per_lvl": 5,
+    "ustp": 5.0,
+    "hero_int_per_lvl": 2,
+    "uinp": 2.0,
+    "hero_agi_per_lvl": 2,
+    "uagp": 2.5,
+    "hp_max": 250,
+    "hp_regen": 0.0,
+    "atk1_range_motion_buffer": 200,
+    "atk1_type": "chaos",
+    "atk1_weapon_type": "mline",
+    "atk1_dmg_point": "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
+    "atk1_area_full": "air,ward,structure,debris,item,ground",
+    "atk1_dice": 4,
+    "atk1_sides": 8,
+    "atk1_range": 1.5,
+    "atk1_cooldown": 50,
+    "atk1_area_medium": 150,
+    "atk1_area_small": 250,
+    "atk1_projectile": "air,structure,debris,ground",
+    "abilities_hero": "",
+    "move_speed": 375,
+    "uacq": 650.0,
+    "ufor": 2,
+    "umvr": 0.5,
+    "tip": "",
+    "hotkey": "",
+    "utub": "",
+    "armor": 5,
+    "hp_regen_type": "none",
+    "proper_names": "",
+    "usnd": "NagaRoyalGuard",
+    "defense_type": "divine",
+    "ucar": 0,
+    "abilities_normal": "",
+    "uhas": "",
+    "uabs": "",
+    "atk2_type": "unknown"
+   },
+   {
+    "id": "o001",
+    "base": "owtw",
+    "name": "Le|cffff8080 Corail amélioré|r produit de la nourriture - 8 Food",
+    "model": "buildings\\naga\\CoralBed\\CoralBed.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNCoralBed.blp",
+    "usca": 0.7,
+    "cost_gold": 15,
+    "cost_lumber": 0,
+    "food_made": 8,
+    "build_time": 15,
+    "requirements": "",
+    "atk1_range_motion_buffer": 500,
+    "atk1_dmg_point": "Doodads\\Ruins\\Props\\Ruins_Shells\\Ruins_Shells1.mdl",
+    "atk1_type": "normal",
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "atk1_targets": 500,
+    "atk1_range": 1.5,
+    "abilities_normal": "ACav",
+    "tip": "Préparer le repas des unités 8 foods",
+    "utub": "Le|cffff8080 Corail|r produit un peu de nourriture. Envoie des coquillages  si un ennemi s'approche.",
+    "point_value": 35,
+    "button_x": 0,
+    "atk1_dmg_base": 30
+   },
+   {
+    "id": "h001",
+    "base": "hbar",
+    "name": "Camp de |cffd45e19Sirénes Naga |r",
+    "upat": "PathTextures\\4x4SimpleSolid.blp",
+    "selection_scale": 0.8,
+    "cost_gold": 80,
+    "cost_lumber": 0,
+    "build_time": 20,
+    "trains": "z000",
+    "upgrades_used": "",
+    "researches": "",
+    "utub": "Les |cffd45e19Sirénes Naga|r sont capables de nager dans les eaux profondes.",
+    "tip": "Construire un camp de |cffd45e19Siréne Naga |r",
+    "hp_max": 500,
+    "model": "Doodads\\Ruins\\Water\\CoralArch\\CoralArch1.mdl",
+    "food_used": 7,
+    "uhot": "M",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNSeaWitch.blp",
+    "special_ability": "buildings\\naga\\TempleofTides\\TempleofTides.mdl",
+    "ushb": "",
+    "ubertip": "",
+    "usca": 0.5,
+    "usew": 1,
+    "team_color": 1,
+    "build_sound": "",
+    "upap": "unfloat",
+    "usit": 3,
+    "usnd": "AncientOfWar",
+    "button_x": 2,
+    "button_y": 2
+   },
+   {
+    "id": "z000",
+    "base": "zmar",
+    "name": "|cffff8080Sirénes Naga|r",
+    "usca": 0.5,
+    "ucol": 16.0,
+    "cost_gold": 0,
+    "food_used": 0,
+    "build_time": 15,
+    "upgrades_used": "",
+    "atk1_dmg_base": 5,
+    "atk1_sides": 3,
+    "tip": "Entrainer une |cffff8080Siréne Naga|r",
+    "uhot": "A",
+    "utub": "Une Naga capable de nager dans les eaux pronfondes.",
+    "button_x": 0,
+    "ubdi": 0,
+    "ubsi": 0,
+    "hp_max": 300,
+    "sight_day": 500,
+    "armor": 4,
+    "point_value": 7,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground",
+    "model": "Units\\Naga\\NagaSiren\\NagaSiren.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNSeaWitch.blp",
+    "atk1_dmg_point": "Abilities\\Weapons\\NecromancerMissile\\NecromancerMissile.mdl",
+    "atk1_weapon_type": "mline",
+    "race": "human",
+    "cargo_size": 0,
+    "armor_upgrade_bonus": 5,
+    "move_type": "amph",
+    "usnd": "NagaSiren"
+   },
+   {
+    "id": "z001",
+    "base": "zmar",
+    "name": "|cffff0000Tortue Dragon|r|r",
+    "usca": 0.5,
+    "ucol": 23.0,
+    "cost_gold": 0,
+    "food_used": 0,
+    "build_time": 15,
+    "upgrades_used": "",
+    "atk1_dmg_base": 8,
+    "atk1_sides": 3,
+    "tip": "Entrainer une |cff0000ffTortue enragée|r",
+    "uhot": "A",
+    "utub": "Une Tortue attaquant à distance.",
+    "button_x": 0,
+    "ubdi": 0,
+    "ubsi": 0,
+    "hp_max": 320,
+    "sight_day": 500,
+    "armor": 10,
+    "point_value": 7,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground",
+    "model": "Units\\Creeps\\DragonSeaTurtleRange\\DragonSeaTurtleRange.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNSeaTurtleRed.blp",
+    "atk1_dmg_point": "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMissile.mdl",
+    "atk1_weapon_type": "mline",
+    "race": "human",
+    "cargo_size": 0,
+    "armor_upgrade_bonus": 5,
+    "usnd": "GiantSeaTurtle",
+    "move_type": "amph"
+   },
+   {
+    "id": "h002",
+    "base": "hbar",
+    "name": "Camp de |cffff0000Tortues Dragon|r|r",
+    "upat": "PathTextures\\4x4SimpleSolid.blp",
+    "selection_scale": 0.8,
+    "cost_gold": 50,
+    "cost_lumber": 0,
+    "build_time": 20,
+    "trains": "z001",
+    "upgrades_used": "",
+    "researches": "",
+    "utub": "Les|cffff0000Tortues Dragon |rsont capables d'attaquer à distance des ennemis ou des bâtiments.",
+    "tip": "Construire un camp de |cffff0000Tortues Dragon|r",
+    "hp_max": 500,
+    "model": "Doodads\\Ruins\\Water\\CoralArch\\CoralArch0.mdl",
+    "food_used": 4,
+    "uhot": "M",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNDragonTurtleRed.blp",
+    "special_ability": "buildings\\naga\\TempleofTides\\TempleofTides.mdl",
+    "ushb": "",
+    "ubertip": "",
+    "usca": 0.5,
+    "usew": 1,
+    "team_color": 1,
+    "build_sound": "",
+    "upap": "unfloat",
+    "usit": 3,
+    "usnd": "NagaRoyalGuard",
+    "button_x": 2,
+    "button_y": 2
+   },
+   {
+    "id": "n000",
+    "base": "ntor",
+    "hp_max": 400,
+    "abilities_normal": "ANpi,Amim,Atsp,A001,Atwa,Aasl",
+    "uabs": "Aabr,ACmi,A001,Atsp,Atwa,Aasl",
+    "button_x": 0,
+    "ubdi": 0,
+    "ubsi": 0
+   },
+   {
+    "id": "H003",
+    "base": "Hmkg",
+    "point_value": 150,
+    "food_used": 10,
+    "cost_lumber": 0,
+    "cost_gold": 80,
+    "atk1_area_full": "air,debris,ground,item,structure,tree,wall,ward",
+    "abilities_hero": "AEah,AOwk,A00D,A007",
+    "model": "Units\\Creeps\\Lobstrokkblue\\Lobstrokkblue.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNLobstrokkBlue.blp",
+    "name": "|cff0000ffSeigneur des flots Makrura|r",
+    "tip": "Appeler |cff0000ffSeigneur des flots Makrura|r",
+    "utub": "",
+    "hotkey": "Ressusciter |cff0000ffSeigneur des flots Makrura|r",
+    "proper_names": "|cff0000ffSeigneur des flots",
+    "usnd": "Lobstrokk",
+    "attack_walk": "Ressusciter le |cff0000ffSeigneur des flots Makrura|r",
+    "hero_agi_per_lvl": 21,
+    "hero_str_per_lvl": 20,
+    "hero_int_per_lvl": 19,
+    "uinp": 3.0,
+    "hp_regen": 0.5,
+    "move_type": "amph",
+    "atk1_range": 2.0,
+    "atk1_sides": 4,
+    "ubs2": 0.8,
+    "udp2": 0.4,
+    "uarm": "Stone",
+    "selection_scale": 2.0,
+    "usca": 1.4,
+    "uhas": "",
+    "hp_max": 200
+   },
+   {
+    "id": "O002",
+    "base": "Otch",
+    "point_value": 150,
+    "food_used": 10,
+    "cost_lumber": 0,
+    "cost_gold": 80,
+    "atk1_area_full": "debris,ground,item,structure,wall,ward",
+    "abilities_hero": "AOae,AOwk,A00B,A009",
+    "model": "Units\\Naga\\NagaSummoner\\NagaSummoner.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNNagaSummoner.blp",
+    "name": "|cff0000ffReine mer|r",
+    "tip": "Appeler |cff0000ffReine mer|r",
+    "utub": "|cff0000ffReine mer|r est dotée d'une force considérable.",
+    "hotkey": "Ressusciter |cff0000ffReine mer|r",
+    "proper_names": "|cff0000ffReine mer|r",
+    "usnd": "NagaSiren",
+    "attack_walk": "",
+    "hero_agi_per_lvl": 21,
+    "hero_int_per_lvl": 20,
+    "hero_str_per_lvl": 19,
+    "unit_type": "",
+    "ustp": 3.0,
+    "primary_attribute": "AGI",
+    "uinp": 3.0,
+    "hp_regen": 0.5,
+    "ucol": 32.0,
+    "move_type": "amph",
+    "move_speed": 270,
+    "atk1_range": 2.0,
+    "atk1_sides": 4,
+    "ubs2": 0.8,
+    "udp2": 0.4,
+    "usca": 1.0,
+    "uhas": "",
+    "race": "human",
+    "hp_max": 200
+   },
+   {
+    "id": "U000",
+    "base": "Ulic",
+    "cost_gold": 80,
+    "cost_lumber": 0,
+    "food_used": 10,
+    "point_value": 150,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground",
+    "name": "|cff0000ffSeigneur Tamatoa|r",
+    "utub": "|cff0000ffSeigneur Tamatoa|r est un Héro capable de faire bien des miracles à l'aide de ses attaques à distance.",
+    "tip": "Appeler |cff0000ffSeigneur Tamatoa|r",
+    "hotkey": "Ressusciter |cff0000ffSeigneur Tamatoa|r",
+    "abilities_hero": "A002,A00F,AUau,AOwk",
+    "proper_names": "|cff0000ffSeigneur Tamatoa|r",
+    "atk1_dmg_point": "abilities\\weapons\\catapult\\catapultmissile.mdl",
+    "model": "Units\\Creeps\\SpiderCrabBehemoth\\SpiderCrabBehemoth.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNSpiderCrabBehemoth.blp",
+    "attack_walk": "",
+    "usnd": "Knight",
+    "race": "human",
+    "hero_int_per_lvl": 21,
+    "hero_agi_per_lvl": 20,
+    "hero_str_per_lvl": 19,
+    "unit_type": "",
+    "ustp": 3.0,
+    "uinp": 3.0,
+    "hp_regen_type": "always",
+    "hp_regen": 0.5,
+    "ufor": 0,
+    "move_type": "amph",
+    "move_height": 0.0,
+    "armor": 1,
+    "atk1_range": 2.0,
+    "ubs2": 0.8,
+    "udp2": 0.4,
+    "uarm": "Stone",
+    "uacq": 500.0,
+    "selection_scale": 2.0,
+    "usca": 1.0,
+    "uhas": "",
+    "hp_max": 200
+   },
+   {
+    "id": "E000",
+    "base": "Ekee",
+    "point_value": 150,
+    "food_used": 10,
+    "cost_lumber": 0,
+    "cost_gold": 80,
+    "atk1_area_full": "debris,ground,item,structure,wall,ward",
+    "name": "|cff0000ffSeigneur Mymidon|r",
+    "proper_names": "|cff0000ffSeigneur Mymidon|r",
+    "abilities_hero": "AEar,AOwk,A006,A00E",
+    "tip": "Appeler |cff0000ffSeigneur Mymidon|r",
+    "utub": "|cff0000ffSeigneur Mymidon|r vous montrera comment l'expérience du combat et la pratique de la perversité vous permettent de gagner la partie.",
+    "hotkey": "Ressusciter |cff0000ffSeigneur Mymidon|r",
+    "model": "units\\naga\\NagaMyrmidon\\NagaMyrmidon.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNNagaMyrmidon.blp",
+    "usnd": "NagaMyrmidon",
+    "atk1_dmg_point": "Abilities\\Weapons\\FireBallMissile\\FireBallMissile.mdl",
+    "attack_walk": "",
+    "race": "human",
+    "usin": 800,
+    "hero_agi_per_lvl": 19,
+    "hero_str_per_lvl": 21,
+    "hero_int_per_lvl": 20,
+    "ustp": 3.0,
+    "primary_attribute": "STR",
+    "uinp": 3.0,
+    "hp_regen_type": "always",
+    "ufor": 0,
+    "move_type": "amph",
+    "move_speed": 270,
+    "armor": 1,
+    "atk1_range": 2.0,
+    "ubs2": 0.8,
+    "uacq": 500.0,
+    "selection_scale": 2.0,
+    "usca": 1.0,
+    "uhas": "",
+    "hp_max": 200
+   },
+   {
+    "id": "H004",
+    "base": "Hamg",
+    "name": "Archimage nage"
+   },
+   {
+    "id": "h005",
+    "base": "hwtw",
+    "name": "Select the map",
+    "is_building": 0,
+    "targeted_as": "ground,organic",
+    "unit_type": "",
+    "hp_regen": 50.0
+   }
+  ]
+ },
+ "items": {
+  "modified_standard": [
+   {
+    "id": "tstr",
+    "base": "tstr",
+    "igol": 10,
+    "istr": 0,
+    "iuse": 10,
+    "isto": 10
+   }
+  ],
+  "custom": [
+   {
+    "id": "IC41",
+    "base": "clfm",
+    "igol": 75
+   },
+   {
+    "id": "IC42",
+    "base": "nspi",
+    "igol": 100
+   },
+   {
+    "id": "IC43",
+    "base": "ckng",
+    "name": "Couronne des rois",
+    "igol": 85
+   },
+   {
+    "id": "IC44",
+    "base": "gobm",
+    "name": "Mine gobelines",
+    "igol": 100
+   },
+   {
+    "id": "IC45",
+    "base": "ofro",
+    "igol": 50
+   },
+   {
+    "id": "IC46",
+    "base": "olig",
+    "igol": 50
+   },
+   {
+    "id": "IC47",
+    "base": "ofir",
+    "igol": 50
+   },
+   {
+    "id": "IC48",
+    "base": "ankh",
+    "igol": 100
+   },
+   {
+    "id": "I000",
+    "base": "texp",
+    "igol": 75,
+    "abilities": "AIlm",
+    "utub": "Augmente le Niveau du héro proche de 1."
+   },
+   {
+    "id": "I001",
+    "base": "gemt"
+   }
+  ]
+ },
+ "destructables": {
+  "modified_standard": [
+   {
+    "id": "LTlt",
+    "base": "LTlt",
+    "occlusion_h": 1
+   }
+  ],
+  "custom": [
+   {
+    "id": "B000",
+    "base": "OG00",
+    "name": "Petit pont MAP7",
+    "bptx": "",
+    "bptd": ""
+   }
+  ]
+ },
+ "buffs": {
+  "modified_standard": [],
+  "custom": [
+   {
+    "id": "B002",
+    "base": "Bbsk",
+    "fnam": "Haste",
+    "ftip": "Haste",
+    "fube": "This Runner is using haste.",
+    "frac": "human",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNBoots.blp",
+    "ftat": "Abilities\\Spells\\Orc\\SpiritLink\\SpiritLinkTarget.mdl",
+    "fta0": "origin",
+    "fta1": "",
+    "ftac": 1
+   },
+   {
+    "id": "B003",
+    "base": "Bbsk",
+    "fnam": "Kodo",
+    "fnsf": "(Atk-Move-Aura)",
+    "ftip": "Kodo",
+    "fube": "This Kodo has increased attack- and movementspeed",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "ftat": "Abilities\\Spells\\Other\\GeneralAuraTarget\\GeneralAuraTarget.mdl",
+    "fta0": "origin",
+    "fta1": "",
+    "ftac": 1
+   },
+   {
+    "id": "B004",
+    "base": "Bbsk",
+    "fnam": "Kodo",
+    "fnsf": "(Feuerbrand)",
+    "ftip": "Kodo",
+    "fube": "This Kodo is surrounded by runner-killing flames.",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "ftat": "Abilities\\Spells\\Orc\\LiquidFire\\Liquidfire.mdl",
+    "fta0": "origin",
+    "fta1": "",
+    "ftac": 1
+   },
+   {
+    "id": "B005",
+    "base": "Bbsk",
+    "fnam": "Kodo",
+    "fnsf": "(Slow-Aura)",
+    "ftip": "Kodo",
+    "fube": "This unit has a slowed movement- and attackspeed.",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "ftat": "Abilities\\Spells\\Other\\Drain\\DrainTarget.mdl",
+    "fta0": "origin",
+    "fta1": "",
+    "ftac": 1
+   },
+   {
+    "id": "B006",
+    "base": "Bbsk",
+    "fnam": "Kodo",
+    "fnsf": "(Live-Reg)",
+    "ftip": "Kodo",
+    "fube": "This Kodo has an increased hitpointregeneration",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "ftat": "Abilities\\Spells\\Other\\GeneralAuraTarget\\GeneralAuraTarget.mdl",
+    "fta0": "origin",
+    "fta1": "",
+    "ftac": 1
+   },
+   {
+    "id": "B007",
+    "base": "Bbsk",
+    "fnam": "Kodo",
+    "fnsf": "(Manaburn-Aura)",
+    "ftip": "Kodo",
+    "fube": "This Unit will loose all its Mana under the effect of this aura.",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "ftat": "Abilities\\Spells\\Other\\Drain\\ManaDrainCaster.mdl",
+    "fta0": "origin",
+    "fta1": "",
+    "ftac": 1
+   },
+   {
+    "id": "B008",
+    "base": "Bbsk",
+    "fnam": "Kodo",
+    "fnsf": "(Thorns-Aura)",
+    "ftip": "Kodo",
+    "fube": "Every unit attacking this Kodo will recieve damage.",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "ftat": "Abilities\\Spells\\Other\\GeneralAuraTarget\\GeneralAuraTarget.mdl",
+    "fta0": "origin",
+    "fta1": "",
+    "ftac": 1
+   },
+   {
+    "id": "B009",
+    "base": "Bbsk",
+    "fnam": "Kodo",
+    "fnsf": "(Damage-Aura)",
+    "ftip": "Kodo",
+    "fube": "This Kodo has an increased attackdamage.",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "ftat": "Abilities\\Spells\\Other\\GeneralAuraTarget\\GeneralAuraTarget.mdl",
+    "fta0": "origin",
+    "fta1": "",
+    "ftac": 1
+   },
+   {
+    "id": "B00A",
+    "base": "Bbsk",
+    "fnam": "Kodo",
+    "fnsf": "(Inv)",
+    "ftip": "Kodo",
+    "fube": "This Unit is invisible.",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "ftat": "",
+    "fta0": "",
+    "fta1": "",
+    "ftac": 0
+   },
+   {
+    "id": "B00B",
+    "base": "BHds",
+    "fnam": "Kodo",
+    "frac": "orc",
+    "fube": "This Kodo is invincible.",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "fnsf": "(Invinc)",
+    "ftip": "Kodo"
+   },
+   {
+    "id": "B00C",
+    "base": "BNss",
+    "fnam": "Kodo",
+    "frac": "orc",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "fnsf": "(Shield)",
+    "ftip": "Kodo",
+    "fube": "A shield that protects against spells."
+   },
+   {
+    "id": "B000",
+    "base": "Bssi",
+    "fnam": "Schleichendes Gift",
+    "fnsf": "_2",
+    "ftip": "Poison",
+    "fube": "This unit is poisoned. It has a slowed attack- and movementspeed.",
+    "frac": "human",
+    "ftat": "Abilities\\Weapons\\PoisonSting\\PoisonStingTarget.mdl",
+    "fart": "ReplaceableTextures\\PassiveButtons\\PASBTNSlowPoison.blp"
+   },
+   {
+    "id": "B00E",
+    "base": "Bbof",
+    "fnam": "Firerocks",
+    "ftip": "Firerocks",
+    "fube": "This unit is burning.",
+    "frac": "human",
+    "fnsf": "_2"
+   },
+   {
+    "id": "B00F",
+    "base": "Bams",
+    "fnam": "Frost Aura",
+    "ftip": "Frost Aura",
+    "fube": "This unit is slowed down.",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNFrost.blp",
+    "ftat": "Abilities\\Spells\\Other\\BreathOfFrost\\BreathOfFrostTarget.mdl"
+   },
+   {
+    "id": "B00J",
+    "base": "Brej",
+    "fnam": "Buff",
+    "ftip": "Buff",
+    "fube": "I'm a buff made by ForTheUnion",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTN_RedArmy.blp",
+    "ftat": "",
+    "fta0": ""
+   },
+   {
+    "id": "B00K",
+    "base": "Bams",
+    "fnam": "Might of Oaks",
+    "ftip": "Might of Oaks",
+    "fube": "This unit is summoned.",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNEnt.blp",
+    "ftat": "",
+    "fta0": ""
+   },
+   {
+    "id": "B00L",
+    "base": "Bams",
+    "fnam": "Banish",
+    "ftip": "Banish",
+    "fube": "This unit is astral",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNTorture.blp",
+    "ftat": "",
+    "fta0": ""
+   },
+   {
+    "id": "B00M",
+    "base": "BIcb",
+    "fnam": "Decreased Armor",
+    "ftip": "Decreased Armor",
+    "fube": "This unit was hit by a Shodow Tower. It has reduced armor.",
+    "frac": "human",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNRegenerationAura.blp"
+   },
+   {
+    "id": "B001",
+    "base": "BHds",
+    "fnam": "Kodo",
+    "frac": "orc",
+    "fube": "This unit is infected.",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "fnsf": "(Cloud)",
+    "ftip": "Kodo",
+    "ftat": "Units\\Undead\\PlagueCloud\\PlagueCloudtarget.mdl",
+    "fta0": "chest"
+   },
+   {
+    "id": "B00D",
+    "base": "Bbsk",
+    "fnam": "Kodo",
+    "fnsf": "(Armor-Aura)",
+    "ftip": "Kodo",
+    "fube": "This Kodo has increased armor",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "ftat": "Abilities\\Spells\\Other\\GeneralAuraTarget\\GeneralAuraTarget.mdl",
+    "fta0": "origin",
+    "fta1": "",
+    "ftac": 1
+   },
+   {
+    "id": "B00G",
+    "base": "Bbsk",
+    "fnam": "Kodo",
+    "fnsf": "(Cripple-Aura)",
+    "ftip": "Kodo",
+    "fube": "This unit has reduced armor.",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "ftat": "Abilities\\Spells\\Other\\GeneralAuraTarget\\GeneralAuraTarget.mdl",
+    "fta0": "origin",
+    "fta1": "",
+    "ftac": 1
+   },
+   {
+    "id": "B00H",
+    "base": "Bams",
+    "frac": "orc",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "fnsf": "(Shell)",
+    "ftip": "Kodo",
+    "fnam": "Kodo",
+    "fube": "This kodo has shield which absorbs the next 300 magial damage."
+   },
+   {
+    "id": "B00I",
+    "base": "BHds",
+    "fnam": "Kodo",
+    "frac": "orc",
+    "fube": "This Kodo shares its damage to other kodos.",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "fnsf": "(Link)",
+    "ftip": "Kodo",
+    "ftat": "",
+    "fta0": ""
+   },
+   {
+    "id": "B00N",
+    "base": "Bams",
+    "fnam": "Poison Arrows",
+    "ftip": "Poison Arrows",
+    "fube": "This unit is poisoned.",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNPoisonArrows.blp",
+    "ftat": "Abilities\\Weapons\\PoisonSting\\PoisonStingTarget.mdl",
+    "fta0": ""
+   },
+   {
+    "id": "B00O",
+    "base": "Bbsk",
+    "frac": "human",
+    "ftip": "Haste",
+    "fube": "This unit has Haste; it has increased movement speed.",
+    "ftac": 1,
+    "fta0": "Overhead",
+    "fta1": "",
+    "ftat": "Abilities\\Spells\\Items\\AIsp\\SpeedTarget.mdl",
+    "fart": "ReplaceableTextures\\CommandButtons\\BTNAnimalWarTraining.blp"
+   }
+  ]
+ },
+ "abilities": {
+  "modified_standard": [
+   {
+    "id": "AOmi",
+    "base": "AOmi",
+    "ubertip@1": "Crée <AOmi,DataA1> double pour troubler l’ennemi. Dissipe les sorts qui affectent le Hero.|nDure <AOmi,Dur1> s.",
+    "ubertip@2": "Crée <AOmi,DataA2> doubles pour troubler l’ennemi. Dissipe les sorts qui affectent l'Hero.|nDure <AOmi,Dur1> s.",
+    "ubertip@3": "Crée <AOmi,DataA3> doubles pour troubler l’ennemi. Dissipe les sorts qui affectent l'Hero.|nDure <AOmi,Dur1> s.",
+    "research_tip": "Crée des doubles pour troubler l’ennemi et dissipe les sorts qui affectent l'Hero.|n|n|cffffcc00Niveau 1 :|r crée <AOmi,DataA1> double.|n|cffffcc00Niveau 2 :|r crée <AOmi,DataA2> doubles.|n|cffffcc00Niveau 3 :|r crée <AOmi,DataA3> doubles."
+   },
+   {
+    "id": "AOwk",
+    "base": "AOwk",
+    "ubertip@1": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement de <AOwk,DataB1,%> % pendant <AOwk,Dur1> s. S’il attaque une unité, il réapparaît et inflige <AOwk,DataC1> points de dégâts supplémentaires.",
+    "ubertip@2": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement de <AOwk,DataB2,%> % pendant <AOwk,Dur2> s. S’il attaque une unité, il réapparaît et inflige <AOwk,DataC2> points de dégâts supplémentaires.",
+    "ubertip@3": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement de <AOwk,DataB3,%> % pendant <AOwk,Dur3> s. S’il attaque une unité, il réapparaît et inflige <AOwk,DataC3> points de dégâts supplémentaires.",
+    "research_tip": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement. S’il attaque une unité, il réapparaît et inflige des dégâts supplémentaires.|n|n|cffffcc00Niveau 1 :|r augmente la vitesse de déplacement de <AOwk,DataB1,%> %, augmente les dégâts de <AOwk,DataC1>, dure <AOwk,Dur1> s. |n|cffffcc00Niveau 2 :|r augmente la vitesse de déplacement de <AOwk,DataB2,%> %, augmente les dégâts de <AOwk,DataC2>, dure <AOwk,Dur2> s. |n|cffffcc00Niveau 3 :|r augmente la vitesse de déplacement de <AOwk,DataB3,%>, augmente les dégâts de <AOwk,DataC3> %, dure <AOwk,Dur3> s."
+   },
+   {
+    "id": "AOww",
+    "base": "AOww",
+    "abuf@1": "BEia",
+    "aret": "Apprendre Aura de Feu",
+    "research_tip": "L'Hero devient insensible à la magie et fait bruler les unités terrestres ennemies proches, ce qui leur inflige <AOww,DataA1> points de dégâts par seconde.",
+    "tip@1": "Aura de feu",
+    "ubertip@1": "L'Hero devient insensible à la magie et fait bruler les unités terrestres ennemies proches, ce qui leur inflige <AOww,DataA1> points de dégâts par seconde.|nDure <AOww,Dur1> s.",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNCloakOfFlames.blp",
+    "arar": "ReplaceableTextures\\CommandButtons\\BTNCloakOfFlames.blp"
+   },
+   {
+    "id": "Atdg",
+    "base": "Atdg",
+    "area_of_effect@1": 300.0,
+    "atar@1": "enemies,structure,tree"
+   },
+   {
+    "id": "Aasl",
+    "base": "Aasl",
+    "area_of_effect@1": 400.0
+   },
+   {
+    "id": "AEim",
+    "base": "AEim",
+    "area_of_effect@1": 300.0,
+    "area_of_effect@2": 300.0,
+    "area_of_effect@3": 300.0,
+    "Eim1@1": 15.0,
+    "Eim1@2": 20.0,
+    "Eim1@3": 30.0
+   },
+   {
+    "id": "AHbz",
+    "base": "AHbz",
+    "area_of_effect@1": 250.0,
+    "area_of_effect@2": 250.0,
+    "area_of_effect@3": 250.0,
+    "cast_range@1": 1000.0,
+    "cast_range@2": 1000.0,
+    "cast_range@3": 1000.0,
+    "required_level": 6
+   },
+   {
+    "id": "ANsh",
+    "base": "ANsh",
+    "required_level": 6,
+    "Osh3@1": 700.0,
+    "Osh3@2": 700.0,
+    "Osh3@3": 700.0,
+    "levels": 1,
+    "Osh1@1": 300.0,
+    "cast_range@1": 1000.0,
+    "Osh4@1": 200.0
+   }
+  ],
+  "custom": [
+   {
+    "id": "A000",
+    "base": "ACim",
+    "name": "Aura de dégats tornade",
+    "atar@1": "enemies,ground,neutral,organic"
+   },
+   {
+    "id": "A001",
+    "base": "Atdg",
+    "area_of_effect@1": 300.0,
+    "atar@1": "enemies,structure,tree",
+    "name": "Aura de dégât sur les bâtiments et abres",
+    "Tdg1@1": 23.0,
+    "Tdg4@1": 250.0,
+    "Tdg5@1": 25.0
+   },
+   {
+    "id": "A002",
+    "base": "ACcv",
+    "is_hero_ability": 1,
+    "required_level": 6,
+    "Ucs3@1": 700.0,
+    "Ucs1@1": 300.0,
+    "Ucs2@1": 9900.0,
+    "race": "other",
+    "name": "Vague écrasante R",
+    "cooldown@1": 80.0,
+    "amcs@1": 110,
+    "hotkey": "R",
+    "arhk": "R",
+    "button_x": 3,
+    "arpx": 3
+   },
+   {
+    "id": "A003",
+    "base": "Aap3",
+    "is_hero_ability": 1
+   },
+   {
+    "id": "A004",
+    "base": "ANr3"
+   },
+   {
+    "id": "A005",
+    "base": "Aven",
+    "is_hero_ability": 1
+   },
+   {
+    "id": "A006",
+    "base": "ANsh",
+    "Osh3@1": 700.0,
+    "Osh3@2": 700.0,
+    "Osh3@3": 700.0,
+    "levels": 1,
+    "Osh1@1": 300.0,
+    "Osh4@1": 200.0,
+    "name": "Onde de choc R",
+    "atar@1": "enemies,ground,structure",
+    "cooldown@1": 80.0,
+    "amcs@1": 110,
+    "required_level": 6,
+    "arhk": "R",
+    "hotkey": "R",
+    "button_x": 3,
+    "arpx": 3
+   },
+   {
+    "id": "A007",
+    "base": "AOeq",
+    "race": "other",
+    "name": "Séisme R",
+    "duration_normal@1": 6.0,
+    "duration_hero@1": 6.0,
+    "cooldown@1": 80.0,
+    "amcs@1": 110,
+    "hotkey": "R",
+    "arhk": "R",
+    "cast_range@1": 700.0
+   },
+   {
+    "id": "A008",
+    "base": "AOwk",
+    "ubertip@1": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement de <AOwk,DataB1,%> % pendant <AOwk,Dur1> s. S’il attaque une unité, il réapparaît et inflige <AOwk,DataC1> points de dégâts supplémentaires.",
+    "ubertip@2": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement de <AOwk,DataB2,%> % pendant <AOwk,Dur2> s. S’il attaque une unité, il réapparaît et inflige <AOwk,DataC2> points de dégâts supplémentaires.",
+    "ubertip@3": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement de <AOwk,DataB3,%> % pendant <AOwk,Dur3> s. S’il attaque une unité, il réapparaît et inflige <AOwk,DataC3> points de dégâts supplémentaires.",
+    "research_tip": "Permet a l'Hero de devenir invisible et augmente sa vitesse de déplacement. S’il attaque une unité, il réapparaît et inflige des dégâts supplémentaires.|n|n|cffffcc00Niveau 1 :|r augmente la vitesse de déplacement de <AOwk,DataB1,%> %, augmente les dégâts de <AOwk,DataC1>, dure <AOwk,Dur1> s. |n|cffffcc00Niveau 2 :|r augmente la vitesse de déplacement de <AOwk,DataB2,%> %, augmente les dégâts de <AOwk,DataC2>, dure <AOwk,Dur2> s. |n|cffffcc00Niveau 3 :|r augmente la vitesse de déplacement de <AOwk,DataB3,%>, augmente les dégâts de <AOwk,DataC3> %, dure <AOwk,Dur3> s.",
+    "race": "other"
+   },
+   {
+    "id": "A009",
+    "base": "AHbz",
+    "area_of_effect@1": 250.0,
+    "area_of_effect@2": 250.0,
+    "area_of_effect@3": 250.0,
+    "cast_range@1": 700.0,
+    "cast_range@2": 1000.0,
+    "cast_range@3": 1000.0,
+    "race": "other",
+    "name": "Blizzard R",
+    "levels": 1,
+    "atar@1": "ground,air,structure,enemy,neutral",
+    "Hbz2@1": 1.0,
+    "cooldown@1": 80.0,
+    "casting_time@1": 0.0,
+    "amcs@1": 110,
+    "required_level": 6,
+    "arhk": "R",
+    "hotkey": "R",
+    "button_x": 3,
+    "arpx": 3,
+    "duration_hero@1": 6.0,
+    "duration_normal@1": 6.0,
+    "Hbz5@1": 50.0,
+    "asat": "Abilities\\Spells\\Human\\Blizzard\\BlizzardTarget.mdl"
+   },
+   {
+    "id": "A00B",
+    "base": "AUfn",
+    "race": "other",
+    "name": "Nova de givre T",
+    "Ufn2@2": 200.0,
+    "Ufn2@3": 300.0,
+    "hotkey": "T",
+    "arhk": "T",
+    "amcs@1": 80,
+    "amcs@2": 80,
+    "amcs@3": 80,
+    "cast_range@1": 700.0,
+    "cast_range@2": 700.0,
+    "cast_range@3": 700.0,
+    "area_of_effect@1": 50.0,
+    "area_of_effect@2": 100.0,
+    "area_of_effect@3": 150.0
+   },
+   {
+    "id": "A00D",
+    "base": "AEer",
+    "race": "other",
+    "name": "Sarments T",
+    "cast_range@1": 700.0,
+    "cast_range@2": 700.0,
+    "cast_range@3": 700.0,
+    "duration_normal@3": 16.0,
+    "Eer1@2": 24.0,
+    "duration_normal@2": 14.0,
+    "duration_normal@1": 12.0,
+    "duration_hero@1": 10.0,
+    "duration_hero@2": 12.0,
+    "duration_hero@3": 14.0,
+    "arhk": "T",
+    "hotkey": "T",
+    "amcs@1": 80,
+    "amcs@2": 80,
+    "amcs@3": 80,
+    "Eer1@1": 19.0,
+    "Eer1@3": 30.0
+   },
+   {
+    "id": "A00E",
+    "base": "AEer",
+    "race": "other",
+    "name": "Poison lent T",
+    "cast_range@1": 700.0,
+    "cast_range@2": 700.0,
+    "cast_range@3": 700.0,
+    "duration_normal@3": 16.0,
+    "Eer1@2": 24.0,
+    "duration_normal@2": 14.0,
+    "duration_normal@1": 12.0,
+    "duration_hero@1": 10.0,
+    "duration_hero@2": 12.0,
+    "duration_hero@3": 14.0,
+    "icon": "ReplaceableTextures\\PassiveButtons\\PASBTNEnvenomedSpear.blp",
+    "arar": "ReplaceableTextures\\PassiveButtons\\PASBTNEnvenomedSpear.blp",
+    "abuf@1": "Bpoi,Bpsd",
+    "abuf@2": "Bpoi,Bpsd",
+    "abuf@3": "Bpoi,Bpsd",
+    "research_tip": "Puissant poison, immobilisant, désarmant et infligeant des dégâts à une cible ennemie de façon temporaire.|n|n|cffffcc00Niveau 1 :|r <AEer,DataA1> points de dégâts par seconde pendant <AEer,Dur1> s.|n|cffffcc00Niveau 2 :|r <AEer,DataA2> points de dégâts par seconde pendant <AEer,Dur2> s.|n|cffffcc00Niveau 3 :|r <AEer,DataA3> points de dégâts par seconde pendant <AEer,Dur3> s.",
+    "aret": "Apprendre Fléche empoissoné de |cffffcc00niveau %d|r",
+    "tip@1": "Empoisonnement de |cffffcc00niveau 1|r",
+    "tip@2": "Empoisonnement de |cffffcc00niveau 2|r",
+    "tip@3": "Empoisonnement de |cffffcc00niveau 3|r",
+    "ubertip@1": "Puissant narcotique, immobilisant et désarmant la cible ennemie pendant <AEer,Dur1> s, et lui infligent <AEer,DataA1> points de dégâts par seconde.",
+    "ubertip@2": "Puissant narcotique, immobilisant et désarmant la cible ennemie pendant <AEer,Dur2> s, et lui infligent <AEer,DataA2> points de dégâts par seconde.",
+    "ubertip@3": "Puissant narcotique, immobilisant et désarmant la cible ennemie pendant <AEer,Dur3> s, et lui infligent <AEer,DataA3> points de dégâts par seconde.",
+    "hotkey": "T",
+    "arhk": "T",
+    "amcs@1": 80,
+    "amcs@2": 80,
+    "amcs@3": 80,
+    "amat": "Abilities\\Spells\\Items\\OrbVenom\\OrbVenomMissile.mdl",
+    "Eer1@1": 19.0,
+    "Eer1@3": 30.0
+   },
+   {
+    "id": "A00F",
+    "base": "AUfn",
+    "race": "other",
+    "name": "Éclair de tempête T",
+    "Ufn2@2": 200.0,
+    "Ufn2@3": 300.0,
+    "hotkey": "T",
+    "arhk": "T",
+    "amcs@1": 80,
+    "amcs@2": 80,
+    "amcs@3": 80,
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNStormBolt.blp",
+    "arar": "ReplaceableTextures\\CommandButtons\\BTNStormBolt.blp",
+    "aeat": "",
+    "amat": "Abilities\\Spells\\Human\\StormBolt\\StormBoltMissile.mdl",
+    "amho": 1,
+    "amsp": 1000,
+    "aord": "thunderbolt",
+    "aret": "Apprendre Éclair de tempête de |cffffcc00niveau %d|r",
+    "research_tip": "Lance un marteau magique qui inflige des dégâts à l’ennemi ciblé et l’étourdit.|n|n|cffffcc00Niveau 1 :|r inflige <ANsb,DataA1> points de dégâts, étourdit pendant <ANsb,Dur1> s.|n|cffffcc00Niveau 2 :|r inflige <ANsb,DataA2> points de dégâts, étourdit pendant <ANsb,Dur2> s.|n|cffffcc00Niveau 3 :|r inflige <ANsb,DataA3> points de dégâts, étourdit pendant <ANsb,Dur3> s.|n|cffffcc00Niveau 4 :|r inflige <ANsb,DataA4> points de dégâts, étourdit pendant <ANsb,Dur4> s.",
+    "tip@1": "Éclair de tempête de |cffffcc00niveau 1|r",
+    "tip@2": "Éclair de tempête de |cffffcc00niveau 2|r",
+    "tip@3": "Éclair de tempête de |cffffcc00niveau 3|r",
+    "ubertip@1": "Lance un marteau magique qui inflige <ANsb,DataA1> points de dégâts à une unité ennemie et l’étourdit pendant <ANsb,Dur1> s.",
+    "ubertip@2": "Lance un marteau magique qui inflige <ANsb,DataA2> points de dégâts à une unité ennemie et l’étourdit pendant <ANsb,Dur2> s.",
+    "ubertip@3": "Lance un marteau magique qui inflige <ANsb,DataA3> points de dégâts à une unité ennemie et l’étourdit pendant <ANsb,Dur3> s.",
+    "abuf@1": "BPSE",
+    "abuf@2": "BPSE",
+    "abuf@3": "BPSE",
+    "cast_range@1": 700.0,
+    "cast_range@2": 700.0,
+    "cast_range@3": 700.0
+   }
+  ]
+ },
+ "doodads": {
+  "modified_standard": [
+   {
+    "id": "ZRrk",
+    "base": "ZRrk",
+    "ddes": 1.5
+   }
+  ],
+  "custom": []
+ },
+ "upgrades": {
+  "modified_standard": [],
+  "custom": [
+   {
+    "id": "R000",
+    "base": "Rhan",
+    "name@1": "Gold Mining",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNMGExchange.blp",
+    "effect1": "rmin",
+    "gba1": 1.0,
+    "ghk1@1": "G",
+    "gtp1@1": "Research Gold Mining",
+    "ubertip@1": "Allows you workers to carry +1 Gold.",
+    "glmb": 0,
+    "gtib": 30,
+    "greq@1": "",
+    "gmo2": 10.0,
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp",
+    "ubertip@2": "Allows you workers to carry +3 Gold.",
+    "gtp1@2": "Research Advanced Gold Mining",
+    "levels": 3,
+    "gglm": 50,
+    "gmo1": 2.0,
+    "name@2": "Advanced Gold Mining",
+    "name@3": "Expert Gold Mining",
+    "ghk1@2": "G",
+    "ghk1@3": "G",
+    "icon@3": "ReplaceableTextures\\CommandButtons\\BTNGoldMine.blp",
+    "ubertip@3": "Allows you workers to carry +5 Gold.",
+    "gtp1@3": "Research Expert Gold Mining",
+    "greq@2": "R00C",
+    "greq@3": "R00C",
+    "gbpx": 1,
+    "grqc@2": "1",
+    "grqc@3": "2"
+   },
+   {
+    "id": "R001",
+    "base": "Rhan",
+    "name@1": "Level 3 Ability Research",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNAvatar.blp",
+    "effect1": "",
+    "gba1": 50.0,
+    "gtp1@1": "Research Level 3 Ability",
+    "ubertip@1": "Allows your runner to use his Level 3 Ability.|nMountainking: Avatar|nChaos Blademaster: Immolation|nNaga Siren: Frost Nova|nVampire Lord: Carrion Swarm|nSylvanas Windrunner: Might of Oaks",
+    "gglb": 500,
+    "glmb": 0,
+    "greq@1": "R00C",
+    "gmo2": 10.0,
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNBootsOfSpeed.blp",
+    "ubertip@2": "Furthermore increases the movement speed of your units by a speed factor of 50.",
+    "gtp1@2": "Research Extreme |cffffcc00H|raste",
+    "gtib": 45,
+    "grqc@1": "2"
+   },
+   {
+    "id": "R003",
+    "base": "Rhac",
+    "gmo2": 5.0,
+    "glmb": 0,
+    "glmm": 0,
+    "time": 0,
+    "ubertip@1": "Increases the armor and hit points of buildings. Also grants them a slight hitpointregenration.",
+    "ubertip@2": "Further increases the armor, regeneration and hit points of buildings.",
+    "ubertip@3": "Further increases the armor, regeneration and hit points of buildings.",
+    "gba2": 5.0,
+    "gglm": 50,
+    "gtp1@1": "Research Improved Walls",
+    "gtp1@2": "Research Advanced Walls",
+    "gtp1@3": "Research Magic Walls",
+    "name@1": "Improved Walls",
+    "name@2": "Advanced Walls",
+    "name@3": "Magic Walls",
+    "greq@2": "R00C",
+    "greq@3": "R00C",
+    "gbpx": 0,
+    "gbpy": 2,
+    "effect2": "rhpx",
+    "gtib": 30,
+    "gef3": "rhpr",
+    "gba3": 0.1,
+    "grqc@2": "1",
+    "grqc@3": "2"
+   },
+   {
+    "id": "R004",
+    "base": "Rhan",
+    "name@1": "Detonator Research",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNThunderclap.blp",
+    "effect1": "",
+    "gba1": 100.0,
+    "ghk1@1": "D",
+    "gtp1@1": "Research Detonators",
+    "ubertip@1": "Allows you to detonate some of your buildings",
+    "glmb": 0,
+    "gtib": 30,
+    "greq@1": "",
+    "gmo2": 1.0,
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNStaffOfNegation.blp",
+    "ubertip@2": "Futhermore increases your mana reserve and mana regeneration rate.",
+    "gtp1@2": "Research Advanced Invigoration",
+    "gmo1": 50.0,
+    "gba2": 0.5,
+    "icon@3": "ReplaceableTextures\\CommandButtons\\BTNScepterOfMastery.blp",
+    "ghk1@2": "I",
+    "ghk1@3": "I",
+    "name@2": "Advanced Invigoration",
+    "name@3": "Ultimate Invigoration",
+    "gtp1@3": "Research Ultimate Invigoration",
+    "ubertip@3": "Futhermore increases your mana reserve and mana regeneration rate.",
+    "greq@2": "h003",
+    "greq@3": "h003"
+   },
+   {
+    "id": "R008",
+    "base": "Rhpt",
+    "name@1": "Selected Difficulty",
+    "grac": "orc",
+    "name@2": "",
+    "effect1": "rhpx",
+    "effect2": "rarm",
+    "gef3": "",
+    "gef4": "rhpr",
+    "levels": 5,
+    "gtp1@1": "",
+    "ubertip@1": "",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "gcls": "",
+    "gtib": 1,
+    "time": 0,
+    "glmb": 0,
+    "glmm": 0,
+    "gglb": 0,
+    "greq@2": "",
+    "gtp1@2": "",
+    "ubertip@2": "",
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "icon@3": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "icon@4": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "gba1": 225.0,
+    "gmo1": 225.0,
+    "gba3": 0.02,
+    "gmo3": 0.02,
+    "gba4": 0.1,
+    "gmo4": 0.1,
+    "icon@5": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp"
+   },
+   {
+    "id": "R006",
+    "base": "Rhme",
+    "name@1": "Lightning Tower Research",
+    "levels": 2,
+    "glmb": 0,
+    "glmm": 0,
+    "gtp1@1": "Research Lightning Tower",
+    "ubertip@1": "Allows you to build Lightning Towers.",
+    "effect1": "",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNPurge.blp",
+    "gbpy": 1,
+    "gbpx": 2,
+    "time": 0,
+    "gtib": 15,
+    "name@2": "Thunder Tower Research",
+    "gtp1@2": "Research Thunder Tower",
+    "ubertip@2": "Allows you to build Thunder Towers.",
+    "greq@2": "R00C",
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNChainLightning.blp",
+    "grqc@2": "2",
+    "gglb": 75
+   },
+   {
+    "id": "R007",
+    "base": "Rhme",
+    "name@1": "Flame Tower Research",
+    "levels": 2,
+    "glmb": 0,
+    "glmm": 0,
+    "gtp1@1": "Research Flame Tower",
+    "ubertip@1": "Allows you to build Flame Towers",
+    "effect1": "",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNFireForTheCannon.blp",
+    "gbpy": 1,
+    "time": 0,
+    "gtib": 15,
+    "name@2": "Inferno Tower Research",
+    "gtp1@2": "Research Inferno Tower",
+    "ubertip@2": "Allows you to build Inferno Towers",
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNWallOfFire.blp",
+    "greq@2": "R00C",
+    "grqc@2": "2",
+    "gglb": 75
+   },
+   {
+    "id": "R009",
+    "base": "Rhme",
+    "name@1": "Poison Tower Research",
+    "levels": 2,
+    "glmb": 0,
+    "glmm": 0,
+    "gtp1@1": "Research Poison Tower",
+    "ubertip@1": "Allows you to build Poison Towers.",
+    "effect1": "",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNEnvenomedSpear.blp",
+    "gbpy": 1,
+    "gbpx": 1,
+    "time": 0,
+    "gtib": 15,
+    "name@2": "Toxic Tower Research",
+    "gtp1@2": "Research Toxic Tower",
+    "ubertip@2": "Allows you to build Toxic Towers.",
+    "greq@2": "R00C",
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNShadowStrike.blp",
+    "grqc@2": "2",
+    "gglb": 75
+   },
+   {
+    "id": "R00E",
+    "base": "Rhar",
+    "name@1": "Reinforced Armor Research",
+    "levels": 2,
+    "name@2": "Reinforced Armor Research",
+    "gtp1@1": "Reinforced Armor Level 1",
+    "gtp1@2": "Reinforced Armor Level 2",
+    "ubertip@1": "Increases the Armor and Hitpoints of your Footmen",
+    "ubertip@2": "Increases the Armor and Hitpoints of your Footmen",
+    "greq@2": "R00C",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNHumanArmorUpTwo.blp",
+    "time": 10,
+    "gglm": 0,
+    "gglb": 100,
+    "glmb": 0,
+    "glmm": 0,
+    "gbpy": 2,
+    "gtib": 20,
+    "grqc@2": "2",
+    "effect2": "rhpx",
+    "gmo2": 5.0,
+    "gba2": 5.0,
+    "greq@1": "R00C",
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNHumanArmorUpThree.blp",
+    "grqc@1": "1"
+   },
+   {
+    "id": "R002",
+    "base": "Rhpt",
+    "name@1": "Level 2 Ability Research",
+    "effect2": "",
+    "effect1": "",
+    "gef3": "",
+    "gef4": "",
+    "levels": 1,
+    "gtp1@1": "Research Level 2 Ability",
+    "ubertip@1": "Allows your runner to use his Level 2 Ability.|nMountainking: Haste|nChaos Blademaster: Critical Strike|nNaga Siren: Banish|nVampire Lord: Dark Vision|nSylvanas Windrunner: Poison Arrows",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNBoots.blp",
+    "time": 0,
+    "gtib": 20,
+    "glmb": 0,
+    "glmm": 0
+   },
+   {
+    "id": "R005",
+    "base": "Rhpt",
+    "name@1": "Increased Manapool",
+    "gtp1@1": "Increased Manapool",
+    "ubertip@1": "Provides your runner with 50 additional Manapoints",
+    "effect2": "",
+    "gef3": "",
+    "gef4": "",
+    "glmb": 0,
+    "glmm": 0,
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNBrilliance.blp",
+    "gtib": 20,
+    "time": 10,
+    "gba1": 50.0,
+    "name@2": "Extended Manapool",
+    "gtp1@2": "Extended Manapool",
+    "ubertip@2": "Provides your runner with 100 additional Manapoints",
+    "greq@2": "R00C",
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNScepterOfMastery.blp",
+    "gglb": 50,
+    "gglm": 100,
+    "gbpx": 0,
+    "grqc@2": "2"
+   },
+   {
+    "id": "R00C",
+    "base": "Rhme",
+    "name@1": "Advanced Warfare Research",
+    "gglm": 450,
+    "levels": 2,
+    "glmb": 0,
+    "glmm": 0,
+    "time": 40,
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNSpiritWalkerMasterTraining.blp",
+    "gtp1@1": "Research Advanced Warfare",
+    "ubertip@1": "Provides you with better units and buildings",
+    "effect1": "",
+    "ubertip@2": "Gives you access to the most powerful units and buildings in the game.",
+    "name@2": "Modern Warfare Research",
+    "gtp1@2": "Research Modern Warfare",
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNFlakCannons.blp",
+    "gtib": 20,
+    "greq@2": "",
+    "gglb": 50
+   },
+   {
+    "id": "R00D",
+    "base": "Rhme",
+    "name@1": "Special Tower Research",
+    "levels": 1,
+    "glmb": 0,
+    "glmm": 0,
+    "gglm": 0,
+    "gtp1@1": "Research Special Tower",
+    "ubertip@1": "Allows your Runner to build his Special Tower.|nMountainking: Rocket Tower|nChaos Blademaster: Chaos Tower|nNaga Siren: Frost Tower|nVampire Lord: Shadow Tower|nSylvanas Windrunner: Moon Tower",
+    "effect1": "",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNClusterRockets.blp",
+    "gbpy": 1,
+    "gbpx": 3,
+    "time": 0,
+    "gglb": 300,
+    "greq@1": "R00C",
+    "grqc@1": "2"
+   },
+   {
+    "id": "R00J",
+    "base": "Rhpt",
+    "name@1": "Timed Difficulty",
+    "grac": "orc",
+    "name@2": "",
+    "effect1": "rhpx",
+    "effect2": "rats",
+    "gef3": "rmov",
+    "gef4": "rhpr",
+    "levels": 6,
+    "gtp1@1": "",
+    "ubertip@1": "",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "gcls": "",
+    "gtib": 1,
+    "time": 0,
+    "glmb": 0,
+    "glmm": 0,
+    "gglb": 0,
+    "greq@2": "",
+    "gtp1@2": "",
+    "ubertip@2": "",
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "icon@3": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "icon@4": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "gba3": 0.04,
+    "gmo3": 0.04,
+    "gba4": 0.1,
+    "gmo4": 0.1,
+    "gba2": 0.05,
+    "gmo2": 0.05,
+    "icon@5": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp",
+    "icon@6": "ReplaceableTextures\\CommandButtons\\BTNKotoBeast.blp"
+   },
+   {
+    "id": "R00G",
+    "base": "Rhme",
+    "name@1": "Scout Tower",
+    "levels": 1,
+    "glmb": 0,
+    "glmm": 0,
+    "gglm": 0,
+    "gtp1@1": "Research Scout Tower",
+    "ubertip@1": "Allows you to build Scout Towers.",
+    "effect1": "",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNMagicalSentry.blp",
+    "gbpx": 3,
+    "time": 0,
+    "gglb": 50,
+    "greq@1": "R00C",
+    "gtib": 30,
+    "grqc@1": "1"
+   },
+   {
+    "id": "R00H",
+    "base": "Rhri",
+    "grac": "undead",
+    "name@1": "Dwarven Rifleman Training",
+    "gba1": 150.0,
+    "gmo1": 0.0,
+    "gglb": 200,
+    "levels": 2,
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNDwarvenLongRifle.blp",
+    "greq@1": "",
+    "name@2": "Dwarven Rifleman Training",
+    "gtp1@1": "Dwarven Rifleman Training - Level 1",
+    "gtp1@2": "Dwarven Rifleman Training - Level 2",
+    "ubertip@2": "Gives the Rifleman Steel Bullets",
+    "glmb": 0,
+    "ghk1@2": "L"
+   },
+   {
+    "id": "R00I",
+    "base": "Rhde",
+    "grac": "undead",
+    "name@1": "Dwarven Soldier Training",
+    "gglb": 200,
+    "gtp1@1": "Dwarven Soldier Training - Level 1",
+    "glmb": 0,
+    "gtib": 30,
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNDefend.blp",
+    "ghk1@2": "D",
+    "name@2": "Dwarven Soldier Training",
+    "gtp1@2": "Dwarven Soldier Training - Level 2",
+    "ubertip@1": "Allows Dwarven Soldier to use the Defend ability, which increases their defensive capabilities against Piercing attacks.",
+    "ubertip@2": "Equipes the Dwarven Soldier with Broad Armor, giving him chance to reduce damage"
+   },
+   {
+    "id": "R00K",
+    "base": "Rhde",
+    "grac": "undead",
+    "name@1": "Fell Grunt Training",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNOrcMeleeUpThree.blp",
+    "gglb": 200,
+    "glmb": 0,
+    "gtib": 30,
+    "gtp1@1": "Fell Grunt Training - Level 1",
+    "ubertip@1": "Allows Fell Grunt to use Battle Reflexes, which gives him a chance to evade an attack.",
+    "levels": 2,
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNOrcMeleeUpThree.blp",
+    "name@2": "Fell Grunt Training",
+    "gtp1@2": "Fell Grunt Training - Level 2",
+    "ubertip@2": "Allows the Fell Grunt to use Berserk in battle, giving him faster attack speed but takes more damage.",
+    "ghk1@2": "D"
+   },
+   {
+    "id": "R00L",
+    "base": "Rhde",
+    "grac": "undead",
+    "name@1": "Fell Raider Training",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNArcaniteRanged.blp",
+    "gglb": 200,
+    "glmb": 0,
+    "gtib": 30,
+    "gbpx": 1,
+    "gtp1@1": "Fell Raider Training - Level 1",
+    "ubertip@1": "Allows the Fell Raider to use the ability Haste, making him move faster for a short period of time."
+   },
+   {
+    "id": "R00M",
+    "base": "Rhri",
+    "grac": "undead",
+    "name@1": "Elven Archer Training",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNImprovedBows.blp",
+    "gglb": 200,
+    "glmb": 0,
+    "gba1": 150.0,
+    "gmo1": 0.0,
+    "gtp1@1": "Elven Archer Training - Level 1",
+    "levels": 2,
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNImprovedBows.blp",
+    "greq@1": "",
+    "name@2": "Elven Archer Training",
+    "gtp1@2": "Elven Archer Training - Level 2",
+    "ubertip@1": "Increases the range of the Elven Archer's attacks.",
+    "ubertip@2": "Gives the Elven Archer Critical Strike.",
+    "ghk1@2": "L",
+    "gbpx": 0
+   },
+   {
+    "id": "R00N",
+    "base": "Rhst",
+    "grac": "undead",
+    "name@1": "Elven Priest Training",
+    "gglb": 200,
+    "glmb": 0,
+    "glmm": 0,
+    "gtib": 30,
+    "time": 0,
+    "gef3": "",
+    "gef4": "",
+    "gba1": 75.0,
+    "gmo1": 50.0,
+    "gtp1@1": "Elven Priest Training - Level 1",
+    "ubertip@1": "Increases Elven Priests' mana capacity and mana regeneration rate.",
+    "name@2": "Elven Priest Training",
+    "gtp1@2": "Elven Priest Training - Level 2",
+    "ubertip@2": "Grants the Elven Priest the ability to cast Heal.",
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNSorceressAdept.blp",
+    "greq@2": "",
+    "gbpx": 1
+   },
+   {
+    "id": "R00O",
+    "base": "Rhde",
+    "grac": "undead",
+    "name@1": "Murloc Training",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNNagaArmorUp2.blp",
+    "gglb": 200,
+    "glmb": 0,
+    "gtib": 30,
+    "gtp1@1": "Murloc Training - Level 1",
+    "ubertip@1": "Instead of training 1 murloc you will train 2 murlocs.",
+    "levels": 2,
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNNagaArmorUp2.blp",
+    "name@2": "Murloc Training",
+    "gtp1@2": "Murloc Training - Level 2",
+    "ubertip@2": "Gives the Murloc the ability to constantly regenerate hitpoints.",
+    "ghk1@2": "D"
+   },
+   {
+    "id": "R00P",
+    "base": "Rhst",
+    "grac": "undead",
+    "name@1": "Naga Siren Training",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNSorceressMaster.blp",
+    "gglb": 200,
+    "glmb": 0,
+    "glmm": 0,
+    "gtib": 30,
+    "time": 0,
+    "gbpx": 1,
+    "gef3": "",
+    "gef4": "",
+    "gtp1@1": "Naga Siren Training - Level 1",
+    "ubertip@1": "Gives the Naga Siren the ability to Infest the kodos, which creates a parasite inside the kodo which will unleash on its death.",
+    "greq@2": "",
+    "name@2": "Naga Siren Training",
+    "gtp1@2": "Naga Siren Training - Level 2",
+    "ubertip@2": "Gives the Naga Siren the ability to cast slow on the kodos, slowing their attack speed and movement speed.",
+    "effect1": "",
+    "effect2": ""
+   },
+   {
+    "id": "R00Q",
+    "base": "Rhst",
+    "grac": "undead",
+    "name@1": "Necromancer Training",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNNecromancerAdept.blp",
+    "gglb": 200,
+    "glmm": 0,
+    "glmb": 0,
+    "time": 0,
+    "gtib": 30,
+    "greq@2": "",
+    "icon@2": "ReplaceableTextures\\CommandButtons\\BTNNecromancerAdept.blp",
+    "name@2": "Necromancer Training",
+    "gtp1@1": "Necromancer Training - Level 1",
+    "gtp1@2": "Necromancer Training - Level 2",
+    "ubertip@1": "Gives the Necromancer the ability to cast Unholy Frenzy, makes the targeted friendly unit attack faster but take damage over time.",
+    "ubertip@2": "Gives the necromancer the ability to cast Cripple, slows the targeted enemy units attack and movement speed greatly.",
+    "gef3": "",
+    "gef4": "",
+    "effect2": "",
+    "effect1": ""
+   },
+   {
+    "id": "R00R",
+    "base": "Rhde",
+    "grac": "undead",
+    "name@1": "Skeleton Training",
+    "icon@1": "ReplaceableTextures\\CommandButtons\\BTNSkeletonMage.blp",
+    "gglb": 200,
+    "glmb": 0,
+    "gtib": 30,
+    "gtp1@1": "Skeleton Training - Level 1",
+    "ubertip@1": "This gives the Skeleton Warrior the ability to reanimate after he has died."
+   }
+  ]
+ },
+ "terrain": {
+  "error": "implausible cliff tileset count 1953653850"
+ }
+}

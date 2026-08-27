@@ -1,0 +1,52 @@
+# Warcraft III object-editor field IDs -> readable names (subset that matters)
+UNIT = {
+ 'unam':'name','unsf':'name_suffix','upro':'proper_names','uubs':'ubertip','utip':'tip',
+ 'utpr':'hotkey','ucun':'classification','urac':'race','ides':'description',
+ 'uhpm':'hp_max','uhpr':'hp_regen','uhrt':'hp_regen_type','umpm':'mana_max','umpr':'mana_regen',
+ 'umpi':'mana_initial','ua1b':'atk1_dmg_base','ua1d':'atk1_dice','ua1s':'atk1_sides',
+ 'ua1c':'atk1_range','ua1z':'atk1_targets','ua1t':'atk1_type','ua1w':'atk1_weapon_type',
+ 'ua1p':'atk1_projectile','ua1f':'atk1_cooldown','ua1m':'atk1_dmg_point','ua1g':'atk1_area_full',
+ 'ua1h':'atk1_area_medium','ua1q':'atk1_area_small','ua1r':'atk1_range_motion_buffer',
+ 'ua2b':'atk2_dmg_base','ua2d':'atk2_dice','ua2s':'atk2_sides','ua2c':'atk2_range',
+ 'ua2z':'atk2_targets','ua2t':'atk2_type','ua2f':'atk2_cooldown',
+ 'uaen':'attacks_enabled','udty':'defense_type','udef':'armor','udup':'armor_upgrade_bonus',
+ 'umvs':'move_speed','umvt':'move_type','umvh':'move_height','umas':'accel','udtm':'turn_rate',
+ 'ugol':'cost_gold','ulum':'cost_lumber','ufoo':'food_used','ufma':'food_made',
+ 'ubld':'build_time','urtm':'repair_time','ugor':'repair_gold','ulur':'repair_lumber',
+ 'usid':'sight_day','usir':'sight_night','usle':'sleeps',
+ 'uabi':'abilities_normal','uhab':'abilities_hero','udaa':'abilities_default',
+ 'utra':'trains','ubui':'builds','ures':'researches','uupt':'upgrades_to','useu':'sells_units',
+ 'usei':'sells_items','umki':'items_made','ureq':'requirements','urqa':'requirements_amount',
+ 'upgr':'upgrades_used','umdl':'model','uscl':'model_scale','uclr':'tint_r','ucld':'tint_g',
+ 'uclb':'tint_b','ussc':'selection_scale','uisz':'icon_size','uico':'icon',
+ 'ussi':'icon_score_screen','ulev':'level','upoi':'point_value','utyp':'unit_type',
+ 'utar':'targeted_as','uspa':'special_ability','upri':'priority','ustm':'stock_max',
+ 'usrg':'stock_regen','ubba':'button_x','ubpx':'button_x','ubpy':'button_y',
+ 'uhds':'hero_str_start','uhdi':'hero_int_start','uhda':'hero_agi_start',
+ 'ustr':'hero_str_per_lvl','uagi':'hero_agi_per_lvl','uint':'hero_int_per_lvl',
+ 'upra':'primary_attribute','uhrl':'hero_revive_locations','utcc':'team_color',
+ 'ucam':'cargo_size','ubdg':'is_building','urpp':'can_repair','ucbs':'cast_backswing',
+ 'ucpt':'cast_point','udea':'death_time','ubsl':'build_sound','uawt':'attack_walk',
+}
+ABIL = {
+ 'anam':'name','ansf':'name_editor_suffix','atp1':'tip','aub1':'ubertip','arut':'research_tip',
+ 'ahky':'hotkey','aart':'icon','abpx':'button_x','abpy':'button_y','aher':'is_hero_ability',
+ 'alev':'levels','arlv':'required_level','acat':'category','arac':'race',
+ 'aefs':'effect_sound','aefl':'effect_sound_looped','atat':'targets_allowed',
+ 'acos':'cost_mana','adur':'duration_hero','ahdu':'duration_hero','adur':'duration_normal',
+ 'acdn':'cooldown','aare':'area_of_effect','aran':'cast_range','acas':'casting_time',
+ 'aui1':'ui_1','Adm1':'data_a','Ahp1':'data_b','Idam':'damage',
+}
+UPGR = {'gnam':'name','gtip':'tip','gub1':'ubertip','ghky':'hotkey','gar1':'icon',
+        'glvl':'levels','ggld':'cost_gold','glum':'cost_lumber','gtim':'time',
+        'gef1':'effect1','gef2':'effect2','gefb':'effect_base','gefa':'effect_amount'}
+ITEM = {'unam':'name','utip':'tip','uubs':'ubertip','ugol':'cost_gold','ulum':'cost_lumber',
+        'ulev':'level','uhpm':'hp','iabi':'abilities','ucla':'class','ipow':'powerup',
+        'ista':'stack_max','uslv':'level_unclassified','ipri':'priority','uico':'icon',
+        'idrp':'droppable','iusa':'usable','iper':'perishable','icid':'cooldown_group',
+        'ucos':'charges','uchd':'charges_dropped'}
+DEST = {'bnam':'name','bfil':'model','bshd':'shadow','bvcr':'tint_r','busr':'user_list',
+        'bonc':'occlusion_h','bflo':'floats','bblt':'can_place_dead','bhps':'hp',
+        'barm':'armor','bvar':'variations','bpin':'pathing','bsel':'selection_size'}
+DOOD = {'dnam':'name','dfil':'model','dvis':'visible_ground','dvr1':'scale_min',
+        'dvr2':'scale_max','dtyp':'category'}

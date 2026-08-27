@@ -1,0 +1,488 @@
+{
+ "source": "war3map.j",
+ "functions": 466,
+ "start": {
+  "gold": 20,
+  "lumber": 1,
+  "food_cap": 10,
+  "food_cap_ceiling": 35,
+  "xp_handicap_pct": 200.0,
+  "time_of_day": 22.0,
+  "day_night_cycle": false,
+  "fog_of_war_disabled": true,
+  "fog_mask_disabled": true
+ },
+ "income": {
+  "triggers": 10,
+  "period_seconds": 0.5,
+  "gold_per_tick": 1,
+  "paused_while_constructing": true,
+  "resume_sweep_seconds": 60.0,
+  "gold_per_minute": 120
+ },
+ "spawners": [
+  {
+   "building": "hC03",
+   "trains": "zC02"
+  },
+  {
+   "building": "hC14",
+   "trains": "hC16"
+  },
+  {
+   "building": "hC15",
+   "trains": "hC17"
+  },
+  {
+   "building": "hC27",
+   "trains": "hgyr"
+  },
+  {
+   "building": "h000",
+   "trains": "n000"
+  },
+  {
+   "building": "ncp3",
+   "trains": "ugar"
+  },
+  {
+   "building": "hgra",
+   "trains": "otau"
+  },
+  {
+   "building": "nct2",
+   "trains": "zcso"
+  },
+  {
+   "building": "h00K",
+   "trains": "z002"
+  },
+  {
+   "building": "h00M",
+   "trains": "z001"
+  },
+  {
+   "building": "h00L",
+   "trains": "z003"
+  },
+  {
+   "building": "nten",
+   "trains": "zmar"
+  },
+  {
+   "building": "h001",
+   "trains": "n001"
+  },
+  {
+   "building": "h00Q",
+   "trains": "u00D"
+  },
+  {
+   "building": "h00P",
+   "trains": "hgyr"
+  },
+  {
+   "building": "h00R",
+   "trains": "ugar"
+  }
+ ],
+ "autotrain_period_seconds": 5.0,
+ "unit_routing": [
+  {
+   "trigger": "AutoAttackArmyMen4T1",
+   "unit": "zC02",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": "Work"
+  },
+  {
+   "trigger": "AutoAttackArmyMen4T2",
+   "unit": "zC02",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": "Base1"
+  },
+  {
+   "trigger": "AutoAttackLegoSoldier4T1",
+   "unit": "hC16",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": "Work"
+  },
+  {
+   "trigger": "AutoAttackLegoSoldier4T2",
+   "unit": "hC16",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": "Base1"
+  },
+  {
+   "trigger": "AutoAttackLegoKnight4T1",
+   "unit": "hC17",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": "Work"
+  },
+  {
+   "trigger": "AutoAttackLegoKnight4T2",
+   "unit": "hC17",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": "Base1"
+  },
+  {
+   "trigger": "AutoAttackHelicopter4T1",
+   "unit": "hgyr",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": "Work"
+  },
+  {
+   "trigger": "AutoAttackHelicopter4T2",
+   "unit": "hgyr",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": "Base1"
+  },
+  {
+   "trigger": "AutoAttackChasseur4T1",
+   "unit": "u00D",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": "Work"
+  },
+  {
+   "trigger": "AutoAttackChasseur4T2",
+   "unit": "u00D",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": "Base1"
+  },
+  {
+   "trigger": "Bisounours",
+   "unit": "n000",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Robot_1",
+   "unit": "n001",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Bisounous",
+   "unit": "n000",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "pikaT2",
+   "unit": "h00B",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "pikaT1",
+   "unit": "h00B",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "zodiakT1",
+   "unit": "o009",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "ZodiakT2",
+   "unit": "o009",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "AMA_1",
+   "unit": "zmar",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Teddy_T1",
+   "unit": "oC24",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Teddy_T2",
+   "unit": "oC24",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Le_recousu_T1",
+   "unit": "u001",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Le_recousu_T2",
+   "unit": "u001",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Sapphiron_T1",
+   "unit": "ufro",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Sapphiron_T2",
+   "unit": "ufro",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "AMA_2",
+   "unit": "zmar",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "robot_2",
+   "unit": "n001",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Bousillator_1",
+   "unit": "zcso",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Bousillator_2",
+   "unit": "zcso",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "gob_pyro_T1",
+   "unit": "z003",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "gob_sniper_T1",
+   "unit": "z002",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "gob_soldat_T1",
+   "unit": "z001",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "gob_pyro_T2",
+   "unit": "z003",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "gob_sniper_T2",
+   "unit": "z002",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "gob_soldat_T2",
+   "unit": "z001",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "brutus_1",
+   "unit": "otau",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "brutus_2",
+   "unit": "otau",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "bombardier_1",
+   "unit": "ugar",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "bombardier_2",
+   "unit": "ugar",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Balloon4T1",
+   "unit": "oC33",
+   "transferred_to_player": 10,
+   "order": "move",
+   "destination_region": "zone_morveux"
+  },
+  {
+   "trigger": "Balloon4T2",
+   "unit": "oC33",
+   "transferred_to_player": 11,
+   "order": "move",
+   "destination_region": "zone_mioche"
+  }
+ ],
+ "reorder_sweeps": [
+  {
+   "name": "mouvement_auto_T1",
+   "period_seconds": 30.0,
+   "unit_types": [
+    "O007",
+    "hC16",
+    "hC17",
+    "oC24",
+    "z003",
+    "zC02",
+    "z002",
+    "z001",
+    "n000",
+    "hgry",
+    "Hpal",
+    "otau",
+    "zcso",
+    "zmar"
+   ],
+   "destinations": [
+    "zone_morveux"
+   ]
+  },
+  {
+   "name": "mouvement_auto_T2",
+   "period_seconds": 30.0,
+   "unit_types": [
+    "O007",
+    "hC16",
+    "hC17",
+    "oC24",
+    "z003",
+    "zC02",
+    "z002",
+    "z001",
+    "n000",
+    "hgry",
+    "Hpal",
+    "otau",
+    "zcso",
+    "zmar"
+   ],
+   "destinations": [
+    "zone_mioche"
+   ]
+  }
+ ],
+ "victory": [
+  {
+   "trigger": "team1win",
+   "on_unit_death": true,
+   "on_enter_region": null
+  },
+  {
+   "trigger": "team2win",
+   "on_unit_death": true,
+   "on_enter_region": null
+  },
+  {
+   "trigger": "ballon_t1",
+   "on_unit_death": false,
+   "on_enter_region": "zone_morveux"
+  },
+  {
+   "trigger": "ballon_t2",
+   "on_unit_death": false,
+   "on_enter_region": "zone_mioche"
+  }
+ ],
+ "chat_commands": [
+  [
+   "0",
+   "-kick bleu"
+  ],
+  [
+   "0",
+   "-kick bleuc"
+  ],
+  [
+   "0",
+   "-kick cyan"
+  ],
+  [
+   "0",
+   "-kick gris"
+  ],
+  [
+   "0",
+   "-kick jaune"
+  ],
+  [
+   "0",
+   "-kick pourpre"
+  ],
+  [
+   "0",
+   "-kick rose"
+  ],
+  [
+   "0",
+   "-kick rouge"
+  ],
+  [
+   "0",
+   "-kick vert"
+  ]
+ ],
+ "builder_death_penalty": {
+  "escort_unit": "nC12",
+  "escorted_to_region": "ToSchool",
+  "message": "TRIGSTR_066",
+  "respawn_delay_seconds": 60.0,
+  "respawn_unit": "oC00",
+  "respawn_region": "Base1"
+ }
+}

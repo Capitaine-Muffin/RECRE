@@ -1,0 +1,5015 @@
+{
+ "map": "La_Recreation_ninja",
+ "source_file": "La_Recreation_ninja.w3x",
+ "archive": {
+  "files": [
+   "(attributes)",
+   "(listfile)",
+   "war3map.doo",
+   "war3map.j",
+   "war3map.mmp",
+   "war3map.shd",
+   "war3map.w3c",
+   "war3map.w3e",
+   "war3map.w3i",
+   "war3map.w3r",
+   "war3map.w3s",
+   "war3map.w3t",
+   "war3map.w3u",
+   "war3map.wct",
+   "war3map.wpm",
+   "war3map.wtg",
+   "war3map.wts",
+   "war3mapMap.blp",
+   "war3mapUnits.doo"
+  ],
+  "hash_entries": 64,
+  "block_entries": 19
+ },
+ "strings": {
+  "1": {
+   "comment": "",
+   "text": "Player 1"
+  },
+  "2": {
+   "comment": "",
+   "text": "Player 2"
+  },
+  "3": {
+   "comment": "",
+   "text": "Player 3"
+  },
+  "4": {
+   "comment": "",
+   "text": "Player 4"
+  },
+  "5": {
+   "comment": "",
+   "text": "Player 5"
+  },
+  "6": {
+   "comment": "",
+   "text": "Player 6"
+  },
+  "7": {
+   "comment": "",
+   "text": "Player 7"
+  },
+  "8": {
+   "comment": "",
+   "text": "Player 8"
+  },
+  "9": {
+   "comment": "",
+   "text": "Player 9"
+  },
+  "10": {
+   "comment": "",
+   "text": "Player 10"
+  },
+  "22": {
+   "comment": "Unités: zC02 (Ninja lanceur de shurikens), Hotkey (Raccourci)",
+   "text": "A"
+  },
+  "27": {
+   "comment": "Unités: oC05 (Tour), Hotkey (Raccourci)",
+   "text": "T"
+  },
+  "37": {
+   "comment": "",
+   "text": "La Recreation ninja"
+  },
+  "38": {
+   "comment": "",
+   "text": "2 équipes"
+  },
+  "40": {
+   "comment": "",
+   "text": "zemilio"
+  },
+  "53": {
+   "comment": "Unités: hC03 (Camp de lanceur de shurikens), Hotkey (Raccourci)",
+   "text": "M"
+  },
+  "59": {
+   "comment": "Unités: oC09 (Ninja marionnettiste), Hotkey (Raccourci)",
+   "text": "G"
+  },
+  "63": {
+   "comment": "",
+   "text": "La récréation chez les ninjas v2"
+  },
+  "64": {
+   "comment": "",
+   "text": "La baston reprends dans une nouvelle map de récré, Qui sera le gagnant ? . . .\n\n                         zemilio\n"
+  },
+  "66": {
+   "comment": "",
+   "text": "Tu as été un vilain garçon !\nVa au coin 1 minute !"
+  },
+  "67": {
+   "comment": "",
+   "text": "Tu as été un vilain garçon !\nVa au coin 1 minute !"
+  },
+  "82": {
+   "comment": "Unités: hC14 (Camp de taijutsu), Hotkey (Raccourci)",
+   "text": "F"
+  },
+  "89": {
+   "comment": "Unités: hC16 (Ninja), Hotkey (Raccourci)",
+   "text": "L"
+  },
+  "143": {
+   "comment": "",
+   "text": "Les Racailles VS Les Intellos"
+  },
+  "148": {
+   "comment": "Unités: oC11 (Lance-Shurikens), Hotkey (Raccourci)",
+   "text": "C"
+  },
+  "156": {
+   "comment": "Unités: uC28 (Lance Surikens mobile), Hotkey (Raccourci)",
+   "text": "O"
+  },
+  "193": {
+   "comment": "Unités: ohwd (Totem Playmobil), Hotkey (Raccourci)",
+   "text": "P"
+  },
+  "211": {
+   "comment": "Unités: nC12 (Maîtresse), Name (Nom)",
+   "text": "Maîtresse"
+  },
+  "221": {
+   "comment": "Unités: nC29 (Bombe Aérosol), Name (Nom)",
+   "text": "Bombe Aérosol"
+  },
+  "226": {
+   "comment": "Unités: ohwd (Totem Playmobil), Tip (Aide - Basique)",
+   "text": "Placer un Totem |cffffcc00P|rlaymobil"
+  },
+  "228": {
+   "comment": "Unités: ohwd (Totem Playmobil), Name (Nom)",
+   "text": "Totem Playmobil"
+  },
+  "251": {
+   "comment": "Unités: hC32 (Bombe à Eau), Name (Nom)",
+   "text": "Bombe à Eau"
+  },
+  "252": {
+   "comment": "Unités: hC32 (Bombe à Eau), Tip (Aide - Basique)",
+   "text": "Gonfler une |cffffcc00B|rombe à Eau"
+  },
+  "253": {
+   "comment": "Unités: hC32 (Bombe à Eau), Hotkey (Raccourci)",
+   "text": "B"
+  },
+  "260": {
+   "comment": "Unités: oC18 (Sas d'entrainement de Ninja), Hotkey (Raccourci)",
+   "text": "Z"
+  },
+  "262": {
+   "comment": "Unités: oC23 (Jounin), Hotkey (Raccourci)",
+   "text": "I"
+  },
+  "287": {
+   "comment": "",
+   "text": "Défaite !"
+  },
+  "297": {
+   "comment": "",
+   "text": "Défaite !"
+  },
+  "299": {
+   "comment": "",
+   "text": "               La récré reprends ! Et les combats avec !\n\nZemilio"
+  },
+  "305": {
+   "comment": "Unités: nC29 (Bombe Aérosol), Tip (Aide - Basique)",
+   "text": "Déposer une Bombe |cffffcc00A|rerosol"
+  },
+  "316": {
+   "comment": "Unités: oC21 (Tank Miniature Matchbox en kit), Tip (Aide - Basique)",
+   "text": "Assembler une Maquette Tan|cffffcc00k|r"
+  },
+  "317": {
+   "comment": "Unités: hmpr (Esprit de Kyubi), Hotkey (Raccourci)",
+   "text": "K"
+  },
+  "320": {
+   "comment": "Unités: hC27 (Camp des ninjas volants), Hotkey (Raccourci)",
+   "text": "H"
+  },
+  "329": {
+   "comment": "Unités: oC21 (Tank Miniature Matchbox en kit), Name (Nom)",
+   "text": "Tank Miniature Matchbox en kit"
+  },
+  "330": {
+   "comment": "Unités: hC22 (Tank Miniature Matchbox), Name (Nom)",
+   "text": "Tank Miniature Matchbox"
+  },
+  "336": {
+   "comment": "Unités: hC15 (Camp de taijutsu & de chevaliers), Ubertip (Aide - Etendue)",
+   "text": "Améliorer en château pour entrainer des chevaliers."
+  },
+  "346": {
+   "comment": "Unités: hC34 (Volcan de Purée), Name (Nom)",
+   "text": "Volcan de Purée"
+  },
+  "351": {
+   "comment": "Unités: oC35 (Esprit de L'ours), Hotkey (Raccourci)",
+   "text": "N"
+  },
+  "353": {
+   "comment": "Unités: ohwd (Totem Playmobil), Ubertip (Aide - Etendue)",
+   "text": "Un totem indien magique au pouvoir mystique surprennant.|n|n|cffffcc00Régénération.|r"
+  },
+  "366": {
+   "comment": "Unités: oC23 (Jounin), Ubertip (Aide - Etendue)",
+   "text": "Le meilleur ami des tous petits !|n|n|cffffcc00Unité de construction avancée.|r"
+  },
+  "370": {
+   "comment": "Unités: hC32 (Bombe à Eau), Ubertip (Aide - Etendue)",
+   "text": "La bombe à eau peut détruire le château ennemi d'un seul coup !|n|n|cffffcc00Très fragile !|r"
+  },
+  "400": {
+   "comment": "Unités: oC21 (Tank Miniature Matchbox en kit), Ubertip (Aide - Etendue)",
+   "text": "Une char d'assaut en maquette pour les adeptes du Blietzkrigg.|n|n|cffffcc00Attaque les unités terrestres et aériennes, dégats supplémentaires sur les batiments.|r"
+  },
+  "402": {
+   "comment": "",
+   "text": "Défaite !"
+  },
+  "409": {
+   "comment": "",
+   "text": "Défaite !"
+  },
+  "411": {
+   "comment": "Unités: hC32 (Bombe à Eau), EditorSuffix (Nom - Suffixe éditeur)",
+   "text": "unit"
+  },
+  "416": {
+   "comment": "Unités: nC29 (Bombe Aérosol), Ubertip (Aide - Etendue)",
+   "text": "Une bombe aérosol nocive pour la santé.|n|n|cffffcc00Attaque les unités terrestres et aériennes.|r"
+  },
+  "417": {
+   "comment": "Unités: oC36 (Centre de Konoha : QG des ninjas), EditorSuffix (Nom - Suffixe éditeur)",
+   "text": "final"
+  },
+  "418": {
+   "comment": "Unités: nC01 (Bombe Aérosol Incendiaire), Name (Nom)",
+   "text": "Bombe Aérosol Incendiaire"
+  },
+  "419": {
+   "comment": "Unités: nC01 (Bombe Aérosol Incendiaire), Tip (Aide - Basique)",
+   "text": "Allumer une allumette devant la Bombe |cffffcc00A|rerosol"
+  },
+  "420": {
+   "comment": "Unités: nC01 (Bombe Aérosol Incendiaire), Ubertip (Aide - Etendue)",
+   "text": "Une bombe aérosol avec une allumette devant le spray (ne faite en aucun cas ce genre de manipulation chez vous !).|n|n|cffffcc00Attaque les unités terrestres et aériennes.|r"
+  },
+  "435": {
+   "comment": "",
+   "text": "Les Racailles"
+  },
+  "436": {
+   "comment": "",
+   "text": "Les Intellos"
+  },
+  "437": {
+   "comment": "Unités: oC00 (Racaille), Name (Nom)",
+   "text": "Racaille"
+  },
+  "441": {
+   "comment": "Unités: oC06 (Intello), Name (Nom)",
+   "text": "Intello"
+  },
+  "444": {
+   "comment": "Unités: nC30 (Resto de Ichiraku), Tip (Aide - Basique)",
+   "text": "Servir le repas de midi !!"
+  },
+  "459": {
+   "comment": "Objets: IC43 (Couronne des rois), Name (Nom)",
+   "text": "Couronne des rois"
+  },
+  "460": {
+   "comment": "Objets: IC44 (Mine gobelines), Name (Nom)",
+   "text": "Mine gobelines"
+  },
+  "464": {
+   "comment": "Unités: nC49 (Magasin de jouets), Name (Nom)",
+   "text": "Magasin de jouets"
+  },
+  "465": {
+   "comment": "Unités: oC07 (Sas d'entrainement de Ninja), Hotkey (Raccourci)",
+   "text": "A"
+  },
+  "466": {
+   "comment": "Unités: oC13 (Tour de Sharingan), Hotkey (Raccourci)",
+   "text": "P"
+  },
+  "467": {
+   "comment": "Unités: hC15 (Camp de taijutsu & de chevaliers), Hotkey (Raccourci)",
+   "text": "A"
+  },
+  "469": {
+   "comment": "Unités: nC29 (Bombe Aérosol), Hotkey (Raccourci)",
+   "text": "A"
+  },
+  "470": {
+   "comment": "Unités: oC25 (Tour de Mangakyou Sharingan), Hotkey (Raccourci)",
+   "text": "A"
+  },
+  "472": {
+   "comment": "Unités: oC04 (Lanceur de shurikiens Mobile), Hotkey (Raccourci)",
+   "text": "C"
+  },
+  "473": {
+   "comment": "Unités: oC31 (Lance-Shurikens Amélioré), Hotkey (Raccourci)",
+   "text": "L"
+  },
+  "474": {
+   "comment": "Unités: oC33 (Bombe à Eau), Name (Nom)",
+   "text": "Bombe à Eau"
+  },
+  "475": {
+   "comment": "Unités: oC33 (Bombe à Eau), Tip (Aide - Basique)",
+   "text": "Gonfler une |cffffcc00B|rombe à Eau"
+  },
+  "476": {
+   "comment": "Unités: oC33 (Bombe à Eau), Ubertip (Aide - Etendue)",
+   "text": "La bombe à eau peut détruire le château ennemi d'un seul coup !|n|n|cffffcc00Très fragile !|r"
+  },
+  "477": {
+   "comment": "Unités: oC33 (Bombe à Eau), Hotkey (Raccourci)",
+   "text": "B"
+  },
+  "478": {
+   "comment": "Unités: hC26 (Esprit de Kuyubi), Hotkey (Raccourci)",
+   "text": "P"
+  },
+  "481": {
+   "comment": "Unités: nC01 (Bombe Aérosol Incendiaire), Hotkey (Raccourci)",
+   "text": "A"
+  },
+  "482": {
+   "comment": "Unités: hmpr (Esprit de Kyubi), Name (Nom)",
+   "text": "Esprit de Kyubi"
+  },
+  "484": {
+   "comment": "Unités: hmpr (Esprit de Kyubi), Ubertip (Aide - Etendue)",
+   "text": "L'esprit de Kyubi, lorsqu'il n'est pas emprisonné peut faire de grands ravages. Toutes les constructions seront détruites et les unités crées seront tuées."
+  },
+  "485": {
+   "comment": "Unités: hgyr (Ninja aux shurikens qui vole), Name (Nom)",
+   "text": "Ninja aux shurikens qui vole"
+  },
+  "486": {
+   "comment": "Unités: hgyr (Ninja aux shurikens qui vole), Tip (Aide - Basique)",
+   "text": "Lancer un Ninja spécialisé dans le lancer de shuriken à basse altitude."
+  },
+  "487": {
+   "comment": "Unités: hgyr (Ninja aux shurikens qui vole), Ubertip (Aide - Etendue)",
+   "text": "Ces ninjas entraînés spécialement pour ce type de mission peuvent surprendre l'ennemis là ou il ne s'y attend pas."
+  },
+  "488": {
+   "comment": "Unités: Hpal (Ninja utilisateur du Chidori), Name (Nom)",
+   "text": "Ninja utilisateur du Chidori"
+  },
+  "489": {
+   "comment": "Unités: Edem (Ninja utilisateur du Jyuuken), Name (Nom)",
+   "text": "Ninja utilisateur du Jyuuken"
+  },
+  "490": {
+   "comment": "Unités: Edem (Ninja utilisateur du Jyuuken), Hotkey (Raccourci)",
+   "text": "J"
+  },
+  "491": {
+   "comment": "Unités: hctw (Tour de Konoha), Name (Nom)",
+   "text": "Tour de Konoha"
+  },
+  "492": {
+   "comment": "Unités: hctw (Tour de Konoha), Ubertip (Aide - Etendue)",
+   "text": "Tour protégeant le village caché de Konoha"
+  },
+  "494": {
+   "comment": "Unités: hctw (Tour de Konoha), Hotkey (Raccourci)",
+   "text": "K"
+  },
+  "495": {
+   "comment": "Unités: oC05 (Tour), Name (Nom)",
+   "text": "Tour"
+  },
+  "496": {
+   "comment": "Unités: oC05 (Tour), Ubertip (Aide - Etendue)",
+   "text": "Une tour de base pas très utile, mais rapide à contruire."
+  },
+  "497": {
+   "comment": "Unités: oC05 (Tour), Tip (Aide - Basique)",
+   "text": "Construire une Tour"
+  },
+  "498": {
+   "comment": "Unités: oC07 (Sas d'entrainement de Ninja), Name (Nom)",
+   "text": "Sas d'entrainement de Ninja"
+  },
+  "499": {
+   "comment": "Unités: oC07 (Sas d'entrainement de Ninja), Tip (Aide - Basique)",
+   "text": "Entrainer un Ninja utilisateur du Jyuuken."
+  },
+  "500": {
+   "comment": "Unités: oC07 (Sas d'entrainement de Ninja), Ubertip (Aide - Etendue)",
+   "text": "Le Jyuuken est un art de combat au corps à corps. Particulièrement dévastateur, ce taijutsu est le plus puissant au niveau des effets à Long terme."
+  },
+  "501": {
+   "comment": "Unités: oC10 (Ninja marionettiste), Name (Nom)",
+   "text": "Ninja marionettiste"
+  },
+  "502": {
+   "comment": "Unités: hC16 (Ninja), Name (Nom)",
+   "text": "Ninja"
+  },
+  "503": {
+   "comment": "Unités: hC16 (Ninja), Tip (Aide - Basique)",
+   "text": "Entrainer un Ninja"
+  },
+  "504": {
+   "comment": "Unités: hC16 (Ninja), Ubertip (Aide - Etendue)",
+   "text": "Ninja de Konoha prêt à se battre."
+  },
+  "505": {
+   "comment": "Unités: hC17 (Ninja à cheval), Name (Nom)",
+   "text": "Ninja à cheval"
+  },
+  "506": {
+   "comment": "Unités: hC17 (Ninja à cheval), Tip (Aide - Basique)",
+   "text": "Entrainer un Ninja à cheval."
+  },
+  "507": {
+   "comment": "Unités: hC17 (Ninja à cheval), Ubertip (Aide - Etendue)",
+   "text": "Sur son cheval, le ninja se déplace plus rapidement et supporte mieux les attaques ennemies."
+  },
+  "508": {
+   "comment": "Unités: oC18 (Sas d'entrainement de Ninja), Name (Nom)",
+   "text": "Sas d'entrainement de Ninja"
+  },
+  "509": {
+   "comment": "Unités: oC18 (Sas d'entrainement de Ninja), Tip (Aide - Basique)",
+   "text": "Entrainer un Ninja utilisateur du Chidori."
+  },
+  "510": {
+   "comment": "Unités: oC18 (Sas d'entrainement de Ninja), Ubertip (Aide - Etendue)",
+   "text": "Tel un pouvoir surnaturel, le chidori est dévastateur et ses dégats sont condérables."
+  },
+  "511": {
+   "comment": "Unités: oC21 (Tank Miniature Matchbox en kit), Hotkey (Raccourci)",
+   "text": "K"
+  },
+  "512": {
+   "comment": "Unités: oC23 (Jounin), Name (Nom)",
+   "text": "Jounin"
+  },
+  "513": {
+   "comment": "Unités: oC23 (Jounin), Tip (Aide - Basique)",
+   "text": "Jounin"
+  },
+  "514": {
+   "comment": "Unités: oC19 (Jounin), Name (Nom)",
+   "text": "Jounin"
+  },
+  "515": {
+   "comment": "Unités: oC24 (Esprit de l'ours), Name (Nom)",
+   "text": "Esprit de l'ours"
+  },
+  "516": {
+   "comment": "Unités: oC35 (Esprit de L'ours), Name (Nom)",
+   "text": "Esprit de L'ours"
+  },
+  "518": {
+   "comment": "Unités: oC35 (Esprit de L'ours), Ubertip (Aide - Etendue)",
+   "text": "Cet Ours ravage tout sur son passage. Il est l'un des derniers Monstres encore vivant."
+  },
+  "522": {
+   "comment": "Unités: hC03 (Camp de lanceur de shurikens), Name (Nom)",
+   "text": "Camp de lanceur de shurikens"
+  },
+  "523": {
+   "comment": "Unités: hC03 (Camp de lanceur de shurikens), Ubertip (Aide - Etendue)",
+   "text": "Les lanceurs de Shurikens sont capables d'attaquer à distance des ennemis ou des bâtiments."
+  },
+  "524": {
+   "comment": "Unités: hC03 (Camp de lanceur de shurikens), Tip (Aide - Basique)",
+   "text": "Construire un camp de lanceur de Shurikens."
+  },
+  "525": {
+   "comment": "Unités: oC09 (Ninja marionnettiste), Name (Nom)",
+   "text": "Ninja marionnettiste"
+  },
+  "526": {
+   "comment": "Unités: oC09 (Ninja marionnettiste), Tip (Aide - Basique)",
+   "text": "Former un ninja marionnettiste."
+  },
+  "527": {
+   "comment": "Unités: oC09 (Ninja marionnettiste), Ubertip (Aide - Etendue)",
+   "text": "Une marionnette est capable de faire des dégats , toutefoi sa capacité n'est pas treès puissante."
+  },
+  "528": {
+   "comment": "Unités: oC11 (Lance-Shurikens), Name (Nom)",
+   "text": "Lance-Shurikens"
+  },
+  "529": {
+   "comment": "Unités: oC11 (Lance-Shurikens), Tip (Aide - Basique)",
+   "text": "Construire un Lance-Shurikens."
+  },
+  "530": {
+   "comment": "Unités: oC11 (Lance-Shurikens), Ubertip (Aide - Etendue)",
+   "text": "Un lanceur de shurikens est capable de dégommer une cible éloignée."
+  },
+  "531": {
+   "comment": "Unités: oC13 (Tour de Sharingan), Name (Nom)",
+   "text": "Tour de Sharingan"
+  },
+  "532": {
+   "comment": "Unités: oC13 (Tour de Sharingan), Tip (Aide - Basique)",
+   "text": "Construire une Tour de Sharingan"
+  },
+  "533": {
+   "comment": "Unités: oC13 (Tour de Sharingan), Ubertip (Aide - Etendue)",
+   "text": "Le Sharingan est art de Konoha capable de décerner le ninjutsu de l'ennemi."
+  },
+  "534": {
+   "comment": "Unités: hC14 (Camp de taijutsu), Name (Nom)",
+   "text": "Camp de taijutsu"
+  },
+  "535": {
+   "comment": "Unités: hC14 (Camp de taijutsu), Tip (Aide - Basique)",
+   "text": "Construire une camp de Taijutsu."
+  },
+  "536": {
+   "comment": "Unités: hC14 (Camp de taijutsu), Ubertip (Aide - Etendue)",
+   "text": "Ce camp spécialisé dans la formation de ninja spécialistes du taijutsu peut faire des merveilles."
+  },
+  "537": {
+   "comment": "Unités: hC15 (Camp de taijutsu & de chevaliers), Name (Nom)",
+   "text": "Camp de taijutsu & de chevaliers"
+  },
+  "538": {
+   "comment": "Unités: hC15 (Camp de taijutsu & de chevaliers), Tip (Aide - Basique)",
+   "text": "Améliorer en Camp de chevalier."
+  },
+  "539": {
+   "comment": "Unités: uC28 (Lance Surikens mobile), Name (Nom)",
+   "text": "Lance Surikens mobile"
+  },
+  "540": {
+   "comment": "Unités: oC25 (Tour de Mangakyou Sharingan), Name (Nom)",
+   "text": "Tour de Mangakyou Sharingan"
+  },
+  "541": {
+   "comment": "Unités: oC25 (Tour de Mangakyou Sharingan), Tip (Aide - Basique)",
+   "text": "Améliorer le Sharingan en Mangakyou Sharingan"
+  },
+  "542": {
+   "comment": "Unités: oC25 (Tour de Mangakyou Sharingan), Ubertip (Aide - Etendue)",
+   "text": "Le Mangakyou Sharingan est une amélioration du Sharingan commun très rare. Elle permet l'utilisation de techniques bien sombres."
+  },
+  "543": {
+   "comment": "Unités: oC04 (Lanceur de shurikiens Mobile), Name (Nom)",
+   "text": "Lanceur de shurikiens Mobile"
+  },
+  "544": {
+   "comment": "Unités: oC04 (Lanceur de shurikiens Mobile), Tip (Aide - Basique)",
+   "text": "Construire un lanceur de shurikens mobile"
+  },
+  "545": {
+   "comment": "Unités: oC04 (Lanceur de shurikiens Mobile), Ubertip (Aide - Etendue)",
+   "text": "Version améliorée du lanceur de shuriken fixe, plus lent mais plus puissant."
+  },
+  "546": {
+   "comment": "Unités: oC31 (Lance-Shurikens Amélioré), Name (Nom)",
+   "text": "Lance-Shurikens Amélioré"
+  },
+  "547": {
+   "comment": "Unités: oC31 (Lance-Shurikens Amélioré), Tip (Aide - Basique)",
+   "text": "Améliorer le Lance-Shurikens."
+  },
+  "548": {
+   "comment": "Unités: oC31 (Lance-Shurikens Amélioré), Ubertip (Aide - Etendue)",
+   "text": "Améliorer le Lance-Shurikens : cela permet une plus grande portée et une meilleure attaque."
+  },
+  "549": {
+   "comment": "Unités: hC26 (Esprit de Kuyubi), Name (Nom)",
+   "text": "Esprit de Kuyubi"
+  },
+  "550": {
+   "comment": "Unités: hC26 (Esprit de Kuyubi), Tip (Aide - Basique)",
+   "text": "Invoquer l'Esprit de Kyubi."
+  },
+  "551": {
+   "comment": "Unités: hC26 (Esprit de Kuyubi), Ubertip (Aide - Etendue)",
+   "text": "L'esprit de Kyubi est capable de détruire tous les bâtiments. Néammoins il est impossible de le maitriser, il détruit donc TOUT sur son passage, même vos propres constructions."
+  },
+  "552": {
+   "comment": "Unités: hC27 (Camp des ninjas volants), Name (Nom)",
+   "text": "Camp des ninjas volants"
+  },
+  "553": {
+   "comment": "Unités: hC27 (Camp des ninjas volants), Tip (Aide - Basique)",
+   "text": "Construire un camp de ninjas volants."
+  },
+  "554": {
+   "comment": "Unités: hC27 (Camp des ninjas volants), Ubertip (Aide - Etendue)",
+   "text": "Les ninja volants lancent des shurikens explosifs  qui peuvent détruire des batiments ennemis. Ils peuvent aussi survoler toute la carte."
+  },
+  "556": {
+   "comment": "Unités: nC30 (Resto de Ichiraku), Ubertip (Aide - Etendue)",
+   "text": "Vive Ichiraku et ses célèbres Ramen, vive Ichiraku, le meilleur cuisto de tout konoha, d'après Naruto lui-même."
+  },
+  "557": {
+   "comment": "Unités: oC08 (Repas rapide des ninjas), Name (Nom)",
+   "text": "Repas rapide des ninjas"
+  },
+  "558": {
+   "comment": "Unités: oC08 (Repas rapide des ninjas), Tip (Aide - Basique)",
+   "text": "Préparer le repas des ninjas."
+  },
+  "559": {
+   "comment": "Unités: oC08 (Repas rapide des ninjas), Ubertip (Aide - Etendue)",
+   "text": "Repas rapide des ninja qui ont la dalle ! Produit un peu de nourriture. Envoie des bout de viande  si un ennemi s'approche."
+  },
+  "560": {
+   "comment": "Unités: oC36 (Centre de Konoha : QG des ninjas), Name (Nom)",
+   "text": "Centre de Konoha : QG des ninjas"
+  },
+  "561": {
+   "comment": "Unités: oC20 (La tour des ninjas), Name (Nom)",
+   "text": "La tour des ninjas"
+  },
+  "562": {
+   "comment": "Unités: oC20 (La tour des ninjas), Ubertip (Aide - Etendue)",
+   "text": "La tour des Ninjas est très puissante et capable de tuer de nombreux ninjas."
+  },
+  "563": {
+   "comment": "Unités: oC20 (La tour des ninjas), Tip (Aide - Basique)",
+   "text": "Construire la tour des ninjas !"
+  },
+  "564": {
+   "comment": "Unités: uC37 (Sarutobi), Name (Nom)",
+   "text": "Sarutobi"
+  },
+  "565": {
+   "comment": "Unités: uC37 (Sarutobi), Ubertip (Aide - Etendue)",
+   "text": "Sarutobi est le très célèbre Sandaime, le Troisième Hokage de Konoha. Sa force est considérable, mais son prix l'est autant."
+  },
+  "566": {
+   "comment": "Unités: uC37 (Sarutobi), Tip (Aide - Basique)",
+   "text": "Appeler Sarutobi"
+  },
+  "567": {
+   "comment": "Unités: hC38 (Académie de Konoha), Name (Nom)",
+   "text": "Académie de Konoha"
+  },
+  "568": {
+   "comment": "Unités: hC38 (Académie de Konoha), Tip (Aide - Basique)",
+   "text": "Construire une académie de Konoha"
+  },
+  "569": {
+   "comment": "Unités: oC40 (Akamaru), Name (Nom)",
+   "text": "Akamaru"
+  },
+  "570": {
+   "comment": "Unités: oC40 (Akamaru), Tip (Aide - Basique)",
+   "text": "Invoquer Akamaru"
+  },
+  "571": {
+   "comment": "Unités: oC40 (Akamaru), Ubertip (Aide - Etendue)",
+   "text": "Les très célèbre chien de Kiba est pret à servir la bonne cause. Néammoins il ne peut s'en prendre qu'aux ninjas, et non aux batiments."
+  },
+  "572": {
+   "comment": "Unités: zC02 (Ninja lanceur de shurikens), Name (Nom)",
+   "text": "Ninja lanceur de shurikens"
+  },
+  "573": {
+   "comment": "Unités: zC02 (Ninja lanceur de shurikens), Tip (Aide - Basique)",
+   "text": "Entrainer un Ninja."
+  },
+  "574": {
+   "comment": "Unités: zC02 (Ninja lanceur de shurikens), Ubertip (Aide - Etendue)",
+   "text": "Un ninja attaquant à distance."
+  },
+  "575": {
+   "comment": "Unités: nC30 (Resto de Ichiraku), Name (Nom)",
+   "text": "Resto de Ichiraku"
+  },
+  "576": {
+   "comment": "Unités: hmpr (Esprit de Kyubi), Tip (Aide - Basique)",
+   "text": "Libérer l'Esprit de Kyubi"
+  },
+  "577": {
+   "comment": "Unités: hctw (Tour de Konoha), Tip (Aide - Basique)",
+   "text": "Améliorer en Tour de Konoha"
+  },
+  "578": {
+   "comment": "Unités: oC35 (Esprit de L'ours), Tip (Aide - Basique)",
+   "text": "Invoquer l'esprit de l'Ours"
+  },
+  "579": {
+   "comment": "Unités: oC39 (Ninja soigneur), Name (Nom)",
+   "text": "Ninja soigneur"
+  },
+  "580": {
+   "comment": "Unités: oC39 (Ninja soigneur), Tip (Aide - Basique)",
+   "text": "Entrainer un ninja soigneur."
+  },
+  "581": {
+   "comment": "Unités: Hmkg (Kakashi), Name (Nom)",
+   "text": "Kakashi"
+  },
+  "582": {
+   "comment": "Unités: Hmkg (Kakashi), Tip (Aide - Basique)",
+   "text": "Appeler Kakashi-sensei"
+  },
+  "583": {
+   "comment": "Unités: Hmkg (Kakashi), Ubertip (Aide - Etendue)",
+   "text": "Le célèbre ninja copieur se montre enfin, décidé à détruire tout ennemi au moyen de ses techniques de ninja très impréssionnantes."
+  },
+  "584": {
+   "comment": "Unités: Hmkg (Kakashi), Revivetip (Aide - Résurrection)",
+   "text": "Ressusciter Kakashi"
+  },
+  "585": {
+   "comment": "Unités: Hmkg (Kakashi), Propernames (Noms propres)",
+   "text": "Kakashi-sensei"
+  },
+  "586": {
+   "comment": "Unités: Otch (Tsunade), Name (Nom)",
+   "text": "Tsunade"
+  },
+  "587": {
+   "comment": "Unités: Otch (Tsunade), Tip (Aide - Basique)",
+   "text": "Appeler Tsunade."
+  },
+  "588": {
+   "comment": "Unités: Otch (Tsunade), Ubertip (Aide - Etendue)",
+   "text": "Cinquième Hokage de Konoha, cette légendaire Sannin est dotée d'une force considérable."
+  },
+  "589": {
+   "comment": "Unités: Otch (Tsunade), Revivetip (Aide - Résurrection)",
+   "text": "Ressusciter Tsunade"
+  },
+  "590": {
+   "comment": "Unités: Otch (Tsunade), Propernames (Noms propres)",
+   "text": "Tsunade Oba-chan"
+  },
+  "591": {
+   "comment": "Unités: Ekee (Jiraya), Name (Nom)",
+   "text": "Jiraya"
+  },
+  "592": {
+   "comment": "Unités: Ekee (Jiraya), Propernames (Noms propres)",
+   "text": "Ero-Senin"
+  },
+  "593": {
+   "comment": "Unités: Ekee (Jiraya), Tip (Aide - Basique)",
+   "text": "Appeler Jiraya."
+  },
+  "594": {
+   "comment": "Unités: Ekee (Jiraya), Ubertip (Aide - Etendue)",
+   "text": "Légendaire Sannin, Jiraya vous montrera comment l'expérience du combat et la pratique de la perversité vous permettent de gagner la partie."
+  },
+  "595": {
+   "comment": "Unités: Ekee (Jiraya), Revivetip (Aide - Résurrection)",
+   "text": "Ressusciter Jiraya."
+  },
+  "596": {
+   "comment": "Unités: Ulic (Gaara), Name (Nom)",
+   "text": "Gaara"
+  },
+  "597": {
+   "comment": "Unités: Ulic (Gaara), Ubertip (Aide - Etendue)",
+   "text": "Gaara est un Héro capable de faire bien des miracles à l'aide de ses attaques à distance."
+  },
+  "598": {
+   "comment": "Unités: Ulic (Gaara), Tip (Aide - Basique)",
+   "text": "Appeler Gaara"
+  },
+  "599": {
+   "comment": "Unités: Ulic (Gaara), Revivetip (Aide - Résurrection)",
+   "text": "Ressusciter Gaara"
+  },
+  "600": {
+   "comment": "Unités: Ulic (Gaara), Propernames (Noms propres)",
+   "text": "Gaara"
+  },
+  "601": {
+   "comment": "Objets: I000 (Tome d'expérience), Ubertip (Aide - Etendue)",
+   "text": "Augmente le Niveau du héro proche de 1."
+  }
+ },
+ "info": {
+  "format": 25,
+  "saves": 363,
+  "editor_version": 6061,
+  "name": "La Recreation ninja",
+  "author": "zemilio",
+  "description": "               La récré reprends ! Et les combats avec !\n\nZemilio",
+  "recommended_players": "2 équipes",
+  "camera_bounds": [
+   -2816.0,
+   -3584.0,
+   2944.0,
+   2816.0,
+   -2816.0,
+   2816.0,
+   2944.0,
+   -3584.0
+  ],
+  "camera_complements": [
+   6,
+   5,
+   2,
+   8
+  ],
+  "playable_w": 53,
+  "playable_h": 54,
+  "flags": 18032,
+  "tileset": "L",
+  "loading_screen_index": 44,
+  "loading_screen_custom": "",
+  "loading_text": "TRIGSTR_064",
+  "loading_title": "TRIGSTR_143",
+  "loading_subtitle": "TRIGSTR_063",
+  "game_data_set": 0,
+  "prologue_path": "",
+  "prologue_text": "",
+  "prologue_title": "",
+  "prologue_subtitle": "",
+  "fog_style": 0,
+  "fog_z_start": 3000.0,
+  "fog_z_end": 5000.0,
+  "fog_density": 0.5,
+  "fog_color": [
+   0,
+   0,
+   0,
+   255
+  ],
+  "weather_global": 0,
+  "sound_env": "",
+  "light_env": "\u0000",
+  "water_color": [
+   255,
+   255,
+   255,
+   255
+  ],
+  "players": [
+   {
+    "id": 0,
+    "type": 1,
+    "race": 1,
+    "fixed_start": 1,
+    "name": "Player 1",
+    "start_x": -2688.0,
+    "start_y": 1600.0,
+    "ally_low_prio": 0,
+    "ally_high_prio": 2
+   },
+   {
+    "id": 1,
+    "type": 1,
+    "race": 1,
+    "fixed_start": 1,
+    "name": "Player 2",
+    "start_x": -2752.0,
+    "start_y": 1728.0,
+    "ally_low_prio": 0,
+    "ally_high_prio": 5
+   },
+   {
+    "id": 2,
+    "type": 1,
+    "race": 1,
+    "fixed_start": 1,
+    "name": "Player 3",
+    "start_x": -2688.0,
+    "start_y": 1856.0,
+    "ally_low_prio": 0,
+    "ally_high_prio": 10
+   },
+   {
+    "id": 3,
+    "type": 1,
+    "race": 1,
+    "fixed_start": 1,
+    "name": "Player 4",
+    "start_x": -2688.0,
+    "start_y": 1984.0,
+    "ally_low_prio": 16,
+    "ally_high_prio": 4
+   },
+   {
+    "id": 4,
+    "type": 1,
+    "race": 1,
+    "fixed_start": 1,
+    "name": "Player 5",
+    "start_x": -2688.0,
+    "start_y": 2176.0,
+    "ally_low_prio": 0,
+    "ally_high_prio": 8
+   },
+   {
+    "id": 5,
+    "type": 1,
+    "race": 1,
+    "fixed_start": 1,
+    "name": "Player 6",
+    "start_x": 2880.0,
+    "start_y": -2880.0,
+    "ally_low_prio": 0,
+    "ally_high_prio": 64
+   },
+   {
+    "id": 6,
+    "type": 1,
+    "race": 1,
+    "fixed_start": 1,
+    "name": "Player 7",
+    "start_x": 2816.0,
+    "start_y": -2688.0,
+    "ally_low_prio": 32,
+    "ally_high_prio": 128
+   },
+   {
+    "id": 7,
+    "type": 1,
+    "race": 1,
+    "fixed_start": 1,
+    "name": "Player 8",
+    "start_x": 2880.0,
+    "start_y": -2560.0,
+    "ally_low_prio": 0,
+    "ally_high_prio": 320
+   },
+   {
+    "id": 8,
+    "type": 1,
+    "race": 1,
+    "fixed_start": 1,
+    "name": "Player 9",
+    "start_x": 2880.0,
+    "start_y": -2432.0,
+    "ally_low_prio": 0,
+    "ally_high_prio": 640
+   },
+   {
+    "id": 9,
+    "type": 1,
+    "race": 1,
+    "fixed_start": 1,
+    "name": "Player 10",
+    "start_x": 2880.0,
+    "start_y": -2304.0,
+    "ally_low_prio": 0,
+    "ally_high_prio": 256
+   },
+   {
+    "id": 10,
+    "type": 2,
+    "race": 1,
+    "fixed_start": 1,
+    "name": "Les Racailles",
+    "start_x": -2944.0,
+    "start_y": 1856.0,
+    "ally_low_prio": 384,
+    "ally_high_prio": 6
+   },
+   {
+    "id": 11,
+    "type": 2,
+    "race": 1,
+    "fixed_start": 1,
+    "name": "Les Intellos",
+    "start_x": 3072.0,
+    "start_y": -2624.0,
+    "ally_low_prio": 0,
+    "ally_high_prio": 2047
+   }
+  ],
+  "forces": [
+   {
+    "flags": 11,
+    "player_mask": 4294964255,
+    "name": "Les Racailles"
+   },
+   {
+    "flags": 11,
+    "player_mask": 3040,
+    "name": "Les Intellos"
+   }
+  ],
+  "upgrades": [
+   {
+    "player_mask": 4095,
+    "id": "Remg",
+    "level": 0,
+    "availability": 2
+   },
+   {
+    "player_mask": 4095,
+    "id": "Rhse",
+    "level": 0,
+    "availability": 2
+   }
+  ],
+  "tech": [],
+  "unit_tables": []
+ },
+ "units": {
+  "modified_standard": [
+   {
+    "id": "ohwd",
+    "base": "ohwd",
+    "cost_gold": 10,
+    "build_time": 5,
+    "unit_type": "mechanical",
+    "hp_max": 20,
+    "tip": "Placer un Totem |cffffcc00P|rlaymobil",
+    "uhot": "P",
+    "utub": "Un totem indien magique au pouvoir mystique surprennant.|n|n|cffffcc00Régénération.|r",
+    "name": "Totem Playmobil"
+   },
+   {
+    "id": "hmpr",
+    "base": "hmpr",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNEarthquake.blp",
+    "name": "Esprit de Kyubi",
+    "tip": "Libérer l'Esprit de Kyubi",
+    "utub": "L'esprit de Kyubi, lorsqu'il n'est pas emprisonné peut faire de grands ravages. Toutes les constructions seront détruites et les unités crées seront tuées.",
+    "build_time": 30,
+    "cost_gold": 0,
+    "cost_lumber": 0,
+    "food_used": 0,
+    "model": "units\\creeps\\GoblinSapper\\GoblinSapper",
+    "uhot": "K"
+   },
+   {
+    "id": "hgyr",
+    "base": "hgyr",
+    "name": "Ninja aux shurikens qui vole",
+    "upgrades_used": "",
+    "cost_lumber": 0,
+    "cost_gold": 0,
+    "tint_b": 150,
+    "tint_r": 150,
+    "uclg": 150,
+    "ucol": 16.0,
+    "hp_max": 250,
+    "atk1_dmg_base": 5,
+    "armor": 4,
+    "abilities_normal": "",
+    "attacks_enabled": 3,
+    "food_used": 0,
+    "tip": "Lancer un Ninja spécialisé dans le lancer de shuriken à basse altitude.",
+    "utub": "Ces ninjas entraînés spécialement pour ce type de mission peuvent surprendre l'ennemis là ou il ne s'y attend pas.",
+    "build_time": 45,
+    "ua2g": "ward,structure,debris,item",
+    "atk2_sides": 10,
+    "atk2_dice": 2,
+    "atk2_dmg_base": 20,
+    "atk1_sides": 10,
+    "model": "units\\human\\GryphonRider\\GryphonRider.mdl"
+   },
+   {
+    "id": "Hpal",
+    "base": "Hpal",
+    "name": "Ninja utilisateur du Chidori",
+    "model": "units\\human\\Uther\\Uther",
+    "usca": 0.7,
+    "tint_b": 0,
+    "selection_scale": 1.0,
+    "cost_lumber": 0,
+    "cost_gold": 0,
+    "food_used": 10,
+    "hero_str_per_lvl": 5,
+    "ustp": 5.0,
+    "hero_int_per_lvl": 2,
+    "uinp": 2.0,
+    "hero_agi_per_lvl": 2,
+    "uagp": 2.5,
+    "hp_max": 250,
+    "hp_regen": 0.0,
+    "atk1_range_motion_buffer": 200,
+    "atk1_type": "chaos",
+    "atk1_weapon_type": "mline",
+    "atk1_dmg_point": "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
+    "atk1_area_full": "air,ward,structure,debris,item,ground",
+    "atk1_dice": 4,
+    "atk1_sides": 8,
+    "atk1_range": 1.5,
+    "atk1_cooldown": 50,
+    "atk1_area_medium": 150,
+    "atk1_area_small": 250,
+    "atk1_projectile": "air,structure,debris,ground",
+    "abilities_hero": "",
+    "move_speed": 375,
+    "uacq": 650.0,
+    "ufor": 2,
+    "umvr": 0.5,
+    "tip": "",
+    "hotkey": "",
+    "utub": "",
+    "armor": 5,
+    "abilities_normal": "ACrn",
+    "hp_regen_type": "none",
+    "proper_names": ""
+   },
+   {
+    "id": "Edem",
+    "base": "Edem",
+    "proper_names": "",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNChaosWarlockGreen.blp",
+    "usca": 0.7,
+    "uclg": 200,
+    "tint_r": 0,
+    "tint_b": 0,
+    "name": "Ninja utilisateur du Jyuuken",
+    "cost_gold": 0,
+    "cost_lumber": 0,
+    "hp_max": 250,
+    "uagp": 5.0,
+    "hero_agi_per_lvl": 10,
+    "hero_int_per_lvl": 2,
+    "hero_str_per_lvl": 2,
+    "ustp": 2.0,
+    "uinp": 1.0,
+    "hp_regen_type": "always",
+    "hp_regen": 0.75,
+    "build_time": 1,
+    "atk1_dmg_point": "",
+    "atk1_dice": 5,
+    "atk1_sides": 4,
+    "atk1_range": 0.9,
+    "abilities_hero": "",
+    "abilities_normal": "ACct,ACev",
+    "sight_day": 800,
+    "tip": "",
+    "hotkey": "",
+    "utub": "",
+    "uhot": "J",
+    "model": "units\\creeps\\assassin\\assassin.mdl"
+   },
+   {
+    "id": "hctw",
+    "base": "hctw",
+    "name": "Tour de Konoha",
+    "utub": "Tour protégeant le village caché de Konoha",
+    "tip": "Améliorer en Tour de Konoha",
+    "uhot": "K",
+    "abilities_normal": "",
+    "atk1_range_motion_buffer": 650,
+    "atk1_weapon_type": "missile",
+    "atk1_dmg_point": "Abilities\\Weapons\\PoisonArrow\\PoisonArrowMissile.mdl",
+    "atk1_area_full": "air,ward,structure,debris,wall,item,ground",
+    "attacks_enabled": 1,
+    "atk1_dmg_base": 13,
+    "atk1_dice": 2,
+    "atk1_sides": 5,
+    "atk1_range": 0.9,
+    "upgrades_used": "",
+    "atk1_cooldown": 0,
+    "atk1_area_medium": 0,
+    "atk1_area_small": 0,
+    "atk1_projectile": "",
+    "atk1_targets": 1500,
+    "requirements": "",
+    "hp_max": 200,
+    "build_time": 20,
+    "usca": 0.8,
+    "tint_b": 0,
+    "cost_gold": 10,
+    "cost_lumber": 0,
+    "atk1_type": "pierce",
+    "model": "buildings\\other\\DalaranGuardTower\\DalaranGuardTower",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNDalaranGuardTower.blp"
+   },
+   {
+    "id": "Hmkg",
+    "base": "Hmkg",
+    "point_value": 150,
+    "food_used": 10,
+    "cost_lumber": 0,
+    "cost_gold": 80,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "abilities_hero": "AEmb,AOmi,AOwk,AOww",
+    "model": "units\\demon\\HeroChaosBladeMaster\\HeroChaosBladeMaster.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNChaosBlademaster.tga",
+    "name": "Kakashi",
+    "tip": "Appeler Kakashi-sensei",
+    "utub": "Le célèbre ninja copieur se montre enfin, décidé à détruire tout ennemi au moyen de ses techniques de ninja très impréssionnantes.",
+    "hotkey": "Ressusciter Kakashi",
+    "proper_names": "Kakashi-sensei",
+    "usnd": "Grom"
+   },
+   {
+    "id": "Otch",
+    "base": "Otch",
+    "point_value": 150,
+    "food_used": 10,
+    "cost_lumber": 0,
+    "cost_gold": 80,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "abilities_hero": "AOsh,AHab,AOwk,AEtq",
+    "model": "units\\human\\Jaina\\Jaina.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNJaina.tga",
+    "name": "Tsunade",
+    "tip": "Appeler Tsunade.",
+    "utub": "Cinquième Hokage de Konoha, cette légendaire Sannin est dotée d'une force considérable.",
+    "hotkey": "Ressusciter Tsunade",
+    "proper_names": "Tsunade Oba-chan",
+    "usnd": "Jaina"
+   },
+   {
+    "id": "Ekee",
+    "base": "Ekee",
+    "point_value": 150,
+    "food_used": 10,
+    "cost_lumber": 0,
+    "cost_gold": 80,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground",
+    "name": "Jiraya",
+    "proper_names": "Ero-Senin",
+    "abilities_hero": "AHfa,AEah,AOwk,ANr2",
+    "tip": "Appeler Jiraya.",
+    "utub": "Légendaire Sannin, Jiraya vous montrera comment l'expérience du combat et la pratique de la perversité vous permettent de gagner la partie.",
+    "hotkey": "Ressusciter Jiraya.",
+    "model": "units\\orc\\Shaman\\Shaman.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNShaman.tga",
+    "usnd": "Shaman",
+    "atk1_dmg_point": "Abilities\\Weapons\\FireBallMissile\\FireBallMissile.mdl"
+   },
+   {
+    "id": "Edmm",
+    "base": "Edmm",
+    "point_value": 150
+   },
+   {
+    "id": "Uwar",
+    "base": "Uwar",
+    "abilities_hero": "AOcl,AUfn,AHmt,AHhb",
+    "abilities_normal": "",
+    "hp_max": 100,
+    "defense_type": "hero",
+    "atk1_targets": 1200,
+    "point_value": 150,
+    "food_used": 10,
+    "cost_lumber": 0,
+    "cost_gold": 80
+   },
+   {
+    "id": "Ulic",
+    "base": "Ulic",
+    "cost_gold": 80,
+    "cost_lumber": 0,
+    "food_used": 10,
+    "point_value": 150,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground",
+    "name": "Gaara",
+    "utub": "Gaara est un Héro capable de faire bien des miracles à l'aide de ses attaques à distance.",
+    "tip": "Appeler Gaara",
+    "hotkey": "Ressusciter Gaara",
+    "abilities_hero": "AEer,AEim,AOwk,AOeq",
+    "proper_names": "Gaara",
+    "atk1_dmg_point": "abilities\\weapons\\catapult\\catapultmissile.mdl"
+   }
+  ],
+  "custom": [
+   {
+    "id": "oC00",
+    "base": "opeo",
+    "name": "Racaille",
+    "model": "units\\critters\\VillagerMan1\\VillagerMan1",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNVillagerMan1.blp",
+    "usca": 1.75,
+    "cost_gold": 500,
+    "food_used": 0,
+    "hp_max": 1000,
+    "abilities_normal": "ACdm,ACbl,ACfa,ACtb",
+    "mana_max": 150,
+    "mana_regen": 10.0,
+    "ubsi": 0,
+    "button_x": 0,
+    "ubdi": 0,
+    "upgrades_used": "",
+    "builds": "hC14,hC15,hC03,hC27,oC05,oC11,oC13,oC20,hC38,oC23,oC08,nC30,oC38",
+    "move_speed": 300,
+    "defense_type": "hero",
+    "usnd": "VillagerKid",
+    "attacks_enabled": 0
+   },
+   {
+    "id": "zC02",
+    "base": "zmar",
+    "name": "Ninja lanceur de shurikens",
+    "usca": 0.5,
+    "tint_r": 0,
+    "tint_b": 0,
+    "ucol": 16.0,
+    "cost_gold": 0,
+    "food_used": 0,
+    "build_time": 15,
+    "upgrades_used": "",
+    "atk1_dmg_base": 5,
+    "atk1_sides": 3,
+    "tip": "Entrainer un Ninja.",
+    "uhot": "A",
+    "utub": "Un ninja attaquant à distance.",
+    "button_x": 0,
+    "ubdi": 0,
+    "ubsi": 0,
+    "hp_max": 80,
+    "sight_day": 500,
+    "armor": 1,
+    "point_value": 7,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground",
+    "model": "units\\creeps\\watcher\\watcher.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNHuntress.blp",
+    "atk1_dmg_point": "Abilities\\Weapons\\BristleBackMissile\\BristleBackMissile.mdl",
+    "atk1_weapon_type": "mline"
+   },
+   {
+    "id": "hC03",
+    "base": "hbar",
+    "name": "Camp de lanceur de shurikens",
+    "tint_b": 0,
+    "upat": "PathTextures\\4x4SimpleSolid.blp",
+    "selection_scale": 1.0,
+    "cost_gold": 15,
+    "cost_lumber": 0,
+    "build_time": 20,
+    "trains": "zC02",
+    "upgrades_used": "",
+    "researches": "",
+    "utub": "Les lanceurs de Shurikens sont capables d'attaquer à distance des ennemis ou des bâtiments.",
+    "tip": "Construire un camp de lanceur de Shurikens.",
+    "hp_max": 500,
+    "model": "buildings\\other\\Tent\\Tent",
+    "food_used": 2,
+    "uhot": "M",
+    "tint_r": 0
+   },
+   {
+    "id": "oC05",
+    "base": "owtw",
+    "name": "Tour",
+    "model": "buildings\\other\\DalaranGuardTower\\DalaranGuardTower",
+    "usca": 0.6,
+    "tint_b": 0,
+    "utub": "Une tour de base pas très utile, mais rapide à contruire.",
+    "uhot": "T",
+    "tip": "Construire une Tour",
+    "atk1_dmg_base": 9,
+    "atk1_dmg_point": "Abilities\\Weapons\\ChimaeraAcidMissile\\ChimaeraAcidMissile.mdl",
+    "requirements": "",
+    "upgrades_used": "",
+    "hp_max": 100,
+    "build_time": 7,
+    "cost_gold": 5,
+    "cost_lumber": 0,
+    "sight_day": 800,
+    "atk1_range_motion_buffer": 600,
+    "upgrades_to": "hctw",
+    "atk1_range": 0.7,
+    "atk1_targets": 1500,
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNDalaranGuardTower.blp",
+    "point_value": 10,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground"
+   },
+   {
+    "id": "oC06",
+    "base": "opeo",
+    "name": "Intello",
+    "model": "units\\critters\\VillagerMan\\VillagerMan",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNVillagerMan.blp",
+    "builds": "hC03,hC27,hC15,hC14,oC05,oC11,oC13,oC20,hC38,oC23,oC08,nC30",
+    "usca": 1.75,
+    "cost_gold": 500,
+    "food_used": 0,
+    "hp_max": 1000,
+    "mana_max": 150,
+    "mana_regen": 10.0,
+    "upgrades_used": "",
+    "abilities_normal": "ACbl,ACdm,ACfa,ACtb",
+    "move_speed": 300,
+    "button_x": 0,
+    "ubdi": 0,
+    "ubsi": 0,
+    "defense_type": "hero",
+    "usnd": "VillagerKid",
+    "attacks_enabled": 0
+   },
+   {
+    "id": "oC07",
+    "base": "owtw",
+    "name": "Sas d'entrainement de Ninja",
+    "model": "buildings\\other\\WyvernCage2\\WyvernCage2",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNChaosWarlockGreen.blp",
+    "usca": 0.8,
+    "cost_lumber": 0,
+    "cost_gold": 30,
+    "build_time": 35,
+    "requirements": "",
+    "upgrades_used": "",
+    "abilities_normal": "Abds",
+    "tip": "Entrainer un Ninja utilisateur du Jyuuken.",
+    "uhot": "A",
+    "utub": "Le Jyuuken est un art de combat au corps à corps. Particulièrement dévastateur, ce taijutsu est le plus puissant au niveau des effets à Long terme.",
+    "sight_day": 800,
+    "ucol": 75.0,
+    "atk1_range_motion_buffer": 100,
+    "food_used": 5,
+    "point_value": 75
+   },
+   {
+    "id": "oC09",
+    "base": "owtw",
+    "name": "Ninja marionnettiste",
+    "cost_gold": 40,
+    "cost_lumber": 0,
+    "build_time": 30,
+    "hp_max": 800,
+    "requirements": "",
+    "model": "units\\creeps\\IronGolem\\IronGolem",
+    "usca": 0.8,
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNArmorGolem.blp",
+    "upgrades_used": "",
+    "sight_day": 800,
+    "tip": "Former un ninja marionnettiste.",
+    "uhot": "G",
+    "utub": "Une marionnette est capable de faire des dégats , toutefoi sa capacité n'est pas treès puissante.",
+    "usnd": "IronGolem",
+    "food_used": 5,
+    "attacks_enabled": 0,
+    "ua2r": 600,
+    "atk2_type": "pierce",
+    "ua2w": "mbounce",
+    "ua2m": "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl",
+    "atk1_targets": 1500,
+    "atk2_targets": 1000,
+    "ua2g": "ward,structure,debris,item,ground",
+    "atk1_dmg_point": "Abilities\\Weapons\\Mortar\\MortarMissile.mdl",
+    "atk1_dmg_base": 10,
+    "atk2_dmg_base": 5,
+    "atk2_sides": 5,
+    "atk2_dice": 1,
+    "atk2_range": 0.75,
+    "abilities_normal": "",
+    "point_value": 125
+   },
+   {
+    "id": "oC10",
+    "base": "ohun",
+    "name": "Ninja marionettiste",
+    "model": "units\\creeps\\IronGolem\\IronGolem",
+    "usca": 0.8,
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNArmorGolem.blp",
+    "cost_gold": 0,
+    "cost_lumber": 0,
+    "food_used": 5,
+    "defense_type": "large",
+    "hp_max": 600,
+    "requirements": "",
+    "upgrades_used": "Remg",
+    "atk1_dmg_point": "Abilities\\Weapons\\Mortar\\MortarMissile.mdl",
+    "atk1_range": 2.0,
+    "atk1_dmg_base": 25,
+    "atk1_dice": 10,
+    "atk1_cooldown": 100,
+    "atk1_area_medium": 150,
+    "atk1_area_small": 250,
+    "atk1_sides": 10,
+    "sight_day": 800,
+    "button_x": 0,
+    "ubdi": 0,
+    "ubsi": 0,
+    "armor": 8,
+    "usnd": "SteamTank",
+    "atk1_projectile": "enemies,ground",
+    "atk1_weapon_type": "msplash",
+    "atk1_targets": 800,
+    "tip": "",
+    "utub": "",
+    "attacks_enabled": 3,
+    "ua2r": 550,
+    "atk2_type": "pierce",
+    "ua2w": "mbounce",
+    "ua2m": "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl",
+    "atk2_targets": 800,
+    "ua2g": "ward,debris,item,ground",
+    "atk2_dmg_base": 5,
+    "atk2_sides": 10,
+    "atk2_dice": 10,
+    "atk2_range": 1.0,
+    "atk1_range_motion_buffer": 650,
+    "atk2_cooldown": 400,
+    "move_height": 50.0,
+    "atk1_type": "siege",
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item",
+    "uacq": 650.0,
+    "ua2p": "ward,debris,item,ground",
+    "point_value": 125
+   },
+   {
+    "id": "oC11",
+    "base": "owtw",
+    "name": "Lance-Shurikens",
+    "model": "units\\nightelf\\Ballista\\Ballista",
+    "usca": 0.8,
+    "uclg": 200,
+    "build_time": 15,
+    "hp_max": 150,
+    "requirements": "",
+    "cost_gold": 5,
+    "cost_lumber": 0,
+    "upgrades_used": "",
+    "atk1_dmg_point": "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl",
+    "atk1_range": 1.2,
+    "abilities_normal": "Abds",
+    "sight_day": 80,
+    "atk1_range_motion_buffer": 700,
+    "tip": "Construire un Lance-Shurikens.",
+    "utub": "Un lanceur de shurikens est capable de dégommer une cible éloignée.",
+    "uhot": "C",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNBallista.blp",
+    "atk1_dice": 3,
+    "usnd": "Ballista",
+    "upgrades_to": "oC31",
+    "atk1_type": "siege",
+    "point_value": 15,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground"
+   },
+   {
+    "id": "nC12",
+    "base": "nvlw",
+    "name": "Maîtresse",
+    "usca": 5.0,
+    "hp_max": 5000,
+    "targeted_as": "air",
+    "defense_type": "normal",
+    "tip": "",
+    "utub": "",
+    "move_speed": 150,
+    "hp_regen_type": "none",
+    "hp_regen": 0.0
+   },
+   {
+    "id": "oC13",
+    "base": "owtw",
+    "model": "units\\orc\\SentryWard\\SentryWard.mdl",
+    "name": "Tour de Sharingan",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNSentryWard.blp",
+    "hp_max": 250,
+    "cost_gold": 10,
+    "cost_lumber": 0,
+    "build_time": 25,
+    "upgrades_used": "",
+    "requirements": "",
+    "atk1_range_motion_buffer": 550,
+    "atk1_dmg_point": "Abilities\\Weapons\\BansheeMissile\\BansheeMissile.mdl",
+    "atk1_dmg_base": 30,
+    "abilities_normal": "Adts,Abds",
+    "sight_day": 800,
+    "tip": "Construire une Tour de Sharingan",
+    "uhot": "P",
+    "utub": "Le Sharingan est art de Konoha capable de décerner le ninjutsu de l'ennemi.",
+    "atk1_dice": 4,
+    "usnd": "AltarOfKings",
+    "usca": 1.1,
+    "defense_type": "normal",
+    "atk1_targets": 1000,
+    "upgrades_to": "oC25",
+    "atk1_range": 0.8,
+    "food_used": 1,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "atk1_type": "normal",
+    "point_value": 20
+   },
+   {
+    "id": "hC14",
+    "base": "htow",
+    "name": "Camp de taijutsu",
+    "upat": "PathTextures\\4x4SimpleSolid.blp",
+    "usca": 0.5,
+    "ucol": 144.0,
+    "selection_scale": 1.0,
+    "cost_gold": 20,
+    "cost_lumber": 0,
+    "food_made": 0,
+    "build_time": 35,
+    "hp_max": 650,
+    "upgrades_used": "",
+    "atk1_dmg_point": "",
+    "atk1_targets": 0,
+    "abilities_normal": "",
+    "tip": "Construire une camp de Taijutsu.",
+    "uhot": "F",
+    "utub": "Ce camp spécialisé dans la formation de ninja spécialistes du taijutsu peut faire des merveilles.",
+    "upgrades_to": "hC15",
+    "trains": "hC16",
+    "food_used": 2,
+    "unit_type": "mechanical"
+   },
+   {
+    "id": "hC15",
+    "base": "hkee",
+    "name": "Camp de taijutsu & de chevaliers",
+    "usca": 0.5,
+    "ucol": 144.0,
+    "upat": "PathTextures\\6x6SimpleSolid.blp",
+    "selection_scale": 1.0,
+    "cost_gold": 40,
+    "cost_lumber": 0,
+    "food_made": 0,
+    "build_time": 40,
+    "hp_max": 750,
+    "upgrades_used": "",
+    "atk1_dmg_point": "",
+    "atk1_targets": 0,
+    "abilities_normal": "",
+    "tip": "Améliorer en Camp de chevalier.",
+    "utub": "Améliorer en château pour entrainer des chevaliers.",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNCastle.blp",
+    "trains": "hC17",
+    "uhot": "A",
+    "food_used": 3,
+    "unit_type": "mechanical"
+   },
+   {
+    "id": "hC16",
+    "base": "hfoo",
+    "name": "Ninja",
+    "usca": 0.5,
+    "ucol": 16.0,
+    "cost_gold": 0,
+    "food_used": 0,
+    "build_time": 16,
+    "hp_max": 125,
+    "upgrades_used": "",
+    "atk1_range_motion_buffer": 50,
+    "atk1_range": 1.0,
+    "abilities_normal": "",
+    "sight_day": 500,
+    "button_x": 0,
+    "ubdi": 0,
+    "ubsi": 0,
+    "tip": "Entrainer un Ninja",
+    "uhot": "L",
+    "utub": "Ninja de Konoha prêt à se battre.",
+    "atk1_dmg_base": 5,
+    "atk1_sides": 5,
+    "atk1_dice": 2,
+    "armor": 3,
+    "point_value": 10,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground"
+   },
+   {
+    "id": "hC17",
+    "base": "hkni",
+    "name": "Ninja à cheval",
+    "requirements": "hC15",
+    "upgrades_used": "",
+    "usca": 0.5,
+    "ucol": 17.0,
+    "selection_scale": 1.2,
+    "cost_gold": 0,
+    "cost_lumber": 0,
+    "food_used": 0,
+    "build_time": 20,
+    "hp_max": 200,
+    "atk1_range_motion_buffer": 50,
+    "atk1_dmg_base": 10,
+    "atk1_range": 1.1,
+    "sight_day": 500,
+    "button_x": 0,
+    "ubdi": 0,
+    "ubsi": 0,
+    "tip": "Entrainer un Ninja à cheval.",
+    "utub": "Sur son cheval, le ninja se déplace plus rapidement et supporte mieux les attaques ennemies.",
+    "armor_upgrade_bonus": 5,
+    "point_value": 20,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground"
+   },
+   {
+    "id": "oC18",
+    "base": "owtw",
+    "name": "Sas d'entrainement de Ninja",
+    "model": "buildings\\other\\MagicVault\\MagicVault",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNHeroPaladin.blp",
+    "usca": 0.8,
+    "cost_gold": 60,
+    "cost_lumber": 0,
+    "requirements": "",
+    "upgrades_used": "",
+    "abilities_normal": "Abds",
+    "sight_day": 800,
+    "tip": "Entrainer un Ninja utilisateur du Chidori.",
+    "uhot": "Z",
+    "utub": "Tel un pouvoir surnaturel, le chidori est dévastateur et ses dégats sont condérables.",
+    "build_time": 60,
+    "food_used": 10
+   },
+   {
+    "id": "oC21",
+    "base": "otrb",
+    "name": "Tank Miniature Matchbox en kit",
+    "model": "units\\human\\WarWagon\\WarWagon",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNSteamTank.blp",
+    "usca": 0.5,
+    "ucol": 36.0,
+    "upat": "PathTextures\\4x4SimpleSolid.blp",
+    "selection_scale": 0.5,
+    "cost_gold": 50,
+    "cost_lumber": 0,
+    "food_made": 0,
+    "build_time": 30,
+    "upgrades_used": "",
+    "atk1_range_motion_buffer": 0,
+    "atk1_type": "unknown",
+    "atk1_weapon_type": "normal",
+    "abilities_normal": "",
+    "tip": "Assembler une Maquette Tan|cffffcc00k|r",
+    "uhot": "K",
+    "utub": "Une char d'assaut en maquette pour les adeptes du Blietzkrigg.|n|n|cffffcc00Attaque les unités terrestres et aériennes, dégats supplémentaires sur les batiments.|r",
+    "food_used": 2,
+    "point_value": 50
+   },
+   {
+    "id": "hC22",
+    "base": "hmtt",
+    "name": "Tank Miniature Matchbox",
+    "usca": 0.5,
+    "ucol": 24.0,
+    "selection_scale": 1.4,
+    "cost_gold": 0,
+    "cost_lumber": 0,
+    "food_used": 2,
+    "build_time": 1,
+    "hp_max": 500,
+    "upgrades_used": "",
+    "atk1_range_motion_buffer": 200,
+    "atk1_area_full": "tree,ward,debris,wall,item,ground",
+    "atk1_dmg_base": 5,
+    "atk1_sides": 5,
+    "atk1_range": 2.0,
+    "sight_day": 800,
+    "requirements": "",
+    "atk1_projectile": "ground,structure",
+    "atk1_dice": 5,
+    "atk1_cooldown": 200,
+    "tip": "",
+    "utub": "",
+    "attacks_enabled": 3,
+    "ua2r": 200,
+    "atk2_type": "siege",
+    "ua2w": "instant",
+    "ua2m": "Abilities\\Weapons\\SteamTank\\SteamTankImpact.mdl",
+    "atk2_targets": 2500,
+    "ua2g": "structure",
+    "atk2_dmg_base": 5,
+    "atk2_sides": 10,
+    "atk2_dice": 10,
+    "atk1_type": "pierce",
+    "point_value": 50
+   },
+   {
+    "id": "oC23",
+    "base": "obar",
+    "name": "Jounin",
+    "trains": "nC24",
+    "researches": "",
+    "hp_max": 700,
+    "hp_regen": 2.0,
+    "cost_lumber": 0,
+    "cost_gold": 30,
+    "upat": "PathTextures\\8x8SimpleSolid.blp",
+    "ucol": 90.0,
+    "upgrades_used": "",
+    "abilities_normal": "",
+    "utub": "Le meilleur ami des tous petits !|n|n|cffffcc00Unité de construction avancée.|r",
+    "tip": "Jounin",
+    "hp_regen_type": "always",
+    "uhot": "I",
+    "model": "units\\human\\Footman\\Footman.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNFootman.tga",
+    "usnd": "GoblinSapper",
+    "usca": 1.5
+   },
+   {
+    "id": "uC28",
+    "base": "umtw",
+    "name": "Lance Surikens mobile",
+    "upgrades_used": "",
+    "cost_lumber": 0,
+    "hp_max": 500,
+    "hp_regen": 3.5,
+    "attacks_enabled": 1,
+    "atk1_targets": 500,
+    "atk1_area_full": "ward,structure,debris,item,ground",
+    "atk1_range": 5.0,
+    "atk1_cooldown": 200,
+    "move_type": "",
+    "move_speed": 25,
+    "umvr": 0.1,
+    "abilities_normal": "",
+    "utub": "",
+    "tip": "",
+    "food_used": 10,
+    "build_time": 1,
+    "cost_gold": 100,
+    "atk1_range_motion_buffer": 1700,
+    "uhot": "O",
+    "atk1_dice": 4,
+    "model": "units\\nightelf\\Ballista\\Ballista.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNBallista.blp",
+    "atk1_area_medium": 250,
+    "atk1_projectile": "allies,ward,structure,debris,enemies,item,ground",
+    "atk1_area_small": 300,
+    "atk1_sides": 20,
+    "atk1_dmg_point": "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl"
+   },
+   {
+    "id": "nC29",
+    "base": "ndgt",
+    "name": "Bombe Aérosol",
+    "cost_lumber": 0,
+    "cost_gold": 100,
+    "hp_max": 600,
+    "atk1_range_motion_buffer": 1100,
+    "atk1_type": "spells",
+    "atk1_dmg_base": 30,
+    "atk1_range": 0.6,
+    "utub": "Une bombe aérosol nocive pour la santé.|n|n|cffffcc00Attaque les unités terrestres et aériennes.|r",
+    "tip": "Déposer une Bombe |cffffcc00A|rerosol",
+    "uhot": "A",
+    "usca": 0.8,
+    "atk1_dmg_point": "Abilities\\Weapons\\ZigguratMissile\\ZigguratMissile.mdl",
+    "atk1_targets": 900,
+    "upgrades_to": "nC01"
+   },
+   {
+    "id": "oC25",
+    "base": "owtw",
+    "name": "Tour de Mangakyou Sharingan",
+    "model": "units\\orc\\SentryWard\\SentryWard.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNStasisTrap.blp",
+    "usnd": "SpiritWolf",
+    "cost_lumber": 0,
+    "cost_gold": 20,
+    "build_time": 30,
+    "hp_max": 400,
+    "requirements": "",
+    "defense_type": "normal",
+    "armor": 6,
+    "atk1_dmg_base": 50,
+    "atk1_targets": 1050,
+    "atk1_range_motion_buffer": 600,
+    "atk1_dmg_point": "Abilities\\Weapons\\BansheeMissile\\BansheeMissile.mdl",
+    "atk1_dice": 6,
+    "atk1_sides": 5,
+    "sight_day": 800,
+    "tip": "Améliorer le Sharingan en Mangakyou Sharingan",
+    "uhot": "A",
+    "utub": "Le Mangakyou Sharingan est une amélioration du Sharingan commun très rare. Elle permet l'utilisation de techniques bien sombres.",
+    "atk1_range": 0.7,
+    "usca": 1.4,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "atk1_type": "chaos",
+    "point_value": 25,
+    "tint_b": 0,
+    "uclg": 0,
+    "abilities_normal": "Adts,Abds"
+   },
+   {
+    "id": "oC04",
+    "base": "owtw",
+    "name": "Lanceur de shurikiens Mobile",
+    "requirements": "",
+    "tip": "Construire un lanceur de shurikens mobile",
+    "uhot": "C",
+    "utub": "Version améliorée du lanceur de shuriken fixe, plus lent mais plus puissant.",
+    "model": "units\\nightelf\\Ballista\\Ballista.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNBallista.blp",
+    "cost_gold": 100,
+    "cost_lumber": 0,
+    "build_time": 60,
+    "hp_max": 250,
+    "food_used": 10,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "atk1_dmg_point": "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl"
+   },
+   {
+    "id": "oC31",
+    "base": "owtw",
+    "name": "Lance-Shurikens Amélioré",
+    "model": "units\\nightelf\\Ballista\\Ballista",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNBallista.blp",
+    "usnd": "Ballista",
+    "atk1_dmg_point": "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl",
+    "atk1_dice": 5,
+    "atk1_dmg_base": 25,
+    "atk1_range": 1.5,
+    "atk1_sides": 5,
+    "requirements": "",
+    "upgrades_used": "",
+    "cost_lumber": 0,
+    "hp_max": 250,
+    "build_time": 30,
+    "armor": 4,
+    "cost_gold": 10,
+    "tip": "Améliorer le Lance-Shurikens.",
+    "uhot": "L",
+    "utub": "Améliorer le Lance-Shurikens : cela permet une plus grande portée et une meilleure attaque.",
+    "atk1_range_motion_buffer": 850,
+    "atk1_type": "siege",
+    "point_value": 20,
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground"
+   },
+   {
+    "id": "hC32",
+    "base": "hgry",
+    "name": "Bombe à Eau",
+    "model": "units\\nightelf\\Wisp\\Wisp",
+    "usca": 1.5,
+    "tint_r": 0,
+    "uclg": 0,
+    "food_used": 0,
+    "build_time": 30,
+    "cost_lumber": 0,
+    "cost_gold": 20,
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNWisp.blp",
+    "upgrades_used": "",
+    "atk1_range_motion_buffer": 90,
+    "atk1_dmg_base": 1000,
+    "atk1_dice": 100,
+    "atk1_sides": 100,
+    "atk1_weapon_type": "instant",
+    "atk1_dmg_point": "Abilities\\Weapons\\FrostWyrmMissile\\FrostWyrmMissile.mdx",
+    "atk1_targets": 1900,
+    "attacks_enabled": 0,
+    "atk1_range": 100.0,
+    "atk1_type": "siege",
+    "hp_max": 5,
+    "hp_regen": 0.0,
+    "abilities_normal": "Acrs",
+    "move_speed": 350,
+    "tip": "Gonfler une |cffffcc00B|rombe à Eau",
+    "uhot": "B",
+    "utub": "La bombe à eau peut détruire le château ennemi d'un seul coup !|n|n|cffffcc00Très fragile !|r",
+    "name_suffix": "unit",
+    "unit_type": "sapper",
+    "point_value": 30
+   },
+   {
+    "id": "oC33",
+    "base": "owtw",
+    "name": "Bombe à Eau",
+    "model": "units\\nightelf\\Wisp\\Wisp",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNWisp.blp",
+    "tint_r": 0,
+    "uclg": 0,
+    "requirements": "",
+    "armor": 0,
+    "build_time": 20,
+    "cost_lumber": 0,
+    "cost_gold": 13,
+    "tip": "Gonfler une |cffffcc00B|rombe à Eau",
+    "utub": "La bombe à eau peut détruire le château ennemi d'un seul coup !|n|n|cffffcc00Très fragile !|r",
+    "uhot": "B",
+    "usca": 1.5,
+    "hp_max": 50,
+    "point_value": 30
+   },
+   {
+    "id": "hC26",
+    "base": "hhou",
+    "name": "Esprit de Kuyubi",
+    "food_made": 0,
+    "cost_lumber": 0,
+    "cost_gold": 400,
+    "build_time": 180,
+    "model": "units\\creeps\\GoblinLandMine\\GoblinLandMine",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNGoblinLandMine.blp",
+    "hp_max": 50,
+    "armor": 15,
+    "upgrades_used": "",
+    "usca": 5.0,
+    "tip": "Invoquer l'Esprit de Kyubi.",
+    "utub": "L'esprit de Kyubi est capable de détruire tous les bâtiments. Néammoins il est impossible de le maitriser, il détruit donc TOUT sur son passage, même vos propres constructions.",
+    "trains": "hmpr",
+    "uhot": "P"
+   },
+   {
+    "id": "hC27",
+    "base": "hbar",
+    "name": "Camp des ninjas volants",
+    "model": "buildings\\other\\CircleOfPower\\CircleOfPower",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNCOP.blp",
+    "usnd": "Workshop",
+    "cost_lumber": 0,
+    "cost_gold": 60,
+    "build_time": 40,
+    "trains": "hgyr",
+    "upgrades_used": "",
+    "researches": "",
+    "hp_max": 500,
+    "tip": "Construire un camp de ninjas volants.",
+    "uhot": "H",
+    "utub": "Les ninja volants lancent des shurikens explosifs  qui peuvent détruire des batiments ennemis. Ils peuvent aussi survoler toute la carte.",
+    "food_used": 4,
+    "uclg": 0,
+    "tint_r": 0,
+    "usca": 1.5,
+    "ucol": 0.0,
+    "point_value": 35
+   },
+   {
+    "id": "nC30",
+    "base": "ncnt",
+    "name": "Resto de Ichiraku",
+    "cost_gold": 100,
+    "mana_max": 99999,
+    "mana_regen": 5.5,
+    "mana_initial": 500,
+    "build_time": 40,
+    "hp_max": 700,
+    "hp_regen": 5.0,
+    "hp_regen_type": "always",
+    "abilities_normal": "ACvp,Aoar",
+    "food_made": 20,
+    "tip": "Servir le repas de midi !!",
+    "description": "",
+    "utub": "Vive Ichiraku et ses célèbres Ramen, vive Ichiraku, le meilleur cuisto de tout konoha, d'après Naruto lui-même.",
+    "model": "buildings\\human\\Workshop\\Workshop",
+    "usca": 1.05,
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNWorkshop.blp"
+   },
+   {
+    "id": "oC19",
+    "base": "opeo",
+    "name": "Jounin",
+    "model": "units\\human\\Footman\\Footman.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNFootman.tga",
+    "usca": 1.5,
+    "tint_r": 0,
+    "ucol": 0.0,
+    "usnd": "GoblinSapper",
+    "cost_gold": 0,
+    "build_time": 5,
+    "builds": "oC40,oC39,uC37,oC35,oC04,hC26,oC09,oC07,oC18,nC37",
+    "upgrades_used": "",
+    "attacks_enabled": 1,
+    "abilities_normal": "",
+    "tip": "",
+    "utub": "",
+    "food_used": 0,
+    "move_speed": 200,
+    "atk1_area_full": "tree",
+    "atk1_dmg_base": 100,
+    "atk1_range_motion_buffer": 50
+   },
+   {
+    "id": "hC34",
+    "base": "hgtw",
+    "name": "Volcan de Purée",
+    "model": "buildings\\other\\FountainOfMana\\FountainOfMana",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNFountainOfLife.blp",
+    "usnd": "FountainOfLifeBlood",
+    "abilities_normal": "Avul",
+    "uacq": 500.0,
+    "atk1_type": "chaos",
+    "atk1_dmg_point": "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMissile.mdl",
+    "atk1_area_full": "ward,structure,debris,item,ground",
+    "ucol": 130.0,
+    "uclg": 100,
+    "tint_b": 50,
+    "atk1_targets": 1000,
+    "atk1_range_motion_buffer": 1750
+   },
+   {
+    "id": "oC24",
+    "base": "otau",
+    "name": "Esprit de l'ours",
+    "model": "units\\creeps\\Furbolg\\Furbolg",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNFurbolg.blp",
+    "usca": 1.5,
+    "tint_b": 100,
+    "uclg": 150,
+    "ucol": 60.0,
+    "usnd": "Furbolg",
+    "cost_gold": 0,
+    "cost_lumber": 0,
+    "food_used": 15,
+    "build_time": 1,
+    "hp_max": 1500,
+    "hp_regen": 0.0,
+    "requirements": "",
+    "upgrades_used": "",
+    "armor": 0,
+    "armor_upgrade_bonus": 0,
+    "defense_type": "hero",
+    "atk1_dmg_base": 50,
+    "atk1_sides": 25,
+    "abilities_normal": "",
+    "move_speed": 180,
+    "umvr": 0.25,
+    "tip": "",
+    "utub": "",
+    "atk1_cooldown": 100,
+    "atk1_area_medium": 200,
+    "atk1_area_small": 300,
+    "atk1_projectile": "allies,ward,structure,debris,enemies,item,ground",
+    "atk1_weapon_type": "msplash",
+    "atk1_targets": 1000,
+    "atk1_dice": 25,
+    "unit_type": "giant",
+    "point_value": 250,
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground"
+   },
+   {
+    "id": "oC35",
+    "base": "ofor",
+    "name": "Esprit de L'ours",
+    "researches": "",
+    "upgrades_used": "",
+    "model": "units\\creeps\\Furbolg\\Furbolg",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNFurbolg.blp",
+    "usca": 1.5,
+    "uclg": 150,
+    "tint_b": 100,
+    "usnd": "Furbolg",
+    "food_used": 15,
+    "cost_gold": 100,
+    "unit_type": "",
+    "abilities_normal": "",
+    "tip": "Invoquer l'esprit de l'Ours",
+    "uhot": "N",
+    "utub": "Cet Ours ravage tout sur son passage. Il est l'un des derniers Monstres encore vivant.",
+    "uacq": 500.0,
+    "point_value": 250
+   },
+   {
+    "id": "oC08",
+    "base": "owtw",
+    "name": "Repas rapide des ninjas",
+    "model": "buildings\\other\\WyvernCage\\WyvernCage",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNCage.blp",
+    "usca": 0.5,
+    "cost_gold": 15,
+    "cost_lumber": 0,
+    "food_made": 3,
+    "build_time": 15,
+    "hp_max": 300,
+    "requirements": "",
+    "atk1_range_motion_buffer": 500,
+    "atk1_dmg_point": "Abilities\\Weapons\\MeatwagonMissile\\MeatwagonMissile.mdl",
+    "atk1_type": "normal",
+    "atk1_area_full": "tree,ward,structure,debris,wall,item,ground",
+    "atk1_targets": 500,
+    "atk1_range": 1.5,
+    "abilities_normal": "ACav",
+    "tip": "Préparer le repas des ninjas.",
+    "utub": "Repas rapide des ninja qui ont la dalle ! Produit un peu de nourriture. Envoie des bout de viande  si un ennemi s'approche.",
+    "point_value": 35
+   },
+   {
+    "id": "oC36",
+    "base": "owtw",
+    "name": "Centre de Konoha : QG des ninjas",
+    "model": "buildings\\human\\TownHall\\TownHall",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNCastle.blp",
+    "usnd": "ElvenGuardTower",
+    "requirements": "",
+    "upgrades_used": "",
+    "hp_max": 3000,
+    "atk1_range_motion_buffer": 600,
+    "atk1_dmg_point": "Abilities\\Weapons\\DragonHawkMissile\\DragonHawkMissile.mdl",
+    "atk1_targets": 1500,
+    "atk1_range": 0.8,
+    "ua2r": 1000,
+    "atk2_type": "siege",
+    "ua2w": "msplash",
+    "ua2m": "Abilities\\Weapons\\DragonHawkMissile\\DragonHawkMissile.mdl",
+    "atk2_targets": 1000,
+    "ua2g": "ward,structure,debris,item,ground",
+    "atk2_range": 2.0,
+    "atk1_sides": 8,
+    "atk2_dmg_base": 20,
+    "atk2_dice": 2,
+    "atk2_sides": 8,
+    "atk2_cooldown": 100,
+    "ua2h": 150,
+    "ua2q": 200,
+    "ua2p": "ward,structure,debris,item,ground",
+    "abilities_normal": "",
+    "uacq": 1000.0,
+    "tint_b": 0,
+    "ucol": 150.0,
+    "name_suffix": "final",
+    "selection_scale": 4.0
+   },
+   {
+    "id": "nC01",
+    "base": "negf",
+    "name": "Bombe Aérosol Incendiaire",
+    "build_time": 30,
+    "cost_gold": 75,
+    "cost_lumber": 0,
+    "atk1_type": "spells",
+    "atk1_area_full": "air,ward,structure,debris,item,ground",
+    "atk1_dmg_base": 40,
+    "atk1_sides": 15,
+    "tip": "Allumer une allumette devant la Bombe |cffffcc00A|rerosol",
+    "uhot": "A",
+    "utub": "Une bombe aérosol avec une allumette devant le spray (ne faite en aucun cas ce genre de manipulation chez vous !).|n|n|cffffcc00Attaque les unités terrestres et aériennes.|r",
+    "usca": 0.8,
+    "atk1_weapon_type": "msplash",
+    "atk1_cooldown": 50,
+    "atk1_area_medium": 100,
+    "atk1_area_small": 200
+   },
+   {
+    "id": "oC20",
+    "base": "owtw",
+    "name": "La tour des ninjas",
+    "cost_gold": 150,
+    "cost_lumber": 0,
+    "upgrades_used": "",
+    "armor": 0,
+    "armor_upgrade_bonus": 0,
+    "atk1_range_motion_buffer": 1000,
+    "atk1_dmg_base": 100,
+    "atk1_cooldown": 3,
+    "atk1_area_medium": 5,
+    "atk1_area_small": 10,
+    "abilities_normal": "",
+    "sight_day": 1000,
+    "usin": 500,
+    "point_value": 150,
+    "build_time": 40,
+    "requirements": "",
+    "utub": "La tour des Ninjas est très puissante et capable de tuer de nombreux ninjas.",
+    "atk1_area_full": "tree,air,ward,structure,debris,enemies,wall,item,ground",
+    "atk1_targets": 2500,
+    "tip": "Construire la tour des ninjas !"
+   },
+   {
+    "id": "uC37",
+    "base": "uabo",
+    "name": "Sarutobi",
+    "cost_gold": 500,
+    "cost_lumber": 0,
+    "build_time": 180,
+    "hp_max": 4000,
+    "hp_regen": 0.0,
+    "hp_regen_type": "none",
+    "requirements": "",
+    "upgrades_used": "",
+    "armor": 3,
+    "atk1_dmg_base": 1000,
+    "abilities_normal": "",
+    "sleeps": 1,
+    "point_value": 1000,
+    "utub": "Sarutobi est le très célèbre Sandaime, le Troisième Hokage de Konoha. Sa force est considérable, mais son prix l'est autant.",
+    "food_used": 15,
+    "atk1_cooldown": 1,
+    "atk1_area_medium": 2,
+    "atk1_area_small": 3,
+    "atk1_range": 1.67,
+    "tip": "Appeler Sarutobi",
+    "model": "units\\human\\HeroPaladinBoss2\\HeroPaladinBoss2.mdl",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNArthas.blp",
+    "usnd": "HeroPaladin"
+   },
+   {
+    "id": "oC39",
+    "base": "oshm",
+    "name": "Ninja soigneur",
+    "cost_gold": 60,
+    "cost_lumber": 0,
+    "food_used": 5,
+    "unit_type": "peon",
+    "build_time": 40,
+    "hp_max": 500,
+    "mana_max": 20000,
+    "mana_regen": 1000.0,
+    "mana_initial": 1000,
+    "upgrades_used": "",
+    "armor_upgrade_bonus": 0,
+    "atk1_dmg_base": 35,
+    "abilities_normal": "AChw,ACcl,ACba,Anh1,ACsw",
+    "classification": "",
+    "ucut": "",
+    "point_value": 200,
+    "atk1_range_motion_buffer": 700,
+    "tip": "Entrainer un ninja soigneur.",
+    "atk1_area_full": "tree,air,ward,structure,debris,wall,item,ground",
+    "model": "units\\human\\Priest\\Priest.mdl",
+    "utub": "",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNPriest.tga"
+   },
+   {
+    "id": "hC38",
+    "base": "halt",
+    "name": "Académie de Konoha",
+    "cost_gold": 60,
+    "cost_lumber": 0,
+    "hp_max": 600,
+    "upgrades_used": "",
+    "trains": "Hmkg,Otch,Ekee,Ulic",
+    "tip": "Construire une académie de Konoha"
+   },
+   {
+    "id": "oC40",
+    "base": "osw1",
+    "name": "Akamaru",
+    "model": "units\\critters\\BrownWolf\\BrownWolf",
+    "icon": "ReplaceableTextures\\CommandButtons\\BTNWolf.blp",
+    "usca": 2.0,
+    "food_used": 10,
+    "name_suffix": "",
+    "unit_type": "giant,summoned",
+    "build_time": 60,
+    "hp_max": 1000,
+    "armor": 5,
+    "atk1_dmg_base": 400,
+    "atk1_dice": 2,
+    "atk1_range": 1.9,
+    "atk1_cooldown": 100,
+    "atk1_area_medium": 200,
+    "atk1_area_small": 300,
+    "atk1_projectile": "ward,debris,item,ground",
+    "ua2m": "Abilities\\Weapons\\BansheeMissile\\BansheeMissile.mdl",
+    "atk1_area_full": "tree,ward,debris,wall,item,ground",
+    "ua2r": 500,
+    "atk2_type": "siege",
+    "ua2w": "missile",
+    "atk2_targets": 1000,
+    "ua2g": "structure",
+    "atk2_dmg_base": 1000,
+    "cost_gold": 200,
+    "atk2_range": 1.0,
+    "tip": "Invoquer Akamaru",
+    "utub": "Les très célèbre chien de Kiba est pret à servir la bonne cause. Néammoins il ne peut s'en prendre qu'aux ninjas, et non aux batiments."
+   },
+   {
+    "id": "nC49",
+    "base": "ngme",
+    "name": "Magasin de jouets",
+    "sells_items": "IC42,IC48,IC41,IC43,IC47,IC46,IC45,IC44,I000,I001"
+   }
+  ]
+ },
+ "items": {
+  "modified_standard": [
+   {
+    "id": "tstr",
+    "base": "tstr",
+    "igol": 10,
+    "istr": 0,
+    "iuse": 10,
+    "isto": 10
+   }
+  ],
+  "custom": [
+   {
+    "id": "IC41",
+    "base": "clfm",
+    "igol": 75
+   },
+   {
+    "id": "IC42",
+    "base": "nspi",
+    "igol": 100
+   },
+   {
+    "id": "IC43",
+    "base": "ckng",
+    "name": "Couronne des rois",
+    "igol": 85
+   },
+   {
+    "id": "IC44",
+    "base": "gobm",
+    "name": "Mine gobelines",
+    "igol": 100
+   },
+   {
+    "id": "IC45",
+    "base": "ofro",
+    "igol": 50
+   },
+   {
+    "id": "IC46",
+    "base": "olig",
+    "igol": 50
+   },
+   {
+    "id": "IC47",
+    "base": "ofir",
+    "igol": 50
+   },
+   {
+    "id": "IC48",
+    "base": "ankh",
+    "igol": 100
+   },
+   {
+    "id": "I000",
+    "base": "texp",
+    "igol": 75,
+    "abilities": "AIlm",
+    "utub": "Augmente le Niveau du héro proche de 1."
+   },
+   {
+    "id": "I001",
+    "base": "gemt"
+   }
+  ]
+ },
+ "regions": [
+  {
+   "left": -3136.0,
+   "bottom": 1664.0,
+   "right": -2784.0,
+   "top": 2112.0,
+   "name": "Base1",
+   "index": 0,
+   "weather": "\u0000\u0000\u0000\u0000",
+   "ambient": "",
+   "color": [
+    255,
+    128,
+    128
+   ],
+   "end": 255
+  },
+  {
+   "left": -64.0,
+   "bottom": -800.0,
+   "right": 448.0,
+   "top": -448.0,
+   "name": "ToSchool",
+   "index": 2,
+   "weather": "\u0000\u0000\u0000\u0000",
+   "ambient": "",
+   "color": [
+    255,
+    128,
+    128
+   ],
+   "end": 255
+  },
+  {
+   "left": 2848.0,
+   "bottom": -2912.0,
+   "right": 3264.0,
+   "top": -2400.0,
+   "name": "Work",
+   "index": 1,
+   "weather": "\u0000\u0000\u0000\u0000",
+   "ambient": "",
+   "color": [
+    255,
+    128,
+    128
+   ],
+   "end": 255
+  },
+  {
+   "left": -64.0,
+   "bottom": -416.0,
+   "right": 480.0,
+   "top": -32.0,
+   "name": "Région 003",
+   "index": 3,
+   "weather": "\u0000\u0000\u0000\u0000",
+   "ambient": "",
+   "color": [
+    255,
+    128,
+    128
+   ],
+   "end": 255
+  },
+  {
+   "left": -3040.0,
+   "bottom": 1824.0,
+   "right": -2912.0,
+   "top": 1952.0,
+   "name": "zone mioche",
+   "index": 4,
+   "weather": "\u0000\u0000\u0000\u0000",
+   "ambient": "",
+   "color": [
+    255,
+    128,
+    128
+   ],
+   "end": 255
+  },
+  {
+   "left": 3008.0,
+   "bottom": -2720.0,
+   "right": 3136.0,
+   "top": -2592.0,
+   "name": "zone morveux",
+   "index": 5,
+   "weather": "\u0000\u0000\u0000\u0000",
+   "ambient": "",
+   "color": [
+    255,
+    128,
+    128
+   ],
+   "end": 255
+  },
+  {
+   "left": -640.0,
+   "bottom": -704.0,
+   "right": -96.0,
+   "top": -128.0,
+   "name": "haut",
+   "index": 6,
+   "weather": "\u0000\u0000\u0000\u0000",
+   "ambient": "",
+   "color": [
+    255,
+    128,
+    128
+   ],
+   "end": 255
+  },
+  {
+   "left": -1952.0,
+   "bottom": -2976.0,
+   "right": -1184.0,
+   "top": -2496.0,
+   "name": "bas",
+   "index": 7,
+   "weather": "\u0000\u0000\u0000\u0000",
+   "ambient": "",
+   "color": [
+    255,
+    128,
+    128
+   ],
+   "end": 255
+  },
+  {
+   "left": -192.0,
+   "bottom": -2752.0,
+   "right": 448.0,
+   "top": -2144.0,
+   "name": "expan bas",
+   "index": 8,
+   "weather": "\u0000\u0000\u0000\u0000",
+   "ambient": "",
+   "color": [
+    255,
+    128,
+    128
+   ],
+   "end": 255
+  },
+  {
+   "left": -512.0,
+   "bottom": 1120.0,
+   "right": 160.0,
+   "top": 1760.0,
+   "name": "expan haut",
+   "index": 9,
+   "weather": "\u0000\u0000\u0000\u0000",
+   "ambient": "",
+   "color": [
+    255,
+    128,
+    128
+   ],
+   "end": 255
+  },
+  {
+   "left": 1408.0,
+   "bottom": 1344.0,
+   "right": 2048.0,
+   "top": 1984.0,
+   "name": "marteleurs",
+   "index": 10,
+   "weather": "\u0000\u0000\u0000\u0000",
+   "ambient": "",
+   "color": [
+    255,
+    128,
+    128
+   ],
+   "end": 255
+  }
+ ],
+ "preplaced_units": [
+  {
+   "type": "sloc",
+   "variation": 0,
+   "x": 3072.0,
+   "y": -2624.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 0,
+   "target_acq": 0.0,
+   "hero_level": 0,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 13
+  },
+  {
+   "type": "oC36",
+   "variation": 0,
+   "x": 3072.0,
+   "y": -2624.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 33
+  },
+  {
+   "type": "sloc",
+   "variation": 0,
+   "x": -2688.0,
+   "y": 1600.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 0,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 0,
+   "target_acq": 0.0,
+   "hero_level": 0,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 34
+  },
+  {
+   "type": "sloc",
+   "variation": 0,
+   "x": -2752.0,
+   "y": 1728.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 1,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 0,
+   "target_acq": 0.0,
+   "hero_level": 0,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 2
+  },
+  {
+   "type": "sloc",
+   "variation": 0,
+   "x": -2688.0,
+   "y": 1856.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 2,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 0,
+   "target_acq": 0.0,
+   "hero_level": 0,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 15
+  },
+  {
+   "type": "sloc",
+   "variation": 0,
+   "x": -2688.0,
+   "y": 1984.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 3,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 0,
+   "target_acq": 0.0,
+   "hero_level": 0,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 3
+  },
+  {
+   "type": "sloc",
+   "variation": 0,
+   "x": -2688.0,
+   "y": 2176.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 4,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 0,
+   "target_acq": 0.0,
+   "hero_level": 0,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 4
+  },
+  {
+   "type": "sloc",
+   "variation": 0,
+   "x": 2880.0,
+   "y": -2304.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 9,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 0,
+   "target_acq": 0.0,
+   "hero_level": 0,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 0
+  },
+  {
+   "type": "sloc",
+   "variation": 0,
+   "x": 2880.0,
+   "y": -2880.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 5,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 0,
+   "target_acq": 0.0,
+   "hero_level": 0,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 9
+  },
+  {
+   "type": "sloc",
+   "variation": 0,
+   "x": 2816.0,
+   "y": -2688.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 6,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 0,
+   "target_acq": 0.0,
+   "hero_level": 0,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 8
+  },
+  {
+   "type": "oC05",
+   "variation": 0,
+   "x": 3200.0,
+   "y": -2816.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 30
+  },
+  {
+   "type": "oC00",
+   "variation": 0,
+   "x": -2703.8,
+   "y": 2108.5,
+   "z": 313.5,
+   "rotation": 0.0,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 3,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 17
+  },
+  {
+   "type": "sloc",
+   "variation": 0,
+   "x": -2944.0,
+   "y": 1856.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 0,
+   "target_acq": 0.0,
+   "hero_level": 0,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 6
+  },
+  {
+   "type": "oC36",
+   "variation": 0,
+   "x": -2944.0,
+   "y": 1920.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 14
+  },
+  {
+   "type": "oC00",
+   "variation": 0,
+   "x": -2700.9,
+   "y": 2260.5,
+   "z": 313.5,
+   "rotation": 0.0,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 4,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 18
+  },
+  {
+   "type": "oC05",
+   "variation": 0,
+   "x": 3200.0,
+   "y": -2432.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 12
+  },
+  {
+   "type": "sloc",
+   "variation": 0,
+   "x": 2880.0,
+   "y": -2432.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 8,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 0,
+   "target_acq": 0.0,
+   "hero_level": 0,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 5
+  },
+  {
+   "type": "nC49",
+   "variation": 0,
+   "x": 128.0,
+   "y": -2176.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 27,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 31
+  },
+  {
+   "type": "nC49",
+   "variation": 0,
+   "x": -128.0,
+   "y": 1280.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 27,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 29
+  },
+  {
+   "type": "oC06",
+   "variation": 0,
+   "x": 2860.7,
+   "y": -2832.6,
+   "z": 313.5,
+   "rotation": 3.142,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 5,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 19
+  },
+  {
+   "type": "oC06",
+   "variation": 0,
+   "x": 2856.5,
+   "y": -2695.3,
+   "z": 313.5,
+   "rotation": 3.142,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 6,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 20
+  },
+  {
+   "type": "oC06",
+   "variation": 0,
+   "x": 2849.6,
+   "y": -2522.0,
+   "z": 313.5,
+   "rotation": 3.142,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 7,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 21
+  },
+  {
+   "type": "oC06",
+   "variation": 0,
+   "x": 2848.7,
+   "y": -2397.6,
+   "z": 313.5,
+   "rotation": 3.142,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 8,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 22
+  },
+  {
+   "type": "oC06",
+   "variation": 0,
+   "x": 2861.1,
+   "y": -2259.4,
+   "z": 313.5,
+   "rotation": 3.142,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 9,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 23
+  },
+  {
+   "type": "oC05",
+   "variation": 0,
+   "x": 2944.0,
+   "y": -2432.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 10
+  },
+  {
+   "type": "oC05",
+   "variation": 0,
+   "x": -3072.0,
+   "y": 1728.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 11
+  },
+  {
+   "type": "oC05",
+   "variation": 0,
+   "x": 2944.0,
+   "y": -2816.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 26
+  },
+  {
+   "type": "sloc",
+   "variation": 0,
+   "x": 2880.0,
+   "y": -2560.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 7,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 0,
+   "target_acq": 0.0,
+   "hero_level": 0,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 7
+  },
+  {
+   "type": "oC05",
+   "variation": 0,
+   "x": -2816.0,
+   "y": 2176.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 25
+  },
+  {
+   "type": "oC05",
+   "variation": 0,
+   "x": -2816.0,
+   "y": 1728.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 24
+  },
+  {
+   "type": "oC05",
+   "variation": 0,
+   "x": -3072.0,
+   "y": 2176.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 28
+  },
+  {
+   "type": "oC00",
+   "variation": 0,
+   "x": -2707.9,
+   "y": 1941.9,
+   "z": 313.5,
+   "rotation": 0.0,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 2,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 16
+  },
+  {
+   "type": "oC00",
+   "variation": 0,
+   "x": -2712.7,
+   "y": 1800.5,
+   "z": 313.5,
+   "rotation": 0.0,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 1,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 27
+  },
+  {
+   "type": "oC00",
+   "variation": 0,
+   "x": -2681.5,
+   "y": 1652.1,
+   "z": 313.5,
+   "rotation": 0.0,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 0,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 1
+  },
+  {
+   "type": "oC20",
+   "variation": 0,
+   "x": -1472.0,
+   "y": 2304.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 32
+  },
+  {
+   "type": "oC20",
+   "variation": 0,
+   "x": -1472.0,
+   "y": 1408.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 35
+  },
+  {
+   "type": "oC25",
+   "variation": 0,
+   "x": -1600.0,
+   "y": 2304.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 36
+  },
+  {
+   "type": "oC25",
+   "variation": 0,
+   "x": -1600.0,
+   "y": 1408.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 37
+  },
+  {
+   "type": "oC31",
+   "variation": 0,
+   "x": 2048.0,
+   "y": 960.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 38
+  },
+  {
+   "type": "oC31",
+   "variation": 0,
+   "x": 2048.0,
+   "y": 1088.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 39
+  },
+  {
+   "type": "oC31",
+   "variation": 0,
+   "x": 1920.0,
+   "y": 960.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 40
+  },
+  {
+   "type": "oC31",
+   "variation": 0,
+   "x": 2688.0,
+   "y": 960.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 41
+  },
+  {
+   "type": "oC31",
+   "variation": 0,
+   "x": 2688.0,
+   "y": 1088.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 42
+  },
+  {
+   "type": "oC31",
+   "variation": 0,
+   "x": 2816.0,
+   "y": 960.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 43
+  },
+  {
+   "type": "oC25",
+   "variation": 0,
+   "x": 2816.0,
+   "y": 1088.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 44
+  },
+  {
+   "type": "oC25",
+   "variation": 0,
+   "x": 1920.0,
+   "y": 1088.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 10,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 45
+  },
+  {
+   "type": "oC20",
+   "variation": 0,
+   "x": 1536.0,
+   "y": -2240.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 46
+  },
+  {
+   "type": "oC25",
+   "variation": 0,
+   "x": 1664.0,
+   "y": -2240.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 47
+  },
+  {
+   "type": "oC20",
+   "variation": 0,
+   "x": 1536.0,
+   "y": -3008.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 48
+  },
+  {
+   "type": "oC25",
+   "variation": 0,
+   "x": 1664.0,
+   "y": -3008.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 49
+  },
+  {
+   "type": "oC31",
+   "variation": 0,
+   "x": -1792.0,
+   "y": -1728.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 50
+  },
+  {
+   "type": "oC31",
+   "variation": 0,
+   "x": -1664.0,
+   "y": -1728.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 51
+  },
+  {
+   "type": "oC31",
+   "variation": 0,
+   "x": -1792.0,
+   "y": -1856.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 52
+  },
+  {
+   "type": "oC31",
+   "variation": 0,
+   "x": -2496.0,
+   "y": -1792.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 53
+  },
+  {
+   "type": "oC31",
+   "variation": 0,
+   "x": -2496.0,
+   "y": -1920.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 54
+  },
+  {
+   "type": "oC31",
+   "variation": 0,
+   "x": -2624.0,
+   "y": -1792.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 55
+  },
+  {
+   "type": "oC25",
+   "variation": 0,
+   "x": -1664.0,
+   "y": -1856.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 56
+  },
+  {
+   "type": "oC25",
+   "variation": 0,
+   "x": -2624.0,
+   "y": -1920.0,
+   "z": 313.5,
+   "rotation": 4.712,
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "flags": 2,
+   "player": 11,
+   "unknown": [
+    0,
+    0
+   ],
+   "hp": -1,
+   "mp": -1,
+   "item_table": -1,
+   "dropsets": [],
+   "gold": 12500,
+   "target_acq": -1.0,
+   "hero_level": 1,
+   "str": 0,
+   "agi": 0,
+   "int": 0,
+   "items": [],
+   "abilities": [],
+   "random_flag": 0,
+   "random": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "color": -1,
+   "waygate": -1,
+   "creation": 57
+  }
+ ],
+ "terrain": {
+  "magic": "W3E!",
+  "version": 11,
+  "tileset": "L",
+  "custom_tilesets": 0,
+  "ground_tilesets": [],
+  "cliff_tilesets": [
+   "Ldrt",
+   "Ldro",
+   "Ldrg",
+   "Lrok",
+   "Lgrs",
+   "Lgrd"
+  ],
+  "width": 2,
+  "height": 1768180803,
+  "offset_x": 4.5813268498928496e+30,
+  "offset_y": 9.10844001811131e-44
+ }
+}

@@ -1,0 +1,216 @@
+{
+ "source": "war3map.j",
+ "functions": 349,
+ "start": {
+  "gold": 10,
+  "lumber": null,
+  "food_cap": 4,
+  "food_cap_ceiling": 30,
+  "xp_handicap_pct": 300.0,
+  "time_of_day": 12.0,
+  "day_night_cycle": false,
+  "fog_of_war_disabled": true,
+  "fog_mask_disabled": true
+ },
+ "income": {
+  "triggers": 10,
+  "period_seconds": 0.5,
+  "gold_per_tick": 1,
+  "paused_while_constructing": false,
+  "resume_sweep_seconds": 60.0,
+  "gold_per_minute": 120
+ },
+ "spawners": [
+  {
+   "building": "hC03",
+   "trains": "zC02"
+  },
+  {
+   "building": "hC14",
+   "trains": "hC16"
+  },
+  {
+   "building": "hC15",
+   "trains": "hC17"
+  },
+  {
+   "building": "hC27",
+   "trains": "hgyr"
+  }
+ ],
+ "autotrain_period_seconds": 2.0,
+ "unit_routing": [
+  {
+   "trigger": "AutoAttackArmyMen4T1",
+   "unit": "zC02",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": "Work"
+  },
+  {
+   "trigger": "AutoAttackArmyMen4T2",
+   "unit": "zC02",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": "Base1"
+  },
+  {
+   "trigger": "AutoAttackLegoSoldier4T1",
+   "unit": "hC16",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": "Work"
+  },
+  {
+   "trigger": "AutoAttackLegoSoldier4T2",
+   "unit": "hC16",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": "Base1"
+  },
+  {
+   "trigger": "AutoAttackLegoKnight4T1",
+   "unit": "hC17",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": "Work"
+  },
+  {
+   "trigger": "AutoAttackLegoKnight4T2",
+   "unit": "hC17",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": "Base1"
+  },
+  {
+   "trigger": "AutoAttackHelicopter4T1",
+   "unit": "hgyr",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": "Work"
+  },
+  {
+   "trigger": "AutoAttackHelicopter4T2",
+   "unit": "hgyr",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": "Base1"
+  },
+  {
+   "trigger": "Action_Figurine4T1",
+   "unit": "oC07",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Action_Figurine4T2",
+   "unit": "oC07",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Gundam4T1",
+   "unit": "oC09",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Gundam4T2",
+   "unit": "oC09",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Super_Action_Hero4T1",
+   "unit": "oC18",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Super_Action_Hero4T2",
+   "unit": "oC18",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Army_Tank4T1",
+   "unit": "oC21",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Army_Tank4T2",
+   "unit": "oC21",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "TeddyT1",
+   "unit": "oC35",
+   "transferred_to_player": 10,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "TeddyT2",
+   "unit": "oC35",
+   "transferred_to_player": 11,
+   "order": "attack",
+   "destination_region": null
+  },
+  {
+   "trigger": "Balloon4T1",
+   "unit": "oC33",
+   "transferred_to_player": 10,
+   "order": "move",
+   "destination_region": "zone_morveux"
+  },
+  {
+   "trigger": "Balloon4T2",
+   "unit": "oC33",
+   "transferred_to_player": 11,
+   "order": "move",
+   "destination_region": "zone_mioche"
+  }
+ ],
+ "reorder_sweeps": [],
+ "victory": [
+  {
+   "trigger": "team1win",
+   "on_unit_death": true,
+   "on_enter_region": null
+  },
+  {
+   "trigger": "team2win",
+   "on_unit_death": true,
+   "on_enter_region": null
+  },
+  {
+   "trigger": "ballon_t1",
+   "on_unit_death": false,
+   "on_enter_region": "zone_morveux"
+  },
+  {
+   "trigger": "ballon_t2",
+   "on_unit_death": false,
+   "on_enter_region": "zone_mioche"
+  }
+ ],
+ "chat_commands": [],
+ "builder_death_penalty": {
+  "escort_unit": "nC12",
+  "escorted_to_region": "ToSchool",
+  "message": "TRIGSTR_066",
+  "respawn_delay_seconds": 60.0,
+  "respawn_unit": "oC00",
+  "respawn_region": "Base1"
+ }
+}

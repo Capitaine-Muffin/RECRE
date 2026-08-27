@@ -1,0 +1,289 @@
+[
+ {
+  "map": "La_Recreation_4.01",
+  "file": "Pikachu.blp",
+  "kind": "texture",
+  "bytes": 24552,
+  "franchise": "Pokémon"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "Textures/Spongebob.blp",
+  "kind": "texture",
+  "bytes": 63632,
+  "franchise": "SpongeBob"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "Textures/SpongebobJellyfishingnet.blp",
+  "kind": "texture",
+  "bytes": 14806,
+  "franchise": "SpongeBob"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "Textures/Terminator.blp",
+  "kind": "texture",
+  "bytes": 52753,
+  "franchise": "Terminator"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "firering6.blp",
+  "kind": "texture",
+  "bytes": 12102,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "textures/Revan.blp",
+  "kind": "texture",
+  "bytes": 54006,
+  "franchise": "Star Wars"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "textures/Revsabre.blp",
+  "kind": "texture",
+  "bytes": 11612,
+  "franchise": "Star Wars"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/BTNDarthRevan.blp",
+  "kind": "texture",
+  "bytes": 5533,
+  "franchise": "Star Wars"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/BTNSpongebob.blp",
+  "kind": "texture",
+  "bytes": 8075,
+  "franchise": "SpongeBob"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/BTNTurbolazer.blp",
+  "kind": "texture",
+  "bytes": 6713,
+  "franchise": "Star Wars"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/FlamerGoblin.mdx",
+  "kind": "model",
+  "bytes": 73525,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/GoblinScout.mdx",
+  "kind": "model",
+  "bytes": 82928,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/GoblinSoldier.mdx",
+  "kind": "model",
+  "bytes": 70849,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/IonCannonBeam.mdx",
+  "kind": "model",
+  "bytes": 9248,
+  "franchise": "Star Wars"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/KrustyKrab.mdx",
+  "kind": "model",
+  "bytes": 60801,
+  "franchise": "SpongeBob"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/Missile_BigPlasmaMissile.mdx",
+  "kind": "model",
+  "bytes": 9264,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/Missile_ChargeMissle.mdx",
+  "kind": "model",
+  "bytes": 4922,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/Missile_PlasmaStream.mdx",
+  "kind": "model",
+  "bytes": 4999,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/Pikachu.mdx",
+  "kind": "model",
+  "bytes": 134701,
+  "franchise": "Pokémon"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/PlanesOfAir.mdx",
+  "kind": "model",
+  "bytes": 27861,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/PlanesOfEarth.mdx",
+  "kind": "model",
+  "bytes": 26493,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/PlanesOfFire.mdx",
+  "kind": "model",
+  "bytes": 26621,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/SpaceOrcShockTrooperVG.mdx",
+  "kind": "model",
+  "bytes": 171741,
+  "franchise": "Warhammer 40k / misc"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/SpaceOrcShockTrooperVG_Portrait.mdx",
+  "kind": "model",
+  "bytes": 100007,
+  "franchise": "Warhammer 40k / misc"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/Spongebob2.MDX",
+  "kind": "model",
+  "bytes": 88355,
+  "franchise": "SpongeBob"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/Steamfortress.mdx",
+  "kind": "model",
+  "bytes": 112981,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/Terminator9000.mdx",
+  "kind": "model",
+  "bytes": 49634,
+  "franchise": "Terminator"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/Turbolazer.mdx",
+  "kind": "model",
+  "bytes": 17077,
+  "franchise": "Star Wars"
+ },
+ {
+  "map": "La_Recreation_4.01",
+  "file": "war3mapImported/revan.mdx",
+  "kind": "model",
+  "bytes": 56794,
+  "franchise": "Star Wars"
+ },
+ {
+  "map": "La_Recreation_retour_du_mag_v1.4",
+  "file": "01.blp",
+  "kind": "texture",
+  "bytes": 700230,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_retour_du_mag_v1.4",
+  "file": "02.blp",
+  "kind": "texture",
+  "bytes": 175942,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_retour_du_mag_v1.4",
+  "file": "Face.blp",
+  "kind": "texture",
+  "bytes": 175942,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_retour_du_mag_v1.4",
+  "file": "Pikachu.blp",
+  "kind": "texture",
+  "bytes": 24552,
+  "franchise": "Pokémon"
+ },
+ {
+  "map": "La_Recreation_retour_du_mag_v1.4",
+  "file": "Spongebob.blp",
+  "kind": "texture",
+  "bytes": 63632,
+  "franchise": "SpongeBob"
+ },
+ {
+  "map": "La_Recreation_retour_du_mag_v1.4",
+  "file": "SpongebobJellyfishingnet.blp",
+  "kind": "texture",
+  "bytes": 14806,
+  "franchise": "SpongeBob"
+ },
+ {
+  "map": "La_Recreation_retour_du_mag_v1.4",
+  "file": "body-256.blp",
+  "kind": "texture",
+  "bytes": 175942,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_retour_du_mag_v1.4",
+  "file": "cloud.blp",
+  "kind": "texture",
+  "bytes": 83019,
+  "franchise": "Final Fantasy"
+ },
+ {
+  "map": "La_Recreation_retour_du_mag_v1.4",
+  "file": "war3mapImported/011.MDX",
+  "kind": "model",
+  "bytes": 269930,
+  "franchise": null
+ },
+ {
+  "map": "La_Recreation_retour_du_mag_v1.4",
+  "file": "war3mapImported/Goku.mdx",
+  "kind": "model",
+  "bytes": 79960,
+  "franchise": "Dragon Ball"
+ },
+ {
+  "map": "La_Recreation_retour_du_mag_v1.4",
+  "file": "war3mapImported/Pikachu.mdx",
+  "kind": "model",
+  "bytes": 134701,
+  "franchise": "Pokémon"
+ },
+ {
+  "map": "La_Recreation_retour_du_mag_v1.4",
+  "file": "war3mapImported/cloud.mdx",
+  "kind": "model",
+  "bytes": 190704,
+  "franchise": "Final Fantasy"
+ }
+]

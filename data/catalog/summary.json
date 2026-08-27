@@ -1,0 +1,499 @@
+{
+ "La_Recreation_4.01": {
+  "name": "La Récréation 4.01",
+  "author": "HannibaLecter57",
+  "description": "Nouvelle Version de la récréation\nDe nombreuses nouvelles unités\nLa meilleure récrée de w3 !\n\nCrédit: Dan van Ohllus, General Frank, Illidan(Evil)X, D.O.G.,",
+  "playable_size": [
+   64,
+   64
+  ],
+  "tileset": "W",
+  "players": 12,
+  "forces": [
+   {
+    "name": "Les Mioches",
+    "mask": "0xfffff41f"
+   },
+   {
+    "name": "Les Morveux",
+    "mask": "0x00000be0"
+   }
+  ],
+  "counts": {
+   "units": 154,
+   "items": 7,
+   "buffs": 1,
+   "abilities": 42,
+   "upgrades": 2
+  },
+  "regions": [
+   {
+    "name": "Base1",
+    "rect": [
+     -3520.0,
+     2976.0,
+     -3136.0,
+     3424.0
+    ]
+   },
+   {
+    "name": "ToSchool",
+    "rect": [
+     -192.0,
+     -192.0,
+     320.0,
+     160.0
+    ]
+   },
+   {
+    "name": "Work",
+    "rect": [
+     2848.0,
+     -3264.0,
+     3264.0,
+     -2848.0
+    ]
+   },
+   {
+    "name": "Région 003",
+    "rect": [
+     -224.0,
+     -192.0,
+     320.0,
+     192.0
+    ]
+   },
+   {
+    "name": "zone mioche",
+    "rect": [
+     -3520.0,
+     3072.0,
+     -3168.0,
+     3360.0
+    ]
+   },
+   {
+    "name": "zone morveux",
+    "rect": [
+     2848.0,
+     -3168.0,
+     3296.0,
+     -2912.0
+    ]
+   },
+   {
+    "name": "mine dor",
+    "rect": [
+     -672.0,
+     160.0,
+     3264.0,
+     2752.0
+    ]
+   },
+   {
+    "name": "mine dor 2",
+    "rect": [
+     -3328.0,
+     -2848.0,
+     832.0,
+     -224.0
+    ]
+   }
+  ],
+  "preplaced": 34,
+  "files": 54
+ },
+ "La_Recreation_de_retour_du_mag2": {
+  "name": "La Récréation-de retour du mag2",
+  "author": "Maps_red",
+  "description": "ils ont fait les courses\nAvec leurs mamans :)les betes sauvages sont la pour empecher les de detruire la base énemie trop rapidement.\n.en gros c'est la meme version.J'ai juste modifié quelques trucs\nMaps_red",
+  "playable_size": [
+   64,
+   64
+  ],
+  "tileset": "L",
+  "players": 12,
+  "forces": [
+   {
+    "name": "Les Mioches",
+    "mask": "0xfffff41f"
+   },
+   {
+    "name": "Les Morveux",
+    "mask": "0x00000be0"
+   }
+  ],
+  "counts": {
+   "units": 57
+  },
+  "regions": [
+   {
+    "name": "Base1",
+    "rect": [
+     -3712.0,
+     -3104.0,
+     -3360.0,
+     -2656.0
+    ]
+   },
+   {
+    "name": "ToSchool",
+    "rect": [
+     -1376.0,
+     2688.0,
+     -864.0,
+     3040.0
+    ]
+   },
+   {
+    "name": "Work",
+    "rect": [
+     3328.0,
+     2656.0,
+     3744.0,
+     3168.0
+    ]
+   },
+   {
+    "name": "Région 003",
+    "rect": [
+     512.0,
+     -2784.0,
+     1056.0,
+     -2400.0
+    ]
+   },
+   {
+    "name": "zone mioche",
+    "rect": [
+     -3552.0,
+     -2912.0,
+     -3488.0,
+     -2848.0
+    ]
+   },
+   {
+    "name": "zone morveux",
+    "rect": [
+     3488.0,
+     2816.0,
+     3552.0,
+     2880.0
+    ]
+   }
+  ],
+  "preplaced": 140,
+  "files": 18
+ },
+ "La_Recreation_ninja": {
+  "name": "La Recreation ninja",
+  "author": "zemilio",
+  "description": "La récré reprends ! Et les combats avec !\n\nZemilio",
+  "playable_size": [
+   53,
+   54
+  ],
+  "tileset": "L",
+  "players": 12,
+  "forces": [
+   {
+    "name": "Les Racailles",
+    "mask": "0xfffff41f"
+   },
+   {
+    "name": "Les Intellos",
+    "mask": "0x00000be0"
+   }
+  ],
+  "counts": {
+   "units": 54,
+   "items": 11
+  },
+  "regions": [
+   {
+    "name": "Base1",
+    "rect": [
+     -3136.0,
+     1664.0,
+     -2784.0,
+     2112.0
+    ]
+   },
+   {
+    "name": "ToSchool",
+    "rect": [
+     -64.0,
+     -800.0,
+     448.0,
+     -448.0
+    ]
+   },
+   {
+    "name": "Work",
+    "rect": [
+     2848.0,
+     -2912.0,
+     3264.0,
+     -2400.0
+    ]
+   },
+   {
+    "name": "Région 003",
+    "rect": [
+     -64.0,
+     -416.0,
+     480.0,
+     -32.0
+    ]
+   },
+   {
+    "name": "zone mioche",
+    "rect": [
+     -3040.0,
+     1824.0,
+     -2912.0,
+     1952.0
+    ]
+   },
+   {
+    "name": "zone morveux",
+    "rect": [
+     3008.0,
+     -2720.0,
+     3136.0,
+     -2592.0
+    ]
+   },
+   {
+    "name": "haut",
+    "rect": [
+     -640.0,
+     -704.0,
+     -96.0,
+     -128.0
+    ]
+   },
+   {
+    "name": "bas",
+    "rect": [
+     -1952.0,
+     -2976.0,
+     -1184.0,
+     -2496.0
+    ]
+   },
+   {
+    "name": "expan bas",
+    "rect": [
+     -192.0,
+     -2752.0,
+     448.0,
+     -2144.0
+    ]
+   },
+   {
+    "name": "expan haut",
+    "rect": [
+     -512.0,
+     1120.0,
+     160.0,
+     1760.0
+    ]
+   },
+   {
+    "name": "marteleurs",
+    "rect": [
+     1408.0,
+     1344.0,
+     2048.0,
+     1984.0
+    ]
+   }
+  ],
+  "preplaced": 58,
+  "files": 19
+ },
+ "La_Recreation_retour_du_mag_v1.4": {
+  "name": "La Recreation retour du mag v1.4",
+  "author": "Saverio",
+  "description": "Les Mioches et les Morveux\nS'affronte encore une fois\nMais cette fois ils ont fait les courses\nAvec leurs mamans :)\n\n\n   Version 1.3",
+  "playable_size": [
+   64,
+   64
+  ],
+  "tileset": "L",
+  "players": 12,
+  "forces": [
+   {
+    "name": "Les Mioches",
+    "mask": "0xfffff41f"
+   },
+   {
+    "name": "Les Morveux",
+    "mask": "0x00000be0"
+   }
+  ],
+  "counts": {
+   "units": 84,
+   "abilities": 20
+  },
+  "regions": [
+   {
+    "name": "Base1",
+    "rect": [
+     -3712.0,
+     -3104.0,
+     -3360.0,
+     -2656.0
+    ]
+   },
+   {
+    "name": "ToSchool",
+    "rect": [
+     -1376.0,
+     2688.0,
+     -864.0,
+     3040.0
+    ]
+   },
+   {
+    "name": "Work",
+    "rect": [
+     3328.0,
+     2656.0,
+     3744.0,
+     3168.0
+    ]
+   },
+   {
+    "name": "Région 003",
+    "rect": [
+     512.0,
+     -2784.0,
+     1056.0,
+     -2400.0
+    ]
+   },
+   {
+    "name": "zone mioche",
+    "rect": [
+     -3552.0,
+     -2912.0,
+     -3488.0,
+     -2848.0
+    ]
+   },
+   {
+    "name": "zone morveux",
+    "rect": [
+     3488.0,
+     2816.0,
+     3552.0,
+     2880.0
+    ]
+   },
+   {
+    "name": "Magtheridon",
+    "rect": [
+     -1696.0,
+     -3296.0,
+     -1504.0,
+     -3136.0
+    ]
+   },
+   {
+    "name": "Arthas",
+    "rect": [
+     -1696.0,
+     -3520.0,
+     -1504.0,
+     -3392.0
+    ]
+   },
+   {
+    "name": "Balnazaar",
+    "rect": [
+     -1696.0,
+     -3776.0,
+     -1504.0,
+     -3648.0
+    ]
+   },
+   {
+    "name": "Thrall",
+    "rect": [
+     -1056.0,
+     -3328.0,
+     -864.0,
+     -3200.0
+    ]
+   },
+   {
+    "name": "Akama",
+    "rect": [
+     -1056.0,
+     -3520.0,
+     -896.0,
+     -3392.0
+    ]
+   },
+   {
+    "name": "Illidan",
+    "rect": [
+     -1056.0,
+     -3712.0,
+     -864.0,
+     -3584.0
+    ]
+   },
+   {
+    "name": "no hero",
+    "rect": [
+     -1856.0,
+     -4064.0,
+     -704.0,
+     -2944.0
+    ]
+   }
+  ],
+  "preplaced": 134,
+  "files": 33
+ },
+ "Recreation_dans_les_iles_v1.2": {
+  "name": "RECREATION DANS LES ILES V1.2",
+  "author": "Chimako",
+  "description": "The red player must choose:\n Right  arrow to change the map.\n Left  arrow to go back.\n Up  arrow to select the map.\n Down arrow to choose randomly.\n\nWithout choice, another player is selected after 40 seconds.",
+  "playable_size": [
+   249,
+   249
+  ],
+  "tileset": "Z",
+  "players": 0,
+  "forces": [
+   {
+    "name": "",
+    "mask": "0x0000000c"
+   },
+   {
+    "name": "",
+    "mask": "0x01000000"
+   },
+   {
+    "name": "IGSTR_008",
+    "mask": "0x52540000"
+   }
+  ],
+  "counts": {
+   "units": 72,
+   "items": 11,
+   "destructables": 2,
+   "buffs": 25,
+   "abilities": 22,
+   "doodads": 1,
+   "upgrades": 25
+  },
+  "regions": [],
+  "preplaced": null,
+  "files": 19
+ }
+}
