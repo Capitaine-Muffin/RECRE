@@ -113,6 +113,35 @@ C'est la voie de contenu la moins chère et la plus fidèle à l'original.
 - Une partie entière tient dans une liste d'entrées horodatées → **replays et
   spectateur gratuits**, et une reconnexion se résout en rejouant le journal.
 
+### Ce que « serveur autoritaire » implique — et ce que ça n'implique pas
+
+Cette section décrit **l'état d'arrivée**, pas le premier jour. Lue seule, elle
+donne à croire qu'un serveur est nécessaire avant de pouvoir jouer : c'est
+faux, et ça a déjà envoyé une session sur une fausse piste.
+
+**La même simulation tourne des deux côtés.** En solo et contre l'IA (étapes 1
+et 2 du §8), elle s'exécute dans le client, sans réseau. Passer au 3c3 la
+déplace sur un serveur — ce n'est pas une réécriture, à une condition
+non négociable :
+
+> **La simulation reste pure.** Aucun accès au DOM, aucun `Date.now()`, aucun
+> `Math.random()` non graine. Elle prend un état et une liste d'intentions,
+> elle rend l'état suivant. Le rendu la lit, ne la modifie jamais.
+
+C'est cette séparation qui rend l'étape 3 possible sans tout refaire — et
+c'est aussi ce qui donne les replays et la reconnexion par rejeu du journal
+annoncés plus haut. Elle se paie le premier jour ou elle ne se paie jamais.
+
+**Ce que le serveur coûtera vraiment, le moment venu :** une connexion
+persistante (websocket), un service de mise en relation des joueurs, et une
+boucle à 10 Hz vivante pour chaque partie en cours.
+
+⚠️ **Ce n'est pas le backend de PING PIOU.** Celui-là reçoit des résumés de
+partie en REST et les rejoue après coup : ni connexion permanente, ni
+appariement, ni boucle temps réel. Les fonctions Edge de Supabase ne sont pas
+faites pour ça. L'étape 3 est un chantier à part entière, à ne pas budgéter
+comme « on rebranche le serveur existant ».
+
 Le combat est le seul morceau à écrire de zéro : dans WC3 c'est le moteur qui
 gère cible, portée, projectiles, types d'armure. Le remplacement minimal :
 
@@ -147,12 +176,21 @@ coûts, la vitesse, l'armure, et c'est l'essentiel.
 
 ## 8. Étapes
 
+Les deux premières étapes sont **hors ligne, sans serveur** : la simulation
+tourne dans le client. Le jeu est déjà publiable à la fin de l'étape 2, en
+solo contre l'IA — c'est ce qui permet de vérifier la boucle sur de vrais
+joueurs avant d'engager le réseau.
+
 1. **Prototype jouable** — une lane, 3 casernes, 1 tour, le château. But :
    vérifier que la boucle « acheter et regarder » tient sur téléphone. Rien
-   d'autre ne compte tant que ce n'est pas prouvé.
+   d'autre ne compte tant que ce n'est pas prouvé. *Simulation locale.*
 2. **La boucle complète** — revenu coupé pendant la construction, Bombe à Eau,
-   punition du coin, héros.
-3. **Réseau** — serveur autoritaire, 3c3, reconnexion.
+   punition du coin, héros. *Simulation locale, adversaire IA.* **Publiable en
+   l'état.**
+3. **Réseau** — serveur autoritaire, 3c3, reconnexion. La simulation ne change
+   pas : elle change d'hôte (voir §6). Websocket, appariement et boucle 10 Hz
+   sont à écrire — c'est l'étape la plus lourde du projet, et la seule qui
+   sorte du modèle de jeu mobile.
 4. **Contenu** — les 20 achetables, un thème, l'équilibrage.
 5. **Deuxième thème** — pour valider que le moteur est bien détachable du
    contenu, ce que les cinq maps promettent.
