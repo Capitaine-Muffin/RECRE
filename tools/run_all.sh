@@ -19,3 +19,4 @@ python3 tools/build_catalog.py
 python3 tools/spawner_economics.py
 python3 tools/asset_inventory.py
 python3 tools/ip_audit.py
+python3 tools/apercu_sprites.py

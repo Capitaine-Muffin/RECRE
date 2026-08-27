@@ -276,3 +276,87 @@ pas partir sur un store.** Voir `04-assets-et-propriete-intellectuelle.md` : le
 détail, et les remplacements proposés. La bonne nouvelle est que le charme de La
 Récréation ne tient pas aux licences mais à l'idée — *des enfants qui se battent
 avec leurs jouets pendant la récré* — et cette idée-là est libre.
+
+---
+
+## 10. Où en est le jeu
+
+**Étape 1 faite.** Le prototype tourne : `npm run servir`, puis
+<http://localhost:8000>.
+
+```
+www/moteur/     simulation déterministe — aucun DOM, aucune horloge, aucun
+                hasard non semé. Vérifié par un test, pas seulement promis.
+www/rendu/      palette, sprites, dessin, scène, interface. Lecture seule.
+www/ia/         l'adversaire, qui produit des intentions comme un joueur.
+www/jeu.js      le seul fichier qui regarde l'horloge, et la convertit en ticks.
+tests/          déterminisme, règles, sprites.  `npm test`
+```
+
+Contenu : 3 casernes, 1 tour, 2 réserves de population, 6 emplacements, un
+château à 10 000 PV de chaque côté, et une IA à trois niveaux qui achète au
+hasard.
+
+### Ce que la simulation a appris pendant l'étape 1
+
+Trois choses sont sorties de la mesure, pas de la théorie.
+
+**Le plafond de population manquait, et sans lui la partie ne finit pas.**
+Une fois les emplacements pleins, l'or n'a plus de destination et deux armées
+s'annulent au milieu pour toujours : 26 parties sur 30 ne se terminaient pas.
+Les maps d'origine ont ce qu'il fallait — le Coffre à Jouet (15 or, +5 places)
+et le Goûter (100 or, +20). Ils sont dans le jeu, aux mêmes prix.
+
+**Le match nul est normal quand les deux camps sont identiques.** Revenu égal,
+IA identique : la symétrie est parfaite, donc rien ne casse. Dès qu'on
+déséquilibre — deux niveaux d'IA différents — 7 à 8 parties sur 30 seulement
+restent nulles, les autres se règlent en 4 à 5 minutes. La vraie réponse est la
+**Bombe à Eau** de l'étape 2 : c'est exactement l'outil que l'original s'était
+donné pour débloquer les grinds.
+
+**Construire sans arrêt fait perdre.** L'IA la plus lente bat la plus rapide
+16 à 6 : à force de poser des bâtiments, on est toujours en chantier, donc on
+ne touche jamais son or. C'est le mécanisme central de l'original, et il
+fonctionne sans qu'on ait eu à le forcer. Le jeu récompense celui qui sait
+attendre — ce qui est très exactement ce qu'on voulait.
+
+### Ce qui reste faible
+
+- **Les cadences d'attaque sont posées à la main**, les maps ne les
+  contiennent pas (§6). C'est l'équilibrage de l'étape 4.
+- **La tour ne vaut pas son emplacement.** Deux tours retardent une percée
+  d'une douzaine de secondes. Aux valeurs de l'original — et l'original a le
+  même souci.
+- **Le Château de Sable est le sprite le plus faible.** Il se lit, mais il
+  s'aplatit ; c'est l'objet qu'on regarde mourir, il mérite mieux.
+
+## 11. Les dessins
+
+Tout est en pixel art écrit à la main, dans `www/rendu/sprites.js` : des
+tableaux de chaînes, un caractère par pixel, une palette commune de vingt-deux
+teintes dans `palette.js`. Aucun fichier image — rien à charger, rien qui
+manque hors ligne, et un diff Git qui montre ce qui a bougé sur le dessin.
+
+`tests/sprites.mjs` vérifie que chaque sprite a des lignes de longueur
+constante et n'emploie que des couleurs de la palette : une faute de frappe
+dans un dessin de vingt-quatre lignes décale une colonne entière et ne se voit
+pas à l'œil.
+
+La planche de contact se régénère avec `python3 tools/apercu_sprites.py`
+(`docs/generated/sprites.png`) — elle lit les sprites depuis le code, donc elle
+ne peut pas mentir sur ce qui est réellement dessiné.
+
+| | |
+|---|---|
+| Unités, 16×16 et 24×20 | Petit Soldat, Soldat de Briques, Cavalier de Briques |
+| Bâtiments, 24×24 | Caserne des Petits Soldats, Fort en Briques, Citadelle en Briques, Tour de Défense, Coffre à Jouets, Goûter |
+| Château, 32×24 | Château de Sable |
+| Enfants, 16×20 | Mioche, Morveux, Maîtresse |
+
+Les proportions font le ton : grosse tête et petit corps pour les enfants, et
+la Maîtresse dessinée plus haute qu'eux — c'est elle qui les fait paraître
+petits. Le contour n'est jamais noir pur mais `#2f2740`, un violet très
+sombre, qui adoucit la silhouette.
+
+Les noms sont neutres par construction : aucun ne renvoie à une franchise (§9,
+et `docs/04-assets-et-propriete-intellectuelle.md`).

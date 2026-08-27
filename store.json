@@ -1,0 +1,37 @@
+{
+  "tva": 0.2,
+
+  "fiche": {
+    "langueDesImages": "fr-FR",
+    "textes": {
+      "fr-FR": {
+        "titre": "La Récréation",
+        "resume": "Achetez des jouets, ils se battent tout seuls. Cassez le château de sable adverse.",
+        "description": "Dans la cour, à la récré, on ne commande pas ses jouets — on décide seulement lesquels sortir de la boîte.\n\nPosez des casernes : elles produisent toutes seules. Vos petits soldats, vos bonshommes de briques et vos cavaliers partent d'eux-mêmes vers le camp d'en face. Le premier qui met le château de sable adverse en miettes a gagné.\n\nUne seule vraie décision, et elle est cruelle : tant qu'un bâtiment est en chantier, vous ne touchez plus un sou. Construire coûte son prix, plus tout ce que vous n'aurez pas gagné pendant ce temps-là. Les plus pressés perdent.\n\n• Une partie tient en une dizaine de minutes\n• Jouable d'une main, en portrait\n• Aucune connexion nécessaire : tout tourne sur l'appareil\n• Du pixel art dessiné à la main\n\nD'après La Récréation, une carte Warcraft III de HannibaLecter57."
+      }
+    },
+    "images": {
+      "icon": "play/icone-512.png",
+      "featureGraphic": "play/banniere-1024x500.png",
+      "phoneScreenshots": [
+        "play/capture-1.png",
+        "play/capture-2.png",
+        "play/capture-3.png"
+      ]
+    }
+  },
+
+  "produits": [
+    {
+      "id": "sans_pub",
+      "titre": "Sans publicité",
+      "description": "Retire la bannière, une fois pour toutes.",
+      "prixTTC": 2.99
+    }
+  ],
+
+  "paiements": {
+    "projet": "projXXXXXXXX",
+    "application": "appXXXXXXXX"
+  }
+}

@@ -1,0 +1,176 @@
+/* La cour de récré. Le jeu remplit l'écran et ne défile jamais. */
+* { box-sizing: border-box; }
+
+:root {
+  --nuit: #1a1624;
+  --ciel: #2b2140;
+  --encre: #2f2740;
+  --craie: #fff6e8;
+  --grise: #c9c2d4;
+  --or: #ffd84d;
+  --alerte: #ef4d5a;
+  --touche: 48px;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--nuit);
+  color: var(--craie);
+  font-family: system-ui, sans-serif;
+  /* Le pixel art n'a pas à être adouci par le navigateur. */
+  image-rendering: pixelated;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+#jeu {
+  height: 100%;
+  display: grid;
+  /* `minmax(0, 1fr)` et pas `1fr` : sans ça la colonne se dimensionne sur son
+     contenu, le pupitre pousse la page plus large que l'écran, et le dernier
+     emplacement sort du cadre. Le modèle interdit le défilement horizontal. */
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  padding: max(0px, env(safe-area-inset-top)) 0 max(0px, env(safe-area-inset-bottom));
+}
+
+/* ------------------------------------------------------------- le bandeau */
+.bandeau {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), transparent);
+}
+
+.chateau { display: flex; align-items: baseline; gap: 0.5rem; }
+.etiquette { font-size: 0.75rem; color: var(--grise); }
+.pv { font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* --------------------------------------------------------------- la scène */
+.scene { width: 100%; height: 100%; display: block; }
+
+/* ------------------------------------------------------------- le pupitre */
+.pupitre {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 0.5rem 0.75rem;
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.compteurs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  min-width: 0;
+}
+.compteur--or { color: var(--or); font-weight: 700; font-size: 1.05rem; }
+.compteur--pv { margin-left: auto; color: var(--grise); }
+.compteur--pv b { color: var(--craie); }
+
+/* Le revenu suspendu est le seul vrai arbitrage du jeu : il doit se voir. */
+.compteur--alerte {
+  color: var(--alerte);
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+
+.emplacements {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.emplacement {
+  aspect-ratio: 1;
+  min-height: var(--touche);
+  display: grid;
+  place-items: center;
+  position: relative;
+  padding: 0;
+  border: 2px dashed rgba(255, 246, 232, 0.28);
+  border-radius: 10px;
+  background: rgba(255, 246, 232, 0.05);
+  color: var(--grise);
+  cursor: pointer;
+}
+.emplacement:has(canvas) { border-style: solid; background: rgba(255,246,232,0.10); }
+.emplacement:focus-visible { outline: 3px solid var(--or); outline-offset: 2px; }
+.plus { font-size: 1.5rem; line-height: 1; }
+
+.chrono {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 2px;
+  font-size: 0.65rem;
+  color: var(--or);
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.vignette { display: block; max-width: 100%; height: auto; }
+
+/* ------------------------------------------------------- panneaux modaux */
+dialog {
+  border: 0;
+  border-radius: 16px;
+  padding: 1rem;
+  max-width: min(96vw, 34rem);
+  background: var(--ciel);
+  color: var(--craie);
+}
+dialog::backdrop { background: rgba(10, 8, 16, 0.72); }
+dialog h2 { margin: 0 0 0.75rem; font-size: 1.1rem; }
+
+.catalogue {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 0.5rem;
+}
+
+.carte {
+  display: grid;
+  justify-items: center;
+  gap: 0.2rem;
+  padding: 0.6rem 0.4rem;
+  min-height: var(--touche);
+  border: 2px solid rgba(255, 246, 232, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 246, 232, 0.06);
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+.carte:disabled { opacity: 0.35; cursor: not-allowed; }
+.carte:focus-visible { outline: 3px solid var(--or); outline-offset: 2px; }
+.carte-nom { font-weight: 700; font-size: 0.85rem; }
+.carte-prix { color: var(--or); font-size: 0.78rem; }
+.carte-aide { color: var(--grise); font-size: 0.7rem; line-height: 1.25; }
+
+button {
+  font: inherit;
+  min-height: var(--touche);
+  padding: 0.7rem 1.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--alerte);
+  color: #fff;
+  cursor: pointer;
+}
+button.secondaire {
+  margin-top: 0.75rem;
+  background: rgba(255, 246, 232, 0.12);
+  color: var(--craie);
+}
+
+/* Écrans larges : la cour reste une colonne, on ne l'étire pas. */
+@media (min-width: 720px) {
+  #jeu { max-width: 30rem; margin-inline: auto; }
+}

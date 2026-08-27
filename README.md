@@ -23,6 +23,27 @@ publiable par un tag. Le moteur s'écrit déterministe à pas fixe dès maintena
 pour que le multijoueur 3c3 se branche plus tard sans réécriture. Voir
 [`docs/02-design-mobile.md`](docs/02-design-mobile.md) §6 et §8.
 
+## Le jeu
+
+Le prototype tourne — étape 1 du plan, solo contre l'IA :
+
+```sh
+npm run servir     # puis http://localhost:8000
+npm test           # déterminisme, règles du jeu, sprites
+```
+
+```
+www/moteur/     la simulation, déterministe à pas fixe. Aucun DOM, aucune
+                horloge, aucun hasard non semé — et un test qui le vérifie.
+www/rendu/      palette, sprites pixel art, dessin, scène, interface.
+www/ia/         l'adversaire : il produit des intentions, comme un joueur.
+tests/          `npm test`
+```
+
+Les dessins sont du pixel art écrit à la main dans `www/rendu/sprites.js` —
+un caractère par pixel, aucune image à charger. La planche de contact est dans
+[`docs/generated/sprites.png`](docs/generated/sprites.png).
+
 ## Par où commencer
 
 | | |
@@ -72,6 +93,8 @@ Python 3, bibliothèque standard uniquement, aucune dépendance à installer.
 ## Arborescence
 
 ```
+www/                le jeu — moteur, rendu, IA
+tests/              les tests du jeu
 raw/maps/           les .w3x d'origine, intouchés
 tools/              lecteur MPQ, parseurs de formats, pipeline
 data/maps/          une map = un JSON (infos, objets, régions, chaînes)

@@ -1,0 +1,22 @@
+{
+  "name": "recre",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preparer": "node tools/vendorer.mjs",
+    "android": "npm run preparer && npx cap sync android && npx cap open android",
+    "servir": "python3 -m http.server 8000 --directory www",
+    "store": "node tools/store.mjs",
+    "publier": "node tools/publier.mjs",
+    "test": "node tests/sprites.mjs && node tests/deterministe.mjs"
+  },
+  "dependencies": {
+    "@capacitor-community/admob": "^6.0.0",
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capitaine-muffin/monetisation": "github:Capitaine-Muffin/monetisation",
+    "@revenuecat/purchases-capacitor": "^9.0.0"
+  }
+}
