@@ -23,15 +23,28 @@ commandes à 12 boutons.
 
 ## 2. Format retenu
 
-- **3 contre 3** (au lieu de 5c5). Le 5c5 demande dix joueurs simultanés ; à
-  trois, une partie se remplit et la contribution de chacun reste lisible.
+**Au lancement : solo contre l'IA.** Le jeu tient entièrement dans
+`modele-jeu-mobile` — HTML/CSS/JS dans `www/`, zéro build, hors ligne,
+publiable par un tag. Pas de serveur, pas de compte, pas de réseau.
+
+Le multijoueur viendra (§8, étape 3), et le moteur est écrit dès maintenant
+pour le recevoir sans réécriture (§6). Mais ce n'est pas ce qu'on livre
+d'abord, et il ne faut pas faire semblant : tout ce qui suit décrit un jeu
+solo.
+
+- **1 contre 1 contre l'IA.** Une base à moi, une base adverse tenue par
+  l'ordinateur. Le format 3c3 de l'original reste la cible du réseau, et rien
+  dans le moteur ne l'empêche — une équipe est déjà une liste de joueurs, elle
+  n'en contient qu'un pour l'instant.
 - **Une lane, deux bases.** Comme la map d'origine : `Base1` ↔ `Work`, la
   rencontre au milieu.
 - **8 à 12 minutes** par partie.
 - **Portrait**, une main. La lane est verticale : ma base en bas, l'ennemie en
   haut, la mêlée au centre de l'écran.
-- **Temps réel avec reconnexion.** Le serveur fait autorité, la simulation est
-  déterministe (voir §6) ; un joueur qui coupe se reconnecte sur l'état courant.
+- **Jouable au clavier et au tactile**, comme l'exige le modèle : le jeu sera
+  essayé depuis un navigateur de bureau autant que depuis un téléphone.
+- **La partie se met en pause et reprend** — l'état de la simulation tient dans
+  un objet sérialisable, on le range dans `localStorage` en quittant.
 
 ## 3. Écran
 
@@ -102,16 +115,93 @@ C'est la voie de contenu la moins chère et la plus fidèle à l'original.
 
 ## 6. Architecture technique
 
-**Serveur autoritaire, simulation déterministe à pas fixe.**
+**Simulation déterministe à pas fixe, écrite comme telle dès la première
+ligne.** Elle tourne dans le navigateur pour l'instant ; c'est le seul point
+qui changera quand le réseau arrivera.
 
-- Pas de simulation : **100 ms** (10 Hz). Suffisant — aucune unité n'est
-  contrôlée, il n'y a pas de visée.
-- Le client n'envoie que des intentions : `{tick, slot, achat}`. Quelques
-  octets, quelques fois par minute. Injouable à tricher, trivial à rejouer.
-- Le client interpole entre les pas pour l'affichage ; la vérité reste au
-  serveur.
-- Une partie entière tient dans une liste d'entrées horodatées → **replays et
-  spectateur gratuits**, et une reconnexion se résout en rejouant le journal.
+C'est la décision structurante du projet. Un moteur déterministe se retrofite
+mal : il faut traquer après coup chaque `Math.random`, chaque `Date.now`,
+chaque parcours d'objet dont l'ordre n'est pas garanti. Écrit déterministe
+d'emblée, il coûte à peu près la même chose, et l'étape 3 devient un
+changement de source d'entrées plutôt qu'une réécriture.
+
+### La forme
+
+```
+www/
+  moteur/     la simulation. Aucun DOM, aucun son, aucune horloge, aucun hasard
+              non semé. Ne dépend de rien. Tourne aussi bien dans Node.
+  rendu/      lit l'état du moteur et dessine. N'écrit jamais dedans.
+  ia/         produit des intentions, exactement comme un joueur humain.
+  jeu.js      assemble les trois et tient la boucle
+```
+
+Le moteur est une fonction pure :
+
+```js
+etatSuivant = avancer(etat, entreesDuTick)
+```
+
+`entreesDuTick` est une liste d'intentions `{joueur, action, cible}`. D'où
+elles viennent — le doigt du joueur, l'IA locale, plus tard une socket — le
+moteur ne le sait pas et ne doit jamais le savoir. **C'est tout le truc** :
+brancher le réseau, c'est remplir cette liste autrement.
+
+### Les règles qu'on ne transige pas
+
+1. **Pas fixe de 100 ms** (10 Hz), boucle à accumulateur. Aucune grandeur du
+   jeu n'est multipliée par un `deltaTime` variable. 10 Hz suffit : personne ne
+   contrôle d'unité, il n'y a pas de visée.
+2. **Aucun `Math.random()` dans `moteur/`.** Un générateur semé
+   (`mulberry32`), rangé dans l'état de la partie, avancé par la simulation.
+   Même graine et mêmes entrées ⇒ même partie, à l'octet près.
+3. **Aucune horloge dans `moteur/`.** `Date.now()` et `performance.now()`
+   vivent dans la boucle hôte, jamais dans la simulation. Le temps du jeu, ce
+   sont les ticks.
+4. **Positions et PV en entiers.** Millièmes de case pour les positions ; pas
+   de flottant accumulé d'un tick à l'autre. Le flottant n'est pas indéterminé
+   en JavaScript (IEEE 754 partout), mais l'entier évite le débat et rend l'état
+   comparable par égalité stricte.
+5. **Parcours toujours dans le même ordre.** Les unités vivent dans un tableau,
+   avec un identifiant entier croissant. Jamais de `Object.keys`, jamais de
+   `Set` d'objets, jamais de tri instable.
+6. **`rendu/` n'écrit jamais dans l'état.** Il interpole entre le tick courant
+   et le précédent pour l'affichage, et c'est tout.
+
+### Ce que ça donne gratuitement, dès le solo
+
+- **Le journal de partie** — `{graine, [{tick, intentions}]}` — quelques
+  kilo-octets. Rejouable, donc : replays, rapports de bug reproductibles,
+  et parties de test rejouées en boucle pour l'équilibrage.
+- **Un test de non-régression qui vaut quelque chose** : rejouer un journal
+  enregistré et comparer une empreinte de l'état final. Si un correctif change
+  le déroulement d'une partie, on le voit tout de suite.
+- **La sauvegarde** : l'état est déjà sérialisable, par construction.
+
+### Le combat
+
+C'est le seul morceau à écrire de zéro : dans WC3 c'est le moteur qui gère
+cible, portée, projectiles, types d'armure. Le remplacement minimal :
+
+- une unité avance sur la lane jusqu'à trouver une cible à portée ;
+- elle frappe tous les `cooldown` ticks pour `dmg_per_hit` ;
+- réduction de dégâts par type d'armure (table à 5 entrées, comme WC3) ;
+- pas de pathfinding : la lane est un couloir 1D avec des voies parallèles.
+
+**Ce dernier point est le vrai raccourci.** La lane 1D remplace tout le
+pathfinding de Warcraft, et elle est fidèle : dans la map d'origine les unités
+vont en ligne droite vers un rectangle.
+
+### L'IA adverse
+
+Elle n'a **aucun accès privilégié** : elle lit l'état public et produit les
+mêmes intentions qu'un joueur. Pas de triche à l'or, pas de vision cachée —
+le brouillard est de toute façon désactivé dans l'original (§4 du doc
+d'analyse), donc tout le monde voit tout, y compris elle.
+
+Trois niveaux, qui se règlent sur un seul curseur : le délai de réaction, en
+ticks, entre le moment où une composition adverse devient lisible et celui où
+l'IA y répond. C'est plus honnête qu'un bonus d'or, et ça se joue mieux.
 
 Le combat est le seul morceau à écrire de zéro : dans WC3 c'est le moteur qui
 gère cible, portée, projectiles, types d'armure. Le remplacement minimal :
@@ -137,22 +227,39 @@ coûts, la vitesse, l'armure, et c'est l'essentiel.
 ## 7. Monétisation et social
 
 - **Cosmétique uniquement.** Le jeu est symétrique et lisible ; vendre de la
-  puissance casserait la seule chose qui le tient.
-- Thèmes, skins de château, effets de destruction, emotes.
-- Pas de `-kick` à la main comme dans l'original : **vote d'équipe** ou
-  abandon avec remplacement par une IA. Le kick unilatéral par l'hôte, tel qu'il
-  existe dans la 4.01, est inacceptable dans un jeu public.
+  puissance casserait la seule chose qui le tient. Ça vaut aussi en solo : une
+  IA qu'on bat en payant n'est pas un adversaire.
+- Thèmes, skins de château, effets de destruction, emotes. En solo, le produit
+  qui se tient est un **déblocage à vie** qui ouvre les thèmes — ça rentre tel
+  quel dans le `store.json` du modèle.
 - L'interdiction du « rush base » n'est plus une convention : les emplacements
   de construction sont hors de portée des unités adverses par construction.
+- Le social — `-kick`, votes, abandon — ne se pose qu'à l'étape 3. À noter
+  quand elle viendra : le kick unilatéral par l'hôte de la 4.01 est
+  inacceptable dans un jeu public, ce sera un vote ou un remplacement par
+  l'IA.
 
 ## 8. Étapes
 
-1. **Prototype jouable** — une lane, 3 casernes, 1 tour, le château. But :
-   vérifier que la boucle « acheter et regarder » tient sur téléphone. Rien
-   d'autre ne compte tant que ce n'est pas prouvé.
+**Étapes 1 et 2 : c'est le périmètre en cours.** Solo contre l'IA, dans
+`modele-jeu-mobile` tel quel, publiable par un tag. Rien d'autre n'est engagé.
+
+1. **Prototype jouable** — une lane, 3 casernes, 1 tour, le château, une IA
+   qui achète au hasard. But : vérifier que la boucle « acheter et regarder »
+   tient sur téléphone. Rien d'autre ne compte tant que ce n'est pas prouvé.
+   Le moteur est déterministe dès ce prototype (§6) — c'est le moment où ça
+   coûte le moins cher.
 2. **La boucle complète** — revenu coupé pendant la construction, Bombe à Eau,
-   punition du coin, héros.
-3. **Réseau** — serveur autoritaire, 3c3, reconnexion.
+   punition du coin, héros, une IA qui répond à la composition adverse.
+   Livrable : un jeu solo publiable.
+
+Puis, dans l'ordre où ça se décide plus tard :
+
+3. **Réseau** — 3c3 temps réel. **Hors modèle** : il faut un serveur, donc un
+   dépôt à part. WebSocket et matchmaking, rien à voir avec un backend REST.
+   Le client garde son moteur ; ce qui change, c'est que les intentions
+   arrivent d'une socket au lieu de l'IA locale, et que le serveur fait
+   autorité en rejouant la même simulation.
 4. **Contenu** — les 20 achetables, un thème, l'équilibrage.
 5. **Deuxième thème** — pour valider que le moteur est bien détachable du
    contenu, ce que les cinq maps promettent.

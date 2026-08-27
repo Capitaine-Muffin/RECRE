@@ -11,11 +11,17 @@ de conception du portage mobile. Pas encore de code de jeu.
 
 ## Le jeu, en une phrase
 
-5 contre 5 (3 contre 3 sur mobile), personne ne contrôle d'armée : on achète des
-**bâtiments qui produisent des unités tout seuls**, elles partent
-automatiquement vers la base adverse, et la première équipe à détruire le
-**Château de Sable** ennemi gagne. Le tout dans une cour de récré, avec des
-jouets — et une maîtresse qui vous met au coin une minute si vous mourez.
+Personne ne contrôle d'armée : on achète des **bâtiments qui produisent des
+unités tout seuls**, elles partent automatiquement vers la base adverse, et le
+premier camp à détruire le **Château de Sable** ennemi gagne. Le tout dans une
+cour de récré, avec des jouets — et une maîtresse qui vous met au coin une
+minute si vous mourez.
+
+Les maps d'origine se jouent à 5 contre 5. **Le portage sort d'abord en solo
+contre l'IA**, dans le modèle `modele-jeu-mobile` tel quel — hors ligne,
+publiable par un tag. Le moteur s'écrit déterministe à pas fixe dès maintenant,
+pour que le multijoueur 3c3 se branche plus tard sans réécriture. Voir
+[`docs/02-design-mobile.md`](docs/02-design-mobile.md) §6 et §8.
 
 ## Par où commencer
 
