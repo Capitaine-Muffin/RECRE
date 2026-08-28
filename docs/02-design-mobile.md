@@ -590,7 +590,9 @@ bougé d'un point.
   d'une douzaine de secondes. Aux valeurs de l'original — et l'original a le
   même souci.
 - **Le Château de Sable est le sprite le plus faible.** Il se lit, mais il
-  s'aplatit ; c'est l'objet qu'on regarde mourir, il mérite mieux.
+  s'aplatit ; c'est l'objet qu'on regarde mourir, il mérite mieux. Les
+  bâtiments sont restés en 24×24 alors que les unités sont passées à une
+  résolution double (§11) — ils y gagneraient autant.
 - **Il n'y a aucune unité à distance**, alors que toute la géométrie des files
   est faite pour en accueillir. C'est le prochain contenu évident : une unité
   qui tape par-dessus la mêlée depuis les rangs de derrière.
@@ -619,10 +621,24 @@ ne peut pas mentir sur ce qui est réellement dessiné.
 
 | | |
 |---|---|
-| Unités, 16×16 et 24×20 | Petit Soldat, Soldat de Briques, Cavalier de Briques |
+| Unités, 24 lignes de haut | Petit Soldat, Soldat de Briques, Cavalier de Briques |
 | Bâtiments, 24×24 | Caserne des Petits Soldats, Fort en Briques, Citadelle en Briques, Tour de Défense, Coffre à Jouets, Goûter |
 | Château, 32×24 | Château de Sable |
 | Enfants, 16×20 | Mioche, Morveux, Maîtresse |
+
+Les unités ont d'abord été dessinées en 16×16 au zoom 3. À 48 pixels à
+l'écran, ça ne suffisait pas : une arme, un casque ou une tête de cheval
+tenaient dans deux ou trois pixels et se lisaient comme une tache. Elles sont
+maintenant en **24 lignes dessinées au zoom 2** — même taille à l'écran, deux
+fois plus de pixels pour la dire. `zoomUnite()` (dans `scene.js`) déduit le
+zoom de la hauteur du sprite, et `tests/sprites.mjs` vérifie que les trois
+unités retombent bien sur la même hauteur à l'écran : sinon la file perd son
+échelle.
+
+Ce qui a changé concrètement : le Petit Soldat a un casque à bord, un fusil en
+travers du corps et un socle de figurine ; le Soldat de Briques a un tenon sur
+la tête, une bandoulière et des mains en pince ; le Cavalier a un cheval avec
+une encolure, des oreilles et une queue, au lieu d'un rectangle brun.
 
 Les proportions font le ton : grosse tête et petit corps pour les enfants, et
 la Maîtresse dessinée plus haute qu'eux — c'est elle qui les fait paraître

@@ -92,6 +92,18 @@ function decalage(unite) {
  */
 export const zoomBatiment = (zoom) => Math.max(1, zoom - 1);
 
+/**
+ * Le zoom d'une unité, choisi pour que toutes fassent la même taille à
+ * l'écran quelle que soit la finesse de leur dessin.
+ *
+ * `TAILLE_FIGURINE` est calée sur une figurine de 48 pixels de haut ; un
+ * sprite de 16 lignes se dessine donc au zoom 3, un de 24 lignes au zoom 2.
+ * C'est ce qui permet de redessiner une unité plus finement sans toucher à la
+ * géométrie de la simulation.
+ */
+export const zoomUnite = (sprite, zoom) =>
+  Math.max(1, Math.round((16 * zoom) / sprite.length));
+
 /** L'abscisse d'une colonne de construction. */
 export const abscisseColonne = (colonne, largeur) =>
   largeur * COLONNES_GRILLE[colonne];
@@ -365,11 +377,12 @@ export function dessinerScene(ctx, etat, camera,
     const py = y(unite.position + decalage(unite));
     if (py < -80 || py > hauteur + 80) continue;
     const sprite = SPRITE_UNITE[unite.type];
+    const zu = zoomUnite(sprite, zoom);
     const x = abscisse(unite, largeur);
-    socle(ctx, x, py, Math.min(sprite[0].length, 14) * zoom * 0.5,
+    socle(ctx, x, py, Math.min(sprite[0].length, 14) * zu * 0.5,
       COULEUR_CAMP[unite.camp]);
-    dessiner(ctx, sprite, x, py, zoom, { miroir: unite.camp === EUX });
-    barreDeVie(ctx, x, py - sprite.length * zoom - 6, 20,
+    dessiner(ctx, sprite, x, py, zu, { miroir: unite.camp === EUX });
+    barreDeVie(ctx, x, py - sprite.length * zu - 6, 20,
       unite.pv / UNITES[unite.type].pv);
   }
 
