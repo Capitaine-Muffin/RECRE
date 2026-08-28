@@ -98,6 +98,17 @@ D'où la règle : la caméra suit tant qu'on ne l'a pas touchée, et se tait
 ensuite. Aucun délai, aucune reprise automatique — il n'y a rien à régler et
 rien qui surprenne.
 
+**Le décor colle au doigt.** Le lissage du suivi ne s'applique qu'au suivi
+automatique : appliqué au glissé, il faisait traîner le décor derrière la main
+— 275 pixels rattrapés sur 300 une demi-seconde après la fin du geste, ce qui
+se ressent comme une caméra lente sans en être une.
+
+**Un lancer prolonge le geste** d'une demi-page environ, avec un freinage
+exprimé par seconde et non par image : sinon un écran à 120 Hz freinerait deux
+fois plus vite qu'un écran à 60. Molette et flèches ont été agrandies dans la
+foulée — traverser le terrain demandait vingt-cinq appuis de flèche, il en faut
+six.
+
 Ce qui sort du cadre ne disparaît pas pour autant : une flèche en haut et en
 bas compte les unités hors champ, dans la couleur du camp à qui elles sont.
 

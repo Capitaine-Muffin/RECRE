@@ -13,7 +13,9 @@ import { VOIES, ECART_MIN } from '../www/moteur/donnees.js';
 import { avancer } from '../www/moteur/simulation.js';
 import { nouveauJournal, noter, rejouer } from '../www/moteur/journal.js';
 import { nouvelAdversaire, jouer } from '../www/ia/adversaire.js';
-import { nouvelleCamera, suivre, front, recentrer } from '../www/rendu/camera.js';
+import { nouvelleCamera, suivre, front, recentrer, saisir, glisser, lacher }
+  from '../www/rendu/camera.js';
+import { visible } from '../www/rendu/scene.js';
 import { baseDe } from '../www/moteur/etat.js';
 
 let echecs = 0;
@@ -191,6 +193,33 @@ for (let i = 0; i < 200; i++) suivre(auto, partieEnCours);
 verifier('jamais touchée, elle suit le front sans dériver',
   Math.abs(auto.position - front(partieEnCours)) < 1000,
   `écart = ${Math.round(Math.abs(auto.position - front(partieEnCours)))}`);
+
+// Le décor colle au doigt : lissé, il traînait derrière et ça se ressentait
+// comme une caméra lente. Et le lancer prolonge le geste, sinon un terrain de
+// trois écrans se traverse à coups de glissés successifs.
+const geste = nouvelleCamera();
+geste.libre = true;
+geste.cible = geste.position = 400_000;
+const parPixel = 1 / (600 / visible());
+let ecartMax = 0;
+saisir(geste, 100, 0);
+for (let t = 16; t <= 256; t += 16) {
+  const doigt = 100 + (t / 256) * 300;
+  glisser(geste, doigt, parPixel, t);
+  suivre(geste, partieEnCours, 16);
+  ecartMax = Math.max(ecartMax,
+    Math.abs((geste.position - 400_000) / parPixel - (doigt - 100)));
+}
+verifier('pendant le glissé, le décor colle au doigt', ecartMax < 2,
+  `écart maximal ${ecartMax.toFixed(1)} px`);
+
+const auLacher = geste.position;
+lacher(geste);
+for (let i = 0; i < 300; i++) suivre(geste, partieEnCours, 16);
+const lance = (geste.position - auLacher) / visible();
+verifier('le lancer prolonge d\'un tiers d\'écran au moins',
+  lance > 0.33, `${lance.toFixed(2)} écran`);
+verifier('et il s\'arrête', geste.elan === 0);
 
 /* ------------------------------------------------------------------------ */
 if (echecs) {

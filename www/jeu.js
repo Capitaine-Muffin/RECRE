@@ -103,7 +103,7 @@ function boucle(maintenant) {
 
   const largeur = toile.clientWidth;
   const hauteur = toile.clientHeight;
-  suivre(camera, etat);
+  suivre(camera, etat, ecoule);
   dessinerScene(ctx, etat, camera, {
     largeur, hauteur,
     zoom: Math.max(2, Math.round(largeur / 120)),

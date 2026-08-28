@@ -20,8 +20,27 @@ import { LANE } from '../moteur/donnees.js';
 import { NOUS, baseDe } from '../moteur/etat.js';
 import { visible } from './scene.js';
 
-/** Douceur du suivi : part du chemin parcourue à chaque image. */
+/**
+ * Douceur du suivi automatique : part du chemin parcourue à chaque image.
+ *
+ * Elle ne s'applique **qu'au suivi du front**. Pendant un glissé, le décor
+ * colle au doigt : lissé, il traînait derrière — 275 pixels rattrapés sur 300
+ * après une demi-seconde, alors que le geste était fini depuis longtemps. Ça se
+ * ressent comme une caméra lente, et ça n'en est pas une.
+ */
 const SOUPLESSE = 0.08;
+
+/**
+ * Frein de l'élan après un lancer, en part de vitesse conservée par seconde.
+ *
+ * Le terrain fait près de trois écrans : sans élan, il faut le traverser à
+ * coups de glissés successifs. Avec, un lancer franc parcourt la moitié du
+ * terrain.
+ */
+const FREIN = 0.02;
+
+/** En dessous, l'élan est mort : on l'arrête plutôt que de traîner. */
+const ELAN_MORT = 4_000;
 
 export function nouvelleCamera() {
   return {
@@ -30,6 +49,8 @@ export function nouvelleCamera() {
     /** Position réellement affichée : elle rattrape `cible` en douceur. */
     position: 0,
     saisie: null,
+    /** Vitesse restante après un lancer, en millipas par seconde. */
+    elan: 0,
     /**
      * Vrai dès que le joueur a déplacé la caméra lui-même. Elle cesse alors de
      * suivre le front : elle est à lui jusqu'à ce qu'il demande à revenir.
@@ -85,12 +106,38 @@ function borner(cible) {
 }
 
 /** Avance la caméra d'une image. */
-export function suivre(camera, etat) {
-  if (camera.saisie === null && !camera.libre) camera.cible = front(etat);
+/**
+ * Avance la caméra d'une image.
+ *
+ * @param {number} ecoule  millisecondes depuis l'image précédente. L'élan
+ *   décroît avec le temps et non avec les images : sans ça un écran à 120 Hz
+ *   freinerait deux fois plus vite qu'un écran à 60.
+ */
+export function suivre(camera, etat, ecoule = 16) {
+  if (camera.saisie === null && !camera.libre && camera.elan === 0) {
+    camera.cible = front(etat);
+  }
+
+  if (camera.elan !== 0 && camera.saisie === null) {
+    const secondes = ecoule / 1000;
+    camera.cible += camera.elan * secondes;
+    camera.elan *= FREIN ** secondes;
+    if (Math.abs(camera.elan) < ELAN_MORT) camera.elan = 0;
+  }
+
+  const avant = camera.cible;
   camera.cible = borner(camera.cible);
+  // Arrivé sur une butée, l'élan n'a plus de sens : il pousserait dans le mur.
+  if (camera.cible !== avant) camera.elan = 0;
+
+  // Sous le doigt, ou lancé : le décor colle, sans lissage. Le lissage est
+  // réservé au suivi automatique du front.
+  if (camera.saisie !== null || camera.elan !== 0) {
+    camera.position = camera.cible;
+    return;
+  }
 
   const ecart = camera.cible - camera.position;
-  // Sauter le lissage sous le pixel évite de trembloter indéfiniment.
   camera.position += Math.abs(ecart) < 200 ? ecart : ecart * SOUPLESSE;
 }
 
@@ -99,11 +146,13 @@ export function recentrer(camera, etat) {
   camera.cible = borner(front(etat));
   camera.libre = false;
   camera.saisie = null;
+  camera.elan = 0;
 }
 
 /** Le joueur saisit la caméra. `y` est en pixels écran. */
-export function saisir(camera, y) {
-  camera.saisie = { y, depart: camera.cible };
+export function saisir(camera, y, maintenant) {
+  camera.saisie = { y, depart: camera.cible, dernierY: y, dernierT: maintenant };
+  camera.elan = 0;
   camera.libre = true;
 }
 
@@ -111,17 +160,35 @@ export function saisir(camera, y) {
  * Le joueur fait glisser. `parPixel` convertit les pixels écran en millipas —
  * il dépend du zoom, donc la scène le fournit.
  */
-export function glisser(camera, y, parPixel) {
-  if (camera.saisie === null) return;
-  camera.cible = borner(camera.saisie.depart + (y - camera.saisie.y) * parPixel);
+export function glisser(camera, y, parPixel, maintenant) {
+  const saisie = camera.saisie;
+  if (saisie === null) return;
+  camera.cible = borner(saisie.depart + (y - saisie.y) * parPixel);
+
+  // La vitesse du geste, pour le lancer. Lissée : un tremblement juste avant
+  // de lever le doigt ne doit pas décider de la trajectoire.
+  const dt = maintenant - saisie.dernierT;
+  if (dt > 0) {
+    const brute = ((y - saisie.dernierY) * parPixel) / (dt / 1000);
+    saisie.vitesse = saisie.vitesse === undefined
+      ? brute
+      : saisie.vitesse * 0.6 + brute * 0.4;
+    saisie.dernierY = y;
+    saisie.dernierT = maintenant;
+  }
 }
 
+/** Le doigt se lève : ce qu'il restait de vitesse devient de l'élan. */
 export function lacher(camera) {
+  const vitesse = camera.saisie?.vitesse ?? 0;
   camera.saisie = null;
+  camera.elan = Math.abs(vitesse) < ELAN_MORT ? 0 : vitesse;
 }
 
 /** Déplacement direct — molette, flèches. La caméra passe au joueur. */
 export function deplacer(camera, delta) {
   camera.cible = borner(camera.cible + delta);
+  camera.position = camera.cible;
+  camera.elan = 0;
   camera.libre = true;
 }

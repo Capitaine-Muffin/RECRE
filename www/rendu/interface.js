@@ -11,7 +11,7 @@
  */
 import { BATIMENTS, CATALOGUE, REGLES } from '../moteur/donnees.js';
 import { NOUS } from '../moteur/etat.js';
-import { SPRITE_BATIMENT, echelle } from './scene.js';
+import { SPRITE_BATIMENT, echelle, visible } from './scene.js';
 import { dessiner } from './dessin.js';
 import { saisir, glisser, lacher, deplacer, recentrer, front } from './camera.js';
 
@@ -150,10 +150,10 @@ export function brancherCamera(racine, toile, camera, obtenirEtat) {
 
   toile.addEventListener('pointerdown', (e) => {
     toile.setPointerCapture(e.pointerId);
-    saisir(camera, e.clientY);
+    saisir(camera, e.clientY, e.timeStamp);
   });
   toile.addEventListener('pointermove', (e) => {
-    if (camera.saisie) glisser(camera, e.clientY, parPixel());
+    if (camera.saisie) glisser(camera, e.clientY, parPixel(), e.timeStamp);
   });
   for (const fin of ['pointerup', 'pointercancel']) {
     toile.addEventListener(fin, () => lacher(camera));
@@ -162,11 +162,15 @@ export function brancherCamera(racine, toile, camera, obtenirEtat) {
   toile.addEventListener('wheel', (e) => {
     e.preventDefault();
     // Molette vers le bas : on descend vers sa propre base, comme une page.
-    deplacer(camera, -e.deltaY * parPixel());
+    // ×3 : à un pour un, un cran ne déplaçait que 17 % d'écran et il en
+    // fallait dix-huit pour traverser le terrain.
+    deplacer(camera, -e.deltaY * parPixel() * 3);
   }, { passive: false });
 
   addEventListener('keydown', (e) => {
-    const pas = 40_000;
+    // Une demi-tranche visible par appui : six appuis pour traverser le
+    // terrain, au lieu de vingt-cinq.
+    const pas = visible() / 2;
     if (e.key === 'ArrowUp') deplacer(camera, pas);
     else if (e.key === 'ArrowDown') deplacer(camera, -pas);
     else if (e.key === 'Home') return recentrer(camera, obtenirEtat());
