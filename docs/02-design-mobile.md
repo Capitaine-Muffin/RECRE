@@ -184,24 +184,28 @@ brancher le réseau, c'est remplir cette liste autrement.
 
 ### Les règles qu'on ne transige pas
 
+Les trois interdits généraux — pas de DOM, pas de `Date.now()`, pas de
+`Math.random()` non graine — sont ceux de
+[`modele-jeu-mobile`](https://github.com/Capitaine-Muffin/modele-jeu-mobile),
+section *Comment écrire le jeu*. Ils valent pour tous les jeux et ne sont pas
+recopiés ici. Ce qui suit est ce que **RECRE** ajoute, et que `npm test`
+vérifie fichier par fichier.
+
 1. **Pas fixe de 100 ms** (10 Hz), boucle à accumulateur. Aucune grandeur du
    jeu n'est multipliée par un `deltaTime` variable. 10 Hz suffit : personne ne
    contrôle d'unité, il n'y a pas de visée.
-2. **Aucun `Math.random()` dans `moteur/`.** Un générateur semé
-   (`mulberry32`), rangé dans l'état de la partie, avancé par la simulation.
-   Même graine et mêmes entrées ⇒ même partie, à l'octet près.
-3. **Aucune horloge dans `moteur/`.** `Date.now()` et `performance.now()`
-   vivent dans la boucle hôte, jamais dans la simulation. Le temps du jeu, ce
-   sont les ticks.
-4. **Positions et PV en entiers.** Millièmes de case pour les positions ; pas
-   de flottant accumulé d'un tick à l'autre. Le flottant n'est pas indéterminé
-   en JavaScript (IEEE 754 partout), mais l'entier évite le débat et rend l'état
-   comparable par égalité stricte.
-5. **Parcours toujours dans le même ordre.** Les unités vivent dans un tableau,
+2. **Positions et PV en entiers.** Des millipas pour les distances ; pas de
+   flottant accumulé d'un tick à l'autre. Le flottant n'est pas indéterminé en
+   JavaScript (IEEE 754 partout), mais l'entier évite le débat et rend l'état
+   comparable par égalité stricte — ce dont vit le test d'empreinte.
+3. **Parcours toujours dans le même ordre.** Les unités vivent dans un tableau,
    avec un identifiant entier croissant. Jamais de `Object.keys`, jamais de
    `Set` d'objets, jamais de tri instable.
-6. **`rendu/` n'écrit jamais dans l'état.** Il interpole entre le tick courant
-   et le précédent pour l'affichage, et c'est tout.
+4. **Le générateur semé vit dans l'état**, pas à côté : `mulberry32` dans
+   `moteur/aleatoire.js`, sa graine rangée dans la partie et avancée par elle.
+   Même graine et mêmes entrées ⇒ même partie, à l'octet près.
+5. **`rendu/` n'écrit jamais dans l'état** — la caméra comprise, qui est du
+   décor et ne peut donc pas changer une partie.
 
 ### Ce que ça donne gratuitement, dès le solo
 
@@ -237,6 +241,40 @@ d'analyse), donc tout le monde voit tout, y compris elle.
 Trois niveaux, qui se règlent sur un seul curseur : le délai de réaction, en
 ticks, entre le moment où une composition adverse devient lisible et celui où
 l'IA y répond. C'est plus honnête qu'un bonus d'or, et ça se joue mieux.
+
+### Ce que « serveur autoritaire » implique — et ce que ça n'implique pas
+
+Cette section décrit **l'état d'arrivée**, pas le premier jour. Lue seule, elle
+donne à croire qu'un serveur est nécessaire avant de pouvoir jouer : c'est
+faux, et ça a déjà envoyé une session sur une fausse piste.
+
+**La même simulation tourne des deux côtés.** En solo et contre l'IA (étapes 1
+et 2 du §8), elle s'exécute dans le client, sans réseau. Passer au 3c3 la
+déplace sur un serveur — ce n'est pas une réécriture, à une condition
+non négociable :
+
+> **La simulation reste pure.** Elle prend un état et une liste d'intentions,
+> elle rend l'état suivant. Le rendu la lit, ne la modifie jamais.
+
+La règle et ses trois interdits sont dans
+[`modele-jeu-mobile`](https://github.com/Capitaine-Muffin/modele-jeu-mobile),
+section *Comment écrire le jeu* — elle vaut pour tous les jeux, elle n'est pas
+recopiée ici.
+
+Ce qu'elle apporte **à RECRE en particulier** : c'est elle qui rend l'étape 3
+possible sans tout refaire, et c'est elle qui donne les replays et la
+reconnexion par rejeu du journal annoncés plus haut. Elle se paie le premier
+jour ou elle ne se paie jamais.
+
+**Ce que le serveur coûtera vraiment, le moment venu :** une connexion
+persistante (websocket), un service de mise en relation des joueurs, et une
+boucle à 10 Hz vivante pour chaque partie en cours.
+
+⚠️ **Ce n'est pas le backend de PING PIOU.** Celui-là reçoit des résumés de
+partie en REST et les rejoue après coup : ni connexion permanente, ni
+appariement, ni boucle temps réel. Les fonctions Edge de Supabase ne sont pas
+faites pour ça. L'étape 3 est un chantier à part entière, à ne pas budgéter
+comme « on rebranche le serveur existant ».
 
 Le combat est le seul morceau à écrire de zéro : dans WC3 c'est le moteur qui
 gère cible, portée, projectiles, types d'armure. Le remplacement minimal :
@@ -276,25 +314,28 @@ coûts, la vitesse, l'armure, et c'est l'essentiel.
 
 ## 8. Étapes
 
-**Étapes 1 et 2 : c'est le périmètre en cours.** Solo contre l'IA, dans
+Les deux premières étapes sont **hors ligne, sans serveur** : la simulation
+tourne dans le client. **C'est le périmètre en cours**, dans
 `modele-jeu-mobile` tel quel, publiable par un tag. Rien d'autre n'est engagé.
 
 1. **Prototype jouable** — une lane, 3 casernes, 1 tour, le château, une IA
    qui achète au hasard. But : vérifier que la boucle « acheter et regarder »
    tient sur téléphone. Rien d'autre ne compte tant que ce n'est pas prouvé.
    Le moteur est déterministe dès ce prototype (§6) — c'est le moment où ça
-   coûte le moins cher.
+   coûte le moins cher. *Simulation locale.*
 2. **La boucle complète** — revenu coupé pendant la construction, Bombe à Eau,
    punition du coin, héros, une IA qui répond à la composition adverse.
-   Livrable : un jeu solo publiable.
+   *Simulation locale, adversaire IA.* **Publiable en l'état** : c'est ce qui
+   permet de vérifier la boucle sur de vrais joueurs avant d'engager le réseau.
 
 Puis, dans l'ordre où ça se décide plus tard :
 
-3. **Réseau** — 3c3 temps réel. **Hors modèle** : il faut un serveur, donc un
-   dépôt à part. WebSocket et matchmaking, rien à voir avec un backend REST.
-   Le client garde son moteur ; ce qui change, c'est que les intentions
-   arrivent d'une socket au lieu de l'IA locale, et que le serveur fait
-   autorité en rejouant la même simulation.
+3. **Réseau** — serveur autoritaire, 3c3, reconnexion. La simulation ne change
+   pas : elle change d'hôte (voir §6). Le client garde son moteur ; ce qui
+   change, c'est que les intentions arrivent d'une socket au lieu de l'IA
+   locale. Websocket, appariement et boucle 10 Hz sont à écrire — c'est
+   l'étape la plus lourde du projet, la seule qui sorte du modèle de jeu
+   mobile, et elle demande son propre dépôt.
 4. **Contenu** — les 20 achetables, un thème, l'équilibrage.
 5. **Deuxième thème** — pour valider que le moteur est bien détachable du
    contenu, ce que les cinq maps promettent.
