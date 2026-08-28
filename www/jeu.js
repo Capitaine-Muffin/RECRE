@@ -10,7 +10,7 @@ import { nouvellePartie, NOUS, EUX } from './moteur/etat.js';
 import { avancer } from './moteur/simulation.js';
 import { nouveauJournal, noter } from './moteur/journal.js';
 import { nouvelAdversaire, jouer } from './ia/adversaire.js';
-import { dessinerScene, visible } from './rendu/scene.js';
+import { dessinerScene } from './rendu/scene.js';
 import { nouvelleCamera, suivre, recentrer } from './rendu/camera.js';
 import { construireInterface, brancherCamera, rafraichir, recolterIntentions,
   annoncerFin } from './rendu/interface.js';
@@ -103,7 +103,7 @@ function boucle(maintenant) {
 
   const largeur = toile.clientWidth;
   const hauteur = toile.clientHeight;
-  suivre(camera, etat, maintenant, { visible: visible() });
+  suivre(camera, etat, maintenant);
   dessinerScene(ctx, etat, camera, {
     largeur, hauteur,
     zoom: Math.max(2, Math.round(largeur / 120)),

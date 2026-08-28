@@ -106,31 +106,134 @@ function placeBatiment(index, camp, largeur) {
 /** Au-delà de chaque base, le terrain s'arrête : mur de la cour, puis ciel. */
 const MUR = 46_000;
 
+/**
+ * Le décor de fond.
+ *
+ * Règle unique, et elle est sévère : **rien ne doit concurrencer les
+ * figurines**. L'écran est déjà chargé. Donc tout ce qui suit est plat, pâle,
+ * et sans volume — des tracés à la craie sur du bitume, pas des objets. Un
+ * décor qui se voit est un décor raté ; celui-ci doit seulement empêcher le
+ * sol d'être une dalle marron.
+ *
+ * D'où une seule idée plutôt qu'un empilement : la cour est un terrain de
+ * foot peint au sol, dans l'axe de la lane. Les deux armées se battent
+ * dessus. Ça situe le lieu, ça donne des repères de distance — ligne médiane,
+ * surfaces de réparation — et ça ne coûte pas un pixel opaque.
+ */
+
+/** La craie : blanc cassé, très transparent. Jamais plus appuyé que ça. */
+const CRAIE = 'rgba(255,246,232,0.085)';
+const CRAIE_PALE = 'rgba(255,246,232,0.055)';
+
+/** Une marelle, dessinée depuis son coin bas, en millipas. */
+function marelle(ctx, x, y, e, sens) {
+  const c = 15_000 * e;               // le côté d'une case
+  const cases = [[0, 0], [0, 1], [-0.5, 2], [0.5, 2], [0, 3], [-0.5, 4], [0.5, 4], [0, 5]];
+  ctx.strokeStyle = CRAIE_PALE;
+  ctx.lineWidth = 1;
+  for (const [dx, dy] of cases) {
+    ctx.strokeRect(Math.round(x + dx * c - c / 2), Math.round(y - sens * (dy + 1) * c),
+      Math.round(c), Math.round(c));
+  }
+}
+
 function dessinerDecor(ctx, camera, largeur, hauteur) {
   const e = echelle(hauteur);
-  const finHaute = ordonnee(LANE, camera, hauteur) - MUR * e;
-  const finBasse = ordonnee(0, camera, hauteur) + MUR * e;
+  const y = (position) => ordonnee(position, camera, hauteur);
+  const finHaute = y(LANE) - MUR * e;
+  const finBasse = y(0) + MUR * e;
 
   ctx.fillStyle = '#6b5a4a';
   ctx.fillRect(0, 0, largeur, hauteur);
 
-  if (finHaute > 0) {
-    const ciel = ctx.createLinearGradient(0, Math.max(0, finHaute - 260), 0, finHaute);
-    ciel.addColorStop(0, '#221a34');
-    ciel.addColorStop(1, '#3d2f56');
-    ctx.fillStyle = ciel;
-    ctx.fillRect(0, 0, largeur, finHaute);
-  }
-  if (finBasse < hauteur) {
-    ctx.fillStyle = '#2b2140';
-    ctx.fillRect(0, finBasse, largeur, hauteur - finBasse);
+  // Deux zones usées, à peine plus claires : le bitume n'est pas neuf, et ça
+  // évite la dalle uniforme sans rien ajouter à regarder.
+  ctx.fillStyle = 'rgba(255,246,232,0.028)';
+  for (const [debut, fin] of [[210_000, 430_000], [620_000, 760_000]]) {
+    const haut = y(fin);
+    ctx.fillRect(0, haut, largeur, Math.max(0, y(debut) - haut));
   }
 
-  // Les lignes du bitume, tous les 50 pas : un repère de distance parcourue.
-  ctx.fillStyle = 'rgba(255,246,232,0.06)';
-  for (let p = 0; p <= LANE; p += 50_000) {
-    const y = ordonnee(p, camera, hauteur);
-    if (y > -2 && y < hauteur + 2) ctx.fillRect(0, Math.round(y), largeur, 1);
+  // ---- le terrain de foot, tracé à la craie --------------------------------
+  const gauche = Math.round(largeur * 0.05);
+  const droite = Math.round(largeur * 0.95);
+  ctx.strokeStyle = CRAIE;
+  ctx.lineWidth = 1;
+
+  // Les touches, sur toute la longueur.
+  ctx.beginPath();
+  ctx.moveTo(gauche + 0.5, y(LANE));
+  ctx.lineTo(gauche + 0.5, y(0));
+  ctx.moveTo(droite + 0.5, y(LANE));
+  ctx.lineTo(droite + 0.5, y(0));
+  ctx.stroke();
+
+  // La ligne médiane et son rond central.
+  const milieu = y(LANE / 2);
+  ctx.beginPath();
+  ctx.moveTo(gauche, Math.round(milieu) + 0.5);
+  ctx.lineTo(droite, Math.round(milieu) + 0.5);
+  ctx.stroke();
+  // Un rond, pas un œuf : la projection est droite du dessus, donc un cercle
+  // peint au sol est un cercle à l'écran — même rayon dans les deux sens.
+  const rond = largeur * 0.19;
+  ctx.beginPath();
+  ctx.ellipse(largeur / 2, milieu, rond, rond, 0, 0, Math.PI * 2);
+  ctx.stroke();
+
+  // Une surface de réparation devant chaque but.
+  for (const base of [0, LANE]) {
+    const vers = base === 0 ? 1 : -1;
+    const proche = y(base + vers * 55_000);
+    const loin = y(base + vers * 165_000);
+    ctx.strokeRect(Math.round(largeur * 0.24) + 0.5, Math.round(Math.min(proche, loin)) + 0.5,
+      Math.round(largeur * 0.52), Math.round(Math.abs(loin - proche)));
+  }
+
+  // ---- deux marelles, hors du terrain -------------------------------------
+  marelle(ctx, largeur * 0.10, y(300_000), e, 1);
+  marelle(ctx, largeur * 0.90, y(640_000), e, -1);
+
+  // ---- au-delà des bases : le mur de la cour ------------------------------
+  if (finHaute > 0) {
+    const ciel = ctx.createLinearGradient(0, Math.max(0, finHaute - 260), 0, finHaute);
+    ciel.addColorStop(0, '#221b2c');
+    ciel.addColorStop(1, '#3a3145');
+    ctx.fillStyle = ciel;
+    ctx.fillRect(0, 0, largeur, finHaute);
+    mursEtBriques(ctx, largeur, 0, finHaute, e);
+  }
+  if (finBasse < hauteur) {
+    // Le même gris-brun que le mur du fond : un violet franc jurerait avec la
+    // cour, et le mur n'est pas censé attirer l'œil.
+    ctx.fillStyle = '#2e2636';
+    ctx.fillRect(0, finBasse, largeur, hauteur - finBasse);
+    mursEtBriques(ctx, largeur, finBasse, hauteur, e);
+  }
+
+  // ---- un très léger assombrissement des bords ----------------------------
+  // Les figurines ressortent au centre sans qu'on ait ajouté le moindre objet.
+  // Discret : à 0,38 ça ternissait toute la cour, et un décor qui se voit est
+  // un décor raté.
+  const bord = ctx.createRadialGradient(
+    largeur / 2, hauteur / 2, hauteur * 0.48,
+    largeur / 2, hauteur / 2, hauteur * 0.85);
+  bord.addColorStop(0, 'rgba(0,0,0,0)');
+  bord.addColorStop(1, 'rgba(12,8,20,0.20)');
+  ctx.fillStyle = bord;
+  ctx.fillRect(0, 0, largeur, hauteur);
+}
+
+/** Les assises de briques du mur du fond. Sombres, à peine détachées. */
+function mursEtBriques(ctx, largeur, haut, bas, e) {
+  const assise = Math.max(4, Math.round(12_000 * e));
+  ctx.fillStyle = 'rgba(255,246,232,0.045)';
+  for (let ligne = 0, yy = bas - assise; yy > haut - assise; yy -= assise, ligne++) {
+    ctx.fillRect(0, Math.round(yy), largeur, 1);
+    const decale = (ligne % 2) * assise;
+    for (let x = decale; x < largeur; x += assise * 2) {
+      ctx.fillRect(Math.round(x), Math.round(yy), 1, assise);
+    }
   }
 }
 

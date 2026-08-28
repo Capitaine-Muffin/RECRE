@@ -453,3 +453,25 @@ sombre, qui adoucit la silhouette.
 
 Les noms sont neutres par construction : aucun ne renvoie à une franchise (§9,
 et `docs/04-assets-et-propriete-intellectuelle.md`).
+
+## 12. Le décor
+
+Règle unique, et sévère : **rien ne doit concurrencer les figurines**. L'écran
+est déjà chargé. Un décor qui se voit est un décor raté — celui-ci doit
+seulement empêcher le sol d'être une dalle marron.
+
+D'où une seule idée plutôt qu'un empilement d'objets : **la cour est un terrain
+de foot peint au sol**, dans l'axe de la lane. Les deux armées se battent
+dessus. Ça situe le lieu en une seconde, ça donne des repères de distance — les
+touches, la ligne médiane, le rond central, les surfaces de réparation — et ça
+ne coûte pas un pixel opaque. Deux marelles sur les côtés, et deux zones de
+bitume usé à peine plus claires pour casser l'uniformité.
+
+Tout est tracé à la craie : du blanc cassé à 8 % d'opacité, sans volume, sans
+ombre. Au-delà des bases, le mur de la cour prend ses assises de briques — c'est
+le seul endroit qui peut se permettre du détail, puisque personne n'y joue.
+Enfin un assombrissement très léger des bords fait ressortir le centre sans
+qu'on ait ajouté le moindre objet.
+
+Le test, c'est la capture : sur un terrain vide, le décor se lit ; sous la
+foule, il disparaît complètement.

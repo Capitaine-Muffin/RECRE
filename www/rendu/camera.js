@@ -10,7 +10,8 @@
  * saisit, elle arrête de suivre, et elle s'y remet après un moment de calme.
  */
 import { LANE } from '../moteur/donnees.js';
-import { NOUS, EUX } from '../moteur/etat.js';
+import { NOUS } from '../moteur/etat.js';
+import { visible } from './scene.js';
 
 /** Combien de temps la caméra reste où le joueur l'a mise, en millisecondes. */
 const PATIENCE = 2500;
@@ -61,21 +62,28 @@ export function front(etat) {
 const DEBORD = 0.22;
 
 /**
+ * Ramène une visée dans les bornes.
+ *
+ * Un seul endroit calcule ces bornes, et toutes les façons de bouger la caméra
+ * y passent. Auparavant seul `suivre` bornait, et `recentrer` pouvait poser la
+ * caméra pile sur une base : un quart de l'écran ne montrait plus que le mur.
+ */
+function borner(cible) {
+  const marge = visible() * DEBORD;
+  return Math.max(marge, Math.min(LANE - marge, cible));
+}
+
+/**
  * Avance la caméra d'une image.
  *
  * @param {number} maintenant  horloge murale, en millisecondes. La caméra a le
  *   droit de la connaître : elle n'est pas la simulation.
- * @param {number} visible  la tranche de lane affichée, **en millipas** — pas
- *   en pixels : la caméra ne connaît que les unités du terrain.
  */
-export function suivre(camera, etat, maintenant, { visible }) {
-  const min = visible * DEBORD;
-  const max = LANE - visible * DEBORD;
-
+export function suivre(camera, etat, maintenant) {
   if (camera.saisie === null && maintenant - camera.laché > PATIENCE) {
     camera.cible = front(etat);
   }
-  camera.cible = Math.max(min, Math.min(max, camera.cible));
+  camera.cible = borner(camera.cible);
 
   const ecart = camera.cible - camera.position;
   // Sauter le lissage sous le pixel évite de trembloter indéfiniment.
@@ -84,7 +92,7 @@ export function suivre(camera, etat, maintenant, { visible }) {
 
 /** Recentre franchement sur le front, sans attendre la fin de la patience. */
 export function recentrer(camera, etat) {
-  camera.cible = front(etat);
+  camera.cible = borner(front(etat));
   camera.laché = 0;
   camera.saisie = null;
 }
@@ -100,7 +108,7 @@ export function saisir(camera, y) {
  */
 export function glisser(camera, y, parPixel) {
   if (camera.saisie === null) return;
-  camera.cible = camera.saisie.depart + (y - camera.saisie.y) * parPixel;
+  camera.cible = borner(camera.saisie.depart + (y - camera.saisie.y) * parPixel);
 }
 
 export function lacher(camera, maintenant) {
