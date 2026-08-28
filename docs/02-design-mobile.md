@@ -73,8 +73,7 @@ de voir la bataille pendant qu'on choisit, et c'est souvent elle qui dit quoi
 acheter. Non modal, donc, et refermé par la croix, par `Échap`, ou en touchant
 le terrain.
 
-Tant qu'il est ouvert, **la caméra est figée**. Sans ça sa patience expire
-pendant qu'on lit les cartes et on retrouve un autre endroit en refermant.
+Il ne touche pas à la caméra — voir juste en dessous pourquoi.
 
 ### La caméra
 
@@ -84,9 +83,20 @@ plus avancée de chaque camp, c'est-à-dire l'endroit où ça se joue. Terrain
 vide, elle regarde **sa propre base** et non le milieu du terrain — c'est le
 début de partie, on y construit, et renvoyer le joueur sur une pelouse déserte
 à chaque fois qu'il ferme le panneau est le contraire de ce qu'il veut. On peut
-l'écarter au doigt (ou à la molette, ou aux flèches) ; elle reste où on l'a
-mise deux secondes et demie, puis se remet à suivre. Un bouton *Revenir à la
-bataille* apparaît dès qu'elle s'est éloignée.
+l'écarter au doigt, à la molette ou aux flèches — et **elle lui appartient dès
+lors qu'il y a touché** : elle n'y revient plus d'elle-même. Un bouton *Revenir
+à la bataille* apparaît dès qu'elle s'est éloignée, et le lui rend.
+
+Une caméra qui reprend la main toute seule produit un bug qu'on a eu, et qui ne
+se lit pas du tout comme un problème de caméra : le joueur ouvre le panneau
+d'achat, la bataille avance pendant qu'il choisit, il referme — et la caméra
+rattrape le front. Le décor glisse de **79 pixels**, presque deux hauteurs de
+figurine, et on jurerait que les unités reculent. Le bug avait d'ailleurs été
+rapporté comme « les mobs font demi-tour quand je construis une tour ».
+
+D'où la règle : la caméra suit tant qu'on ne l'a pas touchée, et se tait
+ensuite. Aucun délai, aucune reprise automatique — il n'y a rien à régler et
+rien qui surprenne.
 
 Ce qui sort du cadre ne disparaît pas pour autant : une flèche en haut et en
 bas compte les unités hors champ, dans la couleur du camp à qui elles sont.

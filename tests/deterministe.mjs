@@ -13,7 +13,7 @@ import { VOIES, ECART_MIN } from '../www/moteur/donnees.js';
 import { avancer } from '../www/moteur/simulation.js';
 import { nouveauJournal, noter, rejouer } from '../www/moteur/journal.js';
 import { nouvelAdversaire, jouer } from '../www/ia/adversaire.js';
-import { nouvelleCamera, suivre, front } from '../www/rendu/camera.js';
+import { nouvelleCamera, suivre, front, recentrer } from '../www/rendu/camera.js';
 import { baseDe } from '../www/moteur/etat.js';
 
 let echecs = 0;
@@ -167,21 +167,30 @@ console.log('\nLa caméra reste où on l\'a mise');
 verifier('terrain vide : la caméra vise sa base',
   front(nouvellePartie(1)) === baseDe(NOUS));
 
-// Panneau ouvert : la patience ne doit pas expirer dans son dos.
+// Le joueur déplace la caméra : elle lui appartient, elle ne revient plus
+// d'elle-même. C'est ce qui évite que le décor lui glisse sous les yeux à la
+// fermeture du panneau d'achat.
 const vue = nouvelleCamera();
 const partieEnCours = partie(77, 1500).etat;
-vue.cible = vue.position = 600_000;      // le joueur a regardé ailleurs
-vue.laché = 0;
-
-vue.figee = true;
-for (let ms = 0; ms <= 10_000; ms += 100) suivre(vue, partieEnCours, ms);
-verifier('figée, elle ne bouge pas même après dix secondes',
+vue.cible = vue.position = 600_000;
+vue.libre = true;
+for (let i = 0; i < 500; i++) suivre(vue, partieEnCours);
+verifier('déplacée par le joueur, elle reste où il l\'a mise',
   Math.round(vue.cible) === 600_000, `cible = ${Math.round(vue.cible)}`);
 
-vue.figee = false;
-for (let ms = 10_000; ms <= 20_000; ms += 100) suivre(vue, partieEnCours, ms);
-verifier('libérée, elle repart suivre le front',
-  Math.round(vue.cible) !== 600_000, `cible = ${Math.round(vue.cible)}`);
+recentrer(vue, partieEnCours);
+for (let i = 0; i < 500; i++) suivre(vue, partieEnCours);
+verifier('après « revenir à la bataille », elle suit de nouveau le front',
+  Math.round(vue.cible) === Math.round(front(partieEnCours)),
+  `cible = ${Math.round(vue.cible)}, front = ${Math.round(front(partieEnCours))}`);
+
+// Jamais touchée : elle suit, et sans à-coup.
+const auto = nouvelleCamera();
+auto.cible = auto.position = front(partieEnCours);
+for (let i = 0; i < 200; i++) suivre(auto, partieEnCours);
+verifier('jamais touchée, elle suit le front sans dériver',
+  Math.abs(auto.position - front(partieEnCours)) < 1000,
+  `écart = ${Math.round(Math.abs(auto.position - front(partieEnCours)))}`);
 
 /* ------------------------------------------------------------------------ */
 if (echecs) {

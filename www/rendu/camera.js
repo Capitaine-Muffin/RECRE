@@ -6,15 +6,19 @@
  * une partie, et deux joueurs qui regardent des endroits différents jouent
  * quand même la même partie. C'est ce qui la rend sûre.
  *
- * Elle suit le front toute seule, et se laisse écarter au doigt : dès qu'on la
- * saisit, elle arrête de suivre, et elle s'y remet après un moment de calme.
+ * Elle suit le front toute seule **tant que le joueur n'y a pas touché**. Dès
+ * qu'il la déplace — au doigt, à la molette, aux flèches — elle lui appartient
+ * et n'y revient plus d'elle-même. Le bouton « Revenir à la bataille » existe
+ * pour ça, et il vaut mieux qu'une caméra qui décide à sa place.
+ *
+ * Une caméra qui reprend la main toute seule produit exactement le bug qu'on a
+ * eu : le joueur ouvre le panneau d'achat, la bataille avance pendant qu'il
+ * choisit, il referme — et la caméra rattrape le front d'un coup. Le décor
+ * glisse de deux hauteurs de figurine, et on jurerait que les unités reculent.
  */
 import { LANE } from '../moteur/donnees.js';
 import { NOUS, baseDe } from '../moteur/etat.js';
 import { visible } from './scene.js';
-
-/** Combien de temps la caméra reste où le joueur l'a mise, en millisecondes. */
-const PATIENCE = 2500;
 
 /** Douceur du suivi : part du chemin parcourue à chaque image. */
 const SOUPLESSE = 0.08;
@@ -25,11 +29,12 @@ export function nouvelleCamera() {
     cible: 0,
     /** Position réellement affichée : elle rattrape `cible` en douceur. */
     position: 0,
-    /** Horodatage de la dernière intervention du joueur. 0 = jamais. */
-    laché: 0,
     saisie: null,
-    /** Vrai tant qu'un panneau est ouvert : la caméra ne suit plus. */
-    figee: false,
+    /**
+     * Vrai dès que le joueur a déplacé la caméra lui-même. Elle cesse alors de
+     * suivre le front : elle est à lui jusqu'à ce qu'il demande à revenir.
+     */
+    libre: false,
   };
 }
 
@@ -79,22 +84,9 @@ function borner(cible) {
   return Math.max(marge, Math.min(LANE - marge, cible));
 }
 
-/**
- * Avance la caméra d'une image.
- *
- * @param {number} maintenant  horloge murale, en millisecondes. La caméra a le
- *   droit de la connaître : elle n'est pas la simulation.
- */
-export function suivre(camera, etat, maintenant) {
-  // Panneau ouvert : le joueur ne regarde pas le terrain, la caméra ne doit
-  // pas en profiter pour s'en aller. Sans ça la patience expire pendant qu'il
-  // choisit, et il retrouve un autre endroit en refermant.
-  if (camera.figee) camera.laché = maintenant;
-
-  if (camera.saisie === null && !camera.figee
-      && maintenant - camera.laché > PATIENCE) {
-    camera.cible = front(etat);
-  }
+/** Avance la caméra d'une image. */
+export function suivre(camera, etat) {
+  if (camera.saisie === null && !camera.libre) camera.cible = front(etat);
   camera.cible = borner(camera.cible);
 
   const ecart = camera.cible - camera.position;
@@ -102,16 +94,17 @@ export function suivre(camera, etat, maintenant) {
   camera.position += Math.abs(ecart) < 200 ? ecart : ecart * SOUPLESSE;
 }
 
-/** Recentre franchement sur le front, sans attendre la fin de la patience. */
+/** Rend la caméra au jeu : elle revient au front et se remet à le suivre. */
 export function recentrer(camera, etat) {
   camera.cible = borner(front(etat));
-  camera.laché = 0;
+  camera.libre = false;
   camera.saisie = null;
 }
 
 /** Le joueur saisit la caméra. `y` est en pixels écran. */
 export function saisir(camera, y) {
   camera.saisie = { y, depart: camera.cible };
+  camera.libre = true;
 }
 
 /**
@@ -123,7 +116,12 @@ export function glisser(camera, y, parPixel) {
   camera.cible = borner(camera.saisie.depart + (y - camera.saisie.y) * parPixel);
 }
 
-export function lacher(camera, maintenant) {
+export function lacher(camera) {
   camera.saisie = null;
-  camera.laché = maintenant;
+}
+
+/** Déplacement direct — molette, flèches. La caméra passe au joueur. */
+export function deplacer(camera, delta) {
+  camera.cible = borner(camera.cible + delta);
+  camera.libre = true;
 }

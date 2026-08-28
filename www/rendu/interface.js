@@ -13,7 +13,7 @@ import { BATIMENTS, CATALOGUE, REGLES } from '../moteur/donnees.js';
 import { NOUS } from '../moteur/etat.js';
 import { SPRITE_BATIMENT, echelle } from './scene.js';
 import { dessiner } from './dessin.js';
-import { saisir, glisser, lacher, recentrer, front } from './camera.js';
+import { saisir, glisser, lacher, deplacer, recentrer, front } from './camera.js';
 
 /** Les intentions du joueur en attente. La boucle les vide à chaque tick. */
 const enAttente = [];
@@ -98,16 +98,16 @@ export function construireInterface(racine, camera) {
         camp: NOUS, action: 'construire',
         emplacement: emplacementVise, batiment: cle,
       });
-      fermer(racine, camera);
+      fermer(racine);
     });
     catalogue.append(carte);
   }
 
-  racine.querySelector('#annuler').addEventListener('click', () => fermer(racine, camera));
+  racine.querySelector('#annuler').addEventListener('click', () => fermer(racine));
 
   // Toucher le terrain referme : c'est le geste attendu d'une feuille.
   racine.querySelector('#scene').addEventListener('pointerdown', () => {
-    if (achat.open) fermer(racine, camera);
+    if (achat.open) fermer(racine);
   });
 
   const emplacements = racine.querySelector('#emplacements');
@@ -117,14 +117,14 @@ export function construireInterface(racine, camera) {
     bouton.dataset.index = String(i);
     // Le clavier autant que le doigt : 1 à 6 ouvrent l'emplacement.
     bouton.title = `Emplacement ${i + 1} (touche ${i + 1})`;
-    bouton.addEventListener('click', () => ouvrir(racine, camera, i));
+    bouton.addEventListener('click', () => ouvrir(racine, i));
     emplacements.append(bouton);
   }
 
   addEventListener('keydown', (e) => {
     const n = Number(e.key);
-    if (n >= 1 && n <= REGLES.emplacements) ouvrir(racine, camera, n - 1);
-    if (e.key === 'Escape') fermer(racine, camera);
+    if (n >= 1 && n <= REGLES.emplacements) ouvrir(racine, n - 1);
+    if (e.key === 'Escape') fermer(racine);
   });
 
   return racine.querySelector('#scene');
@@ -156,24 +156,22 @@ export function brancherCamera(racine, toile, camera, obtenirEtat) {
     if (camera.saisie) glisser(camera, e.clientY, parPixel());
   });
   for (const fin of ['pointerup', 'pointercancel']) {
-    toile.addEventListener(fin, () => lacher(camera, performance.now()));
+    toile.addEventListener(fin, () => lacher(camera));
   }
 
   toile.addEventListener('wheel', (e) => {
     e.preventDefault();
     // Molette vers le bas : on descend vers sa propre base, comme une page.
-    camera.cible -= e.deltaY * parPixel();
-    lacher(camera, performance.now());
+    deplacer(camera, -e.deltaY * parPixel());
   }, { passive: false });
 
   addEventListener('keydown', (e) => {
     const pas = 40_000;
-    if (e.key === 'ArrowUp') camera.cible += pas;
-    else if (e.key === 'ArrowDown') camera.cible -= pas;
+    if (e.key === 'ArrowUp') deplacer(camera, pas);
+    else if (e.key === 'ArrowDown') deplacer(camera, -pas);
     else if (e.key === 'Home') return recentrer(camera, obtenirEtat());
     else return;
     e.preventDefault();
-    lacher(camera, performance.now());
   });
 
   bouton.addEventListener('click', () => recentrer(camera, obtenirEtat()));
@@ -193,17 +191,16 @@ export function brancherCamera(racine, toile, camera, obtenirEtat) {
  * terrain, pas un écran qui le remplace. On continue de voir la bataille — et
  * c'est souvent elle qui dit quoi acheter.
  *
- * La caméra est figée le temps du choix : sinon sa patience expire pendant
- * qu'on lit les cartes, et on retrouve un autre endroit en refermant.
+ * Le panneau ne touche pas à la caméra. Elle continue de suivre le front si le
+ * joueur ne l'a jamais déplacée, et reste où il l'a mise s'il l'a fait — dans
+ * les deux cas il retrouve en refermant ce qu'il avait en ouvrant.
  */
-function ouvrir(racine, camera, index) {
+function ouvrir(racine, index) {
   emplacementVise = index;
-  camera.figee = true;
   racine.querySelector('#achat').show();
 }
 
-function fermer(racine, camera) {
-  camera.figee = false;
+function fermer(racine) {
   racine.querySelector('#achat').close();
 }
 
