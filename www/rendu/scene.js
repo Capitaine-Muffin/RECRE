@@ -124,23 +124,29 @@ const MUR = 46_000;
 /**
  * La pelouse.
  *
- * Un vert **sombre et désaturé**, et ce n'est pas un caprice : le Petit Soldat
- * et la Caserne sont verts eux aussi. Un gazon vif les avalerait. Les verts des
- * figurines (`#3d9950`, `#6fd47a`) sont plus clairs et plus saturés que
- * celui-ci, et chaque sprite porte son contour sombre : la silhouette tient.
+ * Un vert d'herbe franc, tiré vers l'olive. Deux raisons à ce choix, et la
+ * première est contre-intuitive :
+ *
+ * 1. **Un fond clair se lit mieux qu'un fond sombre**, ici. Chaque sprite
+ *    porte un contour `#2f2740` : sur une pelouse sombre ce contour se noie,
+ *    sur une pelouse claire il détoure. La première version, très sombre,
+ *    partait de l'intuition inverse — à tort.
+ * 2. Le Petit Soldat et la Caserne sont verts (`#3d9950`, `#6fd47a`), d'un
+ *    vert **bleuté et saturé**. L'olive s'en écarte par la teinte autant que
+ *    par la valeur, ce qui sépare mieux qu'un simple écart de luminosité.
  */
-const PELOUSE = '#324b31';
+const PELOUSE = '#6d9155';
 
 /** Les bandes de tonte, alternées le long de la lane. */
-const TONTE = 'rgba(255,255,255,0.030)';
+const TONTE = 'rgba(255,255,255,0.055)';
 const LARGEUR_TONTE = 62_000;
 
 /**
  * La craie sur l'herbe : plus franche que sur du bitume, parce que c'est ce
  * qu'on voit d'un vrai terrain — mais toujours sans volume ni ombre.
  */
-const CRAIE = 'rgba(255,252,244,0.16)';
-const CRAIE_PALE = 'rgba(255,252,244,0.10)';
+const CRAIE = 'rgba(255,253,247,0.42)';
+const CRAIE_PALE = 'rgba(255,253,247,0.26)';
 
 /** Une marelle, dessinée depuis son coin bas, en millipas. */
 function marelle(ctx, x, y, e, sens) {
@@ -215,21 +221,11 @@ function dessinerDecor(ctx, camera, largeur, hauteur) {
   marelle(ctx, largeur * 0.90, y(640_000), e, -1);
 
   // ---- au-delà des bases : le mur de la cour ------------------------------
-  if (finHaute > 0) {
-    const ciel = ctx.createLinearGradient(0, Math.max(0, finHaute - 260), 0, finHaute);
-    ciel.addColorStop(0, '#221b2c');
-    ciel.addColorStop(1, '#3a3145');
-    ctx.fillStyle = ciel;
-    ctx.fillRect(0, 0, largeur, finHaute);
-    mursEtBriques(ctx, largeur, 0, finHaute, e);
-  }
-  if (finBasse < hauteur) {
-    // Le même gris-brun que le mur du fond : un violet franc jurerait avec la
-    // cour, et le mur n'est pas censé attirer l'œil.
-    ctx.fillStyle = '#2e2636';
-    ctx.fillRect(0, finBasse, largeur, hauteur - finBasse);
-    mursEtBriques(ctx, largeur, finBasse, hauteur, e);
-  }
+  // Le même aux deux bouts : c'est la même cour, entourée du même mur. Un
+  // dégradé de ciel d'un côté et un aplat de l'autre donnaient deux lieux
+  // différents, et le violet jurait avec l'herbe.
+  if (finHaute > 0) mur(ctx, largeur, 0, finHaute, e);
+  if (finBasse < hauteur) mur(ctx, largeur, finBasse, hauteur, e);
 
   // ---- un très léger assombrissement des bords ----------------------------
   // Les figurines ressortent au centre sans qu'on ait ajouté le moindre objet.
@@ -239,15 +235,28 @@ function dessinerDecor(ctx, camera, largeur, hauteur) {
     largeur / 2, hauteur / 2, hauteur * 0.48,
     largeur / 2, hauteur / 2, hauteur * 0.85);
   bord.addColorStop(0, 'rgba(0,0,0,0)');
-  bord.addColorStop(1, 'rgba(8,14,10,0.22)');
+  bord.addColorStop(1, 'rgba(20,32,18,0.16)');
   ctx.fillStyle = bord;
   ctx.fillRect(0, 0, largeur, hauteur);
 }
 
-/** Les assises de briques du mur du fond. Sombres, à peine détachées. */
-function mursEtBriques(ctx, largeur, haut, bas, e) {
+/**
+ * Le mur de la cour : pierre chaude, assises marquées.
+ *
+ * C'est le seul endroit du décor qui a droit à du détail, puisque personne n'y
+ * joue. Il reste sourd — une pierre grise à peine chaude — pour ne pas tirer
+ * l'œil hors du terrain.
+ */
+function mur(ctx, largeur, haut, bas, e) {
+  const fond = ctx.createLinearGradient(0, haut, 0, bas);
+  const versLeBas = bas < 400 || haut > 0;
+  fond.addColorStop(0, versLeBas ? '#6f6659' : '#857b6d');
+  fond.addColorStop(1, versLeBas ? '#857b6d' : '#6f6659');
+  ctx.fillStyle = fond;
+  ctx.fillRect(0, haut, largeur, bas - haut);
+
   const assise = Math.max(4, Math.round(12_000 * e));
-  ctx.fillStyle = 'rgba(255,246,232,0.045)';
+  ctx.fillStyle = 'rgba(46,38,32,0.22)';
   for (let ligne = 0, yy = bas - assise; yy > haut - assise; yy -= assise, ligne++) {
     ctx.fillRect(0, Math.round(yy), largeur, 1);
     const decale = (ligne % 2) * assise;
@@ -255,6 +264,11 @@ function mursEtBriques(ctx, largeur, haut, bas, e) {
       ctx.fillRect(Math.round(x), Math.round(yy), 1, assise);
     }
   }
+
+  // Le chaperon : la rangée de pierres du dessus, côté terrain.
+  ctx.fillStyle = 'rgba(255,250,240,0.14)';
+  const cote = haut === 0 ? bas - 3 : haut;
+  ctx.fillRect(0, Math.round(cote), largeur, 3);
 }
 
 /** Une flèche de bord quand des unités se battent hors du cadre. */

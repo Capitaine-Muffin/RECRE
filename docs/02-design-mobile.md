@@ -467,25 +467,34 @@ touches, la ligne médiane, le rond central, les surfaces de réparation — et 
 ne coûte pas un pixel opaque. Deux marelles sur les côtés, et les bandes de
 tonte alternées qui défilent quand la caméra bouge.
 
-Les tracés sont de la craie : du blanc cassé à 16 % d'opacité, sans volume et
-sans ombre, donc rien qui puisse passer pour un objet du jeu.
+Les tracés sont de la craie : du blanc cassé, sans volume et sans ombre, donc
+rien qui puisse passer pour un objet du jeu.
 
-### Le vert est le point délicat
+### Le vert : mon raisonnement était à l'envers
 
-Le Petit Soldat et la Caserne sont verts. Un gazon vif les aurait avalés. La
-pelouse est donc **sombre et désaturée** (`#324b31`), là où les verts des
-figurines (`#3d9950`, `#6fd47a`) sont plus clairs et plus saturés ; s'y ajoute
-le contour sombre que porte chaque sprite, et le socle de couleur d'équipe sous
-les pieds.
+Le Petit Soldat et la Caserne sont verts. J'en avais déduit qu'il fallait une
+pelouse **sombre**, pour que les figurines ressortent par la luminosité. C'était
+faux, et la capture l'a montré tout de suite quand la pelouse a été éclaircie.
 
-Ça ne se décide pas au jugé : il a fallu forcer le pire cas — que des unités
+Chaque sprite porte un contour `#2f2740`. Sur une pelouse sombre, ce contour se
+**noie** dans le fond et la silhouette se dilue. Sur une pelouse claire, il
+**détoure** — les mêmes soldats verts se lisent mieux. C'est le contour qui
+sépare, pas le corps.
+
+La pelouse est donc un vert d'herbe franc (`#6d9155`), tiré vers l'olive pour
+s'écarter aussi par la teinte du vert bleuté et saturé des figurines
+(`#3d9950`, `#6fd47a`).
+
+Ça ne se décide pas au jugé : il faut forcer le pire cas — que des unités
 vertes et des tentes vertes sur de l'herbe, rien d'autre à l'écran — et
-regarder. La silhouette tient. C'est le cas à revérifier si la palette bouge.
+regarder. C'est le cas à revérifier si la palette bouge.
 
-Au-delà des bases, le mur de la cour prend ses assises de briques : c'est le
-seul endroit qui peut se permettre du détail, puisque personne n'y joue. Enfin
-un assombrissement très léger des bords fait ressortir le centre sans qu'on ait
-ajouté le moindre objet.
+Au-delà des bases, le mur de la cour prend ses assises de pierre et son
+chaperon : c'est le seul endroit qui peut se permettre du détail, puisque
+personne n'y joue. Il est **identique aux deux bouts** — c'est la même cour,
+entourée du même mur ; un dégradé de ciel d'un côté et un aplat de l'autre
+donnaient deux lieux différents. Enfin un assombrissement très léger des bords
+fait ressortir le centre sans qu'on ait ajouté le moindre objet.
 
 Le test, c'est la capture : sur un terrain vide, le décor se lit ; sous la
 foule, il disparaît complètement.
