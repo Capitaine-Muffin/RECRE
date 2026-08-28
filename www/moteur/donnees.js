@@ -87,8 +87,6 @@ export const REGLES = {
   populationInitiale: 10,
   populationMax: 35,
   pvChateau: 10_000,
-  /** 6 emplacements de construction par camp. */
-  emplacements: 6,
 };
 
 /**
@@ -162,7 +160,7 @@ export const BATIMENTS = {
   },
 
   // Les deux réserves de population. Sans elles l'or n'a plus où aller une
-  // fois les emplacements pleins, et la partie cale : mesuré, 26 parties sur
+  // fois la population saturée, et la partie cale : mesuré, 26 parties sur
   // 30 ne finissaient pas. Ce sont le Coffre à Jouet et le Goûter des maps
   // d'origine, aux mêmes prix.
   coffre_jouets: {

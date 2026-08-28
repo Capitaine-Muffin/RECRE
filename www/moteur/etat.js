@@ -27,8 +27,15 @@ function camp(nom) {
     population: 0,
     populationMax: REGLES.populationInitiale,
     pvChateau: REGLES.pvChateau,
-    /** Un emplacement vide vaut `null`. */
-    emplacements: Array.from({ length: REGLES.emplacements }, () => null),
+    /**
+     * Les bâtiments posés, dans l'ordre de construction.
+     *
+     * Une liste qui grandit, et non un nombre fixe de cases : dans les cartes
+     * d'origine on construit librement dans sa base, et la seule limite est la
+     * population. Six cases fixes rendaient le plafond de 35 inatteignable et
+     * le Goûter — qui ouvre 20 places — parfaitement inutile.
+     */
+    emplacements: [],
     /** Vrai tant qu'un bâtiment est en chantier : le revenu est suspendu. */
     enChantier: false,
     /** File où sortira la prochaine unité. Tourne, pour les répartir. */

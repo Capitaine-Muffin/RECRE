@@ -86,19 +86,27 @@ function decalage(unite) {
 /**
  * Où poser un bâtiment sur la carte.
  *
- * Ils s'alignent de part et d'autre de la lane, en s'éloignant de la base : le
- * terrain gagné par la caméra sert à voir sa propre installation grandir, au
- * lieu de rester vide.
+ * Quatre colonnes, deux de chaque côté de la lane, qui s'éloignent de la base
+ * au fur et à mesure. Quatre et non deux : la population permet une quinzaine
+ * de bâtiments, et sur deux colonnes la base s'étirerait jusqu'au milieu du
+ * terrain. Les unités sont dessinées après, donc elles passent par-dessus.
  */
+const COLONNES = [0.08, 0.21, 0.79, 0.92];
+
+/**
+ * Les bâtiments sont dessinés un cran plus petits que les unités.
+ *
+ * Un cran entier, et pas une fraction : le pixel art se met à l'échelle par
+ * multiples entiers, sinon les pixels bavent. Un bâtiment passe ainsi de 72 à
+ * 48 pixels, ce qui laisse la place d'en aligner une quinzaine sans que la
+ * base s'étire jusqu'au milieu du terrain.
+ */
+export const zoomBatiment = (zoom) => Math.max(1, zoom - 1);
+
 function placeBatiment(index, camp, largeur) {
-  // 0,13 et pas 0,09 : un bâtiment fait 24 pixels de large, il déborderait du
-  // cadre sur un écran étroit.
-  const cote = index % 2 === 0 ? 0.13 : 0.87;
-  // Assez loin du château pour ne pas l'empiler dessus, assez près pour que
-  // les trois d'un côté tiennent dans la tranche visible.
-  const recul = 62_000 + Math.floor(index / 2) * 72_000;
+  const recul = 52_000 + Math.floor(index / COLONNES.length) * 40_000;
   return {
-    x: largeur * cote,
+    x: largeur * COLONNES[index % COLONNES.length],
     position: camp === NOUS ? recul : LANE - recul,
   };
 }
@@ -311,16 +319,16 @@ export function dessinerScene(ctx, etat, camera, { largeur, hauteur, zoom }) {
   // Les bâtiments posés, de part et d'autre de la lane.
   for (const c of [NOUS, EUX]) {
     etat.camps[c].emplacements.forEach((place, i) => {
-      if (!place) return;
       const { x, position } = placeBatiment(i, c, largeur);
       const py = y(position);
       if (py < -120 || py > hauteur + 120) return;
       const sprite = SPRITE_BATIMENT[place.batiment];
+      const zb = zoomBatiment(zoom);
       // Un chantier est translucide : on voit qu'il n'est pas encore là.
       ctx.globalAlpha = place.restant > 0 ? 0.45 : 1;
-      dessiner(ctx, sprite, x, py, zoom);
+      dessiner(ctx, sprite, x, py, zb);
       ctx.globalAlpha = 1;
-      socle(ctx, x, py, 10 * zoom * 0.5, COULEUR_CAMP[c]);
+      socle(ctx, x, py, 10 * zb * 0.5, COULEUR_CAMP[c]);
     });
   }
 

@@ -512,6 +512,46 @@ Les files ne coûtent rien, et l'IA réparée fait plus de bien que tout le rest
 — 294 unités — le ciblage en O(n²) reste sous la milliseconde. Rien à
 optimiser tant que l'ordre de grandeur ne change pas.
 
+### La population est la seule limite au nombre de bâtiments
+
+Il y avait six emplacements fixes, pour simplifier le placement au doigt. C'était
+une invention, pas une règle du jeu d'origine — et elle était incohérente avec
+le reste : à six bâtiments, le plafond de population de 35 était inatteignable
+et le **Goûter, qui ouvre vingt places, ne servait à rien**.
+
+La limite est désormais la population seule, comme dans les cartes d'origine :
+**cinq casernes sans Goûter, seize avec**. Le Goûter devient la décision
+d'ouverture qu'il aurait toujours dû être.
+
+Les conséquences sont mesurées, et elles ne sont pas toutes bonnes :
+
+| | six emplacements | population seule |
+|---|---|---|
+| matchs nuls | 10 % | **37 %** |
+| durée médiane | 305 s | 211 s |
+| pic d'unités | ~300 | ~2 200 |
+
+Les parties qui se règlent vont plus vite, mais il y en a beaucoup moins. Deux
+armées de seize bâtiments s'annulent au milieu, et rien dans l'étape 1 ne
+débloque un tel grippage. C'est encore la **Bombe à Eau** de l'étape 2 qui est
+la réponse prévue — l'original s'est donné exactement cet outil, et pour
+exactement cette raison.
+
+### Le ciblage est indexé par file
+
+Deux mille unités, c'est aussi deux mille recherches de cible par tick, chacune
+parcourant toute l'armée. Mesuré : **35,6 ms par tick** au pire cas, soit 142 ms
+sur un téléphone quatre fois plus lent — au-dessus du budget de 100 ms.
+
+Les unités sont donc rangées par file une fois par tick, et une attaque ne
+regarde que les files qu'elle peut atteindre. S'y ajoute une sortie anticipée :
+dès qu'une cible est à moins d'un écart minimal, aucune autre ne sera
+sensiblement plus proche, ce qui évite de parcourir une mêlée dense en entier
+pour chacun de ses membres.
+
+**11,6 ms**, soit 47 ms sur téléphone : marge de 2,2. L'équilibrage n'a pas
+bougé d'un point.
+
 ### Ce qui reste faible
 
 - **Les cadences d'attaque sont posées à la main**, les maps ne les
@@ -524,6 +564,9 @@ optimiser tant que l'ordre de grandeur ne change pas.
 - **Il n'y a aucune unité à distance**, alors que toute la géométrie des files
   est faite pour en accueillir. C'est le prochain contenu évident : une unité
   qui tape par-dessus la mêlée depuis les rangs de derrière.
+- **37 % de matchs nuls**, contre 10 % avant que la population devienne la
+  seule limite. C'est le prix d'armées trois fois plus grosses sans outil pour
+  débloquer un front figé.
 - **L'IA reste bête** : elle choisit son envie au hasard. Elle économise
   correctement, c'est tout. Répondre à la composition adverse est prévu à
   l'étape 2.

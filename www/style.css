@@ -109,29 +109,41 @@ html, body {
   padding: 0.1rem 0.5rem;
 }
 
-.emplacements {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+/* La barre des bâtiments : ce qui est bâti, dans l'ordre, puis le bouton de
+   construction. Elle défile horizontalement — la population en permet une
+   quinzaine, et il n'est pas question de rétrécir les tuiles jusqu'à ce que
+   tout tienne. */
+.batiments {
+  display: flex;
   gap: 0.4rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  padding-bottom: 0.2rem;
   min-width: 0;
 }
 
-.emplacement {
-  aspect-ratio: 1;
-  min-height: var(--touche);
+.batiment {
+  flex: 0 0 auto;
+  width: var(--touche);
+  height: var(--touche);
   display: grid;
   place-items: center;
   position: relative;
   padding: 0;
-  border: 2px dashed rgba(255, 246, 232, 0.28);
+  border: 2px solid rgba(255, 246, 232, 0.22);
   border-radius: 10px;
-  background: rgba(255, 246, 232, 0.05);
+  background: rgba(255, 246, 232, 0.10);
   color: var(--grise);
+}
+
+.batiment--plus {
+  border-style: dashed;
+  background: rgba(255, 246, 232, 0.05);
+  font-size: 1.5rem;
+  line-height: 1;
   cursor: pointer;
 }
-.emplacement:has(canvas) { border-style: solid; background: rgba(255,246,232,0.10); }
-.emplacement:focus-visible { outline: 3px solid var(--or); outline-offset: 2px; }
-.plus { font-size: 1.5rem; line-height: 1; }
+.batiment--plus:focus-visible { outline: 3px solid var(--or); outline-offset: 2px; }
 
 .chrono {
   position: absolute;
@@ -143,7 +155,7 @@ html, body {
 }
 
 .vignette { display: block; max-width: 100%; height: auto; }
-.emplacement .vignette { width: auto; }
+.batiment .vignette { width: auto; }
 
 /* ------------------------------------------------------- panneaux modaux */
 dialog {

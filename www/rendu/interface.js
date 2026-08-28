@@ -1,6 +1,6 @@
 /**
- * L'interface : le bandeau du haut, les emplacements du bas, le panneau
- * d'achat.
+ * L'interface : le bandeau du haut, la barre des bâtiments en bas, et le
+ * panneau d'achat.
  *
  * En DOM plutôt qu'en canvas : les boutons sont alors de vrais boutons —
  * cibles tactiles confortables, focus au clavier, lisibles par un lecteur
@@ -9,7 +9,7 @@
  * Elle ne modifie pas l'état : elle empile des intentions que la boucle ira
  * chercher, exactement comme l'IA.
  */
-import { BATIMENTS, CATALOGUE, REGLES } from '../moteur/donnees.js';
+import { BATIMENTS, CATALOGUE } from '../moteur/donnees.js';
 import { NOUS } from '../moteur/etat.js';
 import { SPRITE_BATIMENT, echelle, visible } from './scene.js';
 import { dessiner } from './dessin.js';
@@ -22,8 +22,6 @@ const enAttente = [];
 export function recolterIntentions() {
   return enAttente.splice(0, enAttente.length);
 }
-
-let emplacementVise = null;
 
 /** Une vignette du bâtiment, dessinée — pas d'image à charger. */
 function vignette(cle, taille = 3) {
@@ -61,7 +59,7 @@ export function construireInterface(racine, camera) {
           mon château <b id="pv-nous">—</b>
         </span>
       </div>
-      <div id="emplacements" class="emplacements"></div>
+      <div id="batiments" class="batiments"></div>
     </footer>
 
     <dialog id="achat" class="achat">
@@ -94,10 +92,7 @@ export function construireInterface(racine, camera) {
       <span class="carte-aide">${modele.aide}</span>
     `);
     carte.addEventListener('click', () => {
-      enAttente.push({
-        camp: NOUS, action: 'construire',
-        emplacement: emplacementVise, batiment: cle,
-      });
+      enAttente.push({ camp: NOUS, action: 'construire', batiment: cle });
       fermer(racine);
     });
     catalogue.append(carte);
@@ -110,20 +105,8 @@ export function construireInterface(racine, camera) {
     if (achat.open) fermer(racine);
   });
 
-  const emplacements = racine.querySelector('#emplacements');
-  for (let i = 0; i < REGLES.emplacements; i++) {
-    const bouton = document.createElement('button');
-    bouton.className = 'emplacement';
-    bouton.dataset.index = String(i);
-    // Le clavier autant que le doigt : 1 à 6 ouvrent l'emplacement.
-    bouton.title = `Emplacement ${i + 1} (touche ${i + 1})`;
-    bouton.addEventListener('click', () => ouvrir(racine, i));
-    emplacements.append(bouton);
-  }
-
   addEventListener('keydown', (e) => {
-    const n = Number(e.key);
-    if (n >= 1 && n <= REGLES.emplacements) ouvrir(racine, n - 1);
+    if (e.key === 'b' || e.key === 'B') ouvrir(racine);
     if (e.key === 'Escape') fermer(racine);
   });
 
@@ -199,8 +182,7 @@ export function brancherCamera(racine, toile, camera, obtenirEtat) {
  * joueur ne l'a jamais déplacée, et reste où il l'a mise s'il l'a fait — dans
  * les deux cas il retrouve en refermant ce qu'il avait en ouvrant.
  */
-function ouvrir(racine, index) {
-  emplacementVise = index;
+function ouvrir(racine) {
   racine.querySelector('#achat').show();
 }
 
@@ -219,26 +201,33 @@ export function rafraichir(racine, etat) {
   racine.querySelector('#pv-eux').textContent = eux.pvChateau;
   racine.querySelector('#chantier').hidden = !nous.enChantier;
 
-  racine.querySelectorAll('.emplacement').forEach((bouton, i) => {
-    const place = nous.emplacements[i];
-    if (!place) {
-      if (bouton.dataset.etat !== 'vide') {
-        bouton.dataset.etat = 'vide';
-        bouton.replaceChildren();
-        bouton.insertAdjacentHTML('beforeend', '<span class="plus">+</span>');
-      }
-      return;
+  // La barre liste ce qui est bâti, dans l'ordre, et se termine par le bouton
+  // de construction. Elle est reconstruite quand le nombre change seulement.
+  const barre = racine.querySelector('#batiments');
+  if (barre.childElementCount !== nous.emplacements.length + 1) {
+    barre.replaceChildren();
+    for (const place of nous.emplacements) {
+      const tuile = document.createElement('div');
+      tuile.className = 'batiment';
+      tuile.title = BATIMENTS[place.batiment].nom;
+      tuile.append(vignette(place.batiment, 2));
+      tuile.insertAdjacentHTML('beforeend', '<span class="chrono"></span>');
+      barre.append(tuile);
     }
-    const cle = place.restant > 0 ? `${place.batiment}:chantier` : place.batiment;
-    if (bouton.dataset.etat !== cle) {
-      bouton.dataset.etat = cle;
-      bouton.replaceChildren(vignette(place.batiment, 2));
-      if (place.restant > 0) {
-        bouton.insertAdjacentHTML('beforeend', '<span class="chrono"></span>');
-      }
-    }
-    const chrono = bouton.querySelector('.chrono');
-    if (chrono) chrono.textContent = `${Math.ceil(place.restant / 10)} s`;
+    const plus = document.createElement('button');
+    plus.id = 'construire';
+    plus.className = 'batiment batiment--plus';
+    plus.title = 'Construire (touche B)';
+    plus.textContent = '+';
+    plus.addEventListener('click', () => ouvrir(racine));
+    barre.append(plus);
+  }
+
+  nous.emplacements.forEach((place, i) => {
+    const chrono = barre.children[i]?.querySelector('.chrono');
+    if (!chrono) return;
+    chrono.textContent = place.restant > 0 ? `${Math.ceil(place.restant / 10)} s` : '';
+    chrono.hidden = place.restant === 0;
   });
 
   // Griser ce qu'on ne peut pas s'offrir : la contrainte se voit avant le clic.

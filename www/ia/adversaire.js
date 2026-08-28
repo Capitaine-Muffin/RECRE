@@ -11,7 +11,7 @@
  * écrire et bien moins honnête à jouer.
  */
 import { BATIMENTS, CATALOGUE } from '../moteur/donnees.js';
-import { entier, parmi } from '../moteur/aleatoire.js';
+import { parmi } from '../moteur/aleatoire.js';
 
 export const NIVEAUX = {
   tranquille: { reflexion: 120, nom: 'Tranquille' },
@@ -52,12 +52,6 @@ export function jouer(ia, etat, campIndex) {
   }
 
   const camp = etat.camps[campIndex];
-  const libres = [];
-  camp.emplacements.forEach((place, i) => {
-    if (place === null) libres.push(i);
-  });
-  if (!libres.length) return [];
-
   if (ia.envie === null) ia.envie = parmi(ia, CATALOGUE);
   const modele = BATIMENTS[ia.envie];
 
@@ -72,10 +66,5 @@ export function jouer(ia, etat, campIndex) {
   const batiment = ia.envie;
   ia.envie = null;
   ia.attente = NIVEAUX[ia.niveau].reflexion;
-  return [{
-    camp: campIndex,
-    action: 'construire',
-    emplacement: libres[entier(ia, libres.length)],
-    batiment,
-  }];
+  return [{ camp: campIndex, action: 'construire', batiment }];
 }

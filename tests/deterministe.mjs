@@ -109,7 +109,7 @@ verifier('le revenu tombe (+1 tous les 5 ticks)', r.camps[NOUS].or === 22,
   `or = ${r.camps[NOUS].or}`);
 
 const c = nouvellePartie(1);
-avancer(c, [{ camp: NOUS, action: 'construire', emplacement: 0, batiment: 'caserne_soldats' }]);
+avancer(c, [{ camp: NOUS, action: 'construire', batiment: 'caserne_soldats' }]);
 verifier('construire coupe le revenu', c.camps[NOUS].enChantier);
 const orAuDebut = c.camps[NOUS].or;
 for (let t = 0; t < 20; t++) avancer(c, []);
@@ -118,16 +118,38 @@ verifier('le revenu reste coupé pendant le chantier',
 
 const p = nouvellePartie(1);
 p.camps[NOUS].or = 999;
-avancer(p, [{ camp: NOUS, action: 'construire', emplacement: 0, batiment: 'gouter' }]);
+avancer(p, [{ camp: NOUS, action: 'construire', batiment: 'gouter' }]);
 while (p.camps[NOUS].emplacements[0].restant > 0) avancer(p, []);
 verifier('le Goûter ouvre 20 places', p.camps[NOUS].populationMax === 30,
   `plafond = ${p.camps[NOUS].populationMax}`);
 
 const refus = nouvellePartie(1);
 refus.camps[NOUS].or = 0;
-avancer(refus, [{ camp: NOUS, action: 'construire', emplacement: 0, batiment: 'gouter' }]);
+avancer(refus, [{ camp: NOUS, action: 'construire', batiment: 'gouter' }]);
 verifier('un achat qu\'on ne peut pas payer est refusé',
-  refus.camps[NOUS].emplacements[0] === null);
+  refus.camps[NOUS].emplacements.length === 0);
+
+// La population est la seule limite au nombre de bâtiments : c'est la règle des
+// cartes d'origine, et c'est ce qui donne son intérêt au Goûter.
+function combienDeCasernes(avecGouter) {
+  const j = nouvellePartie(2);
+  if (avecGouter) {
+    j.camps[NOUS].or = 9999;
+    avancer(j, [{ camp: NOUS, action: 'construire', batiment: 'gouter' }]);
+    while (j.camps[NOUS].emplacements[0].restant > 0) avancer(j, []);
+  }
+  for (let t = 0; t < 400; t++) {
+    j.camps[NOUS].or = 9999;
+    avancer(j, [{ camp: NOUS, action: 'construire', batiment: 'caserne_soldats' }]);
+  }
+  return j.camps[NOUS].emplacements.length;
+}
+const sansGouter = combienDeCasernes(false);
+const avecGouter = combienDeCasernes(true);
+verifier('sans Goûter, la population borne à cinq casernes', sansGouter === 5,
+  `${sansGouter}`);
+verifier('le Goûter en autorise trois fois plus', avecGouter >= 15,
+  `${avecGouter} contre ${sansGouter}`);
 
 /* ------------------------------------------------------------------------ */
 console.log('\nLes unités ne se chevauchent pas');
@@ -150,8 +172,7 @@ verifier('aucune paire trop proche dans une même file', collisions === 0,
 // compter tranquillement.
 const seul = nouvellePartie(4);
 seul.camps[NOUS].or = 500;
-avancer(seul, [{ camp: NOUS, action: 'construire', emplacement: 0,
-  batiment: 'caserne_soldats' }]);
+avancer(seul, [{ camp: NOUS, action: 'construire', batiment: 'caserne_soldats' }]);
 while (seul.unites.length < VOIES) avancer(seul, []);
 const tournee = seul.unites.slice(0, VOIES).map((u) => u.voie);
 verifier('les files tournent et sont servies une fois chacune',
@@ -180,19 +201,20 @@ for (let i = 0; i < 500; i++) suivre(vue, partieEnCours);
 verifier('déplacée par le joueur, elle reste où il l\'a mise',
   Math.round(vue.cible) === 600_000, `cible = ${Math.round(vue.cible)}`);
 
-recentrer(vue, partieEnCours);
-for (let i = 0; i < 500; i++) suivre(vue, partieEnCours);
-verifier('après « revenir à la bataille », elle suit de nouveau le front',
-  Math.round(vue.cible) === Math.round(front(partieEnCours)),
-  `cible = ${Math.round(vue.cible)}, front = ${Math.round(front(partieEnCours))}`);
-
-// Jamais touchée : elle suit, et sans à-coup.
+// Une caméra jamais touchée converge vers le front, borné par les butées : ce
+// point de repère sert aux deux vérifications suivantes.
 const auto = nouvelleCamera();
-auto.cible = auto.position = front(partieEnCours);
-for (let i = 0; i < 200; i++) suivre(auto, partieEnCours);
-verifier('jamais touchée, elle suit le front sans dériver',
-  Math.abs(auto.position - front(partieEnCours)) < 1000,
-  `écart = ${Math.round(Math.abs(auto.position - front(partieEnCours)))}`);
+auto.cible = auto.position = 500_000;
+for (let i = 0; i < 800; i++) suivre(auto, partieEnCours);
+verifier('jamais touchée, elle se pose sur le front et n\'en bouge plus',
+  Math.abs(auto.position - auto.cible) < 1,
+  `écart ${Math.round(Math.abs(auto.position - auto.cible))}`);
+
+recentrer(vue, partieEnCours);
+for (let i = 0; i < 800; i++) suivre(vue, partieEnCours);
+verifier('après « revenir à la bataille », elle suit de nouveau le front',
+  Math.round(vue.cible) === Math.round(auto.cible),
+  `${Math.round(vue.cible)} contre ${Math.round(auto.cible)}`);
 
 // Le décor colle au doigt : lissé, il traînait derrière et ça se ressentait
 // comme une caméra lente. Et le lancer prolonge le geste, sinon un terrain de
