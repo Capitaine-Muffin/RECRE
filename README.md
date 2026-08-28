@@ -32,6 +32,12 @@ npm run servir     # puis http://localhost:8000
 npm test           # déterminisme, règles du jeu, sprites
 ```
 
+En ligne : <https://capitaine-muffin.github.io/RECRE/> — publié par
+`.github/workflows/pages.yml`, qui n'envoie que `www/`. Le reste du dépôt (les
+cartes d'origine, les données extraites) ne monte jamais sur Pages : un site
+Pages est public, et ces fichiers ne peuvent pas l'être (voir
+[`docs/04`](docs/04-assets-et-propriete-intellectuelle.md)).
+
 ```
 www/moteur/     la simulation, déterministe à pas fixe. Aucun DOM, aucune
                 horloge, aucun hasard non semé — et un test qui le vérifie.

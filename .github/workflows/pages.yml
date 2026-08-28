@@ -1,0 +1,50 @@
+# Publie le jeu sur GitHub Pages.
+#
+# Seul `www/` est envoyé : le jeu se retrouve à la racine du site, et le reste
+# du dépôt — `raw/maps/*.w3x`, `data/`, `docs/` — n'y monte jamais. Ça compte :
+# les cartes d'origine sont pleines de propriété intellectuelle tierce
+# (voir docs/04) et un site Pages est public.
+#
+# ⚠️ À faire une fois, sinon ce workflow tourne dans le vide :
+# Settings → Pages → Source → **GitHub Actions** (et non « Deploy from a
+# branch »). Tant que la source reste une branche, c'est la racine du dépôt qui
+# est servie.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un seul déploiement à la fois ; les pushs qui se suivent ne se doublent pas.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploiement.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Les tests ne demandent aucune dépendance : c'est du Node nu. Autant
+      # refuser de publier un jeu cassé.
+      - name: Tests
+        run: |
+          node tests/sprites.mjs
+          node tests/deterministe.mjs
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: www
+      - id: deploiement
+        uses: actions/deploy-pages@v4
