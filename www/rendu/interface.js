@@ -11,8 +11,9 @@
  */
 import { BATIMENTS, CATALOGUE, REGLES } from '../moteur/donnees.js';
 import { NOUS } from '../moteur/etat.js';
-import { SPRITE_BATIMENT } from './scene.js';
+import { SPRITE_BATIMENT, echelle } from './scene.js';
 import { dessiner } from './dessin.js';
+import { saisir, glisser, lacher, recentrer, front } from './camera.js';
 
 /** Les intentions du joueur en attente. La boucle les vide à chaque tick. */
 const enAttente = [];
@@ -44,7 +45,10 @@ export function construireInterface(racine) {
       </div>
     </header>
 
-    <canvas id="scene" class="scene"></canvas>
+    <div class="terrain">
+      <canvas id="scene" class="scene"></canvas>
+      <button id="recentrer" class="recentrer" hidden>⌖ Revenir à la bataille</button>
+    </div>
 
     <footer class="pupitre">
       <div class="compteurs">
@@ -117,6 +121,62 @@ export function construireInterface(racine) {
   });
 
   return racine.querySelector('#scene');
+}
+
+/**
+ * Les gestes de caméra : glisser pour regarder ailleurs, molette et flèches
+ * pour la même chose au clavier, et un bouton pour revenir à la bataille.
+ *
+ * Rien de tout ça ne touche à l'état : la caméra est du décor, pas du jeu.
+ */
+export function brancherCamera(racine, toile, camera, obtenirEtat) {
+  const bouton = racine.querySelector('#recentrer');
+
+  /**
+   * Combien de millipas vaut un pixel écran.
+   *
+   * Positif : augmenter `camera.position` fait descendre le décor, donc tirer
+   * vers le bas révèle le terrain d'en face. C'est le geste attendu — on
+   * attrape le monde, on ne pousse pas une fenêtre.
+   */
+  const parPixel = () => 1 / echelle(toile.clientHeight);
+
+  toile.addEventListener('pointerdown', (e) => {
+    toile.setPointerCapture(e.pointerId);
+    saisir(camera, e.clientY);
+  });
+  toile.addEventListener('pointermove', (e) => {
+    if (camera.saisie) glisser(camera, e.clientY, parPixel());
+  });
+  for (const fin of ['pointerup', 'pointercancel']) {
+    toile.addEventListener(fin, () => lacher(camera, performance.now()));
+  }
+
+  toile.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    // Molette vers le bas : on descend vers sa propre base, comme une page.
+    camera.cible -= e.deltaY * parPixel();
+    lacher(camera, performance.now());
+  }, { passive: false });
+
+  addEventListener('keydown', (e) => {
+    const pas = 40_000;
+    if (e.key === 'ArrowUp') camera.cible += pas;
+    else if (e.key === 'ArrowDown') camera.cible -= pas;
+    else if (e.key === 'Home') return recentrer(camera, obtenirEtat());
+    else return;
+    e.preventDefault();
+    lacher(camera, performance.now());
+  });
+
+  bouton.addEventListener('click', () => recentrer(camera, obtenirEtat()));
+
+  return function rafraichirBouton(etat) {
+    // Le bouton n'apparaît que si la caméra s'est vraiment écartée du front.
+    const loin = Math.abs(camera.position - front(etat)) > toile.clientHeight
+      / echelle(toile.clientHeight) / 2;
+    bouton.hidden = !loin;
+  };
 }
 
 function ouvrir(racine, index) {

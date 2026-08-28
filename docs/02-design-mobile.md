@@ -13,7 +13,7 @@ Le moteur de La Récréation est déjà, sans le savoir, un jeu mobile :
 |---|---|
 | Aucun contrôle d'unité | Pas de micro, pas de joystick, pas de sélection à 5 doigts |
 | Une décision à la fois (quoi construire) | Un tap. Jouable à une main, en portrait |
-| Brouillard désactivé, tout est visible | Aucune caméra à déplacer pour comprendre l'état de la partie |
+| Brouillard désactivé, tout est visible | Aucune information cachée, donc aucune reconnaissance à faire : la caméra sert le confort, jamais le renseignement |
 | Revenu continu, pas de récolte | Pas de gestion d'ouvriers |
 | Parties courtes, condition de victoire unique | Format session mobile |
 
@@ -50,20 +50,55 @@ solo.
 
 ```
 ┌─────────────────────────┐
-│  ▲ base ennemie  9 320  │  PV du château adverse
+│  ▲ château adverse 9320 │
 ├─────────────────────────┤
-│                         │
-│      zone de mêlée      │  la caméra ne bouge pas :
-│    (les deux flots)     │  toute la lane tient à l'écran
-│                         │
-├─────────────────────────┤
-│   MES EMPLACEMENTS      │  6 cases de construction
-│   [■][■][+][+][+][+]    │  tap sur [+] → panneau d'achat
+│         ▲ 4             │  unités hors champ, en couleur d'équipe
+│  [caserne]              │
+│              [tour]     │  le terrain fait ~3 écrans de haut ;
+│      ~ mêlée ~          │  la caméra suit le front toute seule
+│  [fort]                 │
+│         ▼ 2             │
+│   ⌖ Revenir à la bataille│  (n'apparaît que si on s'est écarté)
 ├─────────────────────────┤
 │  or 148   pop 7/35      │
-│  [casernes][tours][héros][coups]│
+│   MES EMPLACEMENTS      │  6 cases de construction
+│   [■][■][+][+][+][+]    │  tap sur [+] → panneau d'achat
 └─────────────────────────┘
 ```
+
+### La caméra
+
+Le terrain est plus haut que l'écran — environ **trois écrans** — et on en
+regarde une tranche. La caméra **suit le front** : le point entre l'unité la
+plus avancée de chaque camp, c'est-à-dire l'endroit où ça se joue. On peut
+l'écarter au doigt (ou à la molette, ou aux flèches) ; elle reste où on l'a
+mise deux secondes et demie, puis se remet à suivre. Un bouton *Revenir à la
+bataille* apparaît dès qu'elle s'est éloignée.
+
+Ce qui sort du cadre ne disparaît pas pour autant : une flèche en haut et en
+bas compte les unités hors champ, dans la couleur du camp à qui elles sont.
+
+**Le défilement est vertical, et seulement vertical.** La simulation est en une
+dimension : la largeur ne sert qu'à étaler les unités pour qu'elles ne se
+marchent pas dessus. Un défilement latéral ne montrerait que du vide, et
+coûterait un geste au joueur pour rien.
+
+La place gagnée sert à quelque chose : les bâtiments construits sont **posés
+sur la carte**, de part et d'autre de la lane en s'éloignant de la base. On
+voit son installation grandir au lieu de la lire dans une barre d'icônes — et
+un chantier s'affiche en translucide, parce qu'il n'est pas encore là.
+
+Ceci dit : **Clash Royale ne défile pas.** Toute l'arène tient à l'écran, la
+caméra est fixe. C'est un choix défendable, et c'était celui de la première
+version d'ici. Si le terrain agrandi complique plus qu'il n'apporte, revenir en
+arrière tient dans une constante : `PART_VISIBLE` dans `rendu/scene.js`, à
+remettre à 1.
+
+Agrandir le terrain n'a **rien changé au jeu** : la lane fait toujours la même
+longueur en millipas, une unité met le même temps à la traverser, et
+l'équilibrage mesuré à l'étape 1 tient tel quel. C'est du cadrage. Si on veut
+de vraies marches plus longues, c'est `LANE` qu'il faut bouger, et ça, ça
+rééquilibre tout.
 
 Décision de conception : **des emplacements fixes, pas de placement libre.**
 Placer un bâtiment au pixel près sur un écran de téléphone est pénible, et dans
@@ -287,7 +322,8 @@ avec leurs jouets pendant la récré* — et cette idée-là est libre.
 ```
 www/moteur/     simulation déterministe — aucun DOM, aucune horloge, aucun
                 hasard non semé. Vérifié par un test, pas seulement promis.
-www/rendu/      palette, sprites, dessin, scène, interface. Lecture seule.
+www/rendu/      palette, sprites, dessin, scène, caméra, interface. Lecture
+                seule — la caméra ne rentre jamais dans l'état de la partie.
 www/ia/         l'adversaire, qui produit des intentions comme un joueur.
 www/jeu.js      le seul fichier qui regarde l'horloge, et la convertit en ticks.
 tests/          déterminisme, règles, sprites.  `npm test`

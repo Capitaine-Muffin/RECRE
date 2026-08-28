@@ -10,9 +10,10 @@ import { nouvellePartie, NOUS, EUX } from './moteur/etat.js';
 import { avancer } from './moteur/simulation.js';
 import { nouveauJournal, noter } from './moteur/journal.js';
 import { nouvelAdversaire, jouer } from './ia/adversaire.js';
-import { dessinerScene } from './rendu/scene.js';
-import { construireInterface, rafraichir, recolterIntentions, annoncerFin }
-  from './rendu/interface.js';
+import { dessinerScene, visible } from './rendu/scene.js';
+import { nouvelleCamera, suivre, recentrer } from './rendu/camera.js';
+import { construireInterface, brancherCamera, rafraichir, recolterIntentions,
+  annoncerFin } from './rendu/interface.js';
 import { CLE_REVENUECAT, DROITS, BLOC_BANNIERE, PRODUITS } from './config.js';
 
 const SAUVEGARDE = 'recre.partie';
@@ -20,6 +21,10 @@ const SAUVEGARDE = 'recre.partie';
 const racine = document.querySelector('#jeu');
 const toile = construireInterface(racine);
 const ctx = toile.getContext('2d');
+
+// La caméra est du décor : elle ne rentre jamais dans l'état de la partie.
+const camera = nouvelleCamera();
+const rafraichirRecentrage = brancherCamera(racine, toile, camera, () => etat);
 
 let etat;
 let journal;
@@ -37,6 +42,8 @@ function demarrerPartie(graine = (Math.random() * 2 ** 32) >>> 0) {
   // la simulation.
   ia = nouvelAdversaire(graine ^ 0x5bf03635, 'normal');
   reste = 0;
+  recentrer(camera, etat);
+  camera.position = camera.cible;
   ranger();
 }
 
@@ -94,12 +101,15 @@ function boucle(maintenant) {
     avance = true;
   }
 
-  dessinerScene(ctx, etat, {
-    largeur: toile.clientWidth,
-    hauteur: toile.clientHeight,
-    zoom: Math.max(2, Math.round(toile.clientWidth / 120)),
+  const largeur = toile.clientWidth;
+  const hauteur = toile.clientHeight;
+  suivre(camera, etat, maintenant, { visible: visible() });
+  dessinerScene(ctx, etat, camera, {
+    largeur, hauteur,
+    zoom: Math.max(2, Math.round(largeur / 120)),
   });
   rafraichir(racine, etat);
+  rafraichirRecentrage(etat);
 
   if (etat.vainqueur !== null) {
     annoncerFin(racine, etat.vainqueur === NOUS);
