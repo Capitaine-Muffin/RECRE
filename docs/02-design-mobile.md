@@ -377,6 +377,36 @@ unité à distance.
 
 Aucune stat d'unité n'a bougé.
 
+#### Toutes les distances tiennent à une seule référence
+
+Elles n'y tenaient pas, et ça s'est vu. `ECART_MIN` avait été posé à 10 000
+millipas, censément « la hauteur d'une figurine à l'écran » — calculé en
+oubliant que les sprites sont dessinés au **zoom 3**. La vraie valeur est
+27 000. Les unités se recouvraient donc de **64 % en profondeur** : elles ne
+faisaient pas la queue, elles s'empilaient, et une armée qui montait vers la
+base adverse se lisait comme une bouillie horizontale au lieu de rangs
+successifs.
+
+C'est le genre d'erreur qui ne se voit pas dans un test — le déterminisme était
+intact, l'équilibrage aussi — et que seul un œil sur l'écran attrape.
+
+Toutes les distances sont désormais dérivées de `TAILLE_FIGURINE`, avec le
+calcul écrit à côté :
+
+| | |
+|---|---|
+| `TAILLE_FIGURINE` | 27 000 — une figurine, à l'écran, en millipas |
+| `ECART_MIN` | = `TAILLE_FIGURINE` : deux unités se touchent sans se recouvrir |
+| `ECART_VOIE` | 0,35 × — la mêlée porte à trois files de chaque côté |
+| portée de mêlée | 1,22 × `ECART_MIN` — **doit** dépasser l'écart, sinon deux unités qui se bloquent restent face à face sans pouvoir se toucher |
+| portée de tour | 9 × `ECART_MIN` |
+
+Le rapport entre la portée de mêlée et `ECART_MIN` n'est pas un réglage
+d'équilibrage : c'est une contrainte. En dessous de 1, le jeu se fige.
+
+Mesuré après correction : 10 % de matchs nuls et 305 s de médiane, contre 10 %
+et 310 s avant. La géométrie change ce qu'on voit, pas comment ça se joue.
+
 ### L'IA achetait 71 % de tours
 
 En regardant une capture, un détail : six bâtiments construits, et une

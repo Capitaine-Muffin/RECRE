@@ -18,11 +18,28 @@ export const MS_PAR_TICK = 100;
 export const LANE = 1_000_000;
 
 /**
+ * La taille d'une figurine à l'écran, exprimée en millipas.
+ *
+ * **Toutes les distances du jeu s'accrochent à celle-ci.** Sans référence
+ * commune, la simulation et le dessin dérivent l'un de l'autre sans que rien
+ * ne le signale : la première version valait 10 000, calculée en oubliant que
+ * les sprites sont dessinés au zoom 3. Les unités se recouvraient de 64 % en
+ * profondeur — elles ne faisaient pas la queue, elles s'empilaient, et une
+ * armée qui montait vers la base adverse se lisait comme une bouillie
+ * horizontale.
+ *
+ * Le calcul, pour un téléphone de 390 × 844 (canvas ≈ 595 de haut) :
+ * une figurine fait 16 pixels de sprite au zoom 3, soit 48 px ; l'échelle vaut
+ * `hauteur / (LANE × PART_VISIBLE)` = 595 / 340 000 ; d'où 48 / cette échelle
+ * ≈ 27 000 millipas.
+ */
+export const TAILLE_FIGURINE = 27_000;
+
+/**
  * Le nombre de files de front.
  *
  * La lane n'est pas un fil : c'est un couloir de `VOIES` files parallèles. Une
- * unité tient sa file du début à la fin et ne double personne — c'est ce qui
- * empêche deux figurines de se retrouver au même endroit.
+ * unité tient sa file du début à la fin et ne double personne.
  *
  * Seize, et non cinq : les figurines se recouvrent alors légèrement sur les
  * côtés, et c'est voulu. Une ligne de cinq n'est pas une armée, c'est une
@@ -34,30 +51,31 @@ export const LANE = 1_000_000;
 export const VOIES = 16;
 
 /**
- * L'écart minimal entre deux unités d'une même file, en millipas.
+ * L'écart minimal entre deux unités d'une même file.
  *
- * ≈ la hauteur d'une figurine à l'écran. Le chevauchement qu'on accepte est
- * latéral, jamais en profondeur : deux unités l'une derrière l'autre restent
- * comptables.
+ * Exactement une figurine : deux unités l'une derrière l'autre se touchent
+ * sans se recouvrir. C'est ce qui fait qu'une armée en marche se lit comme des
+ * rangs qui montent, et pas comme un tas.
+ *
+ * Le chevauchement qu'on accepte est latéral, jamais en profondeur.
  */
-export const ECART_MIN = 10_000;
+export const ECART_MIN = TAILLE_FIGURINE;
 
 /**
- * L'écart entre deux files voisines, en millipas.
+ * L'écart entre deux files voisines, pour le calcul des portées.
  *
  * Il ne sert qu'aux portées : une attaque mesure sa distance en profondeur
- * **et** en largeur. Une unité de mêlée (portée 12 000) atteint alors trois
- * files de chaque côté, sur un front qui en fait seize : le corps à corps
- * reste un contact local, et il reste de la place au-dessus pour une unité qui
- * tape loin — c'est tout l'intérêt d'en avoir.
+ * **et** en largeur. Une unité de mêlée atteint alors trois files de chaque
+ * côté, sur un front qui en fait seize : le corps à corps reste un contact
+ * local, et il reste de la place au-dessus pour une unité qui tape loin —
+ * c'est tout l'intérêt d'en avoir.
  *
- * La valeur est mesurée, pas devinée. Sur 70 parties, la portée purement en
- * profondeur (l'ancienne, en 1D) donne 26 % de matchs nuls ; 3 500 en donne
- * 29 %, soit la même chose au bruit près. En revanche 7 000 monte à 43 % : la
- * mêlée n'atteignait plus que ses voisines immédiates et les deux armées se
- * croisaient sans se voir.
+ * Mesuré, pas deviné : sur 70 parties, une portée purement en profondeur donne
+ * 26 % de matchs nuls, celle-ci 29 %, soit la même chose au bruit près. Quatre
+ * fois plus large, en revanche, monte à 43 % : la mêlée n'atteint plus que ses
+ * voisines immédiates et les deux armées se croisent sans se voir.
  */
-export const ECART_VOIE = 3_500;
+export const ECART_VOIE = Math.round(TAILLE_FIGURINE * 0.35);
 
 export const REGLES = {
   orInitial: 20,
@@ -81,9 +99,16 @@ export const REGLES = {
  */
 const vitesse = (vitesseWc3) => Math.round((vitesseWc3 * 50) / 3);
 
-/** Portée d'attaque, en millipas. */
-const PORTEE_MELEE = 12_000;
-const PORTEE_TOUR = 90_000;
+/**
+ * Portées d'attaque.
+ *
+ * La mêlée doit dépasser `ECART_MIN`, et ce n'est pas un réglage : deux unités
+ * qui se bloquent restent à `ECART_MIN` l'une de l'autre, donc une portée plus
+ * courte les laisserait face à face sans pouvoir se toucher. Un cinquième de
+ * marge suffit.
+ */
+const PORTEE_MELEE = Math.round(ECART_MIN * 1.22);
+const PORTEE_TOUR = Math.round(ECART_MIN * 9);
 
 /**
  * Les unités.
