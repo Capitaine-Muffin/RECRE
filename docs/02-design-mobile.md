@@ -458,20 +458,37 @@ et `docs/04-assets-et-propriete-intellectuelle.md`).
 
 Règle unique, et sévère : **rien ne doit concurrencer les figurines**. L'écran
 est déjà chargé. Un décor qui se voit est un décor raté — celui-ci doit
-seulement empêcher le sol d'être une dalle marron.
+seulement empêcher le sol d'être une dalle unie.
 
 D'où une seule idée plutôt qu'un empilement d'objets : **la cour est un terrain
-de foot peint au sol**, dans l'axe de la lane. Les deux armées se battent
-dessus. Ça situe le lieu en une seconde, ça donne des repères de distance — les
+de foot**, en herbe, dans l'axe de la lane. Les deux armées se battent dessus.
+Ça situe le lieu en une seconde, ça donne des repères de distance — les
 touches, la ligne médiane, le rond central, les surfaces de réparation — et ça
-ne coûte pas un pixel opaque. Deux marelles sur les côtés, et deux zones de
-bitume usé à peine plus claires pour casser l'uniformité.
+ne coûte pas un pixel opaque. Deux marelles sur les côtés, et les bandes de
+tonte alternées qui défilent quand la caméra bouge.
 
-Tout est tracé à la craie : du blanc cassé à 8 % d'opacité, sans volume, sans
-ombre. Au-delà des bases, le mur de la cour prend ses assises de briques — c'est
-le seul endroit qui peut se permettre du détail, puisque personne n'y joue.
-Enfin un assombrissement très léger des bords fait ressortir le centre sans
-qu'on ait ajouté le moindre objet.
+Les tracés sont de la craie : du blanc cassé à 16 % d'opacité, sans volume et
+sans ombre, donc rien qui puisse passer pour un objet du jeu.
+
+### Le vert est le point délicat
+
+Le Petit Soldat et la Caserne sont verts. Un gazon vif les aurait avalés. La
+pelouse est donc **sombre et désaturée** (`#324b31`), là où les verts des
+figurines (`#3d9950`, `#6fd47a`) sont plus clairs et plus saturés ; s'y ajoute
+le contour sombre que porte chaque sprite, et le socle de couleur d'équipe sous
+les pieds.
+
+Ça ne se décide pas au jugé : il a fallu forcer le pire cas — que des unités
+vertes et des tentes vertes sur de l'herbe, rien d'autre à l'écran — et
+regarder. La silhouette tient. C'est le cas à revérifier si la palette bouge.
+
+Au-delà des bases, le mur de la cour prend ses assises de briques : c'est le
+seul endroit qui peut se permettre du détail, puisque personne n'y joue. Enfin
+un assombrissement très léger des bords fait ressortir le centre sans qu'on ait
+ajouté le moindre objet.
 
 Le test, c'est la capture : sur un terrain vide, le décor se lit ; sous la
 foule, il disparaît complètement.
+
+Les deux réglages, dans `rendu/scene.js` : `CRAIE` / `CRAIE_PALE` pour
+l'opacité des tracés, `PELOUSE` et `TONTE` pour l'herbe.

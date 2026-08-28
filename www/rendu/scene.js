@@ -121,9 +121,26 @@ const MUR = 46_000;
  * surfaces de réparation — et ça ne coûte pas un pixel opaque.
  */
 
-/** La craie : blanc cassé, très transparent. Jamais plus appuyé que ça. */
-const CRAIE = 'rgba(255,246,232,0.085)';
-const CRAIE_PALE = 'rgba(255,246,232,0.055)';
+/**
+ * La pelouse.
+ *
+ * Un vert **sombre et désaturé**, et ce n'est pas un caprice : le Petit Soldat
+ * et la Caserne sont verts eux aussi. Un gazon vif les avalerait. Les verts des
+ * figurines (`#3d9950`, `#6fd47a`) sont plus clairs et plus saturés que
+ * celui-ci, et chaque sprite porte son contour sombre : la silhouette tient.
+ */
+const PELOUSE = '#324b31';
+
+/** Les bandes de tonte, alternées le long de la lane. */
+const TONTE = 'rgba(255,255,255,0.030)';
+const LARGEUR_TONTE = 62_000;
+
+/**
+ * La craie sur l'herbe : plus franche que sur du bitume, parce que c'est ce
+ * qu'on voit d'un vrai terrain — mais toujours sans volume ni ombre.
+ */
+const CRAIE = 'rgba(255,252,244,0.16)';
+const CRAIE_PALE = 'rgba(255,252,244,0.10)';
 
 /** Une marelle, dessinée depuis son coin bas, en millipas. */
 function marelle(ctx, x, y, e, sens) {
@@ -143,15 +160,18 @@ function dessinerDecor(ctx, camera, largeur, hauteur) {
   const finHaute = y(LANE) - MUR * e;
   const finBasse = y(0) + MUR * e;
 
-  ctx.fillStyle = '#6b5a4a';
+  ctx.fillStyle = PELOUSE;
   ctx.fillRect(0, 0, largeur, hauteur);
 
-  // Deux zones usées, à peine plus claires : le bitume n'est pas neuf, et ça
-  // évite la dalle uniforme sans rien ajouter à regarder.
-  ctx.fillStyle = 'rgba(255,246,232,0.028)';
-  for (const [debut, fin] of [[210_000, 430_000], [620_000, 760_000]]) {
-    const haut = y(fin);
-    ctx.fillRect(0, haut, largeur, Math.max(0, y(debut) - haut));
+  // Les bandes de tonte. Elles remplacent les taches d'usure : même rôle —
+  // casser la dalle uniforme — mais en donnant en plus un repère de distance
+  // qui défile quand la caméra bouge.
+  ctx.fillStyle = TONTE;
+  for (let p = 0; p < LANE; p += LARGEUR_TONTE * 2) {
+    const haut = y(p + LARGEUR_TONTE);
+    const bas = y(p);
+    if (bas < 0 || haut > hauteur) continue;
+    ctx.fillRect(0, haut, largeur, bas - haut);
   }
 
   // ---- le terrain de foot, tracé à la craie --------------------------------
@@ -219,7 +239,7 @@ function dessinerDecor(ctx, camera, largeur, hauteur) {
     largeur / 2, hauteur / 2, hauteur * 0.48,
     largeur / 2, hauteur / 2, hauteur * 0.85);
   bord.addColorStop(0, 'rgba(0,0,0,0)');
-  bord.addColorStop(1, 'rgba(12,8,20,0.20)');
+  bord.addColorStop(1, 'rgba(8,14,10,0.22)');
   ctx.fillStyle = bord;
   ctx.fillRect(0, 0, largeur, hauteur);
 }
