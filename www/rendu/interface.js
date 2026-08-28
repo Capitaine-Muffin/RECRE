@@ -36,7 +36,7 @@ function vignette(cle, taille = 3) {
   return toile;
 }
 
-export function construireInterface(racine) {
+export function construireInterface(racine, camera) {
   racine.innerHTML = `
     <header class="bandeau">
       <div class="chateau chateau--eux">
@@ -65,9 +65,11 @@ export function construireInterface(racine) {
     </footer>
 
     <dialog id="achat" class="achat">
-      <h2>Que construire ?</h2>
+      <div class="achat-tete">
+        <h2>Que construire ?</h2>
+        <button id="annuler" class="fermer" aria-label="Fermer">✕</button>
+      </div>
       <div id="catalogue" class="catalogue"></div>
-      <button id="annuler" class="secondaire">Annuler</button>
     </dialog>
 
     <dialog id="fin" class="fin">
@@ -82,26 +84,31 @@ export function construireInterface(racine) {
 
   for (const cle of CATALOGUE) {
     const modele = BATIMENTS[cle];
-    const bouton = document.createElement('button');
-    bouton.className = 'carte';
-    bouton.dataset.batiment = cle;
-    bouton.append(vignette(cle));
-    bouton.insertAdjacentHTML('beforeend', `
+    const carte = document.createElement('button');
+    carte.className = 'carte';
+    carte.dataset.batiment = cle;
+    carte.append(vignette(cle));
+    carte.insertAdjacentHTML('beforeend', `
       <span class="carte-nom">${modele.nom}</span>
       <span class="carte-prix">${modele.or} or · ${modele.population} pop</span>
       <span class="carte-aide">${modele.aide}</span>
     `);
-    bouton.addEventListener('click', () => {
+    carte.addEventListener('click', () => {
       enAttente.push({
         camp: NOUS, action: 'construire',
         emplacement: emplacementVise, batiment: cle,
       });
-      achat.close();
+      fermer(racine, camera);
     });
-    catalogue.append(bouton);
+    catalogue.append(carte);
   }
 
-  racine.querySelector('#annuler').addEventListener('click', () => achat.close());
+  racine.querySelector('#annuler').addEventListener('click', () => fermer(racine, camera));
+
+  // Toucher le terrain referme : c'est le geste attendu d'une feuille.
+  racine.querySelector('#scene').addEventListener('pointerdown', () => {
+    if (achat.open) fermer(racine, camera);
+  });
 
   const emplacements = racine.querySelector('#emplacements');
   for (let i = 0; i < REGLES.emplacements; i++) {
@@ -110,14 +117,14 @@ export function construireInterface(racine) {
     bouton.dataset.index = String(i);
     // Le clavier autant que le doigt : 1 à 6 ouvrent l'emplacement.
     bouton.title = `Emplacement ${i + 1} (touche ${i + 1})`;
-    bouton.addEventListener('click', () => ouvrir(racine, i));
+    bouton.addEventListener('click', () => ouvrir(racine, camera, i));
     emplacements.append(bouton);
   }
 
   addEventListener('keydown', (e) => {
     const n = Number(e.key);
-    if (n >= 1 && n <= REGLES.emplacements) ouvrir(racine, n - 1);
-    if (e.key === 'Escape') achat.close();
+    if (n >= 1 && n <= REGLES.emplacements) ouvrir(racine, camera, n - 1);
+    if (e.key === 'Escape') fermer(racine, camera);
   });
 
   return racine.querySelector('#scene');
@@ -179,9 +186,25 @@ export function brancherCamera(racine, toile, camera, obtenirEtat) {
   };
 }
 
-function ouvrir(racine, index) {
+/**
+ * Ouvre le panneau d'achat.
+ *
+ * `show()` et non `showModal()` : le panneau est une feuille posée au-dessus du
+ * terrain, pas un écran qui le remplace. On continue de voir la bataille — et
+ * c'est souvent elle qui dit quoi acheter.
+ *
+ * La caméra est figée le temps du choix : sinon sa patience expire pendant
+ * qu'on lit les cartes, et on retrouve un autre endroit en refermant.
+ */
+function ouvrir(racine, camera, index) {
   emplacementVise = index;
-  racine.querySelector('#achat').showModal();
+  camera.figee = true;
+  racine.querySelector('#achat').show();
+}
+
+function fermer(racine, camera) {
+  camera.figee = false;
+  racine.querySelector('#achat').close();
 }
 
 /** Reflète l'état dans l'interface. Lecture seule, comme tout `rendu/`. */

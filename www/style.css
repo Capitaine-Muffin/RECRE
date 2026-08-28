@@ -143,6 +143,7 @@ html, body {
 }
 
 .vignette { display: block; max-width: 100%; height: auto; }
+.emplacement .vignette { width: auto; }
 
 /* ------------------------------------------------------- panneaux modaux */
 dialog {
@@ -154,33 +155,105 @@ dialog {
   color: var(--craie);
 }
 dialog::backdrop { background: rgba(10, 8, 16, 0.72); }
+
+/* ------------------------------------------------------- le panneau d'achat */
+/* Une feuille posée au-dessus du terrain, pas un écran qui le remplace : on
+   continue de voir la bataille, et c'est souvent elle qui dit quoi acheter.
+   Non modale, donc sans `::backdrop` — d'où l'ombre portée pour la détacher. */
+.achat[open] {
+  position: fixed;
+  inset: auto 0 0 0;
+  width: 100%;
+  max-width: min(100vw, 30rem);
+  margin: 0 auto;
+  padding: 0.6rem 0.7rem calc(0.7rem + env(safe-area-inset-bottom));
+  border-radius: 18px 18px 0 0;
+  background: rgba(43, 33, 64, 0.97);
+  box-shadow: 0 -12px 32px rgba(8, 6, 14, 0.55);
+  /* Assez basse pour laisser la moitié haute du terrain visible. */
+  max-height: 46vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.achat-tete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.achat-tete h2 { margin: 0; }
+
+.fermer {
+  min-height: 36px;
+  min-width: 36px;
+  padding: 0;
+  font-size: 1rem;
+  background: rgba(255, 246, 232, 0.12);
+  color: var(--craie);
+}
+
+.achat .catalogue {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: 0.2rem;
+}
 dialog h2 { margin: 0 0 0.75rem; font-size: 1.1rem; }
 
 .catalogue {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
-  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+  gap: 0.4rem;
 }
+
+/* Dans la feuille, les cartes sont des rangées : vignette à gauche, texte à
+   droite. Une feuille est basse — en colonnes, les noms se coupent en trois
+   lignes et l'aide devient illisible.
+   
+   ⚠️ `flex-shrink: 0` n'est pas décoratif. Un élément flex se comprime par
+   défaut : six cartes de 76 pixels dans une feuille qui n'en fait que 320 se
+   tassaient jusqu'à leur `min-height` de 48, et le texte débordait dessous au
+   lieu que la liste défile. */
+.achat .catalogue {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.achat .catalogue > .carte { flex-shrink: 0; }
 
 .carte {
   display: grid;
-  justify-items: center;
-  gap: 0.2rem;
-  padding: 0.6rem 0.4rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  /* Les trois lignes sont déclarées explicitement : sans ligne explicite, le
+     `1 / -1` de la vignette désignerait la ligne 1 — elle ne s'étendrait sur
+     rien et le texte partirait dans la colonne de gauche. */
+  grid-template-rows: repeat(3, auto);
+  align-items: start;
+  gap: 0 0.55rem;
+  padding: 0.45rem 0.6rem;
   min-height: var(--touche);
   border: 2px solid rgba(255, 246, 232, 0.18);
   border-radius: 12px;
   background: rgba(255, 246, 232, 0.06);
   color: inherit;
   font: inherit;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
+}
+.carte > canvas {
+  grid-row: 1 / -1;
+  align-self: center;
+  width: 44px;
+  height: 44px;
 }
 .carte:disabled { opacity: 0.35; cursor: not-allowed; }
 .carte:focus-visible { outline: 3px solid var(--or); outline-offset: 2px; }
+
 .carte-nom { font-weight: 700; font-size: 0.85rem; }
 .carte-prix { color: var(--or); font-size: 0.78rem; }
-.carte-aide { color: var(--grise); font-size: 0.7rem; line-height: 1.25; }
+.carte-aide { color: var(--grise); font-size: 0.7rem; line-height: 1.2; }
 
 button {
   font: inherit;

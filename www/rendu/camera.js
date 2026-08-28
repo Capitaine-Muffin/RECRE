@@ -10,7 +10,7 @@
  * saisit, elle arrête de suivre, et elle s'y remet après un moment de calme.
  */
 import { LANE } from '../moteur/donnees.js';
-import { NOUS } from '../moteur/etat.js';
+import { NOUS, baseDe } from '../moteur/etat.js';
 import { visible } from './scene.js';
 
 /** Combien de temps la caméra reste où le joueur l'a mise, en millisecondes. */
@@ -28,6 +28,8 @@ export function nouvelleCamera() {
     /** Horodatage de la dernière intervention du joueur. 0 = jamais. */
     laché: 0,
     saisie: null,
+    /** Vrai tant qu'un panneau est ouvert : la caméra ne suit plus. */
+    figee: false,
   };
 }
 
@@ -49,7 +51,11 @@ export function front(etat) {
   if (nous !== null && eux !== null) return (nous + eux) / 2;
   if (nous !== null) return nous;
   if (eux !== null) return eux;
-  return LANE / 2;
+  // Terrain vide : on regarde sa propre base, pas le milieu du terrain. C'est
+  // le début de partie, on est en train d'y construire — renvoyer le joueur
+  // sur une pelouse déserte à chaque fois qu'il ferme le panneau d'achat est
+  // le contraire de ce qu'il veut.
+  return baseDe(NOUS);
 }
 
 /**
@@ -80,7 +86,13 @@ function borner(cible) {
  *   droit de la connaître : elle n'est pas la simulation.
  */
 export function suivre(camera, etat, maintenant) {
-  if (camera.saisie === null && maintenant - camera.laché > PATIENCE) {
+  // Panneau ouvert : le joueur ne regarde pas le terrain, la caméra ne doit
+  // pas en profiter pour s'en aller. Sans ça la patience expire pendant qu'il
+  // choisit, et il retrouve un autre endroit en refermant.
+  if (camera.figee) camera.laché = maintenant;
+
+  if (camera.saisie === null && !camera.figee
+      && maintenant - camera.laché > PATIENCE) {
     camera.cible = front(etat);
   }
   camera.cible = borner(camera.cible);

@@ -13,6 +13,8 @@ import { VOIES, ECART_MIN } from '../www/moteur/donnees.js';
 import { avancer } from '../www/moteur/simulation.js';
 import { nouveauJournal, noter, rejouer } from '../www/moteur/journal.js';
 import { nouvelAdversaire, jouer } from '../www/ia/adversaire.js';
+import { nouvelleCamera, suivre, front } from '../www/rendu/camera.js';
+import { baseDe } from '../www/moteur/etat.js';
 
 let echecs = 0;
 function verifier(nom, condition, detail = '') {
@@ -152,6 +154,34 @@ while (seul.unites.length < VOIES) avancer(seul, []);
 const tournee = seul.unites.slice(0, VOIES).map((u) => u.voie);
 verifier('les files tournent et sont servies une fois chacune',
   new Set(tournee).size === VOIES, `files servies : ${tournee.join(',')}`);
+
+/* ------------------------------------------------------------------------ */
+console.log('\nLa caméra reste où on l\'a mise');
+
+// `rendu/camera.js` est de la logique pure : on peut la vérifier sans
+// navigateur, et c'est bien plus solide qu'un minutage dans une page.
+
+// Terrain vide, on regarde sa propre base — pas le milieu du terrain. C'est le
+// début de partie : le joueur y construit, l'y renvoyer serait le contraire de
+// ce qu'il veut.
+verifier('terrain vide : la caméra vise sa base',
+  front(nouvellePartie(1)) === baseDe(NOUS));
+
+// Panneau ouvert : la patience ne doit pas expirer dans son dos.
+const vue = nouvelleCamera();
+const partieEnCours = partie(77, 1500).etat;
+vue.cible = vue.position = 600_000;      // le joueur a regardé ailleurs
+vue.laché = 0;
+
+vue.figee = true;
+for (let ms = 0; ms <= 10_000; ms += 100) suivre(vue, partieEnCours, ms);
+verifier('figée, elle ne bouge pas même après dix secondes',
+  Math.round(vue.cible) === 600_000, `cible = ${Math.round(vue.cible)}`);
+
+vue.figee = false;
+for (let ms = 10_000; ms <= 20_000; ms += 100) suivre(vue, partieEnCours, ms);
+verifier('libérée, elle repart suivre le front',
+  Math.round(vue.cible) !== 600_000, `cible = ${Math.round(vue.cible)}`);
 
 /* ------------------------------------------------------------------------ */
 if (echecs) {

@@ -19,11 +19,11 @@ import { CLE_REVENUECAT, DROITS, BLOC_BANNIERE, PRODUITS } from './config.js';
 const SAUVEGARDE = 'recre.partie';
 
 const racine = document.querySelector('#jeu');
-const toile = construireInterface(racine);
-const ctx = toile.getContext('2d');
-
 // La caméra est du décor : elle ne rentre jamais dans l'état de la partie.
 const camera = nouvelleCamera();
+
+const toile = construireInterface(racine, camera);
+const ctx = toile.getContext('2d');
 const rafraichirRecentrage = brancherCamera(racine, toile, camera, () => etat);
 
 let etat;

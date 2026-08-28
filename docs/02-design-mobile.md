@@ -66,11 +66,24 @@ solo.
 └─────────────────────────┘
 ```
 
+### Le panneau d'achat est une feuille, pas un écran
+
+Il s'ouvre en bas et laisse **54 % du terrain visible** au-dessus : on continue
+de voir la bataille pendant qu'on choisit, et c'est souvent elle qui dit quoi
+acheter. Non modal, donc, et refermé par la croix, par `Échap`, ou en touchant
+le terrain.
+
+Tant qu'il est ouvert, **la caméra est figée**. Sans ça sa patience expire
+pendant qu'on lit les cartes et on retrouve un autre endroit en refermant.
+
 ### La caméra
 
 Le terrain est plus haut que l'écran — environ **trois écrans** — et on en
 regarde une tranche. La caméra **suit le front** : le point entre l'unité la
-plus avancée de chaque camp, c'est-à-dire l'endroit où ça se joue. On peut
+plus avancée de chaque camp, c'est-à-dire l'endroit où ça se joue. Terrain
+vide, elle regarde **sa propre base** et non le milieu du terrain — c'est le
+début de partie, on y construit, et renvoyer le joueur sur une pelouse déserte
+à chaque fois qu'il ferme le panneau est le contraire de ce qu'il veut. On peut
 l'écarter au doigt (ou à la molette, ou aux flèches) ; elle reste où on l'a
 mise deux secondes et demie, puis se remet à suivre. Un bouton *Revenir à la
 bataille* apparaît dès qu'elle s'est éloignée.
