@@ -124,13 +124,18 @@ et 2 du §8), elle s'exécute dans le client, sans réseau. Passer au 3c3 la
 déplace sur un serveur — ce n'est pas une réécriture, à une condition
 non négociable :
 
-> **La simulation reste pure.** Aucun accès au DOM, aucun `Date.now()`, aucun
-> `Math.random()` non graine. Elle prend un état et une liste d'intentions,
+> **La simulation reste pure.** Elle prend un état et une liste d'intentions,
 > elle rend l'état suivant. Le rendu la lit, ne la modifie jamais.
 
-C'est cette séparation qui rend l'étape 3 possible sans tout refaire — et
-c'est aussi ce qui donne les replays et la reconnexion par rejeu du journal
-annoncés plus haut. Elle se paie le premier jour ou elle ne se paie jamais.
+La règle et ses trois interdits sont dans
+[`modele-jeu-mobile`](https://github.com/Capitaine-Muffin/modele-jeu-mobile),
+section *Comment écrire le jeu* — elle vaut pour tous les jeux, elle n'est pas
+recopiée ici.
+
+Ce qu'elle apporte **à RECRE en particulier** : c'est elle qui rend l'étape 3
+possible sans tout refaire, et c'est elle qui donne les replays et la
+reconnexion par rejeu du journal annoncés plus haut. Elle se paie le premier
+jour ou elle ne se paie jamais.
 
 **Ce que le serveur coûtera vraiment, le moment venu :** une connexion
 persistante (websocket), un service de mise en relation des joueurs, et une
