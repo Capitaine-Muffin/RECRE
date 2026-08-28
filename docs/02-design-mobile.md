@@ -537,6 +537,36 @@ débloque un tel grippage. C'est encore la **Bombe à Eau** de l'étape 2 qui es
 la réponse prévue — l'original s'est donné exactement cet outil, et pour
 exactement cette raison.
 
+### Le placement compte
+
+Poser un bâtiment ne se réduit plus à choisir quoi : on choisit **où**, sur une
+grille de deux colonnes par huit rangées de part et d'autre de la lane, qui
+couvre les 38 % du terrain devant sa base.
+
+Trois choses le rendent significatif, et elles ne valent qu'ensemble :
+
+1. **Les unités sortent de leur caserne**, pas du château. Une caserne avancée
+   économise à ses unités tout le trajet qui la sépare de la base.
+2. **Les tours tirent depuis leur position.** Une tour avancée couvre plus de
+   terrain.
+3. **Les bâtiments sont attaquables.** Une unité qui n'a aucune unité ennemie à
+   portée s'en prend au bâti — jamais avant, sinon une armée s'arrêterait sur
+   la première caserne venue en laissant passer celle d'en face.
+
+Sans la troisième, avancer serait gratuitement meilleur et le choix
+n'existerait pas. Un bâtiment détruit rend sa population : on reconstruit
+ailleurs, la perte coûte sans être définitive.
+
+Le geste est en deux temps — choisir dans le panneau, puis toucher une case —
+et non un glissé du panneau vers la carte : sur un téléphone le doigt masque ce
+qu'il déplace et la carte défile sous lui. La grille n'apparaît que pendant le
+placement, cases libres éclairées et cases prises barrées.
+
+**Et ça a réglé les matchs nuls.** De 37 % à **10 %**, médiane 271 s, sans
+qu'on ait touché à une seule statistique. La raison est nette une fois dite :
+une armée qui perce détruit désormais la production adverse, là où avant elle
+butait éternellement sur un front qui se reformait derrière.
+
 ### Le ciblage est indexé par file
 
 Deux mille unités, c'est aussi deux mille recherches de cible par tick, chacune

@@ -10,8 +10,9 @@
  *
  * Cette couche lit l'état et ne l'écrit jamais.
  */
-import { LANE, UNITES, BATIMENTS, VOIES, ECART_MIN } from '../moteur/donnees.js';
-import { NOUS, EUX } from '../moteur/etat.js';
+import { LANE, UNITES, BATIMENTS, VOIES, ECART_MIN, COLONNES_GRILLE,
+  RANGEES_GRILLE } from '../moteur/donnees.js';
+import { NOUS, EUX, profondeurRangee } from '../moteur/etat.js';
 import * as S from './sprites.js';
 import { dessiner, barreDeVie, socle } from './dessin.js';
 
@@ -84,32 +85,16 @@ function decalage(unite) {
 }
 
 /**
- * Où poser un bâtiment sur la carte.
- *
- * Quatre colonnes, deux de chaque côté de la lane, qui s'éloignent de la base
- * au fur et à mesure. Quatre et non deux : la population permet une quinzaine
- * de bâtiments, et sur deux colonnes la base s'étirerait jusqu'au milieu du
- * terrain. Les unités sont dessinées après, donc elles passent par-dessus.
- */
-const COLONNES = [0.08, 0.21, 0.79, 0.92];
-
-/**
  * Les bâtiments sont dessinés un cran plus petits que les unités.
  *
  * Un cran entier, et pas une fraction : le pixel art se met à l'échelle par
- * multiples entiers, sinon les pixels bavent. Un bâtiment passe ainsi de 72 à
- * 48 pixels, ce qui laisse la place d'en aligner une quinzaine sans que la
- * base s'étire jusqu'au milieu du terrain.
+ * multiples entiers, sinon les pixels bavent.
  */
 export const zoomBatiment = (zoom) => Math.max(1, zoom - 1);
 
-function placeBatiment(index, camp, largeur) {
-  const recul = 52_000 + Math.floor(index / COLONNES.length) * 40_000;
-  return {
-    x: largeur * COLONNES[index % COLONNES.length],
-    position: camp === NOUS ? recul : LANE - recul,
-  };
-}
+/** L'abscisse d'une colonne de construction. */
+export const abscisseColonne = (colonne, largeur) =>
+  largeur * COLONNES_GRILLE[colonne];
 
 /** Au-delà de chaque base, le terrain s'arrête : mur de la cour, puis ciel. */
 const MUR = 46_000;
@@ -310,26 +295,62 @@ function indicateursHorsChamp(ctx, etat, camera, largeur, hauteur) {
   ctx.textAlign = 'start';
 }
 
-export function dessinerScene(ctx, etat, camera, { largeur, hauteur, zoom }) {
+/**
+ * La grille de construction, montrée seulement pendant qu'on place.
+ *
+ * Les cases libres s'éclairent, les occupées se barrent. Avancer une case, c'est
+ * gagner du trajet pour ses unités et de la portée pour ses tours, mais entrer
+ * dans celle des unités adverses : la grille donne à voir cet arbitrage.
+ */
+function dessinerGrille(ctx, etat, placement, { largeur, zoom, y }) {
+  const prises = new Set(etat.camps[NOUS].emplacements
+    .map((b) => `${b.colonne}:${b.rangee}`));
+  const cote = 13 * zoomBatiment(zoom);
+
+  for (let r = 0; r < RANGEES_GRILLE; r++) {
+    for (let c = 0; c < COLONNES_GRILLE.length; c++) {
+      const py = y(profondeurRangee(NOUS, r));
+      const x = abscisseColonne(c, largeur);
+      const occupee = prises.has(`${c}:${r}`);
+      const visee = placement.colonne === c && placement.rangee === r;
+
+      ctx.lineWidth = visee ? 3 : 1;
+      ctx.strokeStyle = occupee ? 'rgba(239,77,90,0.55)'
+        : visee ? '#ffd84d' : 'rgba(255,253,247,0.55)';
+      ctx.fillStyle = occupee ? 'rgba(239,77,90,0.10)' : 'rgba(255,216,77,0.12)';
+      if (!occupee) ctx.fillRect(x - cote, py - cote * 2, cote * 2, cote * 2);
+      ctx.strokeRect(Math.round(x - cote) + 0.5, Math.round(py - cote * 2) + 0.5,
+        cote * 2, cote * 2);
+    }
+  }
+}
+
+export function dessinerScene(ctx, etat, camera,
+  { largeur, hauteur, zoom, placement = null }) {
   ctx.clearRect(0, 0, largeur, hauteur);
   dessinerDecor(ctx, camera, largeur, hauteur);
 
   const y = (position) => ordonnee(position, camera, hauteur);
 
-  // Les bâtiments posés, de part et d'autre de la lane.
+  // La grille de construction, seulement pendant qu'on place.
+  if (placement) dessinerGrille(ctx, etat, placement, { largeur, hauteur, zoom, y });
+
+  // Les bâtiments, chacun sur sa case.
+  const zb = zoomBatiment(zoom);
   for (const c of [NOUS, EUX]) {
-    etat.camps[c].emplacements.forEach((place, i) => {
-      const { x, position } = placeBatiment(i, c, largeur);
-      const py = y(position);
-      if (py < -120 || py > hauteur + 120) return;
+    for (const place of etat.camps[c].emplacements) {
+      const py = y(place.position);
+      if (py < -120 || py > hauteur + 120) continue;
+      const x = abscisseColonne(place.colonne, largeur);
       const sprite = SPRITE_BATIMENT[place.batiment];
-      const zb = zoomBatiment(zoom);
       // Un chantier est translucide : on voit qu'il n'est pas encore là.
       ctx.globalAlpha = place.restant > 0 ? 0.45 : 1;
       dessiner(ctx, sprite, x, py, zb);
       ctx.globalAlpha = 1;
       socle(ctx, x, py, 10 * zb * 0.5, COULEUR_CAMP[c]);
-    });
+      barreDeVie(ctx, x, py - sprite.length * zb - 6, 22,
+        place.pv / BATIMENTS[place.batiment].pv);
+    }
   }
 
   // Les deux châteaux, et les enfants à côté.

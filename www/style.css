@@ -157,6 +157,24 @@ html, body {
 .vignette { display: block; max-width: 100%; height: auto; }
 .batiment .vignette { width: auto; }
 
+/* Le bandeau de placement, pendant qu'on cherche où poser. */
+.placement {
+  position: absolute;
+  inset-inline: 0.5rem;
+  bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
+  background: rgba(47, 39, 64, 0.94);
+  border: 1px solid var(--or);
+  font-size: 0.85rem;
+}
+.placement b { color: var(--or); }
+.placement button { min-height: 36px; padding: 0.35rem 0.8rem; font-size: 0.8rem; }
+
 /* ------------------------------------------------------- panneaux modaux */
 dialog {
   border: 0;

@@ -5,7 +5,8 @@
  * partie se range dans `localStorage` avec `JSON.stringify` et se relit telle
  * quelle — la sauvegarde ne demande aucun travail supplémentaire.
  */
-import { REGLES, LANE } from './donnees.js';
+import { REGLES, LANE, PAS_GRILLE, COLONNES_GRILLE, RANGEES_GRILLE, VOIES }
+  from './donnees.js';
 
 /** Les deux camps. `nous` construit depuis 0, `eux` depuis `LANE`. */
 export const NOUS = 0;
@@ -19,6 +20,32 @@ export const sens = (camp) => (camp === NOUS ? 1 : -1);
 
 /** Position de la base d'un camp, en millipas. */
 export const baseDe = (camp) => (camp === NOUS ? 0 : LANE);
+
+/**
+ * La profondeur d'une rangée de la grille, pour un camp donné.
+ *
+ * La rangée 0 est collée à sa base ; les suivantes avancent vers l'adversaire.
+ */
+export function profondeurRangee(camp, rangee) {
+  const recul = (rangee + 1) * PAS_GRILLE;
+  return camp === NOUS ? recul : LANE - recul;
+}
+
+/**
+ * La file virtuelle d'une colonne de construction.
+ *
+ * Les bâtiments sont posés de part et d'autre du couloir des unités, pas
+ * dedans. On leur donne quand même une file — juste en dehors de la première
+ * et de la dernière — pour que les portées se calculent comme entre unités,
+ * en profondeur et en largeur.
+ */
+export const voieColonne = (colonne) => (colonne === 0 ? -1 : VOIES);
+
+/** Vrai si la case est dans la grille. */
+export const caseValide = (colonne, rangee) =>
+  Number.isInteger(colonne) && Number.isInteger(rangee)
+  && colonne >= 0 && colonne < COLONNES_GRILLE.length
+  && rangee >= 0 && rangee < RANGEES_GRILLE;
 
 function camp(nom) {
   return {

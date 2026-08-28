@@ -9,14 +9,27 @@
  * Elle ne modifie pas l'état : elle empile des intentions que la boucle ira
  * chercher, exactement comme l'IA.
  */
-import { BATIMENTS, CATALOGUE } from '../moteur/donnees.js';
-import { NOUS } from '../moteur/etat.js';
-import { SPRITE_BATIMENT, echelle, visible } from './scene.js';
+import { BATIMENTS, CATALOGUE, COLONNES_GRILLE, RANGEES_GRILLE, PAS_GRILLE }
+  from '../moteur/donnees.js';
+import { NOUS, profondeurRangee } from '../moteur/etat.js';
+import { SPRITE_BATIMENT, echelle, visible, abscisseColonne } from './scene.js';
 import { dessiner } from './dessin.js';
 import { saisir, glisser, lacher, deplacer, recentrer, front } from './camera.js';
 
 /** Les intentions du joueur en attente. La boucle les vide à chaque tick. */
 const enAttente = [];
+
+/**
+ * Le bâtiment choisi et pas encore posé, ou `null`.
+ *
+ * Choisir puis toucher une case, plutôt que traîner du panneau jusqu'à la
+ * carte : sur un téléphone le doigt masque ce qu'il déplace, et la carte défile
+ * sous lui. En deux temps, on voit où on pose.
+ */
+let enPlacement = null;
+
+/** Ce que la scène doit dessiner : la grille, et la case visée. */
+export const placementEnCours = () => enPlacement;
 
 /** Prend et vide la file. */
 export function recolterIntentions() {
@@ -46,6 +59,10 @@ export function construireInterface(racine, camera) {
     <div class="terrain">
       <canvas id="scene" class="scene"></canvas>
       <button id="recentrer" class="recentrer" hidden>⌖ Revenir à la bataille</button>
+      <div id="placement" class="placement" hidden>
+        <span>Touchez une case pour poser <b id="placement-quoi"></b></span>
+        <button id="placement-annuler" class="secondaire">Annuler</button>
+      </div>
     </div>
 
     <footer class="pupitre">
@@ -92,8 +109,10 @@ export function construireInterface(racine, camera) {
       <span class="carte-aide">${modele.aide}</span>
     `);
     carte.addEventListener('click', () => {
-      enAttente.push({ camp: NOUS, action: 'construire', batiment: cle });
+      enPlacement = { batiment: cle, colonne: null, rangee: null };
       fermer(racine);
+      racine.querySelector('#placement').hidden = false;
+      racine.querySelector('#placement-quoi').textContent = modele.nom;
     });
     catalogue.append(carte);
   }
@@ -105,9 +124,13 @@ export function construireInterface(racine, camera) {
     if (achat.open) fermer(racine);
   });
 
+  racine.querySelector('#placement-annuler').addEventListener('click', () => {
+    annulerPlacement(racine);
+  });
+
   addEventListener('keydown', (e) => {
     if (e.key === 'b' || e.key === 'B') ouvrir(racine);
-    if (e.key === 'Escape') fermer(racine);
+    if (e.key === 'Escape') { fermer(racine); annulerPlacement(racine); }
   });
 
   return racine.querySelector('#scene');
@@ -131,16 +154,35 @@ export function brancherCamera(racine, toile, camera, obtenirEtat) {
    */
   const parPixel = () => 1 / echelle(toile.clientHeight);
 
+  let depart = null;
   toile.addEventListener('pointerdown', (e) => {
     toile.setPointerCapture(e.pointerId);
+    depart = { x: e.clientX, y: e.clientY };
     saisir(camera, e.clientY, e.timeStamp);
   });
   toile.addEventListener('pointermove', (e) => {
     if (camera.saisie) glisser(camera, e.clientY, parPixel(), e.timeStamp);
+    if (enPlacement) {
+      const ou = caseSous(e.clientX, e.clientY, toile, camera);
+      enPlacement.colonne = ou ? ou.colonne : null;
+      enPlacement.rangee = ou ? ou.rangee : null;
+    }
   });
-  for (const fin of ['pointerup', 'pointercancel']) {
-    toile.addEventListener(fin, () => lacher(camera));
-  }
+  toile.addEventListener('pointerup', (e) => {
+    lacher(camera);
+    // Un appui bref pose ; au-delà de quelques pixels c'est un glissé de
+    // caméra, et poser à l'endroit où le doigt s'est arrêté serait une surprise.
+    const bouge = depart
+      && Math.hypot(e.clientX - depart.x, e.clientY - depart.y) > 8;
+    depart = null;
+    if (!enPlacement || bouge) return;
+    const ou = caseSous(e.clientX, e.clientY, toile, camera);
+    if (!ou) return;
+    enAttente.push({ camp: NOUS, action: 'construire',
+      batiment: enPlacement.batiment, colonne: ou.colonne, rangee: ou.rangee });
+    annulerPlacement(racine);
+  });
+  toile.addEventListener('pointercancel', () => { depart = null; lacher(camera); });
 
   toile.addEventListener('wheel', (e) => {
     e.preventDefault();
@@ -188,6 +230,37 @@ function ouvrir(racine) {
 
 function fermer(racine) {
   racine.querySelector('#achat').close();
+}
+
+function annulerPlacement(racine) {
+  enPlacement = null;
+  racine.querySelector('#placement').hidden = true;
+}
+
+/**
+ * La case de la grille sous un point de l'écran, ou `null`.
+ *
+ * Tolérante : on vise la colonne la plus proche et la rangée la plus proche,
+ * sans exiger de tomber pile dedans. Un doigt n'est pas un curseur.
+ */
+function caseSous(x, y, toile, camera) {
+  const largeur = toile.clientWidth;
+  const hauteur = toile.clientHeight;
+  const ech = echelle(hauteur);
+
+  let colonne = 0;
+  let ecart = Infinity;
+  for (let c = 0; c < COLONNES_GRILLE.length; c++) {
+    const d = Math.abs(abscisseColonne(c, largeur) - x);
+    if (d < ecart) { ecart = d; colonne = c; }
+  }
+  if (ecart > largeur * 0.28) return null;
+
+  // De l'ordonnée écran vers la profondeur, puis vers la rangée.
+  const profondeur = camera.position + (hauteur / 2 - y) / ech;
+  const rangee = Math.round(profondeur / PAS_GRILLE) - 1;
+  if (rangee < 0 || rangee >= RANGEES_GRILLE) return null;
+  return { colonne, rangee };
 }
 
 /** Reflète l'état dans l'interface. Lecture seule, comme tout `rendu/`. */

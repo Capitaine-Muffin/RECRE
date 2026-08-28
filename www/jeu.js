@@ -13,7 +13,7 @@ import { nouvelAdversaire, jouer } from './ia/adversaire.js';
 import { dessinerScene } from './rendu/scene.js';
 import { nouvelleCamera, suivre, recentrer } from './rendu/camera.js';
 import { construireInterface, brancherCamera, rafraichir, recolterIntentions,
-  annoncerFin } from './rendu/interface.js';
+  annoncerFin, placementEnCours } from './rendu/interface.js';
 import { CLE_REVENUECAT, DROITS, BLOC_BANNIERE, PRODUITS } from './config.js';
 
 const SAUVEGARDE = 'recre.partie';
@@ -107,6 +107,7 @@ function boucle(maintenant) {
   dessinerScene(ctx, etat, camera, {
     largeur, hauteur,
     zoom: Math.max(2, Math.round(largeur / 120)),
+    placement: placementEnCours(),
   });
   rafraichir(racine, etat);
   rafraichirRecentrage(etat);

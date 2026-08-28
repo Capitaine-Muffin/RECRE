@@ -9,7 +9,8 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { nouvellePartie, empreinte, copier, NOUS, EUX } from '../www/moteur/etat.js';
-import { VOIES, ECART_MIN } from '../www/moteur/donnees.js';
+import { VOIES, ECART_MIN, RANGEES_GRILLE, COLONNES_GRILLE }
+  from '../www/moteur/donnees.js';
 import { avancer } from '../www/moteur/simulation.js';
 import { nouveauJournal, noter, rejouer } from '../www/moteur/journal.js';
 import { nouvelAdversaire, jouer } from '../www/ia/adversaire.js';
@@ -109,7 +110,7 @@ verifier('le revenu tombe (+1 tous les 5 ticks)', r.camps[NOUS].or === 22,
   `or = ${r.camps[NOUS].or}`);
 
 const c = nouvellePartie(1);
-avancer(c, [{ camp: NOUS, action: 'construire', batiment: 'caserne_soldats' }]);
+avancer(c, [{ camp: NOUS, action: 'construire', batiment: 'caserne_soldats', colonne: 0, rangee: 0 }]);
 verifier('construire coupe le revenu', c.camps[NOUS].enChantier);
 const orAuDebut = c.camps[NOUS].or;
 for (let t = 0; t < 20; t++) avancer(c, []);
@@ -118,14 +119,14 @@ verifier('le revenu reste coupé pendant le chantier',
 
 const p = nouvellePartie(1);
 p.camps[NOUS].or = 999;
-avancer(p, [{ camp: NOUS, action: 'construire', batiment: 'gouter' }]);
+avancer(p, [{ camp: NOUS, action: 'construire', batiment: 'gouter', colonne: 0, rangee: 0 }]);
 while (p.camps[NOUS].emplacements[0].restant > 0) avancer(p, []);
 verifier('le Goûter ouvre 20 places', p.camps[NOUS].populationMax === 30,
   `plafond = ${p.camps[NOUS].populationMax}`);
 
 const refus = nouvellePartie(1);
 refus.camps[NOUS].or = 0;
-avancer(refus, [{ camp: NOUS, action: 'construire', batiment: 'gouter' }]);
+avancer(refus, [{ camp: NOUS, action: 'construire', batiment: 'gouter', colonne: 0, rangee: 0 }]);
 verifier('un achat qu\'on ne peut pas payer est refusé',
   refus.camps[NOUS].emplacements.length === 0);
 
@@ -135,12 +136,16 @@ function combienDeCasernes(avecGouter) {
   const j = nouvellePartie(2);
   if (avecGouter) {
     j.camps[NOUS].or = 9999;
-    avancer(j, [{ camp: NOUS, action: 'construire', batiment: 'gouter' }]);
+    avancer(j, [{ camp: NOUS, action: 'construire', batiment: 'gouter',
+      colonne: 1, rangee: RANGEES_GRILLE - 1 }]);
     while (j.camps[NOUS].emplacements[0].restant > 0) avancer(j, []);
   }
-  for (let t = 0; t < 400; t++) {
-    j.camps[NOUS].or = 9999;
-    avancer(j, [{ camp: NOUS, action: 'construire', batiment: 'caserne_soldats' }]);
+  for (let r = 0; r < RANGEES_GRILLE; r++) {
+    for (let c = 0; c < COLONNES_GRILLE.length; c++) {
+      j.camps[NOUS].or = 9999;
+      avancer(j, [{ camp: NOUS, action: 'construire',
+        batiment: 'caserne_soldats', colonne: c, rangee: r }]);
+    }
   }
   return j.camps[NOUS].emplacements.length;
 }
@@ -172,7 +177,7 @@ verifier('aucune paire trop proche dans une même file', collisions === 0,
 // compter tranquillement.
 const seul = nouvellePartie(4);
 seul.camps[NOUS].or = 500;
-avancer(seul, [{ camp: NOUS, action: 'construire', batiment: 'caserne_soldats' }]);
+avancer(seul, [{ camp: NOUS, action: 'construire', batiment: 'caserne_soldats', colonne: 0, rangee: 0 }]);
 while (seul.unites.length < VOIES) avancer(seul, []);
 const tournee = seul.unites.slice(0, VOIES).map((u) => u.voie);
 verifier('les files tournent et sont servies une fois chacune',

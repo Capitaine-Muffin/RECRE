@@ -77,6 +77,26 @@ export const ECART_MIN = TAILLE_FIGURINE;
  */
 export const ECART_VOIE = Math.round(TAILLE_FIGURINE * 0.35);
 
+/**
+ * La zone constructible, en millipas depuis sa propre base.
+ *
+ * Un bâtiment posé loin devant produit des unités plus près du front et, s'il
+ * tire, couvre plus de terrain — mais il entre dans la portée des unités
+ * adverses, qui le démolissent. C'est tout l'arbitrage du placement, et il
+ * n'existe que parce que les trois vont ensemble : sortie des unités sur
+ * place, tir depuis la position, et bâtiments attaquables.
+ */
+export const ZONE_CONSTRUCTIBLE = 380_000;
+
+/** Le pas de la grille de construction, en profondeur. */
+export const PAS_GRILLE = 46_000;
+
+/** Les deux colonnes, de part et d'autre de la lane, en fraction de largeur. */
+export const COLONNES_GRILLE = [0.085, 0.915];
+
+/** Rangées disponibles, de la base vers le front. */
+export const RANGEES_GRILLE = Math.floor(ZONE_CONSTRUCTIBLE / PAS_GRILLE);
+
 export const REGLES = {
   orInitial: 20,
   /** +1 or toutes les 0,5 s dans l'original, soit 1 tous les 5 ticks. */
@@ -141,16 +161,19 @@ export const BATIMENTS = {
     nom: 'Caserne des Petits Soldats',
     aide: 'Produit un Petit Soldat. Le moins cher, le plus fragile.',
     or: 15, population: 2, ticksConstruction: 200, produit: 'petit_soldat',
+    pv: 500, armure: 2,
   },
   fort_briques: {
     nom: 'Fort en Briques',
     aide: 'Produit un Soldat de Briques. Le bon rapport encaisse/prix.',
     or: 20, population: 2, ticksConstruction: 350, produit: 'soldat_briques',
+    pv: 650, armure: 3,
   },
   citadelle_briques: {
     nom: 'Citadelle en Briques',
     aide: 'Produit un Cavalier de Briques, rapide et coriace.',
     or: 40, population: 3, ticksConstruction: 400, produit: 'cavalier_briques',
+    pv: 750, armure: 4,
   },
   tour: {
     nom: 'Tour de Défense',
@@ -168,11 +191,13 @@ export const BATIMENTS = {
     aide: '+5 places. Un emplacement dépensé ici est un emplacement en moins '
       + 'pour produire — c\'est tout l\'arbitrage.',
     or: 15, population: 0, fournitPopulation: 5, ticksConstruction: 150,
+    pv: 300, armure: 1,
   },
   gouter: {
     nom: 'Goûter',
     aide: '+20 places, mais long à préparer. Le pari du début de partie.',
     or: 100, population: 0, fournitPopulation: 20, ticksConstruction: 400,
+    pv: 700, armure: 2,
   },
 };
 

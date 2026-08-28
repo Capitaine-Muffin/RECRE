@@ -16,7 +16,8 @@
  */
 import { UNITES, BATIMENTS, REGLES, LANE, VOIES, ECART_MIN, ECART_VOIE }
   from './donnees.js';
-import { NOUS, EUX, adverse, sens, baseDe } from './etat.js';
+import { NOUS, EUX, adverse, sens, baseDe, profondeurRangee, voieColonne,
+  caseValide } from './etat.js';
 
 /**
  * Dégâts après armure, en entiers.
@@ -92,13 +93,15 @@ function cible(files, unite) {
 
 /** Applique les achats du tick. Une intention refusée est ignorée en silence. */
 function appliquerIntentions(etat, intentions) {
-  for (const { camp: c, action, batiment } of intentions) {
+  for (const { camp: c, action, batiment, colonne, rangee } of intentions) {
     if (action !== 'construire') continue;
     const camp = etat.camps[c];
     const modele = BATIMENTS[batiment];
     if (!modele) continue;
-    // La population est la seule limite au nombre de bâtiments, comme dans les
-    // cartes d'origine.
+    if (!caseValide(colonne, rangee)) continue;
+    if (camp.emplacements.some((b) => b.colonne === colonne && b.rangee === rangee)) {
+      continue;
+    }
     if (camp.or < modele.or) continue;
     if (camp.population + modele.population > camp.populationMax) continue;
 
@@ -106,6 +109,11 @@ function appliquerIntentions(etat, intentions) {
     camp.population += modele.population;
     camp.emplacements.push({
       batiment,
+      colonne,
+      rangee,
+      position: profondeurRangee(c, rangee),
+      voie: voieColonne(colonne),
+      pv: modele.pv,
       restant: modele.ticksConstruction,
       /** Décalé pour que les casernes d'un même camp ne pondent pas en bloc. */
       depuisProduction: (camp.emplacements.length * 7) % REGLES.ticksParProduction,
@@ -150,6 +158,29 @@ function avancerChantiers(etat) {
   }
 }
 
+/**
+ * Recule le point de sortie jusqu'à ce que la place soit libre dans la file.
+ *
+ * Deux casernes sur la même rangée, de part et d'autre de la lane, produisent à
+ * la même profondeur : si la rotation des files leur donne la même, les deux
+ * unités naissaient exactement l'une sur l'autre. On recule la nouvelle vers sa
+ * propre base, ce qui la met simplement en queue.
+ */
+function placeLibre(etat, campIndex, voie, position) {
+  const recul = sens(campIndex) * -1;
+  let essai = position;
+  for (let i = 0; i < 64; i++) {
+    let occupee = false;
+    for (const autre of etat.unites) {
+      if (autre.voie !== voie) continue;
+      if (Math.abs(autre.position - essai) < ECART_MIN) { occupee = true; break; }
+    }
+    if (!occupee) return essai;
+    essai += recul * ECART_MIN;
+  }
+  return essai;
+}
+
 function creer(etat, campIndex, type, position) {
   const modele = UNITES[type];
   const camp = etat.camps[campIndex];
@@ -161,7 +192,7 @@ function creer(etat, campIndex, type, position) {
     type,
     camp: campIndex,
     voie,
-    position,
+    position: placeLibre(etat, campIndex, voie, position),
     pv: modele.pv,
     degats: modele.degats,
     armure: modele.armure,
@@ -183,7 +214,9 @@ function produire(etat) {
       place.depuisProduction++;
       if (place.depuisProduction < REGLES.ticksParProduction) continue;
       place.depuisProduction = 0;
-      creer(etat, c, modele.produit, baseDe(c));
+      // L'unité sort de sa caserne, pas du château : une caserne avancée
+      // économise à ses unités le trajet qui la sépare de la base.
+      creer(etat, c, modele.produit, place.position);
     }
   }
 }
@@ -196,9 +229,8 @@ function produire(etat) {
  */
 function tirerDesTours(etat, degats) {
   for (let c = 0; c < etat.camps.length; c++) {
-    const base = baseDe(c);
     for (const place of etat.camps[c].emplacements) {
-      if (!place || place.restant > 0) continue;
+      if (place.restant > 0) continue;
       const modele = BATIMENTS[place.batiment];
       if (!modele.portee) continue;
       if (place.recharge > 0) {
@@ -206,25 +238,49 @@ function tirerDesTours(etat, degats) {
         continue;
       }
 
-      // Une tour défend toute la largeur de la cour : elle ne mesure que la
-      // profondeur, contrairement aux unités.
+      // Depuis sa propre position, et non depuis le château : c'est ce qui
+      // fait qu'une tour avancée couvre plus de terrain.
+      const portee = modele.portee * modele.portee;
       let victime = null;
       let distance = Infinity;
       for (const unite of etat.unites) {
         if (unite.camp === c || unite.pv <= 0) continue;
-        const d = Math.abs(unite.position - base);
+        const d = distanceCarree(place, unite);
         if (d < distance) {
           distance = d;
           victime = unite;
         }
       }
-      if (victime && distance <= modele.portee) {
+      if (victime && distance <= portee) {
         place.recharge = modele.ticksParCoup;
         degats.set(victime.id,
           (degats.get(victime.id) ?? 0) + degatsRecus(modele.degats, victime.armure));
       }
     }
   }
+}
+
+/**
+ * Le bâtiment adverse le plus proche et à portée, ou `null`.
+ *
+ * Les unités s'en prennent aux bâtiments **seulement quand aucune unité
+ * ennemie n'est à portée** : autrement une armée s'arrêterait sur la première
+ * caserne venue en laissant passer celle d'en face.
+ */
+function cibleBatiment(etat, unite) {
+  const camp = etat.camps[adverse(unite.camp)];
+  const portee = unite.portee * unite.portee;
+  let meilleur = null;
+  let distance = Infinity;
+  for (const place of camp.emplacements) {
+    if (place.restant > 0) continue;
+    const d = distanceCarree(place, unite);
+    if (d < distance) {
+      distance = d;
+      meilleur = place;
+    }
+  }
+  return meilleur && distance <= portee ? meilleur : null;
 }
 
 /**
@@ -257,6 +313,8 @@ function limiteDAvance(unite, file, s) {
  */
 function combattre(etat) {
   const degats = new Map();
+  /** Dégâts aux bâtiments, par « camp:index ». Appliqués en fin de tick. */
+  const degatsBatis = new Map();
   const files = rangerParVoie(etat.unites);
   // Photographie des positions avant que quiconque bouge, rangée par file.
   const depart = files.map((file) => file.map((u) => ({
@@ -273,6 +331,21 @@ function combattre(etat) {
         unite.recharge = unite.ticksParCoup;
         degats.set(proie.id,
           (degats.get(proie.id) ?? 0) + degatsRecus(unite.degats, proie.armure));
+      }
+      continue;
+    }
+
+    // Aucune unité à portée : on s'en prend au bâti. C'est le prix d'un
+    // bâtiment avancé, et la seule chose qui empêche « toujours plus devant »
+    // d'être gratuitement meilleur.
+    const bati = cibleBatiment(etat, unite);
+    if (bati) {
+      if (unite.recharge === 0) {
+        unite.recharge = unite.ticksParCoup;
+        const cle = `${adverse(unite.camp)}:${bati.colonne}:${bati.rangee}`;
+        const modele = BATIMENTS[bati.batiment];
+        degatsBatis.set(cle, (degatsBatis.get(cle) ?? 0)
+          + degatsRecus(unite.degats, modele.armure));
       }
       continue;
     }
@@ -303,8 +376,38 @@ function combattre(etat) {
     const recu = degats.get(unite.id);
     if (recu) unite.pv -= recu;
   }
-
   etat.unites = etat.unites.filter((unite) => unite.pv > 0);
+
+  appliquerDegatsAuBati(etat, degatsBatis);
+}
+
+/**
+ * Encaisse les dégâts subis par les bâtiments et démolit ceux qui tombent.
+ *
+ * Un bâtiment détruit rend sa population : on peut reconstruire ailleurs, ce
+ * qui rend une perte coûteuse sans être définitive.
+ */
+function appliquerDegatsAuBati(etat, degatsBatis) {
+  if (degatsBatis.size === 0) return;
+  for (let c = 0; c < etat.camps.length; c++) {
+    const camp = etat.camps[c];
+    const debout = [];
+    for (const place of camp.emplacements) {
+      const recu = degatsBatis.get(`${c}:${place.colonne}:${place.rangee}`);
+      if (recu) place.pv -= recu;
+      if (place.pv > 0) {
+        debout.push(place);
+        continue;
+      }
+      const modele = BATIMENTS[place.batiment];
+      camp.population -= modele.population;
+      if (modele.fournitPopulation) {
+        camp.populationMax = Math.max(REGLES.populationInitiale,
+          camp.populationMax - modele.fournitPopulation);
+      }
+    }
+    if (debout.length !== camp.emplacements.length) camp.emplacements = debout;
+  }
 }
 
 function verifierVictoire(etat) {

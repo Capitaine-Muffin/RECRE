@@ -10,8 +10,9 @@
  * où il pourrait agir et celui où il agit. Un bonus d'or serait plus simple à
  * écrire et bien moins honnête à jouer.
  */
-import { BATIMENTS, CATALOGUE } from '../moteur/donnees.js';
-import { parmi } from '../moteur/aleatoire.js';
+import { BATIMENTS, CATALOGUE, COLONNES_GRILLE, RANGEES_GRILLE }
+  from '../moteur/donnees.js';
+import { parmi, entier } from '../moteur/aleatoire.js';
 
 export const NIVEAUX = {
   tranquille: { reflexion: 120, nom: 'Tranquille' },
@@ -66,5 +67,20 @@ export function jouer(ia, etat, campIndex) {
   const batiment = ia.envie;
   ia.envie = null;
   ia.attente = NIVEAUX[ia.niveau].reflexion;
-  return [{ camp: campIndex, action: 'construire', batiment }];
+  // Une case libre, la plus en arrière possible : l'IA de l'étape 1 ne sait
+  // pas encore arbitrer entre gagner du trajet et s'exposer, elle joue donc
+  // le placement prudent.
+  const prises = new Set(camp.emplacements.map((b) => `${b.colonne}:${b.rangee}`));
+  const libres = [];
+  for (let r = 0; r < RANGEES_GRILLE; r++) {
+    for (let c = 0; c < COLONNES_GRILLE.length; c++) {
+      if (!prises.has(`${c}:${r}`)) libres.push({ colonne: c, rangee: r });
+    }
+    if (libres.length) break;
+  }
+  if (!libres.length) return [];
+  const ou = libres[entier(ia, libres.length)];
+
+  return [{ camp: campIndex, action: 'construire', batiment,
+    colonne: ou.colonne, rangee: ou.rangee }];
 }
