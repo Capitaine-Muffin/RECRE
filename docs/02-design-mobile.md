@@ -356,6 +356,57 @@ ne touche jamais son or. C'est le mécanisme central de l'original, et il
 fonctionne sans qu'on ait eu à le forcer. Le jeu récompense celui qui sait
 attendre — ce qui est très exactement ce qu'on voulait.
 
+### Les files, et pourquoi la mêlée compte la largeur
+
+La lane n'est pas un fil : c'est un couloir de **seize files**. Une unité tient
+sa file du début à la fin, ne double personne et ne traverse personne — avant
+ça, les figurines se traversaient purement et simplement, ce que personne
+n'avait relevé.
+
+Seize et pas cinq, parce qu'une ligne de cinq n'est pas une armée, c'est une
+patrouille. À seize, les figurines se recouvrent légèrement sur les côtés, et
+c'est voulu : le décalage en profondeur d'une file sur deux (au dessin
+seulement) suffit à ce qu'on lise une foule plutôt qu'une bouillie.
+
+Une portée mesure alors sa distance **en profondeur et en largeur**. C'est ce
+qui empêche un soldat de poignarder son vis-à-vis à l'autre bout d'un front de
+seize files — et c'est ce qui donnera leur intérêt aux unités qui tapent loin :
+elles, la largeur du contact ne les limite pas. À `ECART_VOIE = 3500`, la mêlée
+atteint trois files de chaque côté ; il reste tout l'espace au-dessus pour une
+unité à distance.
+
+Aucune stat d'unité n'a bougé.
+
+### L'IA achetait 71 % de tours
+
+En regardant une capture, un détail : six bâtiments construits, et une
+population de 2 sur 10. L'IA avait rempli ses emplacements de tours, qui ne
+coûtent aucune population — et ne produisent aucune unité.
+
+La cause est une conséquence de la règle centrale. Elle achetait « ce qu'elle
+peut se payer maintenant » ; or construire coupe le revenu, donc elle était
+presque toujours fauchée, donc seule la tour à 5 or lui était accessible.
+Mesuré : **71 % de tours**. Elle ne se faisait jamais d'armée.
+
+Elle se choisit désormais une envie et **économise** jusqu'à pouvoir se
+l'offrir. La répartition redevient uniforme, autour de 17 % par bâtiment.
+
+Ça invalidait tout ce qui avait été mesuré avant. Les chiffres qui valent, sur
+30 parties, `normal` contre `tranquille` :
+
+| | matchs nuls | durée médiane |
+|---|---|---|
+| portée en profondeur seule (référence) | 17 % | 310 s |
+| seize files, portée en largeur comprise | **10 %** | 310 s |
+
+Les files ne coûtent rien, et l'IA réparée fait plus de bien que tout le reste.
+
+### Le coût en calcul : nul
+
+0,01 ms par tick à 121 unités, pour un budget de 100 ms. Même au pic observé
+— 294 unités — le ciblage en O(n²) reste sous la milliseconde. Rien à
+optimiser tant que l'ordre de grandeur ne change pas.
+
 ### Ce qui reste faible
 
 - **Les cadences d'attaque sont posées à la main**, les maps ne les
@@ -365,6 +416,12 @@ attendre — ce qui est très exactement ce qu'on voulait.
   même souci.
 - **Le Château de Sable est le sprite le plus faible.** Il se lit, mais il
   s'aplatit ; c'est l'objet qu'on regarde mourir, il mérite mieux.
+- **Il n'y a aucune unité à distance**, alors que toute la géométrie des files
+  est faite pour en accueillir. C'est le prochain contenu évident : une unité
+  qui tape par-dessus la mêlée depuis les rangs de derrière.
+- **L'IA reste bête** : elle choisit son envie au hasard. Elle économise
+  correctement, c'est tout. Répondre à la composition adverse est prévu à
+  l'étape 2.
 
 ## 11. Les dessins
 

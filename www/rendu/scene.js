@@ -10,7 +10,7 @@
  *
  * Cette couche lit l'état et ne l'écrit jamais.
  */
-import { LANE, UNITES, BATIMENTS, VOIES } from '../moteur/donnees.js';
+import { LANE, UNITES, BATIMENTS, VOIES, ECART_MIN } from '../moteur/donnees.js';
 import { NOUS, EUX } from '../moteur/etat.js';
 import * as S from './sprites.js';
 import { dessiner, barreDeVie, socle } from './dessin.js';
@@ -63,11 +63,24 @@ function ordonnee(position, camera, hauteur) {
 /**
  * L'abscisse d'une unité : sa file.
  *
- * La file vient de la simulation, pas du dessin — c'est elle qui empêche deux
- * unités de se chevaucher, donc elle doit être la même pour tout le monde.
+ * La file vient de la simulation, pas du dessin — c'est elle qui décide qui
+ * bloque qui, donc elle doit être la même pour tout le monde.
  */
 function abscisse(unite, largeur) {
-  return largeur * (0.16 + (unite.voie * 0.68) / (VOIES - 1));
+  return largeur * (0.09 + (unite.voie * 0.82) / (VOIES - 1));
+}
+
+/**
+ * Le décalage en profondeur d'une file, en millipas.
+ *
+ * À seize files, les figurines se recouvrent sur les côtés. Décaler une file
+ * sur deux d'un demi-écart suffit à ce qu'on lise une foule plutôt qu'une
+ * bouillie : deux voisines qui se chevauchent ne sont plus à la même hauteur.
+ *
+ * Purement visuel — la simulation ignore ce décalage.
+ */
+function decalage(unite) {
+  return (unite.voie % 2) * (ECART_MIN / 2);
 }
 
 /**
@@ -183,7 +196,7 @@ export function dessinerScene(ctx, etat, camera, { largeur, hauteur, zoom }) {
   // Les unités, du fond vers l'avant pour que le recouvrement soit correct.
   const triees = [...etat.unites].sort((a, b) => b.position - a.position);
   for (const unite of triees) {
-    const py = y(unite.position);
+    const py = y(unite.position + decalage(unite));
     if (py < -80 || py > hauteur + 80) continue;
     const sprite = SPRITE_UNITE[unite.type];
     const x = abscisse(unite, largeur);

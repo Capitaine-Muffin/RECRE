@@ -24,14 +24,25 @@ export const NIVEAUX = {
  *   la simulation, pour qu'ajouter un tirage ici ne décale pas la partie.
  */
 export function nouvelAdversaire(graine, niveau = 'normal') {
-  return { graine: graine >>> 0, niveau, attente: NIVEAUX[niveau].reflexion };
+  return {
+    graine: graine >>> 0,
+    niveau,
+    attente: NIVEAUX[niveau].reflexion,
+    /** Ce qu'elle veut construire, et pour quoi elle met de côté. */
+    envie: null,
+  };
 }
 
 /**
  * Ce que l'IA veut faire à ce tick. Rend une liste d'intentions, souvent vide.
  *
- * Étape 1 : elle achète au hasard ce qu'elle peut se payer, dès qu'un
- * emplacement est libre. Elle jouera la composition adverse à l'étape 2.
+ * Elle se choisit une **envie**, puis économise jusqu'à pouvoir se l'offrir.
+ *
+ * Acheter simplement « ce qu'elle peut se payer maintenant » ne marche pas, et
+ * la raison est instructive : construire coupe le revenu, donc elle est presque
+ * toujours fauchée, donc seul le moins cher lui est accessible. Mesuré, elle
+ * achetait **71 % de tours** — qui ne produisent aucune unité. Elle ne se
+ * faisait jamais d'armée, et les parties n'en finissaient pas.
  */
 export function jouer(ia, etat, campIndex) {
   if (etat.vainqueur !== null) return [];
@@ -47,18 +58,24 @@ export function jouer(ia, etat, campIndex) {
   });
   if (!libres.length) return [];
 
-  const abordables = CATALOGUE.filter((cle) => {
-    const modele = BATIMENTS[cle];
-    return camp.or >= modele.or
-      && camp.population + modele.population <= camp.populationMax;
-  });
-  if (!abordables.length) return [];
+  if (ia.envie === null) ia.envie = parmi(ia, CATALOGUE);
+  const modele = BATIMENTS[ia.envie];
 
+  // Manque de place, et pas d'argent : économiser n'y changera rien, elle
+  // change d'avis. Sans ça elle attendrait indéfiniment.
+  if (camp.population + modele.population > camp.populationMax) {
+    ia.envie = null;
+    return [];
+  }
+  if (camp.or < modele.or) return [];
+
+  const batiment = ia.envie;
+  ia.envie = null;
   ia.attente = NIVEAUX[ia.niveau].reflexion;
   return [{
     camp: campIndex,
     action: 'construire',
     emplacement: libres[entier(ia, libres.length)],
-    batiment: parmi(ia, abordables),
+    batiment,
   }];
 }

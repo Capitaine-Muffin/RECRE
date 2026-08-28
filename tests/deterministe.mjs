@@ -9,6 +9,7 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { nouvellePartie, empreinte, copier, NOUS, EUX } from '../www/moteur/etat.js';
+import { VOIES, ECART_MIN } from '../www/moteur/donnees.js';
 import { avancer } from '../www/moteur/simulation.js';
 import { nouveauJournal, noter, rejouer } from '../www/moteur/journal.js';
 import { nouvelAdversaire, jouer } from '../www/ia/adversaire.js';
@@ -123,6 +124,34 @@ refus.camps[NOUS].or = 0;
 avancer(refus, [{ camp: NOUS, action: 'construire', emplacement: 0, batiment: 'gouter' }]);
 verifier('un achat qu\'on ne peut pas payer est refusé',
   refus.camps[NOUS].emplacements[0] === null);
+
+/* ------------------------------------------------------------------------ */
+console.log('\nLes unités ne se chevauchent pas');
+
+// La garantie de lisibilité : dans une file, deux unités gardent leurs
+// distances. Le chevauchement qu'on accepte est latéral, jamais en profondeur.
+const foule = partie(31337, 4000).etat;
+let collisions = 0;
+for (const u of foule.unites) {
+  for (const autre of foule.unites) {
+    if (autre.id <= u.id || autre.voie !== u.voie) continue;
+    if (Math.abs(autre.position - u.position) < ECART_MIN) collisions++;
+  }
+}
+verifier('aucune paire trop proche dans une même file', collisions === 0,
+  `${collisions} paire(s) sur ${foule.unites.length} unités`);
+
+// Les files tournent : les VOIES premières unités d'un camp les servent
+// toutes, une fois chacune. Sans adversaire, personne ne meurt et on peut
+// compter tranquillement.
+const seul = nouvellePartie(4);
+seul.camps[NOUS].or = 500;
+avancer(seul, [{ camp: NOUS, action: 'construire', emplacement: 0,
+  batiment: 'caserne_soldats' }]);
+while (seul.unites.length < VOIES) avancer(seul, []);
+const tournee = seul.unites.slice(0, VOIES).map((u) => u.voie);
+verifier('les files tournent et sont servies une fois chacune',
+  new Set(tournee).size === VOIES, `files servies : ${tournee.join(',')}`);
 
 /* ------------------------------------------------------------------------ */
 if (echecs) {

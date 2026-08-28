@@ -14,7 +14,8 @@
  * `Math.random`, `Date.now`, `performance.now`, le DOM. Tout le hasard vient
  * de `aleatoire.js`, tout le temps se compte en ticks.
  */
-import { UNITES, BATIMENTS, REGLES, LANE, VOIES, ECART_MIN } from './donnees.js';
+import { UNITES, BATIMENTS, REGLES, LANE, VOIES, ECART_MIN, ECART_VOIE }
+  from './donnees.js';
 import { NOUS, EUX, adverse, sens, baseDe } from './etat.js';
 
 /**
@@ -28,20 +29,37 @@ export function degatsRecus(degats, armure) {
   return Math.max(1, Math.floor((degats * 100) / (100 + 6 * Math.max(0, armure))));
 }
 
-/** L'unité ennemie la plus proche de `unite`, ou `null`. */
+/**
+ * Le carré de la distance entre deux unités, files comprises.
+ *
+ * Au carré, et pas la vraie distance : tout reste entier, donc exact et
+ * comparable sans qu'une racine vienne mettre des flottants dans une
+ * comparaison dont dépend le déroulement de la partie.
+ *
+ * La largeur compte autant que la profondeur. C'est elle qui fait qu'une unité
+ * de mêlée ne tape pas son vis-à-vis à l'autre bout d'un front de seize files.
+ */
+function distanceCarree(a, b) {
+  const dp = a.position - b.position;
+  const dv = (a.voie - b.voie) * ECART_VOIE;
+  return dp * dp + dv * dv;
+}
+
+/** L'unité ennemie la plus proche de `unite`, ou `null` si aucune à portée. */
 function cible(etat, unite) {
   let meilleure = null;
   let distance = Infinity;
+  const portee = unite.portee * unite.portee;
   // Parcours d'un tableau, dans l'ordre de création : reproductible.
   for (const autre of etat.unites) {
     if (autre.camp === unite.camp || autre.pv <= 0) continue;
-    const d = Math.abs(autre.position - unite.position);
+    const d = distanceCarree(unite, autre);
     if (d < distance) {
       distance = d;
       meilleure = autre;
     }
   }
-  return meilleure && distance <= unite.portee ? meilleure : null;
+  return meilleure && distance <= portee ? meilleure : null;
 }
 
 /** Applique les achats du tick. Une intention refusée est ignorée en silence. */
@@ -160,6 +178,8 @@ function tirerDesTours(etat, degats) {
         continue;
       }
 
+      // Une tour défend toute la largeur de la cour : elle ne mesure que la
+      // profondeur, contrairement aux unités.
       let victime = null;
       let distance = Infinity;
       for (const unite of etat.unites) {

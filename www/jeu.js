@@ -126,7 +126,23 @@ racine.querySelector('#rejouer').addEventListener('click', () => {
 addEventListener('resize', redimensionner);
 addEventListener('pagehide', ranger);
 
-if (!reprendre()) demarrerPartie();
+// Crochet d'essai : `?essai=1400&graine=7` démarre une partie donnée et
+// l'avance de 1400 ticks avant le premier rendu. Sert aux captures et à
+// reproduire un bug à un instant précis.
+const essai = new URLSearchParams(location.search);
+if (essai.has('essai')) {
+  demarrerPartie(Number(essai.get('graine') ?? 1) >>> 0);
+  const ia2 = nouvelAdversaire(etat.graine ^ 0x77, 'normal');
+  for (let t = 0; t < Number(essai.get('essai')); t++) {
+    const intentions = [...jouer(ia2, etat, NOUS), ...jouer(ia, etat, EUX)];
+    noter(journal, etat.tick, intentions);
+    avancer(etat, intentions);
+  }
+  recentrer(camera, etat);
+  camera.position = camera.cible;
+} else if (!reprendre()) {
+  demarrerPartie();
+}
 redimensionner();
 derniereFrame = performance.now();
 requestAnimationFrame(boucle);

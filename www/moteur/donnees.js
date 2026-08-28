@@ -22,20 +22,42 @@ export const LANE = 1_000_000;
  *
  * La lane n'est pas un fil : c'est un couloir de `VOIES` files parallèles. Une
  * unité tient sa file du début à la fin et ne double personne — c'est ce qui
- * fait que l'écran reste lisible quand soixante figurines se rentrent dedans.
+ * empêche deux figurines de se retrouver au même endroit.
  *
- * Cinq : à 360 pixels de large ça laisse 72 pixels par file, une figurine en
- * fait 48 au zoom courant. Aucune ne recouvre sa voisine.
+ * Seize, et non cinq : les figurines se recouvrent alors légèrement sur les
+ * côtés, et c'est voulu. Une ligne de cinq n'est pas une armée, c'est une
+ * patrouille ; à seize, on retrouve la masse qui traverse la cour. Le
+ * chevauchement latéral reste lisible parce que les files voisines sont
+ * décalées en profondeur au dessin (`rendu/scene.js`) : on voit une foule, pas
+ * une bouillie.
  */
-export const VOIES = 5;
+export const VOIES = 16;
 
 /**
  * L'écart minimal entre deux unités d'une même file, en millipas.
  *
- * 11 000 ≈ la hauteur d'une figurine à l'écran. En dessous, elles se
- * chevauchent et on ne compte plus rien.
+ * ≈ la hauteur d'une figurine à l'écran. Le chevauchement qu'on accepte est
+ * latéral, jamais en profondeur : deux unités l'une derrière l'autre restent
+ * comptables.
  */
-export const ECART_MIN = 11_000;
+export const ECART_MIN = 10_000;
+
+/**
+ * L'écart entre deux files voisines, en millipas.
+ *
+ * Il ne sert qu'aux portées : une attaque mesure sa distance en profondeur
+ * **et** en largeur. Une unité de mêlée (portée 12 000) atteint alors trois
+ * files de chaque côté, sur un front qui en fait seize : le corps à corps
+ * reste un contact local, et il reste de la place au-dessus pour une unité qui
+ * tape loin — c'est tout l'intérêt d'en avoir.
+ *
+ * La valeur est mesurée, pas devinée. Sur 70 parties, la portée purement en
+ * profondeur (l'ancienne, en 1D) donne 26 % de matchs nuls ; 3 500 en donne
+ * 29 %, soit la même chose au bruit près. En revanche 7 000 monte à 43 % : la
+ * mêlée n'atteignait plus que ses voisines immédiates et les deux armées se
+ * croisaient sans se voir.
+ */
+export const ECART_VOIE = 3_500;
 
 export const REGLES = {
   orInitial: 20,
