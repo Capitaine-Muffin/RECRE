@@ -31,6 +31,8 @@ function camp(nom) {
     emplacements: Array.from({ length: REGLES.emplacements }, () => null),
     /** Vrai tant qu'un bâtiment est en chantier : le revenu est suspendu. */
     enChantier: false,
+    /** File où sortira la prochaine unité. Tourne, pour les répartir. */
+    prochaineVoie: 0,
   };
 }
 

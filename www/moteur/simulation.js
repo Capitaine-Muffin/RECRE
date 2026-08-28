@@ -14,7 +14,7 @@
  * `Math.random`, `Date.now`, `performance.now`, le DOM. Tout le hasard vient
  * de `aleatoire.js`, tout le temps se compte en ticks.
  */
-import { UNITES, BATIMENTS, REGLES, LANE } from './donnees.js';
+import { UNITES, BATIMENTS, REGLES, LANE, VOIES, ECART_MIN } from './donnees.js';
 import { NOUS, EUX, adverse, sens, baseDe } from './etat.js';
 
 /**
@@ -106,10 +106,15 @@ function avancerChantiers(etat) {
 
 function creer(etat, campIndex, type, position) {
   const modele = UNITES[type];
+  const camp = etat.camps[campIndex];
+  // Les files tournent : deux casernes voisines ne versent pas dans la même.
+  const voie = camp.prochaineVoie;
+  camp.prochaineVoie = (voie + 1) % VOIES;
   etat.unites.push({
     id: etat.prochainId++,
     type,
     camp: campIndex,
+    voie,
     position,
     pv: modele.pv,
     degats: modele.degats,
@@ -175,7 +180,28 @@ function tirerDesTours(etat, degats) {
 }
 
 /**
- * Les unités : chercher une cible, sinon avancer.
+ * Jusqu'où une unité peut avancer sans monter sur celle de devant.
+ *
+ * On regarde la file, et seulement elle : l'unité la plus proche devant, amie
+ * ou ennemie, fixe la limite à `ECART_MIN`. Personne ne double, personne ne
+ * traverse — les figurines font la queue et le front devient une vraie ligne.
+ *
+ * Les distances sont mesurées sur les positions **du début du tick**
+ * (`depart`), pas sur celles déjà modifiées : sinon l'ordre du parcours
+ * déciderait qui avance, et deux exécutions pourraient diverger.
+ */
+function limiteDAvance(unite, depart, s) {
+  let ecart = Infinity;
+  for (const autre of depart) {
+    if (autre.id === unite.id || autre.voie !== unite.voie) continue;
+    const devant = (autre.position - unite.position) * s;
+    if (devant > 0 && devant < ecart) ecart = devant;
+  }
+  return ecart === Infinity ? Infinity : Math.max(0, ecart - ECART_MIN);
+}
+
+/**
+ * Les unités : chercher une cible, sinon avancer — sans se chevaucher.
  *
  * Les dégâts sont accumulés puis appliqués d'un coup, pour que l'ordre du
  * parcours ne décide pas qui meurt en premier : deux unités qui s'achèvent
@@ -183,6 +209,10 @@ function tirerDesTours(etat, degats) {
  */
 function combattre(etat) {
   const degats = new Map();
+  // Photographie des positions avant que quiconque bouge.
+  const depart = etat.unites.map((u) => ({
+    id: u.id, voie: u.voie, position: u.position,
+  }));
 
   for (const unite of etat.unites) {
     if (unite.pv <= 0) continue;
@@ -198,12 +228,13 @@ function combattre(etat) {
       continue;
     }
 
+    const s = sens(unite.camp);
     const arrivee = baseDe(adverse(unite.camp));
     const restant = Math.abs(arrivee - unite.position);
 
-    // Arrivée devant le château : elle l'assiège, elle ne disparaît pas. Les
-    // unités s'y empilent, exactement comme dans la map d'origine.
-    if (restant === 0) {
+    // Devant le château : elle le cogne. Elle ne disparaît pas, et celles de
+    // derrière font la queue — c'est le siège de la map d'origine.
+    if (restant <= ECART_MIN) {
       if (unite.recharge === 0) {
         unite.recharge = unite.ticksParCoup;
         const ennemi = etat.camps[adverse(unite.camp)];
@@ -212,7 +243,9 @@ function combattre(etat) {
       continue;
     }
 
-    unite.position += sens(unite.camp) * Math.min(unite.vitesse, restant);
+    const pas = Math.min(unite.vitesse, restant - ECART_MIN,
+      limiteDAvance(unite, depart, s));
+    if (pas > 0) unite.position += s * pas;
   }
 
   tirerDesTours(etat, degats);

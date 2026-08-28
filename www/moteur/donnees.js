@@ -17,6 +17,26 @@ export const MS_PAR_TICK = 100;
 /** Longueur de la lane, en millipas. 1000 pas de 1000 millipas. */
 export const LANE = 1_000_000;
 
+/**
+ * Le nombre de files de front.
+ *
+ * La lane n'est pas un fil : c'est un couloir de `VOIES` files parallèles. Une
+ * unité tient sa file du début à la fin et ne double personne — c'est ce qui
+ * fait que l'écran reste lisible quand soixante figurines se rentrent dedans.
+ *
+ * Cinq : à 360 pixels de large ça laisse 72 pixels par file, une figurine en
+ * fait 48 au zoom courant. Aucune ne recouvre sa voisine.
+ */
+export const VOIES = 5;
+
+/**
+ * L'écart minimal entre deux unités d'une même file, en millipas.
+ *
+ * 11 000 ≈ la hauteur d'une figurine à l'écran. En dessous, elles se
+ * chevauchent et on ne compte plus rien.
+ */
+export const ECART_MIN = 11_000;
+
 export const REGLES = {
   orInitial: 20,
   /** +1 or toutes les 0,5 s dans l'original, soit 1 tous les 5 ticks. */

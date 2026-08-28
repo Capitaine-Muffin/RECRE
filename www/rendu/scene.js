@@ -10,7 +10,7 @@
  *
  * Cette couche lit l'état et ne l'écrit jamais.
  */
-import { LANE, UNITES, BATIMENTS } from '../moteur/donnees.js';
+import { LANE, UNITES, BATIMENTS, VOIES } from '../moteur/donnees.js';
 import { NOUS, EUX } from '../moteur/etat.js';
 import * as S from './sprites.js';
 import { dessiner, barreDeVie, socle } from './dessin.js';
@@ -60,11 +60,14 @@ function ordonnee(position, camera, hauteur) {
   return hauteur / 2 - (position - camera.position) * echelle(hauteur);
 }
 
-const VOIES = 7;
-/** Étale les unités sur la largeur. Cosmétique : la simulation est en 1D. */
+/**
+ * L'abscisse d'une unité : sa file.
+ *
+ * La file vient de la simulation, pas du dessin — c'est elle qui empêche deux
+ * unités de se chevaucher, donc elle doit être la même pour tout le monde.
+ */
 function abscisse(unite, largeur) {
-  const voie = unite.id % VOIES;
-  return largeur * (0.16 + (voie * 0.68) / (VOIES - 1));
+  return largeur * (0.16 + (unite.voie * 0.68) / (VOIES - 1));
 }
 
 /**
