@@ -44,13 +44,15 @@ solo.
 - **Jouable au clavier et au tactile**, comme l'exige le modèle : le jeu sera
   essayé depuis un navigateur de bureau autant que depuis un téléphone.
 - **La partie se met en pause et reprend** — l'état de la simulation tient dans
-  un objet sérialisable, on le range dans `localStorage` en quittant.
+  un objet sérialisable, on le range dans `localStorage` en quittant. Un bouton
+  la met aussi en pause en cours de route, et un rapport raconte ce qui s'est
+  passé (§12).
 
 ## 3. Écran
 
 ```
 ┌─────────────────────────┐
-│  ▲ château adverse 9320 │
+│  ▲ château adverse 9320 ⏸│
 ├─────────────────────────┤
 │         ▲ 4             │  unités hors champ, en couleur d'équipe
 │  [caserne]              │
@@ -61,8 +63,8 @@ solo.
 │   ⌖ Revenir à la bataille│  (n'apparaît que si on s'est écarté)
 ├─────────────────────────┤
 │  or 148   pop 7/35      │
-│   MES EMPLACEMENTS      │  6 cases de construction
-│   [■][■][+][+][+][+]    │  tap sur [+] → panneau d'achat
+│   MES BÂTIMENTS         │  ce qui est bâti, dans l'ordre
+│   [■][■][■][+]          │  tap sur [+] → panneau d'achat
 └─────────────────────────┘
 ```
 
@@ -401,10 +403,13 @@ www/rendu/      palette, sprites, dessin, scène, caméra, interface. Lecture
                 seule — la caméra ne rentre jamais dans l'état de la partie.
 www/ia/         l'adversaire, qui produit des intentions comme un joueur.
 www/jeu.js      le seul fichier qui regarde l'horloge, et la convertit en ticks.
-tests/          déterminisme, règles, sprites.  `npm test`
+www/rapport.js  le rapport de partie, écrit en rejouant le journal (§13).
+www/version.js  la version, tamponnée par la CI à la publication.
+tests/          déterminisme, règles, sprites, rapport.  `npm test`
 ```
 
-Contenu : 3 casernes, 1 tour, 2 réserves de population, 6 emplacements, un
+Contenu : 3 casernes, 1 tour, 2 réserves de population, une grille de
+construction de deux colonnes sur huit rangées bornée par la population, un
 château à 10 000 PV de chaque côté, et une IA à trois niveaux qui achète au
 hasard.
 
@@ -648,7 +653,42 @@ sombre, qui adoucit la silhouette.
 Les noms sont neutres par construction : aucun ne renvoie à une franchise (§9,
 et `docs/04-assets-et-propriete-intellectuelle.md`).
 
-## 12. Le décor
+## 12. Mettre en pause, recommencer, raconter
+
+Le bouton ⏸ du bandeau ouvre le menu et arrête la partie : **Reprendre**,
+**Recommencer**, **Rapport de partie**. Au clavier, `p`.
+
+La pause n'existe pas dans la simulation, et c'est voulu : le moteur ne connaît
+pas le temps qui passe, seulement `avancer()`. Mettre en pause, c'est ne pas
+l'appeler. Rien dans l'état ne s'en souvient — le jour où deux joueurs se
+partageront la même simulation, il n'y aura rien à défaire.
+
+Recommencer demande deux appuis (le bouton devient « Confirmer : tout
+perdre »). Pas de `confirm()` : certaines WebViews le bloquent, et un appui de
+trop coûterait la partie en cours.
+
+### Le rapport de partie
+
+Un texte à coller tel quel, qui dit la version, la graine, ce que chaque camp a
+construit et produit, la chronologie des poses, des destructions et des paliers
+de château — puis **le journal complet**, qui rejoue la partie à l'identique.
+
+Il n'est pas tenu par des compteurs dans la simulation : il **rejoue le
+journal** et regarde. C'était la promesse du journal depuis le début (§6), et
+elle se tient — le moteur n'a pas une ligne de statistique à traîner. Le coût
+est mesuré : la plus longue partie observée (6000 ticks, 383 unités) se rejoue
+en 490 ms sur une machine de bureau, et le rapport pèse 2 à 4 ko. On le paie
+une fois, partie en pause.
+
+`tests/rapport.mjs` vérifie que la version affichée est bien celle de
+`package.json`, et que le journal recopié dans le rapport rejoue la partie à
+l'empreinte exacte. Un rapport qui ment sur sa version ou qui ne se rejoue pas
+coûte plus de temps qu'il n'en fait gagner.
+
+La révision (`www/version.js`) est réécrite par la CI au moment de publier :
+entre deux tags, le numéro de version seul ne dit pas sur quel commit on jouait.
+
+## 13. Le décor
 
 Règle unique, et sévère : **rien ne doit concurrencer les figurines**. L'écran
 est déjà chargé. Un décor qui se voit est un décor raté — celui-ci doit

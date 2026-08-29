@@ -53,6 +53,12 @@ jobs:
       - name: Calculer le versionCode
         run: echo "VERSION_CODE=$((BASE_VERSION_CODE + GITHUB_RUN_NUMBER))" >> "$GITHUB_ENV"
 
+      # Même tampon que pour Pages : le rapport de partie doit nommer le commit.
+      - name: Tamponner la révision
+        run: |
+          sed -i "s/^export const REVISION = .*/export const REVISION = '${GITHUB_SHA:0:7}';/" www/version.js
+          grep -q "REVISION = '${GITHUB_SHA:0:7}'" www/version.js
+
       - name: Générer le projet Android
         run: |
           npx cap add android || npx cap sync android

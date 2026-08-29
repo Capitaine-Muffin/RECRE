@@ -41,6 +41,14 @@ jobs:
         run: |
           node tests/sprites.mjs
           node tests/deterministe.mjs
+          node tests/rapport.mjs
+
+      # Le rapport de partie annonce sur quel commit le joueur jouait. Entre
+      # deux tags, le seul numéro de version ne le dit pas.
+      - name: Tamponner la révision
+        run: |
+          sed -i "s/^export const REVISION = .*/export const REVISION = '${GITHUB_SHA:0:7}';/" www/version.js
+          grep -q "REVISION = '${GITHUB_SHA:0:7}'" www/version.js
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

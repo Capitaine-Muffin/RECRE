@@ -9,7 +9,7 @@
     "servir": "python3 -m http.server 8000 --directory www",
     "store": "node tools/store.mjs",
     "publier": "node tools/publier.mjs",
-    "test": "node tests/sprites.mjs && node tests/deterministe.mjs"
+    "test": "node tests/sprites.mjs && node tests/deterministe.mjs && node tests/rapport.mjs"
   },
   "dependencies": {
     "@capacitor-community/admob": "^6.0.0",

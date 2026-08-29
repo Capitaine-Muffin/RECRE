@@ -12,8 +12,11 @@ import { nouveauJournal, noter } from './moteur/journal.js';
 import { nouvelAdversaire, jouer } from './ia/adversaire.js';
 import { dessinerScene } from './rendu/scene.js';
 import { nouvelleCamera, suivre, recentrer } from './rendu/camera.js';
-import { construireInterface, brancherCamera, rafraichir, recolterIntentions,
-  annoncerFin, placementEnCours } from './rendu/interface.js';
+import { construireInterface, brancherCamera, brancherMenu, rafraichir,
+  recolterIntentions, annoncerFin, placementEnCours, reinitialiser }
+  from './rendu/interface.js';
+import { redigerRapport } from './rapport.js';
+import { VERSION, REVISION } from './version.js';
 import { CLE_REVENUECAT, DROITS, BLOC_BANNIERE, PRODUITS } from './config.js';
 
 const SAUVEGARDE = 'recre.partie';
@@ -34,6 +37,17 @@ let achats = [];
 /** Le reliquat de temps réel pas encore converti en ticks. */
 let reste = 0;
 let derniereFrame = 0;
+
+/**
+ * Partie en pause : la boucle continue de dessiner, la simulation n'avance
+ * plus.
+ *
+ * C'est bien la boucle qui s'arrête, jamais le moteur : lui ne connaît pas le
+ * temps qui passe, il ne connaît que `avancer()`. Une pause n'est donc rien
+ * d'autre que ne pas l'appeler — et rien dans l'état ne s'en souvient, ce qui
+ * la rend gratuite pour le futur multijoueur, où elle n'existera pas.
+ */
+let enPause = false;
 
 function demarrerPartie(graine = (Math.random() * 2 ** 32) >>> 0) {
   etat = nouvellePartie(graine);
@@ -87,18 +101,20 @@ function boucle(maintenant) {
   // simulation d'un coup, on repart de zéro sur le temps écoulé.
   const ecoule = Math.min(maintenant - derniereFrame, 250);
   derniereFrame = maintenant;
-  reste += ecoule;
 
   let avance = false;
-  while (reste >= MS_PAR_TICK) {
-    reste -= MS_PAR_TICK;
-    const intentions = [
-      ...recolterIntentions(),
-      ...jouer(ia, etat, EUX),
-    ];
-    noter(journal, etat.tick, intentions);
-    avancer(etat, intentions);
-    avance = true;
+  if (!enPause) {
+    reste += ecoule;
+    while (reste >= MS_PAR_TICK) {
+      reste -= MS_PAR_TICK;
+      const intentions = [
+        ...recolterIntentions(),
+        ...jouer(ia, etat, EUX),
+      ];
+      noter(journal, etat.tick, intentions);
+      avancer(etat, intentions);
+      avance = true;
+    }
   }
 
   const largeur = toile.clientWidth;
@@ -121,7 +137,27 @@ function boucle(maintenant) {
 
 racine.querySelector('#rejouer').addEventListener('click', () => {
   racine.querySelector('#fin').close();
+  recommencer();
+});
+
+function recommencer() {
+  reinitialiser(racine);
+  recolterIntentions();
   demarrerPartie();
+  enPause = false;
+}
+
+brancherMenu(racine, {
+  mettreEnPause: () => { enPause = true; },
+  // Le reliquat est jeté : sans ça, la reprise rattraperait d'un coup les ticks
+  // accumulés avant la pause et la partie ferait un bond.
+  reprendre: () => { enPause = false; reste = 0; },
+  recommencer,
+  redigerRapport: () => redigerRapport({
+    journal, etat, version: VERSION, revision: REVISION,
+    // `jeu.js` est le seul fichier qui a le droit de regarder l'horloge.
+    quand: new Date().toLocaleString('fr-FR'),
+  }),
 });
 
 addEventListener('resize', redimensionner);

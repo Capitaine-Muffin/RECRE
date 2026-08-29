@@ -1,6 +1,12 @@
 /* La cour de récré. Le jeu remplit l'écran et ne défile jamais. */
 * { box-sizing: border-box; }
 
+/* ⚠️ Le `display: none` de l'attribut `hidden` vient de la feuille du
+   navigateur : la moindre règle d'auteur qui pose un `display` le bat, et
+   l'élément reste visible. C'est ce qui affichait « Touchez une case pour
+   poser » en permanence, `.placement` étant en `display: flex`. */
+[hidden] { display: none !important; }
+
 :root {
   --nuit: #1a1624;
   --ciel: #2b2140;
@@ -40,10 +46,27 @@ html, body {
 
 /* ------------------------------------------------------------- le bandeau */
 .bandeau {
+  position: relative;
   display: flex;
   justify-content: center;
   padding: 0.5rem;
   background: linear-gradient(180deg, rgba(0,0,0,0.45), transparent);
+}
+
+/* Le bouton de pause est posé par-dessus plutôt que dans le flux : les PV de
+   l'adversaire restent centrés sur l'écran, où l'œil va les chercher. */
+.menu-bouton {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  min-height: 40px;
+  min-width: 40px;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+  background: rgba(255, 246, 232, 0.12);
+  color: var(--craie);
 }
 
 .chateau { display: flex; align-items: baseline; gap: 0.5rem; }
@@ -300,6 +323,47 @@ button.secondaire {
   background: rgba(255, 246, 232, 0.12);
   color: var(--craie);
 }
+
+/* ---------------------------------------------- le menu et le rapport */
+.menu h2 { margin-bottom: 1rem; }
+.menu-actions { display: grid; gap: 0.5rem; }
+.menu-actions button { margin: 0; }
+/* Le bouton armé ne peut pas être rouge plein : « Reprendre » l'est déjà, et
+   deux boutons rouges côte à côte ne disent plus lequel est dangereux. */
+button.danger {
+  background: transparent;
+  color: var(--alerte);
+  box-shadow: inset 0 0 0 2px currentColor;
+}
+
+.rapport[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: min(96vw, 34rem);
+  max-height: 82vh;
+}
+.rapport-aide { margin: 0; font-size: 0.78rem; color: var(--grise); line-height: 1.35; }
+
+/* Le rapport se lit peu et se copie beaucoup : une zone de texte, parce qu'un
+   appui long y sélectionne tout, même quand le presse-papiers est refusé. */
+#rapport-texte {
+  flex: 1 1 auto;
+  min-height: min(24rem, 52vh);
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 246, 232, 0.2);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--craie);
+  font-family: ui-monospace, monospace;
+  font-size: 0.7rem;
+  line-height: 1.35;
+  white-space: pre;
+  overflow: auto;
+  user-select: text;
+  resize: none;
+}
+#rapport-copier { margin: 0; }
 
 /* Écrans larges : la cour reste une colonne, on ne l'étire pas. */
 @media (min-width: 720px) {

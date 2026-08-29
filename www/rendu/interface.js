@@ -54,6 +54,7 @@ export function construireInterface(racine, camera) {
         <span class="etiquette">Château adverse</span>
         <span class="pv" id="pv-eux">—</span>
       </div>
+      <button id="pause" class="menu-bouton" aria-label="Pause">⏸</button>
     </header>
 
     <div class="terrain">
@@ -87,10 +88,31 @@ export function construireInterface(racine, camera) {
       <div id="catalogue" class="catalogue"></div>
     </dialog>
 
+    <dialog id="menu" class="menu">
+      <h2 id="menu-titre">Partie en pause</h2>
+      <div class="menu-actions">
+        <button id="reprendre">Reprendre</button>
+        <button id="recommencer" class="secondaire">Recommencer</button>
+        <button id="voir-rapport" class="secondaire">Rapport de partie</button>
+      </div>
+    </dialog>
+
+    <dialog id="rapport" class="rapport">
+      <div class="achat-tete">
+        <h2>Rapport de partie</h2>
+        <button id="rapport-fermer" class="fermer" aria-label="Fermer">✕</button>
+      </div>
+      <p class="rapport-aide">Tout ce qui s'est passé, avec le numéro de
+        version et le journal qui rejoue la partie. À coller tel quel.</p>
+      <textarea id="rapport-texte" readonly spellcheck="false"></textarea>
+      <button id="rapport-copier">Copier</button>
+    </dialog>
+
     <dialog id="fin" class="fin">
       <h2 id="fin-titre"></h2>
       <p id="fin-detail"></p>
       <button id="rejouer">Rejouer</button>
+      <button id="fin-rapport" class="secondaire">Rapport de partie</button>
     </dialog>
   `;
 
@@ -129,11 +151,114 @@ export function construireInterface(racine, camera) {
   });
 
   addEventListener('keydown', (e) => {
+    if (raccourciBloque(e)) return;
     if (e.key === 'b' || e.key === 'B') ouvrir(racine);
     if (e.key === 'Escape') { fermer(racine); annulerPlacement(racine); }
   });
 
   return racine.querySelector('#scene');
+}
+
+/**
+ * Le menu de pause : reprendre, recommencer, lire le rapport.
+ *
+ * L'interface ne sait pas mettre en pause ni redémarrer — elle appelle ce
+ * qu'on lui donne. C'est `jeu.js` qui tient la boucle et l'horloge, et lui
+ * seul ; ici on ne fait qu'écouter des boutons.
+ *
+ * @param actions.mettreEnPause  appelée quand le menu s'ouvre
+ * @param actions.reprendre      appelée quand il se referme, quelle qu'en soit
+ *                               la façon — bouton, Échap, clic hors du panneau
+ * @param actions.recommencer    nouvelle partie
+ * @param actions.redigerRapport rend le texte du rapport
+ */
+export function brancherMenu(racine, actions) {
+  const menu = racine.querySelector('#menu');
+  const rapport = racine.querySelector('#rapport');
+  const texte = racine.querySelector('#rapport-texte');
+  const recommencer = racine.querySelector('#recommencer');
+  const copier = racine.querySelector('#rapport-copier');
+
+  const ouvrirMenu = () => {
+    // Partie finie : le panneau de fin a déjà la main, deux modales
+    // superposées n'apprendraient rien à personne.
+    if (menu.open || racine.querySelector('#fin').open) return;
+    actions.mettreEnPause();
+    armerRecommencer(recommencer, false);
+    menu.showModal();
+  };
+
+  racine.querySelector('#pause').addEventListener('click', () => {
+    if (menu.open) menu.close(); else ouvrirMenu();
+  });
+  racine.querySelector('#reprendre').addEventListener('click', () => menu.close());
+
+  // `close` et pas le seul bouton : Échap et le clic hors du panneau ferment
+  // aussi. Une partie qui resterait figée sans que rien ne le dise serait prise
+  // pour un plantage.
+  menu.addEventListener('close', () => {
+    if (!rapport.open) actions.reprendre();
+  });
+
+  // Recommencer demande deux appuis. Pas de `confirm()` : bloqué dans certaines
+  // WebViews, et l'à-peu-près d'un appui de trop coûterait la partie en cours.
+  recommencer.addEventListener('click', () => {
+    if (recommencer.dataset.arme !== 'oui') return armerRecommencer(recommencer, true);
+    armerRecommencer(recommencer, false);
+    menu.close();
+    actions.recommencer();
+  });
+
+  const montrerRapport = () => {
+    texte.value = actions.redigerRapport();
+    copier.textContent = 'Copier';
+    rapport.showModal();
+  };
+  racine.querySelector('#voir-rapport').addEventListener('click', montrerRapport);
+  racine.querySelector('#fin-rapport').addEventListener('click', montrerRapport);
+  racine.querySelector('#rapport-fermer').addEventListener('click', () => rapport.close());
+  rapport.addEventListener('close', () => {
+    if (!menu.open && !racine.querySelector('#fin').open) actions.reprendre();
+  });
+
+  copier.addEventListener('click', async () => {
+    // `navigator.clipboard` demande un contexte sécurisé et n'existe pas
+    // partout ; la sélection reste toujours possible à la main, d'où le repli
+    // qui sélectionne tout plutôt que d'échouer en silence.
+    try {
+      await navigator.clipboard.writeText(texte.value);
+      copier.textContent = 'Copié !';
+    } catch {
+      texte.focus();
+      texte.select();
+      copier.textContent = 'Copiez la sélection';
+    }
+  });
+
+  addEventListener('keydown', (e) => {
+    if (raccourciBloque(e) || (e.key !== 'p' && e.key !== 'P')) return;
+    if (menu.open) menu.close(); else ouvrirMenu();
+  });
+
+  return { ouvrirMenu };
+}
+
+/** Une lettre tapée dans le rapport n'est pas un raccourci de jeu. */
+const raccourciBloque = (e) =>
+  e.target instanceof Element && e.target.closest('textarea, input');
+
+function armerRecommencer(bouton, arme) {
+  bouton.dataset.arme = arme ? 'oui' : 'non';
+  bouton.textContent = arme ? 'Confirmer : tout perdre' : 'Recommencer';
+  bouton.classList.toggle('danger', arme);
+}
+
+/** Remet l'interface à zéro pour une partie neuve. */
+export function reinitialiser(racine) {
+  fermer(racine);
+  annulerPlacement(racine);
+  const fin = racine.querySelector('#fin');
+  if (fin.open) fin.close();
 }
 
 /**
@@ -313,7 +438,7 @@ export function rafraichir(racine, etat) {
 
 export function annoncerFin(racine, gagne) {
   const fin = racine.querySelector('#fin');
-  if (fin.open) return;
+  if (fin.open || racine.querySelector('#rapport').open) return;
   racine.querySelector('#fin-titre').textContent = gagne ? 'Gagné !' : 'Perdu…';
   racine.querySelector('#fin-detail').textContent = gagne
     ? 'Le château adverse est en miettes.'
